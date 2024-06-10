@@ -41,7 +41,7 @@ public:
 
     void add_intervals_to_investigate(std::string path, std::vector<TimeInterval> intervals);
 
-    void add_interval_analysis_request(std::shared_ptr<IntervalAnalysisRequest> request);
+    void add_interval_analysis_request(int analysis_id, std::shared_ptr<IntervalAnalysisRequest> request, int logical_operation);
 
     int process_interval_analysis_request(std::shared_ptr<IntervalAnalysisRequest> analysis_request, float* intervals, std::string const& file, std::vector<TimeInterval> const& intervals_to_investigate) const;
 

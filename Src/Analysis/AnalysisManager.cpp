@@ -5,8 +5,74 @@
 #include "AnalysisManager.h"
 #include "Analysis/IntervalAnalysis/TransformAnalysis/IntervalPositionAdjustmentAnalysisRequest.h"
 
-void AnalysisManager::add_interval_analysis_request(std::shared_ptr<IntervalAnalysisRequest> request) {
-    interval_analysis_queries.push_back(request);
+void AnalysisManager::add_interval_analysis_request(int analysis_id, std::shared_ptr<IntervalAnalysisRequest> request, int logical_operation) {
+    if(interval_analysis_queries.size() > analysis_id){
+        if(interval_analysis_queries[analysis_id].get() == nullptr){
+            switch(logical_operation) {
+                case 0: {
+                    interval_analysis_queries[analysis_id] = request;
+                    break;
+                }
+                case 1: {
+                    interval_analysis_queries[analysis_id] = request;
+                    break;
+                }
+                case 2: {
+                    interval_analysis_queries[analysis_id] = !request;
+                    break;
+                }
+                case 3: {
+                    interval_analysis_queries[analysis_id] = !request;
+                    break;
+                }
+            }
+        } else {
+            switch(logical_operation){
+                case 0:{
+                    interval_analysis_queries[analysis_id] = interval_analysis_queries[analysis_id] & request;
+                    break;
+                }
+                case 1:{
+                    interval_analysis_queries[analysis_id] = interval_analysis_queries[analysis_id] | request;
+                    break;
+                }
+                case 2:{
+                    interval_analysis_queries[analysis_id] = interval_analysis_queries[analysis_id] & (!request);
+                    break;
+                }
+                case 3:{
+                    interval_analysis_queries[analysis_id] = interval_analysis_queries[analysis_id] | (!request);
+                    break;
+                }
+            }
+        }
+    } else {
+        int tmp = interval_analysis_queries.size();
+        for (int i = tmp - 1; i < analysis_id; ++i) {
+            if (i != analysis_id - 1)
+                interval_analysis_queries.push_back(nullptr);
+            else {
+                switch (logical_operation) {
+                    case 0: {
+                        interval_analysis_queries.push_back(request);
+                        break;
+                    }
+                    case 1: {
+                        interval_analysis_queries.push_back(request);
+                        break;
+                    }
+                    case 2: {
+                        interval_analysis_queries.push_back(!request);
+                        break;
+                    }
+                    case 3: {
+                        interval_analysis_queries.push_back(!request);
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 
 int AnalysisManager::process_interval_analysis_request(std::shared_ptr<IntervalAnalysisRequest> analysis_request,

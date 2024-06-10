@@ -1,6 +1,6 @@
 # Record, Replay  & Analysis Plugin
 
-[![Build](https://github.com/vrsys/Recording-And-Analysis-Plugin/actions/workflows/cmake.yml/badge.svg)](https://github.com/vrsys/Recording-And-Analysis-Plugin/actions/workflows/cmake.yml)
+[![Build](https://github.com/vrsys/recording-plugin/actions/workflows/cmake.yml/badge.svg)](https://github.com/vrsys/recording-plugin/actions/workflows/cmake.yml)
 
 ![Logo](Images/Icon_resized.png)
 
@@ -212,7 +212,7 @@ void export_transform_data_to_CSV(std::string const& transform_file_path);
 
 void export_generic_data_to_CSV(std::string const& generic_file_path);
 
-void export_sound_data_to_WAV(std::string const& sound_file_path);```
+void export_sound_data_to_WAV(std::string const& sound_file_path);
 ```
 
 Debugging:

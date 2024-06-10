@@ -8,47 +8,49 @@ extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddAnalysisRecordingP
     AnalysisManager& manager = AnalysisManager::getInstance();
     manager.add_recording_path(path, path_length);
 }
-
-extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddDistanceAnalysisRequest(int analysis_id, int id_a, int id_b, float distance) {
+/**
+ *  @param logical_operation an int defining whether the analysis request will be combined with the current query using &, |, &! or |!
+ */
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddDistanceAnalysisRequest(int analysis_id, int id_a, int id_b, float distance, int logical_operation) {
     AnalysisManager& manager = AnalysisManager::getInstance();
     std::shared_ptr<IntervalTransformAnalysisRequest> request = std::make_shared<IntervalDistanceAnalysisRequest>(id_a, id_b, distance);
-    manager.add_interval_analysis_request(request);
+    manager.add_interval_analysis_request(analysis_id, request, logical_operation);
 }
 
-extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddContainmentAnalysisRequest(int analysis_id, int id_a,  float* min_max) {
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddContainmentAnalysisRequest(int analysis_id, int id_a,  float* min_max, int logical_operation) {
     AnalysisManager& manager = AnalysisManager::getInstance();
     std::shared_ptr<IntervalContainmentAnalysisRequest> request = std::make_shared<IntervalContainmentAnalysisRequest>(id_a, glm::vec3{min_max[0], min_max[1], min_max[2]}, glm::vec3{min_max[3], min_max[4], min_max[5]});
-    manager.add_interval_analysis_request(request);
+    manager.add_interval_analysis_request(analysis_id, request, logical_operation);
 }
 
-extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddGazeAnalysisRequest(int analysis_id, int id_a, int id_b, float cone_angle, float distance) {
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddGazeAnalysisRequest(int analysis_id, int id_a, int id_b, float cone_angle, float distance, int logical_operation) {
     AnalysisManager& manager = AnalysisManager::getInstance();
     std::shared_ptr<IntervalGazeAnalysisRequest> request = std::make_shared<IntervalGazeAnalysisRequest>(id_a, id_b, cone_angle, distance);
-    manager.add_interval_analysis_request(request);
+    manager.add_interval_analysis_request(analysis_id, request, logical_operation);
 }
 
-extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddGazeAnalysisRequestAx(int analysis_id, int id_a, int id_b, float cone_angle, float distance, int axis) {
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddGazeAnalysisRequestAx(int analysis_id, int id_a, int id_b, float cone_angle, float distance, int axis, int logical_operation) {
     AnalysisManager& manager = AnalysisManager::getInstance();
     std::shared_ptr<IntervalGazeAnalysisRequest> request = std::make_shared<IntervalGazeAnalysisRequest>(id_a, id_b, cone_angle, distance, axis);
-    manager.add_interval_analysis_request(request);
+    manager.add_interval_analysis_request(analysis_id, request, logical_operation);
 }
 
-extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddRotationAnalysisRequest(int analysis_id, int id_a, float temporal_search_interval, float rotation_threshold) {
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddRotationAnalysisRequest(int analysis_id, int id_a, float temporal_search_interval, float rotation_threshold, int logical_operation) {
     AnalysisManager& manager = AnalysisManager::getInstance();
     std::shared_ptr<IntervalRotationAnalysisRequest> request = std::make_shared<IntervalRotationAnalysisRequest>(id_a, temporal_search_interval, rotation_threshold);
-    manager.add_interval_analysis_request(request);
+    manager.add_interval_analysis_request(analysis_id, request, logical_operation);
 }
 
-extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddSoundActivationAnalysisRequest(int analysis_id, int sound_id, float temporal_search_interval, float activation_level) {
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddSoundActivationAnalysisRequest(int analysis_id, int sound_id, float temporal_search_interval, float activation_level, int logical_operation) {
     AnalysisManager& manager = AnalysisManager::getInstance();
     std::shared_ptr<IntervalSoundActivationAnalysisRequest> request = std::make_shared<IntervalSoundActivationAnalysisRequest>(sound_id, temporal_search_interval, activation_level);
-    manager.add_interval_analysis_request(request);
+    manager.add_interval_analysis_request(analysis_id, request, logical_operation);
 }
 
-extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddVelocityAnalysisRequest(int analysis_id, int id_a, float temporal_search_interval, float velocity_threshold) {
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API AddVelocityAnalysisRequest(int analysis_id, int id_a, float temporal_search_interval, float velocity_threshold, int logical_operation) {
     AnalysisManager& manager = AnalysisManager::getInstance();
     std::shared_ptr<IntervalVelocityAnalysisRequest> request = std::make_shared<IntervalVelocityAnalysisRequest>(id_a, temporal_search_interval, velocity_threshold);
-    manager.add_interval_analysis_request(request);
+    manager.add_interval_analysis_request(analysis_id, request, logical_operation);
 }
 
 extern "C" int UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API ProcessAnalysisRequests(int analysis_id, float* intervals) {
