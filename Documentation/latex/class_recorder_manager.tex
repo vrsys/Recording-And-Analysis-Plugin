@@ -1,0 +1,408 @@
+\doxysection{Recorder\+Manager Class Reference}
+\hypertarget{class_recorder_manager}{}\label{class_recorder_manager}\index{RecorderManager@{RecorderManager}}
+
+
+This class controls multiple recorder, which can playback \& record different things at the same time.  
+
+
+
+
+{\ttfamily \#include $<$Recorder\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_recorder_manager_ad58a37176f61c879f3a909cd09b0af37}{Recorder\+Manager}} ()
+\item 
+\mbox{\hyperlink{class_recorder_manager_a69c105ff809baadc35c0b644d68836bd}{Recorder\+Manager}} (\mbox{\hyperlink{class_recorder_manager}{Recorder\+Manager}} const \&)=delete
+\item 
+void \mbox{\hyperlink{class_recorder_manager_ab3a02a0158e0ebd5539ed7307b24d2fe}{operator=}} (\mbox{\hyperlink{class_recorder_manager}{Recorder\+Manager}} const \&)=delete
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a32640ced79bb8d945fcf9fc2f3626591}{record\+\_\+transform\+\_\+at\+\_\+time}} (int recorder\+\_\+id, std\+::string const \&object\+\_\+name, int object\+\_\+uuid, float const \texorpdfstring{$\ast$}{*}local\+\_\+matrix, float time\+\_\+stamp, int const \texorpdfstring{$\ast$}{*}object\+\_\+information)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a8e08bfba5e90e48fb4c74859cea332e5}{record\+\_\+sound\+\_\+at\+\_\+time}} (int recorder\+\_\+id, float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int sound\+\_\+data\+\_\+length, int sampling\+\_\+rate, int start\+\_\+index, int channel\+\_\+num, float time\+\_\+stamp, int sound\+\_\+origin)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_ae74da2aebf4db85aefbdb29932e77985}{record\+\_\+sound\+\_\+at\+\_\+time}} (int recorder\+\_\+id, float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int sound\+\_\+data\+\_\+length, int sampling\+\_\+rate, int start\+\_\+index, int channel\+\_\+num, int corresponding\+\_\+gameobject\+\_\+id, float time\+\_\+stamp, int sound\+\_\+origin)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_ac836e2afa168cb3a4c4c9d275b8db47c}{record\+\_\+generic\+\_\+at\+\_\+time}} (int recorder\+\_\+id, float time\+\_\+stamp, int id, int \texorpdfstring{$\ast$}{*}int\+\_\+a, float \texorpdfstring{$\ast$}{*}float\+\_\+a, char \texorpdfstring{$\ast$}{*}char\+\_\+a)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a3d6b49456c31b4eed5fde349bd3ee145}{get\+\_\+transform\+\_\+at\+\_\+time}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+uuid, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}matrix, int \texorpdfstring{$\ast$}{*}object\+\_\+information)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_a768a99af25f87aba57de13ae1c61c97f}{get\+\_\+sound\+\_\+at\+\_\+time}} (int recorder\+\_\+id, int sound\+\_\+origin, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}sound\+\_\+data)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_af450eb3dde4537f5f0f8a9009f1005c2}{get\+\_\+sound\+\_\+at\+\_\+time}} (int recorder\+\_\+id, int sound\+\_\+origin, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int \texorpdfstring{$\ast$}{*}corresponding\+\_\+go\+\_\+id)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_aa2d5096de0b585634149c341866a1e38}{get\+\_\+sampling\+\_\+rate}} (int recorder\+\_\+id, int sound\+\_\+origin)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_a5c3d8c5170d022d0f750728e66d79b8b}{get\+\_\+channel\+\_\+num}} (int recorder\+\_\+id, int sound\+\_\+origin)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a3617a374f8c648ae78dbdadcc22668a2}{get\+\_\+generic\+\_\+at\+\_\+time}} (int recorder\+\_\+id, float time\+\_\+stamp, int id, int \texorpdfstring{$\ast$}{*}int\+\_\+a, float \texorpdfstring{$\ast$}{*}float\+\_\+a, char \texorpdfstring{$\ast$}{*}char\+\_\+a)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a93b887ae3cfceb86c7da2b03bd6a2d53}{create\+\_\+recording\+\_\+file}} (int recorder\+\_\+id, std\+::string const \&directory, std\+::string const \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a960dd8f2ae0272be71e5251007e6403d}{stop\+\_\+recording}} (int recorder\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_aa47420550f63cdf10d369506b9419143}{open\+\_\+existing\+\_\+recording\+\_\+file}} (int recorder\+\_\+id, std\+::string const \&directory, std\+::string const \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_aa24238b6ba7463ddef03d3806d685777}{stop\+\_\+replay}} (int recorder\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a122a90c361decf5dac340dfeae5a8ad8}{set\+\_\+transform\+\_\+recording\+\_\+buffer\+\_\+size}} (int recorder\+\_\+id, int max\+\_\+size)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_ab06dcbd12e8282f91b23edbea4e905da}{set\+\_\+sound\+\_\+recording\+\_\+buffer\+\_\+size}} (int recorder\+\_\+id, int max\+\_\+size)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_aad31719b923e81132d3970ea3569dae5}{set\+\_\+replay\+\_\+buffer\+\_\+num}} (int recorder\+\_\+id, int buffer\+\_\+num)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_aa797a7d9ad9992961c0d839c6c4be050}{set\+\_\+replay\+\_\+buffer\+\_\+time\+\_\+interval}} (int recorder\+\_\+id, float time\+\_\+interval)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_a8e930aee28d06bc8552c531310cdf6e6}{next\+\_\+positions\+\_\+for\+\_\+id}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+uuid, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}positions)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_ac3286dc5979a8c9b1a59e357c97ad935}{get\+\_\+original\+\_\+id}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+id)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_ae94206665f4e07e28988d3b8b1e5a8c3}{get\+\_\+original\+\_\+id}} (int recorder\+\_\+id, int object\+\_\+id)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_a2e2d0ba5e33124ff87374ce16aff8078}{get\+\_\+new\+\_\+id}} (int recorder\+\_\+id, int old\+\_\+object\+\_\+id)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_a2ab39567fef8544bc23bbb582df6df38}{get\+\_\+recording\+\_\+gameobjects}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_a8cbbe24acbc4251274ef27ed0dc2ea33}{get\+\_\+recording\+\_\+sound\+\_\+sources}} (int recorder\+\_\+id, int \texorpdfstring{$\ast$}{*}ids, int max\+\_\+size)
+\item 
+std\+::map$<$ int, std\+::string $>$ \mbox{\hyperlink{class_recorder_manager_a556385c5addb8907695486bedda8ba89}{get\+\_\+recording\+\_\+gameobjects}} (int recorder\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a78de4c6220ad8791f623d69fdedfc73d}{register\+\_\+gameobject\+\_\+path}} (int recorder\+\_\+id, int uuid, char \texorpdfstring{$\ast$}{*}path, int path\+\_\+length, float time)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_abf2b7ce7d6afcf2167f74635aefbd6fe}{register\+\_\+gameobject\+\_\+prefab}} (int recorder\+\_\+id, int uuid, char \texorpdfstring{$\ast$}{*}prefab, int prefab\+\_\+length, float time)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_ace8a687543affe002b44e7894bdc7709}{get\+\_\+gameobject\+\_\+path}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_aa99975435d93d8c6ee367a4cbd2d3825}{get\+\_\+gameobject\+\_\+prefab}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a3eb1f2449e899157a6c3616456664e55}{register\+\_\+gameobject\+\_\+components}} (int recorder\+\_\+id, int uuid, char \texorpdfstring{$\ast$}{*}components, int components\+\_\+length)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_a725feae157c499fb6f77664267b5c7e4}{get\+\_\+gameobject\+\_\+components}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+std\+::string \mbox{\hyperlink{class_recorder_manager_aa758cac08b855c57f19823524bb5f23c}{get\+\_\+gameobject\+\_\+components}} (int recorder\+\_\+id, std\+::string name)
+\item 
+std\+::string \mbox{\hyperlink{class_recorder_manager_a195a426abaa52fa1ee17cf5dd3017ee2}{get\+\_\+gameobject\+\_\+mesh\+\_\+path}} (int recorder\+\_\+id, std\+::string name)
+\item 
+float \mbox{\hyperlink{class_recorder_manager_a40198c9974ccaa0c6c6591b65f6ad98b}{get\+\_\+gameobject\+\_\+first\+\_\+time}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+int \mbox{\hyperlink{class_recorder_manager_ac21a51910d54467c1c69912f13651555}{get\+\_\+sound\+\_\+ids}} (int recorder\+\_\+id, int \texorpdfstring{$\ast$}{*}ids, int max\+\_\+id\+\_\+count)
+\item 
+float \mbox{\hyperlink{class_recorder_manager_ae9cceb6385a59e696ebc35293406c397}{get\+\_\+recording\+\_\+duration}} (int recorder\+\_\+id)
+\item 
+float \mbox{\hyperlink{class_recorder_manager_a97b5844ab752f2b2405099c9d389bd62}{get\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset}} (int recorder\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a4258840c9b263ec546c6906acd782193}{register\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset}} (int recorder\+\_\+id, float offset\+\_\+to\+\_\+global\+\_\+time)
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a5fffcf1c5cd02573ca8364a633ff73d5}{set\+\_\+debug\+\_\+mode}} (int recorder\+\_\+id, bool \mbox{\hyperlink{class_recorder_manager_a2d92ccb8929e821cea87208aec150a85}{debug}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_recorder_manager}{Recorder\+Manager}} \& \mbox{\hyperlink{class_recorder_manager_af28b395aff262d9d2eb2d39262d60143}{get\+Instance}} ()
+\item 
+static BS\+::thread\+\_\+pool \& \mbox{\hyperlink{class_recorder_manager_a75502baca7451844aa102cc12dc5b61a}{get\+Thread\+Pool}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_recorder_manager_a2d92ccb8929e821cea87208aec150a85}{debug}} = false
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_recorder}{Recorder}} $>$ \mbox{\hyperlink{class_recorder_manager_aa12d8ebccded173d4c112083a0128e72}{recorders}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class controls multiple recorder, which can playback \& record different things at the same time. 
+
+For this multi-\/threading is used. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_recorder_manager_ad58a37176f61c879f3a909cd09b0af37}\label{class_recorder_manager_ad58a37176f61c879f3a909cd09b0af37} 
+\index{RecorderManager@{RecorderManager}!RecorderManager@{RecorderManager}}
+\index{RecorderManager@{RecorderManager}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{RecorderManager()}{RecorderManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Recorder\+Manager\+::\+Recorder\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a69c105ff809baadc35c0b644d68836bd}\label{class_recorder_manager_a69c105ff809baadc35c0b644d68836bd} 
+\index{RecorderManager@{RecorderManager}!RecorderManager@{RecorderManager}}
+\index{RecorderManager@{RecorderManager}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{RecorderManager()}{RecorderManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Recorder\+Manager\+::\+Recorder\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_recorder_manager}{Recorder\+Manager}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_recorder_manager_a93b887ae3cfceb86c7da2b03bd6a2d53}\label{class_recorder_manager_a93b887ae3cfceb86c7da2b03bd6a2d53} 
+\index{RecorderManager@{RecorderManager}!create\_recording\_file@{create\_recording\_file}}
+\index{create\_recording\_file@{create\_recording\_file}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{create\_recording\_file()}{create\_recording\_file()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::create\+\_\+recording\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{std\+::string const \&}]{directory,  }\item[{std\+::string const \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a5c3d8c5170d022d0f750728e66d79b8b}\label{class_recorder_manager_a5c3d8c5170d022d0f750728e66d79b8b} 
+\index{RecorderManager@{RecorderManager}!get\_channel\_num@{get\_channel\_num}}
+\index{get\_channel\_num@{get\_channel\_num}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_channel\_num()}{get\_channel\_num()}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+channel\+\_\+num (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{sound\+\_\+origin }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a725feae157c499fb6f77664267b5c7e4}\label{class_recorder_manager_a725feae157c499fb6f77664267b5c7e4} 
+\index{RecorderManager@{RecorderManager}!get\_gameobject\_components@{get\_gameobject\_components}}
+\index{get\_gameobject\_components@{get\_gameobject\_components}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_components()}{get\_gameobject\_components()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+gameobject\+\_\+components (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_aa758cac08b855c57f19823524bb5f23c}\label{class_recorder_manager_aa758cac08b855c57f19823524bb5f23c} 
+\index{RecorderManager@{RecorderManager}!get\_gameobject\_components@{get\_gameobject\_components}}
+\index{get\_gameobject\_components@{get\_gameobject\_components}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_components()}{get\_gameobject\_components()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Recorder\+Manager\+::get\+\_\+gameobject\+\_\+components (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a40198c9974ccaa0c6c6591b65f6ad98b}\label{class_recorder_manager_a40198c9974ccaa0c6c6591b65f6ad98b} 
+\index{RecorderManager@{RecorderManager}!get\_gameobject\_first\_time@{get\_gameobject\_first\_time}}
+\index{get\_gameobject\_first\_time@{get\_gameobject\_first\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_first\_time()}{get\_gameobject\_first\_time()}}
+{\footnotesize\ttfamily float Recorder\+Manager\+::get\+\_\+gameobject\+\_\+first\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a195a426abaa52fa1ee17cf5dd3017ee2}\label{class_recorder_manager_a195a426abaa52fa1ee17cf5dd3017ee2} 
+\index{RecorderManager@{RecorderManager}!get\_gameobject\_mesh\_path@{get\_gameobject\_mesh\_path}}
+\index{get\_gameobject\_mesh\_path@{get\_gameobject\_mesh\_path}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_mesh\_path()}{get\_gameobject\_mesh\_path()}}
+{\footnotesize\ttfamily std\+::string Recorder\+Manager\+::get\+\_\+gameobject\+\_\+mesh\+\_\+path (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_ace8a687543affe002b44e7894bdc7709}\label{class_recorder_manager_ace8a687543affe002b44e7894bdc7709} 
+\index{RecorderManager@{RecorderManager}!get\_gameobject\_path@{get\_gameobject\_path}}
+\index{get\_gameobject\_path@{get\_gameobject\_path}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_path()}{get\_gameobject\_path()}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+gameobject\+\_\+path (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_aa99975435d93d8c6ee367a4cbd2d3825}\label{class_recorder_manager_aa99975435d93d8c6ee367a4cbd2d3825} 
+\index{RecorderManager@{RecorderManager}!get\_gameobject\_prefab@{get\_gameobject\_prefab}}
+\index{get\_gameobject\_prefab@{get\_gameobject\_prefab}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_prefab()}{get\_gameobject\_prefab()}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+gameobject\+\_\+prefab (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a3617a374f8c648ae78dbdadcc22668a2}\label{class_recorder_manager_a3617a374f8c648ae78dbdadcc22668a2} 
+\index{RecorderManager@{RecorderManager}!get\_generic\_at\_time@{get\_generic\_at\_time}}
+\index{get\_generic\_at\_time@{get\_generic\_at\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_generic\_at\_time()}{get\_generic\_at\_time()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::get\+\_\+generic\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{int\+\_\+a,  }\item[{float \texorpdfstring{$\ast$}{*}}]{float\+\_\+a,  }\item[{char \texorpdfstring{$\ast$}{*}}]{char\+\_\+a }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a2e2d0ba5e33124ff87374ce16aff8078}\label{class_recorder_manager_a2e2d0ba5e33124ff87374ce16aff8078} 
+\index{RecorderManager@{RecorderManager}!get\_new\_id@{get\_new\_id}}
+\index{get\_new\_id@{get\_new\_id}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_new\_id()}{get\_new\_id()}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+new\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{old\+\_\+object\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_ac3286dc5979a8c9b1a59e357c97ad935}\label{class_recorder_manager_ac3286dc5979a8c9b1a59e357c97ad935} 
+\index{RecorderManager@{RecorderManager}!get\_original\_id@{get\_original\_id}}
+\index{get\_original\_id@{get\_original\_id}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_original\_id()}{get\_original\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+original\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_ae94206665f4e07e28988d3b8b1e5a8c3}\label{class_recorder_manager_ae94206665f4e07e28988d3b8b1e5a8c3} 
+\index{RecorderManager@{RecorderManager}!get\_original\_id@{get\_original\_id}}
+\index{get\_original\_id@{get\_original\_id}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_original\_id()}{get\_original\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+original\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{object\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_ae9cceb6385a59e696ebc35293406c397}\label{class_recorder_manager_ae9cceb6385a59e696ebc35293406c397} 
+\index{RecorderManager@{RecorderManager}!get\_recording\_duration@{get\_recording\_duration}}
+\index{get\_recording\_duration@{get\_recording\_duration}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_duration()}{get\_recording\_duration()}}
+{\footnotesize\ttfamily float Recorder\+Manager\+::get\+\_\+recording\+\_\+duration (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a556385c5addb8907695486bedda8ba89}\label{class_recorder_manager_a556385c5addb8907695486bedda8ba89} 
+\index{RecorderManager@{RecorderManager}!get\_recording\_gameobjects@{get\_recording\_gameobjects}}
+\index{get\_recording\_gameobjects@{get\_recording\_gameobjects}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_gameobjects()}{get\_recording\_gameobjects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::map$<$ int, std\+::string $>$ Recorder\+Manager\+::get\+\_\+recording\+\_\+gameobjects (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a2ab39567fef8544bc23bbb582df6df38}\label{class_recorder_manager_a2ab39567fef8544bc23bbb582df6df38} 
+\index{RecorderManager@{RecorderManager}!get\_recording\_gameobjects@{get\_recording\_gameobjects}}
+\index{get\_recording\_gameobjects@{get\_recording\_gameobjects}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_gameobjects()}{get\_recording\_gameobjects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+recording\+\_\+gameobjects (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a8cbbe24acbc4251274ef27ed0dc2ea33}\label{class_recorder_manager_a8cbbe24acbc4251274ef27ed0dc2ea33} 
+\index{RecorderManager@{RecorderManager}!get\_recording\_sound\_sources@{get\_recording\_sound\_sources}}
+\index{get\_recording\_sound\_sources@{get\_recording\_sound\_sources}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_sound\_sources()}{get\_recording\_sound\_sources()}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+recording\+\_\+sound\+\_\+sources (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{ids,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a97b5844ab752f2b2405099c9d389bd62}\label{class_recorder_manager_a97b5844ab752f2b2405099c9d389bd62} 
+\index{RecorderManager@{RecorderManager}!get\_recording\_start\_global\_timeoffset@{get\_recording\_start\_global\_timeoffset}}
+\index{get\_recording\_start\_global\_timeoffset@{get\_recording\_start\_global\_timeoffset}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_start\_global\_timeoffset()}{get\_recording\_start\_global\_timeoffset()}}
+{\footnotesize\ttfamily float Recorder\+Manager\+::get\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_aa2d5096de0b585634149c341866a1e38}\label{class_recorder_manager_aa2d5096de0b585634149c341866a1e38} 
+\index{RecorderManager@{RecorderManager}!get\_sampling\_rate@{get\_sampling\_rate}}
+\index{get\_sampling\_rate@{get\_sampling\_rate}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_sampling\_rate()}{get\_sampling\_rate()}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+sampling\+\_\+rate (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{sound\+\_\+origin }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a768a99af25f87aba57de13ae1c61c97f}\label{class_recorder_manager_a768a99af25f87aba57de13ae1c61c97f} 
+\index{RecorderManager@{RecorderManager}!get\_sound\_at\_time@{get\_sound\_at\_time}}
+\index{get\_sound\_at\_time@{get\_sound\_at\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_sound\_at\_time()}{get\_sound\_at\_time()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+sound\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{sound\+\_\+origin,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_af450eb3dde4537f5f0f8a9009f1005c2}\label{class_recorder_manager_af450eb3dde4537f5f0f8a9009f1005c2} 
+\index{RecorderManager@{RecorderManager}!get\_sound\_at\_time@{get\_sound\_at\_time}}
+\index{get\_sound\_at\_time@{get\_sound\_at\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_sound\_at\_time()}{get\_sound\_at\_time()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+sound\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{sound\+\_\+origin,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int \texorpdfstring{$\ast$}{*}}]{corresponding\+\_\+go\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_ac21a51910d54467c1c69912f13651555}\label{class_recorder_manager_ac21a51910d54467c1c69912f13651555} 
+\index{RecorderManager@{RecorderManager}!get\_sound\_ids@{get\_sound\_ids}}
+\index{get\_sound\_ids@{get\_sound\_ids}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_sound\_ids()}{get\_sound\_ids()}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::get\+\_\+sound\+\_\+ids (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{ids,  }\item[{int}]{max\+\_\+id\+\_\+count }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a3d6b49456c31b4eed5fde349bd3ee145}\label{class_recorder_manager_a3d6b49456c31b4eed5fde349bd3ee145} 
+\index{RecorderManager@{RecorderManager}!get\_transform\_at\_time@{get\_transform\_at\_time}}
+\index{get\_transform\_at\_time@{get\_transform\_at\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{get\_transform\_at\_time()}{get\_transform\_at\_time()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::get\+\_\+transform\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+uuid,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{matrix,  }\item[{int \texorpdfstring{$\ast$}{*}}]{object\+\_\+information }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_af28b395aff262d9d2eb2d39262d60143}\label{class_recorder_manager_af28b395aff262d9d2eb2d39262d60143} 
+\index{RecorderManager@{RecorderManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_recorder_manager}{Recorder\+Manager}} \& Recorder\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_recorder_manager_a75502baca7451844aa102cc12dc5b61a}\label{class_recorder_manager_a75502baca7451844aa102cc12dc5b61a} 
+\index{RecorderManager@{RecorderManager}!getThreadPool@{getThreadPool}}
+\index{getThreadPool@{getThreadPool}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{getThreadPool()}{getThreadPool()}}
+{\footnotesize\ttfamily static BS\+::thread\+\_\+pool \& Recorder\+Manager\+::get\+Thread\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_recorder_manager_a8e930aee28d06bc8552c531310cdf6e6}\label{class_recorder_manager_a8e930aee28d06bc8552c531310cdf6e6} 
+\index{RecorderManager@{RecorderManager}!next\_positions\_for\_id@{next\_positions\_for\_id}}
+\index{next\_positions\_for\_id@{next\_positions\_for\_id}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{next\_positions\_for\_id()}{next\_positions\_for\_id()}}
+{\footnotesize\ttfamily int Recorder\+Manager\+::next\+\_\+positions\+\_\+for\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+uuid,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{positions }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_aa47420550f63cdf10d369506b9419143}\label{class_recorder_manager_aa47420550f63cdf10d369506b9419143} 
+\index{RecorderManager@{RecorderManager}!open\_existing\_recording\_file@{open\_existing\_recording\_file}}
+\index{open\_existing\_recording\_file@{open\_existing\_recording\_file}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{open\_existing\_recording\_file()}{open\_existing\_recording\_file()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::open\+\_\+existing\+\_\+recording\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{std\+::string const \&}]{directory,  }\item[{std\+::string const \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_ab3a02a0158e0ebd5539ed7307b24d2fe}\label{class_recorder_manager_ab3a02a0158e0ebd5539ed7307b24d2fe} 
+\index{RecorderManager@{RecorderManager}!operator=@{operator=}}
+\index{operator=@{operator=}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Recorder\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_recorder_manager}{Recorder\+Manager}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_recorder_manager_ac836e2afa168cb3a4c4c9d275b8db47c}\label{class_recorder_manager_ac836e2afa168cb3a4c4c9d275b8db47c} 
+\index{RecorderManager@{RecorderManager}!record\_generic\_at\_time@{record\_generic\_at\_time}}
+\index{record\_generic\_at\_time@{record\_generic\_at\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{record\_generic\_at\_time()}{record\_generic\_at\_time()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::record\+\_\+generic\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{int\+\_\+a,  }\item[{float \texorpdfstring{$\ast$}{*}}]{float\+\_\+a,  }\item[{char \texorpdfstring{$\ast$}{*}}]{char\+\_\+a }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a8e08bfba5e90e48fb4c74859cea332e5}\label{class_recorder_manager_a8e08bfba5e90e48fb4c74859cea332e5} 
+\index{RecorderManager@{RecorderManager}!record\_sound\_at\_time@{record\_sound\_at\_time}}
+\index{record\_sound\_at\_time@{record\_sound\_at\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{record\_sound\_at\_time()}{record\_sound\_at\_time()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::record\+\_\+sound\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int}]{sound\+\_\+data\+\_\+length,  }\item[{int}]{sampling\+\_\+rate,  }\item[{int}]{start\+\_\+index,  }\item[{int}]{channel\+\_\+num,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{sound\+\_\+origin }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_ae74da2aebf4db85aefbdb29932e77985}\label{class_recorder_manager_ae74da2aebf4db85aefbdb29932e77985} 
+\index{RecorderManager@{RecorderManager}!record\_sound\_at\_time@{record\_sound\_at\_time}}
+\index{record\_sound\_at\_time@{record\_sound\_at\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{record\_sound\_at\_time()}{record\_sound\_at\_time()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::record\+\_\+sound\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int}]{sound\+\_\+data\+\_\+length,  }\item[{int}]{sampling\+\_\+rate,  }\item[{int}]{start\+\_\+index,  }\item[{int}]{channel\+\_\+num,  }\item[{int}]{corresponding\+\_\+gameobject\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{sound\+\_\+origin }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a32640ced79bb8d945fcf9fc2f3626591}\label{class_recorder_manager_a32640ced79bb8d945fcf9fc2f3626591} 
+\index{RecorderManager@{RecorderManager}!record\_transform\_at\_time@{record\_transform\_at\_time}}
+\index{record\_transform\_at\_time@{record\_transform\_at\_time}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{record\_transform\_at\_time()}{record\_transform\_at\_time()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::record\+\_\+transform\+\_\+at\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{std\+::string const \&}]{object\+\_\+name,  }\item[{int}]{object\+\_\+uuid,  }\item[{float const \texorpdfstring{$\ast$}{*}}]{local\+\_\+matrix,  }\item[{float}]{time\+\_\+stamp,  }\item[{int const \texorpdfstring{$\ast$}{*}}]{object\+\_\+information }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a3eb1f2449e899157a6c3616456664e55}\label{class_recorder_manager_a3eb1f2449e899157a6c3616456664e55} 
+\index{RecorderManager@{RecorderManager}!register\_gameobject\_components@{register\_gameobject\_components}}
+\index{register\_gameobject\_components@{register\_gameobject\_components}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_components()}{register\_gameobject\_components()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::register\+\_\+gameobject\+\_\+components (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{components,  }\item[{int}]{components\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a78de4c6220ad8791f623d69fdedfc73d}\label{class_recorder_manager_a78de4c6220ad8791f623d69fdedfc73d} 
+\index{RecorderManager@{RecorderManager}!register\_gameobject\_path@{register\_gameobject\_path}}
+\index{register\_gameobject\_path@{register\_gameobject\_path}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_path()}{register\_gameobject\_path()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::register\+\_\+gameobject\+\_\+path (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{path,  }\item[{int}]{path\+\_\+length,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_abf2b7ce7d6afcf2167f74635aefbd6fe}\label{class_recorder_manager_abf2b7ce7d6afcf2167f74635aefbd6fe} 
+\index{RecorderManager@{RecorderManager}!register\_gameobject\_prefab@{register\_gameobject\_prefab}}
+\index{register\_gameobject\_prefab@{register\_gameobject\_prefab}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_prefab()}{register\_gameobject\_prefab()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::register\+\_\+gameobject\+\_\+prefab (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{prefab,  }\item[{int}]{prefab\+\_\+length,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a4258840c9b263ec546c6906acd782193}\label{class_recorder_manager_a4258840c9b263ec546c6906acd782193} 
+\index{RecorderManager@{RecorderManager}!register\_recording\_start\_global\_timeoffset@{register\_recording\_start\_global\_timeoffset}}
+\index{register\_recording\_start\_global\_timeoffset@{register\_recording\_start\_global\_timeoffset}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{register\_recording\_start\_global\_timeoffset()}{register\_recording\_start\_global\_timeoffset()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::register\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float}]{offset\+\_\+to\+\_\+global\+\_\+time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a5fffcf1c5cd02573ca8364a633ff73d5}\label{class_recorder_manager_a5fffcf1c5cd02573ca8364a633ff73d5} 
+\index{RecorderManager@{RecorderManager}!set\_debug\_mode@{set\_debug\_mode}}
+\index{set\_debug\_mode@{set\_debug\_mode}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{set\_debug\_mode()}{set\_debug\_mode()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::set\+\_\+debug\+\_\+mode (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{bool}]{debug }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_aad31719b923e81132d3970ea3569dae5}\label{class_recorder_manager_aad31719b923e81132d3970ea3569dae5} 
+\index{RecorderManager@{RecorderManager}!set\_replay\_buffer\_num@{set\_replay\_buffer\_num}}
+\index{set\_replay\_buffer\_num@{set\_replay\_buffer\_num}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{set\_replay\_buffer\_num()}{set\_replay\_buffer\_num()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::set\+\_\+replay\+\_\+buffer\+\_\+num (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{buffer\+\_\+num }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_aa797a7d9ad9992961c0d839c6c4be050}\label{class_recorder_manager_aa797a7d9ad9992961c0d839c6c4be050} 
+\index{RecorderManager@{RecorderManager}!set\_replay\_buffer\_time\_interval@{set\_replay\_buffer\_time\_interval}}
+\index{set\_replay\_buffer\_time\_interval@{set\_replay\_buffer\_time\_interval}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{set\_replay\_buffer\_time\_interval()}{set\_replay\_buffer\_time\_interval()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::set\+\_\+replay\+\_\+buffer\+\_\+time\+\_\+interval (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float}]{time\+\_\+interval }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_ab06dcbd12e8282f91b23edbea4e905da}\label{class_recorder_manager_ab06dcbd12e8282f91b23edbea4e905da} 
+\index{RecorderManager@{RecorderManager}!set\_sound\_recording\_buffer\_size@{set\_sound\_recording\_buffer\_size}}
+\index{set\_sound\_recording\_buffer\_size@{set\_sound\_recording\_buffer\_size}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{set\_sound\_recording\_buffer\_size()}{set\_sound\_recording\_buffer\_size()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::set\+\_\+sound\+\_\+recording\+\_\+buffer\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a122a90c361decf5dac340dfeae5a8ad8}\label{class_recorder_manager_a122a90c361decf5dac340dfeae5a8ad8} 
+\index{RecorderManager@{RecorderManager}!set\_transform\_recording\_buffer\_size@{set\_transform\_recording\_buffer\_size}}
+\index{set\_transform\_recording\_buffer\_size@{set\_transform\_recording\_buffer\_size}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{set\_transform\_recording\_buffer\_size()}{set\_transform\_recording\_buffer\_size()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::set\+\_\+transform\+\_\+recording\+\_\+buffer\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_a960dd8f2ae0272be71e5251007e6403d}\label{class_recorder_manager_a960dd8f2ae0272be71e5251007e6403d} 
+\index{RecorderManager@{RecorderManager}!stop\_recording@{stop\_recording}}
+\index{stop\_recording@{stop\_recording}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{stop\_recording()}{stop\_recording()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::stop\+\_\+recording (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_manager_aa24238b6ba7463ddef03d3806d685777}\label{class_recorder_manager_aa24238b6ba7463ddef03d3806d685777} 
+\index{RecorderManager@{RecorderManager}!stop\_replay@{stop\_replay}}
+\index{stop\_replay@{stop\_replay}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{stop\_replay()}{stop\_replay()}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::stop\+\_\+replay (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_recorder_manager_a2d92ccb8929e821cea87208aec150a85}\label{class_recorder_manager_a2d92ccb8929e821cea87208aec150a85} 
+\index{RecorderManager@{RecorderManager}!debug@{debug}}
+\index{debug@{debug}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily bool Recorder\+Manager\+::debug = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_manager_aa12d8ebccded173d4c112083a0128e72}\label{class_recorder_manager_aa12d8ebccded173d4c112083a0128e72} 
+\index{RecorderManager@{RecorderManager}!recorders@{recorders}}
+\index{recorders@{recorders}!RecorderManager@{RecorderManager}}
+\doxysubsubsection{\texorpdfstring{recorders}{recorders}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_recorder}{Recorder}}$>$ Recorder\+Manager\+::recorders\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\mbox{\hyperlink{_recorder_manager_8h}{Recorder\+Manager.\+h}}\item 
+Src/\+Recording/\mbox{\hyperlink{_recorder_manager_8cpp}{Recorder\+Manager.\+cpp}}\end{DoxyCompactItemize}

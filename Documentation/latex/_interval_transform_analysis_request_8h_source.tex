@@ -1,0 +1,27 @@
+\doxysection{Interval\+Transform\+Analysis\+Request.\+h}
+\hypertarget{_interval_transform_analysis_request_8h_source}{}\label{_interval_transform_analysis_request_8h_source}\index{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalTransformAnalysisRequest.h@{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalTransformAnalysisRequest.h}}
+\mbox{\hyperlink{_interval_transform_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Anton-\/Lammert\ on\ 26.10.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_INTERVALTRANSFORMANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_INTERVALTRANSFORMANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_analysis_request_8h}{Analysis/IntervalAnalysis/IntervalAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_data_8h}{Recording/Transform/TransformData.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_log_8h}{DebugLog.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_interval_transform_analysis_request}{IntervalTransformAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_interval_analysis_request}{IntervalAnalysisRequest}}\{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_transform_analysis_request_a7e72be7c65fd84d8317e8f035d3d4c72}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ =\ 0;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\ \mbox{\hyperlink{class_interval_transform_analysis_request_a3dea3275685c99d8ea8bc559cad7759f}{get\_type}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_INTERVALTRANSFORMANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

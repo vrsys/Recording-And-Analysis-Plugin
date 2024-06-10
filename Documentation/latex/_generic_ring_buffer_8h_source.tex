@@ -1,0 +1,64 @@
+\doxysection{Generic\+Ring\+Buffer.\+h}
+\hypertarget{_generic_ring_buffer_8h_source}{}\label{_generic_ring_buffer_8h_source}\index{Src/Recording/Generic/GenericRingBuffer.h@{Src/Recording/Generic/GenericRingBuffer.h}}
+\mbox{\hyperlink{_generic_ring_buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 05.01.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_GENERICRINGBUFFER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_GENERICRINGBUFFER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_generic_buffer_8h}{GenericBuffer.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ring_buffer_8h}{Recording/BaseStructure/RingBuffer.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_log_8h}{DebugLog.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}glm/gtx/matrix\_decompose.hpp"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_generic_ring_buffer}{GenericRingBuffer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ring_buffer}{RingBuffer}}\{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_generic_ring_buffer}{GenericRingBuffer}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_a0a75fb8ddeb31009d02728b46abaed9a}{buffer\_num}},\ \textcolor{keywordtype}{float}\ buffer\_time,\ \textcolor{keywordtype}{float}\ record\_duration);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_generic_ring_buffer_a4ff57a439be613b6f5e7a4ac0a4bf211}{\string~GenericRingBuffer}}()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destroying\ Generic\ Ring\ Buffer\(\backslash\)n"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generic_ring_buffer_ad9ff2fe698d46d83c05cc1745f2e7fa1}{log\_loading\_data\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generic_ring_buffer_aa871127625f02f828470d804e46909c3}{log\_loading\_finished}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_generic_ring_buffer_aee62b9c7ed0de69903245be7cf48ca0a}{read\_single\_data\_from\_file}}(std::ifstream\ \&record\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_generic_ring_buffer_a3236b6f0303334a151cf99357f4536c8}{read\_single\_data\_from\_vector}}(std::vector<Bytef>\ \textcolor{keyword}{const}\&\ data\_vector,\ \textcolor{keywordtype}{int}\&\ index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_generic_ring_buffer_ae299b4ecbe70090fa2ddaab8f4bb5258}{duplicate\_data}}(std::shared\_ptr<RecordableData>\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generic_ring_buffer_a1fca8e3db854df9c5dc205fb7f070053}{read\_chunk\_from\_file}}(std::ifstream\ \&record\_file,\ std::shared\_ptr<RecordableData>\ current\_data[],\ \textcolor{keywordtype}{int}\ current\_chunk\_size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_generic_ring_buffer_ab302603d3b3b66644a0fb3dedf3cf152}{load\_data}}(\mbox{\hyperlink{struct_loading_information}{LoadingInformation}}\ \textcolor{keyword}{const}\&\ load\_info,\ std::shared\_ptr<RecordableData>\ data)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generic_ring_buffer_a7eef4822b28ddf9bce9811a9ecb67876}{reload\_index\_maps}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{DataType}}\ \mbox{\hyperlink{class_generic_ring_buffer_ac6ef744729f2c4066bc36e57c6b6b436}{get\_recorded\_data\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_generic_ring_buffer_a41a63290fea1c59d5d7fc10cd0b4d8bb}{data\_at\_time}}(\textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{float}\ time,\ \textcolor{keywordtype}{int}*\ i\_arr,\ \textcolor{keywordtype}{float}*\ f\_arr,\ \textcolor{keywordtype}{char}*\ c\_arr);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_generic_ring_buffer_a5e137be140b92804b09a4a96af89ff68}{get\_dto\_size}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{struct_generic_d_t_o}{GenericDTO}}\ \mbox{\hyperlink{class_generic_ring_buffer_ad644188f431509448730b846a7009e43}{generic\_dto}}[\mbox{\hyperlink{class_ring_buffer_a5f2a5a431fab450a6dd3d068c5546ee8}{read\_chunk\_size}}];}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{struct_generic_d_t_o}{GenericDTO}}\ \mbox{\hyperlink{class_generic_ring_buffer_ad9414c168fdd694557e6d462e732a53b}{s\_generic\_dto}};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_GENERICRINGBUFFER\_H}}
+
+\end{DoxyCode}

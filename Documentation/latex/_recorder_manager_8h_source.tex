@@ -1,0 +1,130 @@
+\doxysection{Recorder\+Manager.\+h}
+\hypertarget{_recorder_manager_8h_source}{}\label{_recorder_manager_8h_source}\index{Src/Recording/RecorderManager.h@{Src/Recording/RecorderManager.h}}
+\mbox{\hyperlink{_recorder_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 30.06.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_RECORDERMANAGER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_RECORDERMANAGER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_recorder_8h}{Recorder.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../../External/thread-\/pool/include/BS\_thread\_pool.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_recorder_manager}{RecorderManager}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_recorder_manager}{RecorderManager}}\ \&\mbox{\hyperlink{class_recorder_manager_af28b395aff262d9d2eb2d39262d60143}{getInstance}}()\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_recorder_manager}{RecorderManager}}\ instance;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ BS::thread\_pool\ \&\mbox{\hyperlink{class_recorder_manager_a75502baca7451844aa102cc12dc5b61a}{getThreadPool}}()\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ BS::thread\_pool\ thread\_pool(std::thread::hardware\_concurrency()\ -\/\ 1);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ thread\_pool;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_recorder_manager_ad58a37176f61c879f3a909cd09b0af37}{RecorderManager}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_recorder_manager_a69c105ff809baadc35c0b644d68836bd}{RecorderManager}}(\mbox{\hyperlink{class_recorder_manager}{RecorderManager}}\ \textcolor{keyword}{const}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_recorder_manager_ab3a02a0158e0ebd5539ed7307b24d2fe}{operator=}}(\mbox{\hyperlink{class_recorder_manager}{RecorderManager}}\ \textcolor{keyword}{const}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a32640ced79bb8d945fcf9fc2f3626591}{record\_transform\_at\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ std::string\ \textcolor{keyword}{const}\&\ object\_name,\ \textcolor{keywordtype}{int}\ object\_uuid,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \textcolor{keyword}{const}\ *local\_matrix,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ *object\_information);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_recorder_manager_a8e08bfba5e90e48fb4c74859cea332e5}{record\_sound\_at\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{float}\ *sound\_data,\ \textcolor{keywordtype}{int}\ sound\_data\_length,\ \textcolor{keywordtype}{int}\ sampling\_rate,\ \textcolor{keywordtype}{int}\ start\_index,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ channel\_num,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ sound\_origin);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_recorder_manager_a8e08bfba5e90e48fb4c74859cea332e5}{record\_sound\_at\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{float}\ *sound\_data,\ \textcolor{keywordtype}{int}\ sound\_data\_length,\ \textcolor{keywordtype}{int}\ sampling\_rate,\ \textcolor{keywordtype}{int}\ start\_index,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ channel\_num,\ \textcolor{keywordtype}{int}\ corresponding\_gameobject\_id,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ sound\_origin);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_ac836e2afa168cb3a4c4c9d275b8db47c}{record\_generic\_at\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}\ *int\_a,\ \textcolor{keywordtype}{float}\ *float\_a,\ \textcolor{keywordtype}{char}\ *char\_a);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_recorder_manager_a3d6b49456c31b4eed5fde349bd3ee145}{get\_transform\_at\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{char}\ *object\_name,\ \textcolor{keywordtype}{int}\ object\_name\_length,\ \textcolor{keywordtype}{int}\ object\_uuid,\ \textcolor{keywordtype}{float}\ time\_stamp,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *matrix,\ \textcolor{keywordtype}{int}\ *object\_information);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_a768a99af25f87aba57de13ae1c61c97f}{get\_sound\_at\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ sound\_origin,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{float}\ *sound\_data);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_recorder_manager_a768a99af25f87aba57de13ae1c61c97f}{get\_sound\_at\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ sound\_origin,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{float}\ *sound\_data,\ \textcolor{keywordtype}{int}*\ corresponding\_go\_id);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_aa2d5096de0b585634149c341866a1e38}{get\_sampling\_rate}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ sound\_origin);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_a5c3d8c5170d022d0f750728e66d79b8b}{get\_channel\_num}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ sound\_origin);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a3617a374f8c648ae78dbdadcc22668a2}{get\_generic\_at\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}\ *int\_a,\ \textcolor{keywordtype}{float}\ *float\_a,\ \textcolor{keywordtype}{char}\ *char\_a);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a93b887ae3cfceb86c7da2b03bd6a2d53}{create\_recording\_file}}(\textcolor{keywordtype}{int}\ recorder\_id,\ std::string\ \textcolor{keyword}{const}\&\ directory,\ std::string\ \textcolor{keyword}{const}\&\ file\_name);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a960dd8f2ae0272be71e5251007e6403d}{stop\_recording}}(\textcolor{keywordtype}{int}\ recorder\_id);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_aa47420550f63cdf10d369506b9419143}{open\_existing\_recording\_file}}(\textcolor{keywordtype}{int}\ recorder\_id,\ std::string\ \textcolor{keyword}{const}\&\ directory,\ std::string\ \textcolor{keyword}{const}\&\ file\_name);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_aa24238b6ba7463ddef03d3806d685777}{stop\_replay}}(\textcolor{keywordtype}{int}\ recorder\_id);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a122a90c361decf5dac340dfeae5a8ad8}{set\_transform\_recording\_buffer\_size}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ max\_size);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_ab06dcbd12e8282f91b23edbea4e905da}{set\_sound\_recording\_buffer\_size}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ max\_size);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_aad31719b923e81132d3970ea3569dae5}{set\_replay\_buffer\_num}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ buffer\_num);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_aa797a7d9ad9992961c0d839c6c4be050}{set\_replay\_buffer\_time\_interval}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{float}\ time\_interval);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_recorder_manager_a8e930aee28d06bc8552c531310cdf6e6}{next\_positions\_for\_id}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{char}\ *object\_name,\ \textcolor{keywordtype}{int}\ object\_name\_length,\ \textcolor{keywordtype}{int}\ object\_uuid,\ \textcolor{keywordtype}{float}\ time\_stamp,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *positions);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_ac3286dc5979a8c9b1a59e357c97ad935}{get\_original\_id}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{char}\ *object\_name,\ \textcolor{keywordtype}{int}\ object\_name\_length,\ \textcolor{keywordtype}{int}\ object\_id);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_ac3286dc5979a8c9b1a59e357c97ad935}{get\_original\_id}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ object\_id);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_a2e2d0ba5e33124ff87374ce16aff8078}{get\_new\_id}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ old\_object\_id);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_a2ab39567fef8544bc23bbb582df6df38}{get\_recording\_gameobjects}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{int}\ max\_size);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_a8cbbe24acbc4251274ef27ed0dc2ea33}{get\_recording\_sound\_sources}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}*\ ids,\ \textcolor{keywordtype}{int}\ max\_size);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ std::map<int,\ std::string>\ \mbox{\hyperlink{class_recorder_manager_a2ab39567fef8544bc23bbb582df6df38}{get\_recording\_gameobjects}}(\textcolor{keywordtype}{int}\ recorder\_id);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a78de4c6220ad8791f623d69fdedfc73d}{register\_gameobject\_path}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{char}\ *path,\ \textcolor{keywordtype}{int}\ path\_length,\ \textcolor{keywordtype}{float}\ time);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_abf2b7ce7d6afcf2167f74635aefbd6fe}{register\_gameobject\_prefab}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{char}\ *prefab,\ \textcolor{keywordtype}{int}\ prefab\_length,\ \textcolor{keywordtype}{float}\ time);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_ace8a687543affe002b44e7894bdc7709}{get\_gameobject\_path}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{int}\ max\_size,\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{int}\ name\_length);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_aa99975435d93d8c6ee367a4cbd2d3825}{get\_gameobject\_prefab}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{int}\ max\_size,\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{int}\ name\_length);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a3eb1f2449e899157a6c3616456664e55}{register\_gameobject\_components}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{char}\ *components,\ \textcolor{keywordtype}{int}\ components\_length);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_a725feae157c499fb6f77664267b5c7e4}{get\_gameobject\_components}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{char}\ *text,\ \textcolor{keywordtype}{int}\ max\_size,\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{int}\ name\_length);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ std::string\ \mbox{\hyperlink{class_recorder_manager_a725feae157c499fb6f77664267b5c7e4}{get\_gameobject\_components}}(\textcolor{keywordtype}{int}\ recorder\_id,\ std::string\ name);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ std::string\ \mbox{\hyperlink{class_recorder_manager_a195a426abaa52fa1ee17cf5dd3017ee2}{get\_gameobject\_mesh\_path}}(\textcolor{keywordtype}{int}\ recorder\_id,\ std::string\ name);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_manager_a40198c9974ccaa0c6c6591b65f6ad98b}{get\_gameobject\_first\_time}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{int}\ name\_length);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_manager_ac21a51910d54467c1c69912f13651555}{get\_sound\_ids}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{int}*\ ids,\ \textcolor{keywordtype}{int}\ max\_id\_count);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_manager_ae9cceb6385a59e696ebc35293406c397}{get\_recording\_duration}}(\textcolor{keywordtype}{int}\ recorder\_id);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_manager_a97b5844ab752f2b2405099c9d389bd62}{get\_recording\_start\_global\_timeoffset}}(\textcolor{keywordtype}{int}\ recorder\_id);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a4258840c9b263ec546c6906acd782193}{register\_recording\_start\_global\_timeoffset}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{float}\ offset\_to\_global\_time);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a5fffcf1c5cd02573ca8364a633ff73d5}{set\_debug\_mode}}(\textcolor{keywordtype}{int}\ recorder\_id,\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a2d92ccb8929e821cea87208aec150a85}{debug}});}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_manager_a2d92ccb8929e821cea87208aec150a85}{debug}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ std::vector<Recorder>\ \mbox{\hyperlink{class_recorder_manager_aa12d8ebccded173d4c112083a0128e72}{recorders}};}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_RECORDERMANAGER\_H}}
+
+\end{DoxyCode}

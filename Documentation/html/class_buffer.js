@@ -1,0 +1,25 @@
+var class_buffer =
+[
+    [ "~Buffer", "class_buffer.html#a59b8743e4a5f731bdd0c4185c9ef263b", null ],
+    [ "Buffer", "class_buffer.html#ac16f13d430128a2fa81567c7c1fab994", null ],
+    [ "add_element", "class_buffer.html#a58bf464af609b2f6718a58d7f1cc289c", null ],
+    [ "add_last_element", "class_buffer.html#abbb24ce60c36a4be3baeefd621f5594d", null ],
+    [ "clear_buffer", "class_buffer.html#ab72a72560baabc5fcc84e621c9211190", null ],
+    [ "contains_time", "class_buffer.html#a78782b209d0d6ea2143847042acab702", null ],
+    [ "get_any_data", "class_buffer.html#a2da541ac2341a26b69ddbd235313b154", null ],
+    [ "get_data", "class_buffer.html#a2d84a11fe7192dafd2dd1ce671b4b8bd", null ],
+    [ "get_max_time", "class_buffer.html#a9e19e1b4e2f8af2dfa786cd7ec6a5fe1", null ],
+    [ "get_min_time", "class_buffer.html#a7728f58bfb05676da3686168bf61e646", null ],
+    [ "reload_index_maps", "class_buffer.html#a52ef2b6f5eb38303a2b31a12b3196dcd", null ],
+    [ "set_debug_mode", "class_buffer.html#a834f60f5bf80ce5a056773c74d1708fb", null ],
+    [ "set_max_time", "class_buffer.html#acc0333f424b799c31d6ce4388b9171a0", null ],
+    [ "set_memory_status", "class_buffer.html#af56799a64257df2be005b7f9edbaf2a1", null ],
+    [ "set_min_time", "class_buffer.html#aa62fd7ab020f20b411e317767518c1f7", null ],
+    [ "stored_in_memory", "class_buffer.html#a66913fd318e61eb6dcf1f4fff88c31d0", null ],
+    [ "debug", "class_buffer.html#a25259c0e5e639dcb232050a6b036d923", null ],
+    [ "id_last_data", "class_buffer.html#ae37ed45faf26b275d6294b2354a849b7", null ],
+    [ "in_memory", "class_buffer.html#a6439b9f7161509e0bdbc3b230e772713", null ],
+    [ "loaded_data_for_ids", "class_buffer.html#a3506ce1140871bbb7e98de21ce5d3630", null ],
+    [ "max_time", "class_buffer.html#a8fd3ae25875b00a217575a2bd70f1255", null ],
+    [ "min_time", "class_buffer.html#a6d36a0c58c462bccd89ca8563229383a", null ]
+];

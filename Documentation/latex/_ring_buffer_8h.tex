@@ -1,0 +1,29 @@
+\doxysection{Src/\+Recording/\+Base\+Structure/\+Ring\+Buffer.h File Reference}
+\hypertarget{_ring_buffer_8h}{}\label{_ring_buffer_8h}\index{Src/Recording/BaseStructure/RingBuffer.h@{Src/Recording/BaseStructure/RingBuffer.h}}
+{\ttfamily \#include "{}Buffer.\+h"{}}\newline
+{\ttfamily \#include "{}Recording/\+Transform/\+Transform\+Data.\+h"{}}\newline
+{\ttfamily \#include "{}Recording/\+Generic/\+Generic\+Data.\+h"{}}\newline
+{\ttfamily \#include "{}Recording/\+Sound/\+Sound\+Data.\+h"{}}\newline
+{\ttfamily \#include "{}Recording/\+Data\+Type.\+h"{}}\newline
+{\ttfamily \#include "{}Debug\+Log.\+h"{}}\newline
+{\ttfamily \#include "{}Config.\+h"{}}\newline
+{\ttfamily \#include "{}zlib.\+h"{}}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_loading_information}{Loading\+Information}}
+\item 
+struct \mbox{\hyperlink{struct_checkpoint}{Checkpoint}}
+\begin{DoxyCompactList}\small\item\em This struct stores information about the last data seen before a certain point in time as well as the position in the recording file from which on new data is present. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}}
+\begin{DoxyCompactList}\small\item\em This class is used to load data from a recording and store it in buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}

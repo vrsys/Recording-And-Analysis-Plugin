@@ -1,0 +1,75 @@
+\doxysection{Generic\+Data.\+h}
+\hypertarget{_generic_data_8h_source}{}\label{_generic_data_8h_source}\index{Src/Recording/Generic/GenericData.h@{Src/Recording/Generic/GenericData.h}}
+\mbox{\hyperlink{_generic_data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 18.03.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_GENERICDATA\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_GENERICDATA\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_recorded_id_data_8h}{Recording/BaseStructure/RecordedIdData.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}glm/mat4x4.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}glm/gtc/quaternion.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}glm/gtc/matrix\_transform.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}glm/gtx/quaternion.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}glm/gtx/string\_cast.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}glm/gtx/matrix\_interpolation.hpp"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\_c}}\ =\ 10;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_generic_data_8h_aeb0c3685b857ad530453a1e5e666cbc1}{char\_c}}\ =\ 10;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_generic_d_t_o}{GenericDTO}}\{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_generic_d_t_o_a35739e7b991088d9db92c0f91894ad97}{id}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_generic_d_t_o_ae6bfc9ee69d5821b079322302ed4eff8}{t}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_generic_d_t_o_a0935ea91d5d97bcaa3144c710618f8a0}{i}}[\mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\_c}}];}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_generic_d_t_o_a2535fa65704e9d318767d4e59b217e80}{f}}[\mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\_c}}];}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_generic_d_t_o_ac32fbc3f3935629d931786b3c56f2b95}{c}}[\mbox{\hyperlink{_generic_data_8h_aeb0c3685b857ad530453a1e5e666cbc1}{char\_c}}];}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_generic_d_t_o_af941d8cb9396f2b660a7454a9364a43b}{layer}}\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_generic_d_t_o_a0d3a7adfc6da376914e86e9556c26a17}{dto\_layout}}()\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}genericDTO:\ int\ id;float\ t;int\ i[10];float\ f[10];char\ c[10];int\ layer\ =\ 0;"{}};}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_generic_data}{GenericData}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_recordable_data}{RecordableData}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_generic_data_a5c0ff5930f1c20566294104d27ab38f9}{int\_ar}}\ [\mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\_c}}];}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_generic_data_aa469100bdb1a366f29b95e9c8955ed30}{float\_ar}}\ [\mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\_c}}];}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_generic_data_a1722677c55e5477242b5025649ffe45a}{char\_ar}}\ [\mbox{\hyperlink{_generic_data_8h_aeb0c3685b857ad530453a1e5e666cbc1}{char\_c}}];}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_generic_data_a53d266970be68cd208cabbf1b029b96b}{GenericData}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_generic_data_a53d266970be68cd208cabbf1b029b96b}{GenericData}}(\mbox{\hyperlink{struct_generic_d_t_o}{GenericDTO}}\ \textcolor{keyword}{const}\&\ dto);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_generic_data_a53d266970be68cd208cabbf1b029b96b}{GenericData}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}},\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}*\ i\_arr,\ \textcolor{keywordtype}{float}*\ f\_arr,\ \textcolor{keywordtype}{char}*\ c\_arr);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_generic_data_a53d266970be68cd208cabbf1b029b96b}{GenericData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_generic_data}{GenericData}}\&\ data);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_generic_data_a53d266970be68cd208cabbf1b029b96b}{GenericData}}(std::shared\_ptr<GenericData>\ data);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_generic_data_a6ddd1519e903bb1dfe0de0997d2c2890}{\string~GenericData}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::ofstream\&\ \mbox{\hyperlink{class_generic_data_a855ddfa0ed829ae9baf8ded67b61242e}{write}}(std::ofstream\&\ ofs)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::ifstream\&\ \mbox{\hyperlink{class_generic_data_a774453ec791b85ed0a42f1cf19635523}{read}}(std::ifstream\&\ ifs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generic_data_a17e00eae448bb8a005a88cea4cc638bd}{update\_data}}(\textcolor{keywordtype}{int}*\ i\_arr,\ \textcolor{keywordtype}{float}*\ f\_arr,\ \textcolor{keywordtype}{char}*\ c\_arr);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_generic_data}{GenericData}}\ \mbox{\hyperlink{class_generic_data_a54dbf7548f1d88e8950712009de75d0b}{interpolate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_generic_data}{GenericData}}\&\ next\_data,\ \textcolor{keywordtype}{float}\ t);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_generic_data}{GenericData}}\ \mbox{\hyperlink{class_generic_data_a54dbf7548f1d88e8950712009de75d0b}{interpolate}}(\textcolor{keyword}{const}\ std::shared\_ptr<GenericData>\ next\_data,\ \textcolor{keywordtype}{float}\ t);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generic_data_a80a8148ea745ad5da016223ae14b4c89}{write\_to\_stream}}(std::ofstream\&\ file)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{struct_generic_d_t_o}{GenericDTO}}\ \mbox{\hyperlink{class_generic_data_a43899bc91621e21161a429b93b7c5eb2}{to\_dto}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_GENERICDATA\_H}}
+
+\end{DoxyCode}

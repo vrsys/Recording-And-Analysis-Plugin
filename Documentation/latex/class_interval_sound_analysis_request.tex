@@ -1,0 +1,74 @@
+\doxysection{Interval\+Sound\+Analysis\+Request Class Reference}
+\hypertarget{class_interval_sound_analysis_request}{}\label{class_interval_sound_analysis_request}\index{IntervalSoundAnalysisRequest@{IntervalSoundAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Interval\+Sound\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Interval\+Sound\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_interval_sound_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_interval_sound_analysis_request_a1817ebefa744813a81ef19f594d7aed4}{Interval\+Sound\+Analysis\+Request}} (int \mbox{\hyperlink{class_interval_sound_analysis_request_a4716e12e8112e9052d87e42221098aeb}{id}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_interval_analysis_request_a565b40048c51b3926999fe3ee878c06e}{clone}} () const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_adc02e3fee418698665da22c2b9e38763}{get\+\_\+result}} () const
+\item 
+virtual void \mbox{\hyperlink{class_interval_analysis_request_a28952cc890dc5eb57cbd7f9d20b6e427}{clear\+\_\+recent\+\_\+data}} ()=0
+\item 
+void \mbox{\hyperlink{class_interval_analysis_request_a9961447a702d030a9f8b8d7d204b9568}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_analysis_request}{Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const =0
+\item 
+virtual void \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file)=0
+\item 
+virtual void \mbox{\hyperlink{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_interval_sound_analysis_request_a4716e12e8112e9052d87e42221098aeb}{id}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_ac34fb1a86b659287180cb91c8a2608f1}{intervals}}
+\item 
+\mbox{\hyperlink{struct_time_interval}{Time\+Interval}} \mbox{\hyperlink{class_interval_analysis_request_a92538cc08380b17ce51d4834d846fab8}{current\+Interval}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_interval_sound_analysis_request_a1817ebefa744813a81ef19f594d7aed4}\label{class_interval_sound_analysis_request_a1817ebefa744813a81ef19f594d7aed4} 
+\index{IntervalSoundAnalysisRequest@{IntervalSoundAnalysisRequest}!IntervalSoundAnalysisRequest@{IntervalSoundAnalysisRequest}}
+\index{IntervalSoundAnalysisRequest@{IntervalSoundAnalysisRequest}!IntervalSoundAnalysisRequest@{IntervalSoundAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{IntervalSoundAnalysisRequest()}{IntervalSoundAnalysisRequest()}}
+{\footnotesize\ttfamily Interval\+Sound\+Analysis\+Request\+::\+Interval\+Sound\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_interval_sound_analysis_request_a4716e12e8112e9052d87e42221098aeb}\label{class_interval_sound_analysis_request_a4716e12e8112e9052d87e42221098aeb} 
+\index{IntervalSoundAnalysisRequest@{IntervalSoundAnalysisRequest}!id@{id}}
+\index{id@{id}!IntervalSoundAnalysisRequest@{IntervalSoundAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Interval\+Sound\+Analysis\+Request\+::id}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Interval\+Analysis/\+Sound\+Analysis/\mbox{\hyperlink{_interval_sound_analysis_request_8h}{Interval\+Sound\+Analysis\+Request.\+h}}\item 
+Src/\+Analysis/\+Interval\+Analysis/\+Sound\+Analysis/\mbox{\hyperlink{_interval_sound_analysis_request_8cpp}{Interval\+Sound\+Analysis\+Request.\+cpp}}\end{DoxyCompactItemize}

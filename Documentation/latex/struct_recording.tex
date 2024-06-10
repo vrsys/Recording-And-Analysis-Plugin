@@ -1,0 +1,258 @@
+\doxysection{Recording Struct Reference}
+\hypertarget{struct_recording}{}\label{struct_recording}\index{Recording@{Recording}}
+
+
+{\ttfamily \#include $<$Recording.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_recording_a270f855f9547078427135d75854cd7c6}{Recording}} ()
+\item 
+\mbox{\hyperlink{struct_recording_a2fb8e58e2c793cb51e0e859c93359f32}{Recording}} (std\+::string const \&recording\+\_\+name)
+\item 
+\mbox{\hyperlink{struct_recording_a7f3f63ed8d51b83eed06ab6dd6d00cb9}{Recording}} (std\+::string const \&recording\+\_\+dir, std\+::string const \&recording\+\_\+name)
+\item 
+bool \mbox{\hyperlink{struct_recording_a9bf2c751a8a586e42b573b5eea79b936}{setup\+\_\+for\+\_\+recording}} ()
+\item 
+bool \mbox{\hyperlink{struct_recording_a01c44fec0dcd5be8714e3c738060c574}{end\+\_\+recording}} ()
+\item 
+bool \mbox{\hyperlink{struct_recording_a58712aadedbb1da9d46619c537201456}{setup\+\_\+for\+\_\+replay}} ()
+\item 
+bool \mbox{\hyperlink{struct_recording_a101c3a6a62c3182158b4f568c5da25e2}{end\+\_\+replay}} ()
+\item 
+bool \mbox{\hyperlink{struct_recording_a6794a11f2c5ca038045fe27098dceb34}{is\+\_\+currently\+\_\+recording}} () const
+\item 
+bool \mbox{\hyperlink{struct_recording_a6a03382b774e7fe15148a6e8a82016db}{is\+\_\+currently\+\_\+replaying}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_recording_8h_a77efeb5a39ee7f2d9c2d7603eddcc926}{Recording\+State}} \mbox{\hyperlink{struct_recording_a082ddfe0477e4192dd1cd0485d3a9509}{state}}
+\begin{DoxyCompactList}\small\item\em current state of the recording \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_recording_a50f182603b8bf50b42d88a52c8b369c1}{recording\+\_\+directory}} = R"{}(\textbackslash{}Assets\textbackslash{}\+Recordings\textbackslash{})"{}
+\begin{DoxyCompactList}\small\item\em path relative to the current directory of the application under which the recording files will be saved \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_recording_a1d653eec5a85b1c069424e6cfbbda29b}{transform\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em location of the current recording file storing transform data \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_recording_a656bfb793c6309121599fff6651792a1}{sound\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em location of the current recording file storing sound data \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_recording_aeee54fc916c91a10b820ccc274d54d4b}{generic\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em location of the current recording file storing generic data \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_recording_afecafee83b0dc4d7710b86d5a22e3581}{meta\+\_\+information\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em location of the current meta information file \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_recording_a6027373b95e4a334735ead63f81a512e}{transform\+\_\+replaying}} = false
+\begin{DoxyCompactList}\small\item\em is there currently a replay of transform data? If not get rid of stored data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_recording_add3cb8ca9d86fcc8405985f11ab032a6}{sound\+\_\+replaying}} = false
+\begin{DoxyCompactList}\small\item\em is there currently a replay of sound data? If not get rid of stored data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_recording_a7bec36a8222686db922b64673926b0bb}{generic\+\_\+replaying}} = false
+\begin{DoxyCompactList}\small\item\em is there currently a replay of generic data? If not get rid of stored data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_recording_a554dc56bff2ae8176a02bfaafd523e61}{transform\+\_\+recording}} = false
+\begin{DoxyCompactList}\small\item\em is there currently a recording of transform data? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_recording_a7e9f4bc1247b33fe4b3a98c87f2d26f9}{sound\+\_\+recording}} = false
+\begin{DoxyCompactList}\small\item\em is there currently a recording of sound data? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_recording_aff65892d03c7082ebfe356f391561123}{generic\+\_\+recording}} = false
+\begin{DoxyCompactList}\small\item\em is there currently a recording of generic data? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \mbox{\hyperlink{struct_recording_a1358d06af435c03b7cdd75a7aba739e4}{meta\+\_\+information}}
+\item 
+float \mbox{\hyperlink{struct_recording_ab4550cd00d9634adebd95d7e0afbd871}{duration}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_recording_a270f855f9547078427135d75854cd7c6}\label{struct_recording_a270f855f9547078427135d75854cd7c6} 
+\index{Recording@{Recording}!Recording@{Recording}}
+\index{Recording@{Recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{Recording()}{Recording()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Recording\+::\+Recording (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_recording_a2fb8e58e2c793cb51e0e859c93359f32}\label{struct_recording_a2fb8e58e2c793cb51e0e859c93359f32} 
+\index{Recording@{Recording}!Recording@{Recording}}
+\index{Recording@{Recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{Recording()}{Recording()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Recording\+::\+Recording (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{recording\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_recording_a7f3f63ed8d51b83eed06ab6dd6d00cb9}\label{struct_recording_a7f3f63ed8d51b83eed06ab6dd6d00cb9} 
+\index{Recording@{Recording}!Recording@{Recording}}
+\index{Recording@{Recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{Recording()}{Recording()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Recording\+::\+Recording (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{recording\+\_\+dir,  }\item[{std\+::string const \&}]{recording\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_recording_a01c44fec0dcd5be8714e3c738060c574}\label{struct_recording_a01c44fec0dcd5be8714e3c738060c574} 
+\index{Recording@{Recording}!end\_recording@{end\_recording}}
+\index{end\_recording@{end\_recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{end\_recording()}{end\_recording()}}
+{\footnotesize\ttfamily bool Recording\+::end\+\_\+recording (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_recording_a101c3a6a62c3182158b4f568c5da25e2}\label{struct_recording_a101c3a6a62c3182158b4f568c5da25e2} 
+\index{Recording@{Recording}!end\_replay@{end\_replay}}
+\index{end\_replay@{end\_replay}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{end\_replay()}{end\_replay()}}
+{\footnotesize\ttfamily bool Recording\+::end\+\_\+replay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_recording_a6794a11f2c5ca038045fe27098dceb34}\label{struct_recording_a6794a11f2c5ca038045fe27098dceb34} 
+\index{Recording@{Recording}!is\_currently\_recording@{is\_currently\_recording}}
+\index{is\_currently\_recording@{is\_currently\_recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{is\_currently\_recording()}{is\_currently\_recording()}}
+{\footnotesize\ttfamily bool Recording\+::is\+\_\+currently\+\_\+recording (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_recording_a6a03382b774e7fe15148a6e8a82016db}\label{struct_recording_a6a03382b774e7fe15148a6e8a82016db} 
+\index{Recording@{Recording}!is\_currently\_replaying@{is\_currently\_replaying}}
+\index{is\_currently\_replaying@{is\_currently\_replaying}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{is\_currently\_replaying()}{is\_currently\_replaying()}}
+{\footnotesize\ttfamily bool Recording\+::is\+\_\+currently\+\_\+replaying (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_recording_a9bf2c751a8a586e42b573b5eea79b936}\label{struct_recording_a9bf2c751a8a586e42b573b5eea79b936} 
+\index{Recording@{Recording}!setup\_for\_recording@{setup\_for\_recording}}
+\index{setup\_for\_recording@{setup\_for\_recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{setup\_for\_recording()}{setup\_for\_recording()}}
+{\footnotesize\ttfamily bool Recording\+::setup\+\_\+for\+\_\+recording (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_recording_a58712aadedbb1da9d46619c537201456}\label{struct_recording_a58712aadedbb1da9d46619c537201456} 
+\index{Recording@{Recording}!setup\_for\_replay@{setup\_for\_replay}}
+\index{setup\_for\_replay@{setup\_for\_replay}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{setup\_for\_replay()}{setup\_for\_replay()}}
+{\footnotesize\ttfamily bool Recording\+::setup\+\_\+for\+\_\+replay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_recording_ab4550cd00d9634adebd95d7e0afbd871}\label{struct_recording_ab4550cd00d9634adebd95d7e0afbd871} 
+\index{Recording@{Recording}!duration@{duration}}
+\index{duration@{duration}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{duration}{duration}}
+{\footnotesize\ttfamily float Recording\+::duration}
+
+\Hypertarget{struct_recording_aeee54fc916c91a10b820ccc274d54d4b}\label{struct_recording_aeee54fc916c91a10b820ccc274d54d4b} 
+\index{Recording@{Recording}!generic\_file@{generic\_file}}
+\index{generic\_file@{generic\_file}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{generic\_file}{generic\_file}}
+{\footnotesize\ttfamily std\+::string Recording\+::generic\+\_\+file}
+
+
+
+location of the current recording file storing generic data 
+
+\Hypertarget{struct_recording_aff65892d03c7082ebfe356f391561123}\label{struct_recording_aff65892d03c7082ebfe356f391561123} 
+\index{Recording@{Recording}!generic\_recording@{generic\_recording}}
+\index{generic\_recording@{generic\_recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{generic\_recording}{generic\_recording}}
+{\footnotesize\ttfamily bool Recording\+::generic\+\_\+recording = false}
+
+
+
+is there currently a recording of generic data? 
+
+\Hypertarget{struct_recording_a7bec36a8222686db922b64673926b0bb}\label{struct_recording_a7bec36a8222686db922b64673926b0bb} 
+\index{Recording@{Recording}!generic\_replaying@{generic\_replaying}}
+\index{generic\_replaying@{generic\_replaying}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{generic\_replaying}{generic\_replaying}}
+{\footnotesize\ttfamily bool Recording\+::generic\+\_\+replaying = false}
+
+
+
+is there currently a replay of generic data? If not get rid of stored data 
+
+\Hypertarget{struct_recording_a1358d06af435c03b7cdd75a7aba739e4}\label{struct_recording_a1358d06af435c03b7cdd75a7aba739e4} 
+\index{Recording@{Recording}!meta\_information@{meta\_information}}
+\index{meta\_information@{meta\_information}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{meta\_information}{meta\_information}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_meta_information}{Meta\+Information}} Recording\+::meta\+\_\+information}
+
+\Hypertarget{struct_recording_afecafee83b0dc4d7710b86d5a22e3581}\label{struct_recording_afecafee83b0dc4d7710b86d5a22e3581} 
+\index{Recording@{Recording}!meta\_information\_file@{meta\_information\_file}}
+\index{meta\_information\_file@{meta\_information\_file}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{meta\_information\_file}{meta\_information\_file}}
+{\footnotesize\ttfamily std\+::string Recording\+::meta\+\_\+information\+\_\+file}
+
+
+
+location of the current meta information file 
+
+\Hypertarget{struct_recording_a50f182603b8bf50b42d88a52c8b369c1}\label{struct_recording_a50f182603b8bf50b42d88a52c8b369c1} 
+\index{Recording@{Recording}!recording\_directory@{recording\_directory}}
+\index{recording\_directory@{recording\_directory}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{recording\_directory}{recording\_directory}}
+{\footnotesize\ttfamily std\+::string Recording\+::recording\+\_\+directory = R"{}(\textbackslash{}Assets\textbackslash{}\+Recordings\textbackslash{})"{}}
+
+
+
+path relative to the current directory of the application under which the recording files will be saved 
+
+\Hypertarget{struct_recording_a656bfb793c6309121599fff6651792a1}\label{struct_recording_a656bfb793c6309121599fff6651792a1} 
+\index{Recording@{Recording}!sound\_file@{sound\_file}}
+\index{sound\_file@{sound\_file}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{sound\_file}{sound\_file}}
+{\footnotesize\ttfamily std\+::string Recording\+::sound\+\_\+file}
+
+
+
+location of the current recording file storing sound data 
+
+\Hypertarget{struct_recording_a7e9f4bc1247b33fe4b3a98c87f2d26f9}\label{struct_recording_a7e9f4bc1247b33fe4b3a98c87f2d26f9} 
+\index{Recording@{Recording}!sound\_recording@{sound\_recording}}
+\index{sound\_recording@{sound\_recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{sound\_recording}{sound\_recording}}
+{\footnotesize\ttfamily bool Recording\+::sound\+\_\+recording = false}
+
+
+
+is there currently a recording of sound data? 
+
+\Hypertarget{struct_recording_add3cb8ca9d86fcc8405985f11ab032a6}\label{struct_recording_add3cb8ca9d86fcc8405985f11ab032a6} 
+\index{Recording@{Recording}!sound\_replaying@{sound\_replaying}}
+\index{sound\_replaying@{sound\_replaying}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{sound\_replaying}{sound\_replaying}}
+{\footnotesize\ttfamily bool Recording\+::sound\+\_\+replaying = false}
+
+
+
+is there currently a replay of sound data? If not get rid of stored data 
+
+\Hypertarget{struct_recording_a082ddfe0477e4192dd1cd0485d3a9509}\label{struct_recording_a082ddfe0477e4192dd1cd0485d3a9509} 
+\index{Recording@{Recording}!state@{state}}
+\index{state@{state}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_recording_8h_a77efeb5a39ee7f2d9c2d7603eddcc926}{Recording\+State}} Recording\+::state}
+
+
+
+current state of the recording 
+
+\Hypertarget{struct_recording_a1d653eec5a85b1c069424e6cfbbda29b}\label{struct_recording_a1d653eec5a85b1c069424e6cfbbda29b} 
+\index{Recording@{Recording}!transform\_file@{transform\_file}}
+\index{transform\_file@{transform\_file}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{transform\_file}{transform\_file}}
+{\footnotesize\ttfamily std\+::string Recording\+::transform\+\_\+file}
+
+
+
+location of the current recording file storing transform data 
+
+\Hypertarget{struct_recording_a554dc56bff2ae8176a02bfaafd523e61}\label{struct_recording_a554dc56bff2ae8176a02bfaafd523e61} 
+\index{Recording@{Recording}!transform\_recording@{transform\_recording}}
+\index{transform\_recording@{transform\_recording}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{transform\_recording}{transform\_recording}}
+{\footnotesize\ttfamily bool Recording\+::transform\+\_\+recording = false}
+
+
+
+is there currently a recording of transform data? 
+
+\Hypertarget{struct_recording_a6027373b95e4a334735ead63f81a512e}\label{struct_recording_a6027373b95e4a334735ead63f81a512e} 
+\index{Recording@{Recording}!transform\_replaying@{transform\_replaying}}
+\index{transform\_replaying@{transform\_replaying}!Recording@{Recording}}
+\doxysubsubsection{\texorpdfstring{transform\_replaying}{transform\_replaying}}
+{\footnotesize\ttfamily bool Recording\+::transform\+\_\+replaying = false}
+
+
+
+is there currently a replay of transform data? If not get rid of stored data 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\mbox{\hyperlink{_recording_8h}{Recording.\+h}}\end{DoxyCompactItemize}

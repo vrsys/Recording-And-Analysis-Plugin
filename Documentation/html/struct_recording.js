@@ -1,0 +1,26 @@
+var struct_recording =
+[
+    [ "Recording", "struct_recording.html#a270f855f9547078427135d75854cd7c6", null ],
+    [ "Recording", "struct_recording.html#a2fb8e58e2c793cb51e0e859c93359f32", null ],
+    [ "Recording", "struct_recording.html#a7f3f63ed8d51b83eed06ab6dd6d00cb9", null ],
+    [ "end_recording", "struct_recording.html#a01c44fec0dcd5be8714e3c738060c574", null ],
+    [ "end_replay", "struct_recording.html#a101c3a6a62c3182158b4f568c5da25e2", null ],
+    [ "is_currently_recording", "struct_recording.html#a6794a11f2c5ca038045fe27098dceb34", null ],
+    [ "is_currently_replaying", "struct_recording.html#a6a03382b774e7fe15148a6e8a82016db", null ],
+    [ "setup_for_recording", "struct_recording.html#a9bf2c751a8a586e42b573b5eea79b936", null ],
+    [ "setup_for_replay", "struct_recording.html#a58712aadedbb1da9d46619c537201456", null ],
+    [ "duration", "struct_recording.html#ab4550cd00d9634adebd95d7e0afbd871", null ],
+    [ "generic_file", "struct_recording.html#aeee54fc916c91a10b820ccc274d54d4b", null ],
+    [ "generic_recording", "struct_recording.html#aff65892d03c7082ebfe356f391561123", null ],
+    [ "generic_replaying", "struct_recording.html#a7bec36a8222686db922b64673926b0bb", null ],
+    [ "meta_information", "struct_recording.html#a1358d06af435c03b7cdd75a7aba739e4", null ],
+    [ "meta_information_file", "struct_recording.html#afecafee83b0dc4d7710b86d5a22e3581", null ],
+    [ "recording_directory", "struct_recording.html#a50f182603b8bf50b42d88a52c8b369c1", null ],
+    [ "sound_file", "struct_recording.html#a656bfb793c6309121599fff6651792a1", null ],
+    [ "sound_recording", "struct_recording.html#a7e9f4bc1247b33fe4b3a98c87f2d26f9", null ],
+    [ "sound_replaying", "struct_recording.html#add3cb8ca9d86fcc8405985f11ab032a6", null ],
+    [ "state", "struct_recording.html#a082ddfe0477e4192dd1cd0485d3a9509", null ],
+    [ "transform_file", "struct_recording.html#a1d653eec5a85b1c069424e6cfbbda29b", null ],
+    [ "transform_recording", "struct_recording.html#a554dc56bff2ae8176a02bfaafd523e61", null ],
+    [ "transform_replaying", "struct_recording.html#a6027373b95e4a334735ead63f81a512e", null ]
+];

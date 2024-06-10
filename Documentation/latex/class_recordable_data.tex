@@ -1,0 +1,132 @@
+\doxysection{Recordable\+Data Class Reference}
+\hypertarget{class_recordable_data}{}\label{class_recordable_data}\index{RecordableData@{RecordableData}}
+
+
+{\ttfamily \#include $<$Recorded\+Id\+Data.\+h$>$}
+
+Inheritance diagram for Recordable\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_recordable_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_recordable_data_a7e95a55e4cb5d09cc3e852fac49c32fa}{Recordable\+Data}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_recordable_data_af98b164c2c1dadb964ef3925e5c1bdc1}{\texorpdfstring{$\sim$}{\string~}\+Recordable\+Data}} ()=default
+\item 
+virtual std\+::ofstream \& \mbox{\hyperlink{class_recordable_data_a4c719562d1d378e83aa4f751dff67fcb}{write}} (std\+::ofstream \&ofs) const =0
+\item 
+virtual std\+::ifstream \& \mbox{\hyperlink{class_recordable_data_a629b8968c09ea12f82be4112b7cc1a71}{read}} (std\+::ifstream \&ifs)=0
+\item 
+\mbox{\hyperlink{class_recordable_data_ab341dd4bc935d9c4f13c0131157c46dc}{Recordable\+Data}} (int i, float t)
+\item 
+virtual void \mbox{\hyperlink{class_recordable_data_a94dd274caf8c8168f686653f48063d71}{write\+\_\+to\+\_\+stream}} (std\+::ofstream \&file) const =0
+\item 
+bool \mbox{\hyperlink{class_recordable_data_a90be1a06b561cde835c22c3a1fc0d009}{operator$<$}} (\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} const \&data) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}} = -\/1.\+0f
+\item 
+int \mbox{\hyperlink{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f}{id}} = -\/1
+\item 
+bool \mbox{\hyperlink{class_recordable_data_a97a09d7f8e5390c4ad98ee9bccab7e05}{interpolated\+\_\+data}} = false
+\item 
+int \mbox{\hyperlink{class_recordable_data_a108952a5624ca94f3fbecf3e75be3351}{layer}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_recordable_data_a7e95a55e4cb5d09cc3e852fac49c32fa}\label{class_recordable_data_a7e95a55e4cb5d09cc3e852fac49c32fa} 
+\index{RecordableData@{RecordableData}!RecordableData@{RecordableData}}
+\index{RecordableData@{RecordableData}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{RecordableData()}{RecordableData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Recordable\+Data\+::\+Recordable\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_recordable_data_af98b164c2c1dadb964ef3925e5c1bdc1}\label{class_recordable_data_af98b164c2c1dadb964ef3925e5c1bdc1} 
+\index{RecordableData@{RecordableData}!````~RecordableData@{\texorpdfstring{$\sim$}{\string~}RecordableData}}
+\index{````~RecordableData@{\texorpdfstring{$\sim$}{\string~}RecordableData}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RecordableData()}{\string~RecordableData()}}
+{\footnotesize\ttfamily virtual Recordable\+Data\+::\texorpdfstring{$\sim$}{\string~}\+Recordable\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{class_recordable_data_ab341dd4bc935d9c4f13c0131157c46dc}\label{class_recordable_data_ab341dd4bc935d9c4f13c0131157c46dc} 
+\index{RecordableData@{RecordableData}!RecordableData@{RecordableData}}
+\index{RecordableData@{RecordableData}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{RecordableData()}{RecordableData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Recordable\+Data\+::\+Recordable\+Data (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_recordable_data_a90be1a06b561cde835c22c3a1fc0d009}\label{class_recordable_data_a90be1a06b561cde835c22c3a1fc0d009} 
+\index{RecordableData@{RecordableData}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Recordable\+Data\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} const \&}]{data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_recordable_data_a629b8968c09ea12f82be4112b7cc1a71}\label{class_recordable_data_a629b8968c09ea12f82be4112b7cc1a71} 
+\index{RecordableData@{RecordableData}!read@{read}}
+\index{read@{read}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily virtual std\+::ifstream \& Recordable\+Data\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_generic_data_a774453ec791b85ed0a42f1cf19635523}{Generic\+Data}}, \mbox{\hyperlink{class_sound_data_a01570e0cc7a59ae4505bc576a74956aa}{Sound\+Data}}, and \mbox{\hyperlink{class_transform_data_ae8425540d4753dc33900bf856d714bc1}{Transform\+Data}}.
+
+\Hypertarget{class_recordable_data_a4c719562d1d378e83aa4f751dff67fcb}\label{class_recordable_data_a4c719562d1d378e83aa4f751dff67fcb} 
+\index{RecordableData@{RecordableData}!write@{write}}
+\index{write@{write}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily virtual std\+::ofstream \& Recordable\+Data\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_generic_data_a855ddfa0ed829ae9baf8ded67b61242e}{Generic\+Data}}, \mbox{\hyperlink{class_sound_data_a0a0edc82c9037e8a715f531914bcea62}{Sound\+Data}}, and \mbox{\hyperlink{class_transform_data_af48a416ac4edcc878f7ab5f829da0029}{Transform\+Data}}.
+
+\Hypertarget{class_recordable_data_a94dd274caf8c8168f686653f48063d71}\label{class_recordable_data_a94dd274caf8c8168f686653f48063d71} 
+\index{RecordableData@{RecordableData}!write\_to\_stream@{write\_to\_stream}}
+\index{write\_to\_stream@{write\_to\_stream}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{write\_to\_stream()}{write\_to\_stream()}}
+{\footnotesize\ttfamily virtual void Recordable\+Data\+::write\+\_\+to\+\_\+stream (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_generic_data_a80a8148ea745ad5da016223ae14b4c89}{Generic\+Data}}, \mbox{\hyperlink{class_sound_data_a47c0b461b2cd076add3c00a1879f8e0d}{Sound\+Data}}, and \mbox{\hyperlink{class_transform_data_ad35b58674c00d5f91fb1f7dbc6640aa0}{Transform\+Data}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f}\label{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f} 
+\index{RecordableData@{RecordableData}!id@{id}}
+\index{id@{id}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Recordable\+Data\+::id = -\/1}
+
+\Hypertarget{class_recordable_data_a97a09d7f8e5390c4ad98ee9bccab7e05}\label{class_recordable_data_a97a09d7f8e5390c4ad98ee9bccab7e05} 
+\index{RecordableData@{RecordableData}!interpolated\_data@{interpolated\_data}}
+\index{interpolated\_data@{interpolated\_data}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{interpolated\_data}{interpolated\_data}}
+{\footnotesize\ttfamily bool Recordable\+Data\+::interpolated\+\_\+data = false}
+
+\Hypertarget{class_recordable_data_a108952a5624ca94f3fbecf3e75be3351}\label{class_recordable_data_a108952a5624ca94f3fbecf3e75be3351} 
+\index{RecordableData@{RecordableData}!layer@{layer}}
+\index{layer@{layer}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{layer}{layer}}
+{\footnotesize\ttfamily int Recordable\+Data\+::layer = 0}
+
+\Hypertarget{class_recordable_data_aa183d327401888c499af11f9700b62de}\label{class_recordable_data_aa183d327401888c499af11f9700b62de} 
+\index{RecordableData@{RecordableData}!time@{time}}
+\index{time@{time}!RecordableData@{RecordableData}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily float Recordable\+Data\+::time = -\/1.\+0f}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\+Base\+Structure/\mbox{\hyperlink{_recorded_id_data_8h}{Recorded\+Id\+Data.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,219 @@
+\doxysection{Sound\+Data Class Reference}
+\hypertarget{class_sound_data}{}\label{class_sound_data}\index{SoundData@{SoundData}}
+
+
+{\ttfamily \#include $<$Sound\+Data.\+h$>$}
+
+Inheritance diagram for Sound\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sound_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sound_data_a50a82ff0bb0674aaf7d95c5d5b6cb2f5}{Sound\+Data}} ()=default
+\item 
+\mbox{\hyperlink{class_sound_data_aa20513c184ca233e82cfc40a4621bc86}{Sound\+Data}} (\mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}} const \&dto)
+\item 
+\mbox{\hyperlink{class_sound_data_a9a4a923099987ec2a28df39703d869f1}{Sound\+Data}} (int i, float t, int s\+\_\+n, int s\+\_\+i, int s\+\_\+r, int c\+\_\+n, int c\+\_\+go\+\_\+id, float \texorpdfstring{$\ast$}{*}data)
+\item 
+\mbox{\hyperlink{class_sound_data_aebd079dc7dcffee4c1cffe13c8fc49fc}{Sound\+Data}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ data)
+\item 
+\mbox{\hyperlink{class_sound_data_a05c74b7ea25f587d7268769b044a3609}{\texorpdfstring{$\sim$}{\string~}\+Sound\+Data}} () override
+\item 
+std\+::ofstream \& \mbox{\hyperlink{class_sound_data_a0a0edc82c9037e8a715f531914bcea62}{write}} (std\+::ofstream \&ofs) const override
+\item 
+std\+::ifstream \& \mbox{\hyperlink{class_sound_data_a01570e0cc7a59ae4505bc576a74956aa}{read}} (std\+::ifstream \&ifs) override
+\item 
+\mbox{\hyperlink{class_sound_data}{Sound\+Data}} \mbox{\hyperlink{class_sound_data_ae23e082d6145a8fc4450fa5d2a56bea3}{interpolate}} (\mbox{\hyperlink{class_sound_data}{Sound\+Data}} next\+\_\+sound, float \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}})
+\item 
+\mbox{\hyperlink{class_sound_data}{Sound\+Data}} \mbox{\hyperlink{class_sound_data_a6138ff4a3867e5b71d3dd08b14748864}{interpolate}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ next\+\_\+sound, float \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}})
+\item 
+void \mbox{\hyperlink{class_sound_data_a47c0b461b2cd076add3c00a1879f8e0d}{write\+\_\+to\+\_\+stream}} (std\+::ofstream \&file) const override
+\item 
+\mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}} \mbox{\hyperlink{class_sound_data_add4b8e3098c63402f13db6f8766aee46}{to\+\_\+dto}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_recordable_data_a7e95a55e4cb5d09cc3e852fac49c32fa}{Recordable\+Data}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_recordable_data_af98b164c2c1dadb964ef3925e5c1bdc1}{\texorpdfstring{$\sim$}{\string~}\+Recordable\+Data}} ()=default
+\item 
+\mbox{\hyperlink{class_recordable_data_ab341dd4bc935d9c4f13c0131157c46dc}{Recordable\+Data}} (int i, float t)
+\item 
+bool \mbox{\hyperlink{class_recordable_data_a90be1a06b561cde835c22c3a1fc0d009}{operator$<$}} (\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} const \&data) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_sound_data_add23b7bf7f5ad665f240a70949f20873}{start\+\_\+time}} = -\/1.\+0f
+\item 
+float \mbox{\hyperlink{class_sound_data_ad6c5aecf930aea91cfed055cc3a86616}{end\+\_\+time}} = -\/1.\+0f
+\item 
+int \mbox{\hyperlink{class_sound_data_a376030334c26bc23802e2cc1253cf910}{sample\+\_\+num}} = -\/1
+\item 
+int \mbox{\hyperlink{class_sound_data_a4b8ffcd40ab9ef160248f7790d38e678}{start\+\_\+index}} = 0
+\item 
+int \mbox{\hyperlink{class_sound_data_aa15ba206710b75db1ae97265f51b42ff}{sampling\+\_\+rate}} = -\/1
+\item 
+int \mbox{\hyperlink{class_sound_data_a6735224552b8452f64870051d9eb536d}{channel\+\_\+num}} = -\/1
+\item 
+int \mbox{\hyperlink{class_sound_data_a12ebd8de9ab90efd8e88414df535352e}{corresponding\+\_\+gameobject\+\_\+id}}
+\item 
+float \mbox{\hyperlink{class_sound_data_a0ae4a941ed36ed4e653f9dc2740e2377}{sound\+\_\+data}} \mbox{[}4800\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}} = -\/1.\+0f
+\item 
+int \mbox{\hyperlink{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f}{id}} = -\/1
+\item 
+bool \mbox{\hyperlink{class_recordable_data_a97a09d7f8e5390c4ad98ee9bccab7e05}{interpolated\+\_\+data}} = false
+\item 
+int \mbox{\hyperlink{class_recordable_data_a108952a5624ca94f3fbecf3e75be3351}{layer}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sound_data_a50a82ff0bb0674aaf7d95c5d5b6cb2f5}\label{class_sound_data_a50a82ff0bb0674aaf7d95c5d5b6cb2f5} 
+\index{SoundData@{SoundData}!SoundData@{SoundData}}
+\index{SoundData@{SoundData}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{SoundData()}{SoundData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Sound\+Data\+::\+Sound\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_sound_data_aa20513c184ca233e82cfc40a4621bc86}\label{class_sound_data_aa20513c184ca233e82cfc40a4621bc86} 
+\index{SoundData@{SoundData}!SoundData@{SoundData}}
+\index{SoundData@{SoundData}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{SoundData()}{SoundData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Sound\+Data\+::\+Sound\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}} const \&}]{dto }\end{DoxyParamCaption})}
+
+\Hypertarget{class_sound_data_a9a4a923099987ec2a28df39703d869f1}\label{class_sound_data_a9a4a923099987ec2a28df39703d869f1} 
+\index{SoundData@{SoundData}!SoundData@{SoundData}}
+\index{SoundData@{SoundData}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{SoundData()}{SoundData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Sound\+Data\+::\+Sound\+Data (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{float}]{t,  }\item[{int}]{s\+\_\+n,  }\item[{int}]{s\+\_\+i,  }\item[{int}]{s\+\_\+r,  }\item[{int}]{c\+\_\+n,  }\item[{int}]{c\+\_\+go\+\_\+id,  }\item[{float \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_sound_data_aebd079dc7dcffee4c1cffe13c8fc49fc}\label{class_sound_data_aebd079dc7dcffee4c1cffe13c8fc49fc} 
+\index{SoundData@{SoundData}!SoundData@{SoundData}}
+\index{SoundData@{SoundData}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{SoundData()}{SoundData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Sound\+Data\+::\+Sound\+Data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_sound_data_a05c74b7ea25f587d7268769b044a3609}\label{class_sound_data_a05c74b7ea25f587d7268769b044a3609} 
+\index{SoundData@{SoundData}!````~SoundData@{\texorpdfstring{$\sim$}{\string~}SoundData}}
+\index{````~SoundData@{\texorpdfstring{$\sim$}{\string~}SoundData}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundData()}{\string~SoundData()}}
+{\footnotesize\ttfamily Sound\+Data\+::\texorpdfstring{$\sim$}{\string~}\+Sound\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sound_data_ae23e082d6145a8fc4450fa5d2a56bea3}\label{class_sound_data_ae23e082d6145a8fc4450fa5d2a56bea3} 
+\index{SoundData@{SoundData}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sound_data}{Sound\+Data}} Sound\+Data\+::interpolate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sound_data}{Sound\+Data}}}]{next\+\_\+sound,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_sound_data_a6138ff4a3867e5b71d3dd08b14748864}\label{class_sound_data_a6138ff4a3867e5b71d3dd08b14748864} 
+\index{SoundData@{SoundData}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sound_data}{Sound\+Data}} Sound\+Data\+::interpolate (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{next\+\_\+sound,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_sound_data_a01570e0cc7a59ae4505bc576a74956aa}\label{class_sound_data_a01570e0cc7a59ae4505bc576a74956aa} 
+\index{SoundData@{SoundData}!read@{read}}
+\index{read@{read}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily std\+::ifstream \& Sound\+Data\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a629b8968c09ea12f82be4112b7cc1a71}{Recordable\+Data}}.
+
+\Hypertarget{class_sound_data_add4b8e3098c63402f13db6f8766aee46}\label{class_sound_data_add4b8e3098c63402f13db6f8766aee46} 
+\index{SoundData@{SoundData}!to\_dto@{to\_dto}}
+\index{to\_dto@{to\_dto}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{to\_dto()}{to\_dto()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}} Sound\+Data\+::to\+\_\+dto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_sound_data_a0a0edc82c9037e8a715f531914bcea62}\label{class_sound_data_a0a0edc82c9037e8a715f531914bcea62} 
+\index{SoundData@{SoundData}!write@{write}}
+\index{write@{write}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily std\+::ofstream \& Sound\+Data\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a4c719562d1d378e83aa4f751dff67fcb}{Recordable\+Data}}.
+
+\Hypertarget{class_sound_data_a47c0b461b2cd076add3c00a1879f8e0d}\label{class_sound_data_a47c0b461b2cd076add3c00a1879f8e0d} 
+\index{SoundData@{SoundData}!write\_to\_stream@{write\_to\_stream}}
+\index{write\_to\_stream@{write\_to\_stream}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{write\_to\_stream()}{write\_to\_stream()}}
+{\footnotesize\ttfamily void Sound\+Data\+::write\+\_\+to\+\_\+stream (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a94dd274caf8c8168f686653f48063d71}{Recordable\+Data}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sound_data_a6735224552b8452f64870051d9eb536d}\label{class_sound_data_a6735224552b8452f64870051d9eb536d} 
+\index{SoundData@{SoundData}!channel\_num@{channel\_num}}
+\index{channel\_num@{channel\_num}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{channel\_num}{channel\_num}}
+{\footnotesize\ttfamily int Sound\+Data\+::channel\+\_\+num = -\/1}
+
+\Hypertarget{class_sound_data_a12ebd8de9ab90efd8e88414df535352e}\label{class_sound_data_a12ebd8de9ab90efd8e88414df535352e} 
+\index{SoundData@{SoundData}!corresponding\_gameobject\_id@{corresponding\_gameobject\_id}}
+\index{corresponding\_gameobject\_id@{corresponding\_gameobject\_id}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{corresponding\_gameobject\_id}{corresponding\_gameobject\_id}}
+{\footnotesize\ttfamily int Sound\+Data\+::corresponding\+\_\+gameobject\+\_\+id}
+
+\Hypertarget{class_sound_data_ad6c5aecf930aea91cfed055cc3a86616}\label{class_sound_data_ad6c5aecf930aea91cfed055cc3a86616} 
+\index{SoundData@{SoundData}!end\_time@{end\_time}}
+\index{end\_time@{end\_time}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{end\_time}{end\_time}}
+{\footnotesize\ttfamily float Sound\+Data\+::end\+\_\+time = -\/1.\+0f}
+
+\Hypertarget{class_sound_data_a376030334c26bc23802e2cc1253cf910}\label{class_sound_data_a376030334c26bc23802e2cc1253cf910} 
+\index{SoundData@{SoundData}!sample\_num@{sample\_num}}
+\index{sample\_num@{sample\_num}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{sample\_num}{sample\_num}}
+{\footnotesize\ttfamily int Sound\+Data\+::sample\+\_\+num = -\/1}
+
+\Hypertarget{class_sound_data_aa15ba206710b75db1ae97265f51b42ff}\label{class_sound_data_aa15ba206710b75db1ae97265f51b42ff} 
+\index{SoundData@{SoundData}!sampling\_rate@{sampling\_rate}}
+\index{sampling\_rate@{sampling\_rate}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{sampling\_rate}{sampling\_rate}}
+{\footnotesize\ttfamily int Sound\+Data\+::sampling\+\_\+rate = -\/1}
+
+\Hypertarget{class_sound_data_a0ae4a941ed36ed4e653f9dc2740e2377}\label{class_sound_data_a0ae4a941ed36ed4e653f9dc2740e2377} 
+\index{SoundData@{SoundData}!sound\_data@{sound\_data}}
+\index{sound\_data@{sound\_data}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{sound\_data}{sound\_data}}
+{\footnotesize\ttfamily float Sound\+Data\+::sound\+\_\+data\mbox{[}4800\mbox{]}}
+
+\Hypertarget{class_sound_data_a4b8ffcd40ab9ef160248f7790d38e678}\label{class_sound_data_a4b8ffcd40ab9ef160248f7790d38e678} 
+\index{SoundData@{SoundData}!start\_index@{start\_index}}
+\index{start\_index@{start\_index}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{start\_index}{start\_index}}
+{\footnotesize\ttfamily int Sound\+Data\+::start\+\_\+index = 0}
+
+\Hypertarget{class_sound_data_add23b7bf7f5ad665f240a70949f20873}\label{class_sound_data_add23b7bf7f5ad665f240a70949f20873} 
+\index{SoundData@{SoundData}!start\_time@{start\_time}}
+\index{start\_time@{start\_time}!SoundData@{SoundData}}
+\doxysubsubsection{\texorpdfstring{start\_time}{start\_time}}
+{\footnotesize\ttfamily float Sound\+Data\+::start\+\_\+time = -\/1.\+0f}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\+Sound/\mbox{\hyperlink{_sound_data_8h}{Sound\+Data.\+h}}\item 
+Src/\+Recording/\+Sound/\mbox{\hyperlink{_sound_data_8cpp}{Sound\+Data.\+cpp}}\end{DoxyCompactItemize}

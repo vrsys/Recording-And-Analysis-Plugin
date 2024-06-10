@@ -1,0 +1,88 @@
+\doxysection{Quantitative\+Transform\+Analysis\+Request Class Reference}
+\hypertarget{class_quantitative_transform_analysis_request}{}\label{class_quantitative_transform_analysis_request}\index{QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Quantitative\+Tramsform\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Quantitative\+Transform\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.372881cm]{class_quantitative_transform_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quantitative_transform_analysis_request_a1eacc12fb71a574c10e25ac422b6ef59}{Quantitative\+Transform\+Analysis\+Request}} (float t\+\_\+sampling\+\_\+rate)
+\item 
+virtual void \mbox{\hyperlink{class_quantitative_transform_analysis_request_a124640367a1b032d7b106b2fb163decf}{clear\+\_\+recent\+\_\+data}} ()=0
+\item 
+virtual \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} \mbox{\hyperlink{class_quantitative_transform_analysis_request_ab2734b5321b7bf729438deb16e212a5b}{get\+\_\+type}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quantitative_analysis_request_aab548255e6498d2859d43916546e1aff}{Quantitative\+Analysis\+Request}} (float t\+\_\+sampling\+\_\+rate)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_based_value}{Time\+Based\+Value}} $>$ \mbox{\hyperlink{class_quantitative_analysis_request_a5433105049c551db583df0f24b91ad61}{get\+\_\+result}} () const
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_quantitative_analysis_request_a4be1f8e3862fa7a3aff7462ea6b03028}{clone}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{class_quantitative_analysis_request_a95d9cdee3e4fa673cb216b67acdd7b6b}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const =0
+\item 
+void \mbox{\hyperlink{class_quantitative_analysis_request_a815fa0f990f176d5746a119d6d6a82b9}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_analysis_request}{Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file)=0
+\item 
+virtual void \mbox{\hyperlink{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_based_value}{Time\+Based\+Value}} $>$ \mbox{\hyperlink{class_quantitative_analysis_request_a2d9e013d208cf277ee3a3d45796789a0}{values}}
+\item 
+float \mbox{\hyperlink{class_quantitative_analysis_request_a140e1d3f1bd1dfaec350451cbd56b822}{temporal\+\_\+sampling\+\_\+rate}}
+\item 
+float \mbox{\hyperlink{class_quantitative_analysis_request_ad26cf4d06894a90bf6ce08b658580d86}{last\+\_\+value\+\_\+time}} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_quantitative_transform_analysis_request_a1eacc12fb71a574c10e25ac422b6ef59}\label{class_quantitative_transform_analysis_request_a1eacc12fb71a574c10e25ac422b6ef59} 
+\index{QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}!QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}}
+\index{QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}!QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{QuantitativeTransformAnalysisRequest()}{QuantitativeTransformAnalysisRequest()}}
+{\footnotesize\ttfamily Quantitative\+Transform\+Analysis\+Request\+::\+Quantitative\+Transform\+Analysis\+Request (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+sampling\+\_\+rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_quantitative_transform_analysis_request_a124640367a1b032d7b106b2fb163decf}\label{class_quantitative_transform_analysis_request_a124640367a1b032d7b106b2fb163decf} 
+\index{QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}!clear\_recent\_data@{clear\_recent\_data}}
+\index{clear\_recent\_data@{clear\_recent\_data}!QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clear\_recent\_data()}{clear\_recent\_data()}}
+{\footnotesize\ttfamily virtual void Quantitative\+Transform\+Analysis\+Request\+::clear\+\_\+recent\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_quantitative_distance_analysis_request_aba96cc80c39dc7abb25a8c691e481939}{Quantitative\+Distance\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a2115d962b448d79df4efe2cca36644b0}{Quantitative\+Gaze\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_rotation_analysis_request_a72e3f8c3ff4b3b823b5b06c7155cdc26}{Quantitative\+Rotation\+Analysis\+Request}}, and \mbox{\hyperlink{class_quantitative_velocity_analysis_request_ae67bca8cbc952d9514e69013ade06dae}{Quantitative\+Velocity\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_transform_analysis_request_ab2734b5321b7bf729438deb16e212a5b}\label{class_quantitative_transform_analysis_request_ab2734b5321b7bf729438deb16e212a5b} 
+\index{QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!QuantitativeTransformAnalysisRequest@{QuantitativeTransformAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} Quantitative\+Transform\+Analysis\+Request\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_quantitative_distance_analysis_request_a880c9d813a9963c5f36b6a8701c31bc9}{Quantitative\+Distance\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a4d529cd40a632f03ceb11cdd75cda82b}{Quantitative\+Gaze\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_rotation_analysis_request_a890c2ed4a11172e070b033194b42d35f}{Quantitative\+Rotation\+Analysis\+Request}}, and \mbox{\hyperlink{class_quantitative_velocity_analysis_request_aacbeb2e75de49f3f1a97538899c62a15}{Quantitative\+Velocity\+Analysis\+Request}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Quantitative\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_quantitative_tramsform_analysis_request_8h}{Quantitative\+Tramsform\+Analysis\+Request.\+h}}\end{DoxyCompactItemize}

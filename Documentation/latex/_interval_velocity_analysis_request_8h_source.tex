@@ -1,0 +1,47 @@
+\doxysection{Interval\+Velocity\+Analysis\+Request.\+h}
+\hypertarget{_interval_velocity_analysis_request_8h_source}{}\label{_interval_velocity_analysis_request_8h_source}\index{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalVelocityAnalysisRequest.h@{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalVelocityAnalysisRequest.h}}
+\mbox{\hyperlink{_interval_velocity_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Anton-\/Lammert\ on\ 06.01.2023.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_INTERVALVELOCITYANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_INTERVALVELOCITYANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_transform_analysis_request_8h}{IntervalTransformAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_interval_velocity_analysis_request}{IntervalVelocityAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_interval_transform_analysis_request}{IntervalTransformAnalysisRequest}}\{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_aeb65e5515ab35b50b7805b8d61067f89}{id}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_aebe45cd6168caaa835533595f5710803}{search\_interval}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_ad3cc5e32a7dec7ce34e611f65a4a0029}{velocity\_threshold}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ std::deque<TransformData>\ \mbox{\hyperlink{class_interval_velocity_analysis_request_a8c4fef8ddeadc2eb01a3a09b3517f567}{recent\_data}};}
+\DoxyCodeLine{00019\ \ \ \ \ std::deque<bool>\ \mbox{\hyperlink{class_interval_velocity_analysis_request_a6f039c11f86abdd9af875d99b715d91b}{recent\_data\_active}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_interval_velocity_analysis_request}{IntervalVelocityAnalysisRequest}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{float}\ t,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_ad3cc5e32a7dec7ce34e611f65a4a0029}{velocity\_threshold}});}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_a560860ff42306a6bd01db0063fb9b7a6}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{class_interval_velocity_analysis_request_ae05671b35014afc65167b7c045fc6423}{get\_description}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_info)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_a929b1ded5a855aea83d8765edf5f26f1}{update\_parameters}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ original\_meta\_file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ new\_meta\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_velocity_analysis_request_a6ac99e003c498d079d7cf08d6af6165c}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_a42271f20fdb98720482cd7e7cfbbf2da}{clear\_recent\_data}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_acba761e415e13dd465ba8bba23895b48}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_ac400e23be816a1b01e741bb30cb8a895}{get\_id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_velocity_analysis_request_a8a5616935606f778e34ac51085e8f720}{set\_id}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_INTERVALVELOCITYANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

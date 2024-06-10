@@ -1,0 +1,895 @@
+\doxysection{Recorder Class Reference}
+\hypertarget{class_recorder}{}\label{class_recorder}\index{Recorder@{Recorder}}
+
+
+This class represents a single recorder which can either playback or record to/from a file.  
+
+
+
+
+{\ttfamily \#include $<$Recorder.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_recorder_af0b4f40e7c67f16b0ffff13712149d78}{Recorder}} ()
+\item 
+\mbox{\hyperlink{class_recorder}{Recorder}} \& \mbox{\hyperlink{class_recorder_adf51ac79d8beee929b07f3df204f8438}{operator=}} (const \mbox{\hyperlink{class_recorder}{Recorder}} \&)=delete
+\item 
+\mbox{\hyperlink{class_recorder_ad7fff2b79ded2fca54bbf9dc5ac42dab}{Recorder}} (\mbox{\hyperlink{class_recorder}{Recorder}} \&\&obj)
+\item 
+\mbox{\hyperlink{class_recorder}{Recorder}} \& \mbox{\hyperlink{class_recorder_a3d5a76a1be718926b69dd60fe20fcf12}{operator=}} (\mbox{\hyperlink{class_recorder}{Recorder}} \&\&obj)
+\item 
+\mbox{\hyperlink{class_recorder_a6b3c569577fcdc298d8d4a6a2b96e9a9}{\texorpdfstring{$\sim$}{\string~}\+Recorder}} ()
+\item 
+bool \mbox{\hyperlink{class_recorder_a9260d30b9180222ce2595b43fa3eb79a}{record\+\_\+transform}} (std\+::string const \&object\+\_\+name, int id, float const \texorpdfstring{$\ast$}{*}local\+\_\+matrix, float time\+\_\+stamp, int const \texorpdfstring{$\ast$}{*}object\+\_\+information)
+\begin{DoxyCompactList}\small\item\em Records transformation data and object information for a certain object and a certain point in time. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorder_aef5fb4257521f4d77c26d3d4a81fcc09}{record\+\_\+sound}} (float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int sound\+\_\+data\+\_\+length, int sampling\+\_\+rate, int start\+\_\+index, int channel\+\_\+num, float time\+\_\+stamp, int sound\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Records audio buffer data for a certain sound source and a certain point in time. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorder_a8c87aed99b5928ed81d96a878477dbfb}{record\+\_\+sound}} (float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int sound\+\_\+data\+\_\+length, int sampling\+\_\+rate, int start\+\_\+index, int channel\+\_\+num, int corresponding\+\_\+gameobject\+\_\+id, float time\+\_\+stamp, int sound\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Records audio buffer data for a certain sound source and a certain point in time. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorder_ab1361949731a0393778665cc6a85c343}{record\+\_\+generic}} (float time\+\_\+stamp, int id, int \texorpdfstring{$\ast$}{*}int\+\_\+a, float \texorpdfstring{$\ast$}{*}float\+\_\+a, char \texorpdfstring{$\ast$}{*}char\+\_\+a)
+\begin{DoxyCompactList}\small\item\em Records generic buffer data for a certain id and a certain point in time. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorder_a427b4851602e41aebb9e8408f67710bc}{get\+\_\+transform}} (char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+uuid, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}matrix, int \texorpdfstring{$\ast$}{*}object\+\_\+information)
+\begin{DoxyCompactList}\small\item\em This function fills array data passed as arguments with retrieved transform information. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_recorder_a385a398b9404387b15396c3d67a599b3}{get\+\_\+sound}} (int sound\+\_\+origin, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}sound\+\_\+data)
+\item 
+int \mbox{\hyperlink{class_recorder_a696b1064f123fdddd26c0475338f30f3}{get\+\_\+sound}} (int sound\+\_\+origin, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int \texorpdfstring{$\ast$}{*}corresponding\+\_\+go\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_recorder_a0fa97656e86d951b6af92fe42c4a51fd}{get\+\_\+generic}} (float time\+\_\+stamp, int id, int \texorpdfstring{$\ast$}{*}int\+\_\+a, float \texorpdfstring{$\ast$}{*}float\+\_\+a, char \texorpdfstring{$\ast$}{*}char\+\_\+a)
+\item 
+int \mbox{\hyperlink{class_recorder_ab4b68d16e0fb975570eb233ad5f06033}{get\+\_\+sampling\+\_\+rate}} (int sound\+\_\+origin)
+\item 
+int \mbox{\hyperlink{class_recorder_aa5052b8df5701b7ef03696c1873acfff}{get\+\_\+channel\+\_\+num}} (int sound\+\_\+origin)
+\item 
+int \mbox{\hyperlink{class_recorder_ad3cc1b4f90cacafe5214a88b66972f9c}{get\+\_\+sound\+\_\+ids}} (int \texorpdfstring{$\ast$}{*}ids, int max\+\_\+id\+\_\+count)
+\item 
+bool \mbox{\hyperlink{class_recorder_ad2d379eceda122c5812f4479fe234bd4}{create\+\_\+recording\+\_\+file}} (std\+::string const \&recording\+\_\+directory, std\+::string const \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{class_recorder_a05e541b94711c0263e9bcec1a2e16211}{stop\+\_\+recording}} ()
+\item 
+bool \mbox{\hyperlink{class_recorder_a7eb142588b1ac02122dae21383372c21}{open\+\_\+existing\+\_\+recording\+\_\+file}} (std\+::string const \&directory, std\+::string const \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{class_recorder_aa9bb7b480942b007492c5a31059de225}{stop\+\_\+replay}} ()
+\item 
+bool \mbox{\hyperlink{class_recorder_ad1203717b8c4b502b79dcf2dc26b5b2f}{set\+\_\+transform\+\_\+recording\+\_\+buffer\+\_\+size}} (int max\+\_\+size)
+\item 
+bool \mbox{\hyperlink{class_recorder_a0800d295613da36668ddef7817b9a904}{set\+\_\+sound\+\_\+recording\+\_\+buffer\+\_\+size}} (int max\+\_\+size)
+\item 
+bool \mbox{\hyperlink{class_recorder_a31cd7edd026c6bb15db56e292776ee82}{set\+\_\+replay\+\_\+buffer\+\_\+num}} (int buffer\+\_\+num)
+\item 
+bool \mbox{\hyperlink{class_recorder_a0d79e4f5373c6238053f884d7c994246}{set\+\_\+replay\+\_\+buffer\+\_\+time\+\_\+interval}} (float time\+\_\+interval)
+\item 
+int \mbox{\hyperlink{class_recorder_aecafa179b6468db3b1c5851d62f044fe}{next\+\_\+positions\+\_\+for\+\_\+id}} (char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+uuid, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}positions)
+\item 
+int \mbox{\hyperlink{class_recorder_ad15b54bfb5f7516f854e5081a31f4b19}{get\+\_\+recording\+\_\+gameobjects}} (char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size)
+\item 
+int \mbox{\hyperlink{class_recorder_a86df1379fa18ec7d6b329d32468e11b4}{get\+\_\+recording\+\_\+sound\+\_\+sources}} (int \texorpdfstring{$\ast$}{*}ids, int max\+\_\+size)
+\item 
+std\+::map$<$ int, std\+::string $>$ \mbox{\hyperlink{class_recorder_af8105e836fa0bc7020a2550ebf52d798}{get\+\_\+recording\+\_\+gameobjects}} ()
+\item 
+bool \mbox{\hyperlink{class_recorder_ad66353fe66976c16eb85e5e6254b5c0b}{register\+\_\+gameobject\+\_\+path}} (int uuid, char \texorpdfstring{$\ast$}{*}path, int path\+\_\+length, float time)
+\item 
+int \mbox{\hyperlink{class_recorder_aa59f6905380bdf81ab029c49dbbe99db}{get\+\_\+gameobject\+\_\+path}} (char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+bool \mbox{\hyperlink{class_recorder_a2d2bf1998a1fe63c949e6ace0a61ff7b}{register\+\_\+gameobject\+\_\+prefab}} (int uuid, char \texorpdfstring{$\ast$}{*}prefab, int prefab\+\_\+length, float time)
+\item 
+int \mbox{\hyperlink{class_recorder_ab866efeec6fc154157dc7063ca6f0af4}{get\+\_\+gameobject\+\_\+prefab}} (char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+bool \mbox{\hyperlink{class_recorder_a7ac93604bb75700e2922c64f1a88ec5f}{register\+\_\+gameobject\+\_\+components}} (int uuid, char \texorpdfstring{$\ast$}{*}components, int components\+\_\+length)
+\item 
+int \mbox{\hyperlink{class_recorder_a035f8af083a03fa9405016fda74af0fa}{get\+\_\+gameobject\+\_\+components}} (char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+std\+::string \mbox{\hyperlink{class_recorder_a7797d6ba94c92d18ccbc1da6d20d47ba}{get\+\_\+gameobject\+\_\+components}} (std\+::string name)
+\item 
+std\+::string \mbox{\hyperlink{class_recorder_a793bd0d463d80045f00316520d4ba270}{get\+\_\+gameobject\+\_\+mesh\+\_\+path}} (std\+::string name)
+\item 
+float \mbox{\hyperlink{class_recorder_a4361ceb3ee8b206034d4bf09801d3844}{get\+\_\+gameobject\+\_\+first\+\_\+time}} (char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+float \mbox{\hyperlink{class_recorder_a742965b1b916dcd8a635def9c250c4e5}{get\+\_\+recording\+\_\+duration}} ()
+\item 
+float \mbox{\hyperlink{class_recorder_ad7eae5029e8ece3b7be01968b570356f}{get\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset}} ()
+\item 
+int \mbox{\hyperlink{class_recorder_aead3f482489c7f26fb4911068a9225a3}{get\+\_\+original\+\_\+id}} (char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+id)
+\item 
+int \mbox{\hyperlink{class_recorder_ac425ac9d385b4a3b4ca0b858e2737dee}{get\+\_\+original\+\_\+id}} (int object\+\_\+id)
+\item 
+int \mbox{\hyperlink{class_recorder_aab2487e0e4223893b32fe0ca8221fd02}{get\+\_\+new\+\_\+id}} (int object\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_recorder_a3c5189994e8dd458d31e392f1f38810d}{register\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset}} (float offset\+\_\+to\+\_\+global\+\_\+time)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{class_recorder_adb424533fc33416f0fee5bf598ee62cc}{write\+\_\+buffer}} (const std\+::string \&file\+\_\+name, std\+::vector$<$ T $>$ \&writing\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Template function for writing buffer data in a compressed manner to a file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorder_a55053570b04f7356707ab842ac145512}{set\+\_\+debug\+\_\+mode}} (bool debug\+\_\+state)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_recording}{Recording}} \mbox{\hyperlink{class_recorder_aff795f0ae5d18c7703d437962167ace9}{current\+\_\+recording}}
+\begin{DoxyCompactList}\small\item\em information about the recording currently active during playback / recording \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorder_a5d913aaa37b8a6c50f6ad22d70fc8a1e}{sound\+\_\+rec\+\_\+active}} = false
+\item 
+bool \mbox{\hyperlink{class_recorder_a80d730a48e32cd271362b962db04e231}{debug}} = false
+\begin{DoxyCompactList}\small\item\em if true debug output will be generated during recording/playback \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorder_a6121a3a4a7913f64adbb74b7e84514e6}{editing\+\_\+mode}} = false
+\begin{DoxyCompactList}\small\item\em if true, the complete recording is loaded into memory \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorder_aacab8c8ab1fabdc4ffab13f509713f59}{writing\+\_\+generic\+\_\+to\+\_\+file}} = false
+\item 
+bool \mbox{\hyperlink{class_recorder_a1ebc89f8543ceaaf498244aded268078}{writing\+\_\+sound\+\_\+to\+\_\+file}} = false
+\item 
+bool \mbox{\hyperlink{class_recorder_a87cafc465786a5930dc4905f0c54d231}{writing\+\_\+transform\+\_\+to\+\_\+file}} = false
+\item 
+float \mbox{\hyperlink{class_recorder_a7bee081570006deec7053a79e0ddf8ba}{current\+\_\+time}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em last used time stamp during replay/recording \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_recorder_a5d17000ac72a4f747367edd5b7068247}{current\+\_\+sound\+\_\+time}} = 0.\+0f
+\item 
+int \mbox{\hyperlink{class_recorder_a7a173e25008d17a800a7652a57f33dc8}{recording\+\_\+buffer\+\_\+size}} = 10000
+\begin{DoxyCompactList}\small\item\em how many transforms are stored during recording before writing them to a file \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_recorder_a8d09ded04d58e67a4cba387c038ead8d}{sound\+\_\+recording\+\_\+buffer\+\_\+size}} = 100
+\begin{DoxyCompactList}\small\item\em how many sound chunks are stored during recording before writing them to a file \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_recorder_a0a05dd55af6e92aaeb256d9d6e32f079}{generic\+\_\+buffer\+\_\+size}} = 100
+\begin{DoxyCompactList}\small\item\em how many generic elements are stored during recording before writing them to a file \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_recorder_a08784cb9f17bf00e5d19d23f6881a29e}{wait\+\_\+count}} = 10000
+\item 
+float \mbox{\hyperlink{class_recorder_adb025e84c5795baec9910e19a78a8f51}{last\+\_\+time}}
+\item 
+std\+::map$<$ int, \mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}} $>$ \mbox{\hyperlink{class_recorder_aba57f3bc52e4e65774775609992d837c}{last\+\_\+transforms}}
+\begin{DoxyCompactList}\small\item\em the last seen transformation matrix for a given object, this can be used to avoid storing data that did not change. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_recorder_a1c25dc401bf5cb8a2d064979bb8d95b2}{transform\+\_\+buffer\+\_\+num}} = 3
+\begin{DoxyCompactList}\small\item\em how many buffer are used to store transform data \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_recorder_a3c7b9214d1e9ad20a2102743e3410126}{transform\+\_\+buffer\+\_\+time\+\_\+interval}} = 10.\+0f
+\begin{DoxyCompactList}\small\item\em how many seconds of replay are saved in each buffer at most for transform data \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_ring_buffer}{Transform\+Ring\+Buffer}} $>$ \mbox{\hyperlink{class_recorder_a1b92057d9f5360531f33f44209994483}{transform\+\_\+ring\+\_\+buffer}} = nullptr
+\item 
+int \mbox{\hyperlink{class_recorder_a34bb086910e095a0e7165377bbf7ed7e}{sound\+\_\+buffer\+\_\+num}} = 3
+\begin{DoxyCompactList}\small\item\em how many buffer are used to store sound data \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_recorder_acfdd64c438ea973934816584ac80d072}{sound\+\_\+buffer\+\_\+time\+\_\+interval}} = 10.\+0f
+\begin{DoxyCompactList}\small\item\em how many seconds of replay are saved in each sound buffer at most \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_ring_buffer}{Sound\+Ring\+Buffer}} $>$ \mbox{\hyperlink{class_recorder_a8b9c3c7441bb049273759e6eb1f7a8e9}{sound\+\_\+ring\+\_\+buffer}} = nullptr
+\item 
+int \mbox{\hyperlink{class_recorder_a169f3500e009a093b98b5b51559569b8}{generic\+\_\+buffer\+\_\+num}} = 3
+\begin{DoxyCompactList}\small\item\em how many buffer are used to store generic data \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_recorder_aac77e0a29c064232c9910d89e51ab75f}{generic\+\_\+buffer\+\_\+time\+\_\+interval}} = 10.\+0f
+\begin{DoxyCompactList}\small\item\em how many seconds of replay are saved in each generic buffer at most \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_generic_ring_buffer}{Generic\+Ring\+Buffer}} $>$ \mbox{\hyperlink{class_recorder_a7b3a30a5a995056d38ae3df22ec0b64c}{generic\+\_\+ring\+\_\+buffer}} = nullptr
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}} $>$ \mbox{\hyperlink{class_recorder_a8df43c220156adc0f51d7c406f61affa}{transform\+\_\+recording\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em stores recorded transform data until it is moved to the writing buffer and written to the file \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}} $>$ \mbox{\hyperlink{class_recorder_a6bddf8f5f8f3898e9449826ead30db70}{sound\+\_\+recording\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em stores recorded sound data until it is moved to the writing buffer and written to the file \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_generic_d_t_o}{Generic\+DTO}} $>$ \mbox{\hyperlink{class_recorder_a1670552f0450b9c473d8c5866d3e82f4}{generic\+\_\+recording\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em stores recorded generic data until it is moved to the writing buffer and written to the file \end{DoxyCompactList}\item 
+std\+::map$<$ int, \mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}} $>$ \mbox{\hyperlink{class_recorder_a0f95eb4c12c049e2f0b62bf60f3447f3}{last\+\_\+sound\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em stores last sound information for a given id. This is used during recording to compress audio. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}} $>$ \mbox{\hyperlink{class_recorder_afbf1c0acf26acb59e67e147173632435}{transform\+\_\+writing\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em stores recorded transform data that is written to the file \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}} $>$ \mbox{\hyperlink{class_recorder_a3f8b270248dc5b09510e5d7f17ef3251}{sound\+\_\+writing\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em stores recorded sound data that is written to the file \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_generic_d_t_o}{Generic\+DTO}} $>$ \mbox{\hyperlink{class_recorder_a8ebf9d44c7919c0f13380f39fd7814a8}{generic\+\_\+writing\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em stores recorded generic data that is written to the file \end{DoxyCompactList}\item 
+std\+::future$<$ void $>$ \mbox{\hyperlink{class_recorder_a78f68be8e5294c2f7d43e68198dff373}{transform\+\_\+loading}}
+\item 
+std\+::future$<$ void $>$ \mbox{\hyperlink{class_recorder_ab44ebc146d3139fb4044660a56bd23db}{sound\+\_\+loading}}
+\item 
+std\+::future$<$ void $>$ \mbox{\hyperlink{class_recorder_a9937b812e3b100780309d2aef9b336eb}{generic\+\_\+loading}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents a single recorder which can either playback or record to/from a file. 
+
+The recorder records transformation, audio and generic data individually and write recorded data to file. For playback the individual files are read and data is returned. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_recorder_af0b4f40e7c67f16b0ffff13712149d78}\label{class_recorder_af0b4f40e7c67f16b0ffff13712149d78} 
+\index{Recorder@{Recorder}!Recorder@{Recorder}}
+\index{Recorder@{Recorder}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{Recorder()}{Recorder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Recorder\+::\+Recorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_recorder_ad7fff2b79ded2fca54bbf9dc5ac42dab}\label{class_recorder_ad7fff2b79ded2fca54bbf9dc5ac42dab} 
+\index{Recorder@{Recorder}!Recorder@{Recorder}}
+\index{Recorder@{Recorder}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{Recorder()}{Recorder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Recorder\+::\+Recorder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_recorder}{Recorder}} \&\&}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a6b3c569577fcdc298d8d4a6a2b96e9a9}\label{class_recorder_a6b3c569577fcdc298d8d4a6a2b96e9a9} 
+\index{Recorder@{Recorder}!````~Recorder@{\texorpdfstring{$\sim$}{\string~}Recorder}}
+\index{````~Recorder@{\texorpdfstring{$\sim$}{\string~}Recorder}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Recorder()}{\string~Recorder()}}
+{\footnotesize\ttfamily Recorder\+::\texorpdfstring{$\sim$}{\string~}\+Recorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_recorder_ad2d379eceda122c5812f4479fe234bd4}\label{class_recorder_ad2d379eceda122c5812f4479fe234bd4} 
+\index{Recorder@{Recorder}!create\_recording\_file@{create\_recording\_file}}
+\index{create\_recording\_file@{create\_recording\_file}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{create\_recording\_file()}{create\_recording\_file()}}
+{\footnotesize\ttfamily bool Recorder\+::create\+\_\+recording\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{recording\+\_\+directory,  }\item[{std\+::string const \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_aa5052b8df5701b7ef03696c1873acfff}\label{class_recorder_aa5052b8df5701b7ef03696c1873acfff} 
+\index{Recorder@{Recorder}!get\_channel\_num@{get\_channel\_num}}
+\index{get\_channel\_num@{get\_channel\_num}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_channel\_num()}{get\_channel\_num()}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+channel\+\_\+num (\begin{DoxyParamCaption}\item[{int}]{sound\+\_\+origin }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a035f8af083a03fa9405016fda74af0fa}\label{class_recorder_a035f8af083a03fa9405016fda74af0fa} 
+\index{Recorder@{Recorder}!get\_gameobject\_components@{get\_gameobject\_components}}
+\index{get\_gameobject\_components@{get\_gameobject\_components}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_components()}{get\_gameobject\_components()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+gameobject\+\_\+components (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a7797d6ba94c92d18ccbc1da6d20d47ba}\label{class_recorder_a7797d6ba94c92d18ccbc1da6d20d47ba} 
+\index{Recorder@{Recorder}!get\_gameobject\_components@{get\_gameobject\_components}}
+\index{get\_gameobject\_components@{get\_gameobject\_components}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_components()}{get\_gameobject\_components()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Recorder\+::get\+\_\+gameobject\+\_\+components (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a4361ceb3ee8b206034d4bf09801d3844}\label{class_recorder_a4361ceb3ee8b206034d4bf09801d3844} 
+\index{Recorder@{Recorder}!get\_gameobject\_first\_time@{get\_gameobject\_first\_time}}
+\index{get\_gameobject\_first\_time@{get\_gameobject\_first\_time}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_first\_time()}{get\_gameobject\_first\_time()}}
+{\footnotesize\ttfamily float Recorder\+::get\+\_\+gameobject\+\_\+first\+\_\+time (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a793bd0d463d80045f00316520d4ba270}\label{class_recorder_a793bd0d463d80045f00316520d4ba270} 
+\index{Recorder@{Recorder}!get\_gameobject\_mesh\_path@{get\_gameobject\_mesh\_path}}
+\index{get\_gameobject\_mesh\_path@{get\_gameobject\_mesh\_path}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_mesh\_path()}{get\_gameobject\_mesh\_path()}}
+{\footnotesize\ttfamily std\+::string Recorder\+::get\+\_\+gameobject\+\_\+mesh\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_aa59f6905380bdf81ab029c49dbbe99db}\label{class_recorder_aa59f6905380bdf81ab029c49dbbe99db} 
+\index{Recorder@{Recorder}!get\_gameobject\_path@{get\_gameobject\_path}}
+\index{get\_gameobject\_path@{get\_gameobject\_path}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_path()}{get\_gameobject\_path()}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+gameobject\+\_\+path (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ab866efeec6fc154157dc7063ca6f0af4}\label{class_recorder_ab866efeec6fc154157dc7063ca6f0af4} 
+\index{Recorder@{Recorder}!get\_gameobject\_prefab@{get\_gameobject\_prefab}}
+\index{get\_gameobject\_prefab@{get\_gameobject\_prefab}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_prefab()}{get\_gameobject\_prefab()}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+gameobject\+\_\+prefab (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a0fa97656e86d951b6af92fe42c4a51fd}\label{class_recorder_a0fa97656e86d951b6af92fe42c4a51fd} 
+\index{Recorder@{Recorder}!get\_generic@{get\_generic}}
+\index{get\_generic@{get\_generic}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_generic()}{get\_generic()}}
+{\footnotesize\ttfamily bool Recorder\+::get\+\_\+generic (\begin{DoxyParamCaption}\item[{float}]{time\+\_\+stamp,  }\item[{int}]{id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{int\+\_\+a,  }\item[{float \texorpdfstring{$\ast$}{*}}]{float\+\_\+a,  }\item[{char \texorpdfstring{$\ast$}{*}}]{char\+\_\+a }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_aab2487e0e4223893b32fe0ca8221fd02}\label{class_recorder_aab2487e0e4223893b32fe0ca8221fd02} 
+\index{Recorder@{Recorder}!get\_new\_id@{get\_new\_id}}
+\index{get\_new\_id@{get\_new\_id}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_new\_id()}{get\_new\_id()}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+new\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{object\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_aead3f482489c7f26fb4911068a9225a3}\label{class_recorder_aead3f482489c7f26fb4911068a9225a3} 
+\index{Recorder@{Recorder}!get\_original\_id@{get\_original\_id}}
+\index{get\_original\_id@{get\_original\_id}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_original\_id()}{get\_original\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+original\+\_\+id (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ac425ac9d385b4a3b4ca0b858e2737dee}\label{class_recorder_ac425ac9d385b4a3b4ca0b858e2737dee} 
+\index{Recorder@{Recorder}!get\_original\_id@{get\_original\_id}}
+\index{get\_original\_id@{get\_original\_id}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_original\_id()}{get\_original\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+original\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{object\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a742965b1b916dcd8a635def9c250c4e5}\label{class_recorder_a742965b1b916dcd8a635def9c250c4e5} 
+\index{Recorder@{Recorder}!get\_recording\_duration@{get\_recording\_duration}}
+\index{get\_recording\_duration@{get\_recording\_duration}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_duration()}{get\_recording\_duration()}}
+{\footnotesize\ttfamily float Recorder\+::get\+\_\+recording\+\_\+duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_af8105e836fa0bc7020a2550ebf52d798}\label{class_recorder_af8105e836fa0bc7020a2550ebf52d798} 
+\index{Recorder@{Recorder}!get\_recording\_gameobjects@{get\_recording\_gameobjects}}
+\index{get\_recording\_gameobjects@{get\_recording\_gameobjects}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_gameobjects()}{get\_recording\_gameobjects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::map$<$ int, std\+::string $>$ Recorder\+::get\+\_\+recording\+\_\+gameobjects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ad15b54bfb5f7516f854e5081a31f4b19}\label{class_recorder_ad15b54bfb5f7516f854e5081a31f4b19} 
+\index{Recorder@{Recorder}!get\_recording\_gameobjects@{get\_recording\_gameobjects}}
+\index{get\_recording\_gameobjects@{get\_recording\_gameobjects}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_gameobjects()}{get\_recording\_gameobjects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+recording\+\_\+gameobjects (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a86df1379fa18ec7d6b329d32468e11b4}\label{class_recorder_a86df1379fa18ec7d6b329d32468e11b4} 
+\index{Recorder@{Recorder}!get\_recording\_sound\_sources@{get\_recording\_sound\_sources}}
+\index{get\_recording\_sound\_sources@{get\_recording\_sound\_sources}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_sound\_sources()}{get\_recording\_sound\_sources()}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+recording\+\_\+sound\+\_\+sources (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{ids,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ad7eae5029e8ece3b7be01968b570356f}\label{class_recorder_ad7eae5029e8ece3b7be01968b570356f} 
+\index{Recorder@{Recorder}!get\_recording\_start\_global\_timeoffset@{get\_recording\_start\_global\_timeoffset}}
+\index{get\_recording\_start\_global\_timeoffset@{get\_recording\_start\_global\_timeoffset}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_start\_global\_timeoffset()}{get\_recording\_start\_global\_timeoffset()}}
+{\footnotesize\ttfamily float Recorder\+::get\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ab4b68d16e0fb975570eb233ad5f06033}\label{class_recorder_ab4b68d16e0fb975570eb233ad5f06033} 
+\index{Recorder@{Recorder}!get\_sampling\_rate@{get\_sampling\_rate}}
+\index{get\_sampling\_rate@{get\_sampling\_rate}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_sampling\_rate()}{get\_sampling\_rate()}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+sampling\+\_\+rate (\begin{DoxyParamCaption}\item[{int}]{sound\+\_\+origin }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a385a398b9404387b15396c3d67a599b3}\label{class_recorder_a385a398b9404387b15396c3d67a599b3} 
+\index{Recorder@{Recorder}!get\_sound@{get\_sound}}
+\index{get\_sound@{get\_sound}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_sound()}{get\_sound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+sound (\begin{DoxyParamCaption}\item[{int}]{sound\+\_\+origin,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a696b1064f123fdddd26c0475338f30f3}\label{class_recorder_a696b1064f123fdddd26c0475338f30f3} 
+\index{Recorder@{Recorder}!get\_sound@{get\_sound}}
+\index{get\_sound@{get\_sound}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_sound()}{get\_sound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+sound (\begin{DoxyParamCaption}\item[{int}]{sound\+\_\+origin,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int \texorpdfstring{$\ast$}{*}}]{corresponding\+\_\+go\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ad3cc1b4f90cacafe5214a88b66972f9c}\label{class_recorder_ad3cc1b4f90cacafe5214a88b66972f9c} 
+\index{Recorder@{Recorder}!get\_sound\_ids@{get\_sound\_ids}}
+\index{get\_sound\_ids@{get\_sound\_ids}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_sound\_ids()}{get\_sound\_ids()}}
+{\footnotesize\ttfamily int Recorder\+::get\+\_\+sound\+\_\+ids (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{ids,  }\item[{int}]{max\+\_\+id\+\_\+count }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a427b4851602e41aebb9e8408f67710bc}\label{class_recorder_a427b4851602e41aebb9e8408f67710bc} 
+\index{Recorder@{Recorder}!get\_transform@{get\_transform}}
+\index{get\_transform@{get\_transform}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{get\_transform()}{get\_transform()}}
+{\footnotesize\ttfamily bool Recorder\+::get\+\_\+transform (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+uuid,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{matrix,  }\item[{int \texorpdfstring{$\ast$}{*}}]{object\+\_\+information }\end{DoxyParamCaption})}
+
+
+
+This function fills array data passed as arguments with retrieved transform information. 
+
+In this method a ring buffer is tasked with retrieving data for a given id and time. For this the ring buffer searches in every buffer whether the required information is present and loads it if necessary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+\_\+name} & The name of the object for which data is retrieved \\
+\hline
+{\em object\+\_\+name\+\_\+length} & The length of the name for which data is retrieved \\
+\hline
+{\em object\+\_\+uuid} & The id of the object for which data is retrieved \\
+\hline
+{\em time\+\_\+stamp} & The point in time for which data is retrieved \\
+\hline
+{\em matrix} & A float buffer in which the retrieved data is stored and from where it can be read after the function returned \\
+\hline
+{\em object\+\_\+information} & A int buffer in which retrieved information about the parent and active state is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_recorder_aecafa179b6468db3b1c5851d62f044fe}\label{class_recorder_aecafa179b6468db3b1c5851d62f044fe} 
+\index{Recorder@{Recorder}!next\_positions\_for\_id@{next\_positions\_for\_id}}
+\index{next\_positions\_for\_id@{next\_positions\_for\_id}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{next\_positions\_for\_id()}{next\_positions\_for\_id()}}
+{\footnotesize\ttfamily int Recorder\+::next\+\_\+positions\+\_\+for\+\_\+id (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+uuid,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{positions }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a7eb142588b1ac02122dae21383372c21}\label{class_recorder_a7eb142588b1ac02122dae21383372c21} 
+\index{Recorder@{Recorder}!open\_existing\_recording\_file@{open\_existing\_recording\_file}}
+\index{open\_existing\_recording\_file@{open\_existing\_recording\_file}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{open\_existing\_recording\_file()}{open\_existing\_recording\_file()}}
+{\footnotesize\ttfamily bool Recorder\+::open\+\_\+existing\+\_\+recording\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{directory,  }\item[{std\+::string const \&}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_adf51ac79d8beee929b07f3df204f8438}\label{class_recorder_adf51ac79d8beee929b07f3df204f8438} 
+\index{Recorder@{Recorder}!operator=@{operator=}}
+\index{operator=@{operator=}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_recorder}{Recorder}} \& Recorder\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_recorder}{Recorder}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_recorder_a3d5a76a1be718926b69dd60fe20fcf12}\label{class_recorder_a3d5a76a1be718926b69dd60fe20fcf12} 
+\index{Recorder@{Recorder}!operator=@{operator=}}
+\index{operator=@{operator=}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_recorder}{Recorder}} \& Recorder\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_recorder}{Recorder}} \&\&}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ab1361949731a0393778665cc6a85c343}\label{class_recorder_ab1361949731a0393778665cc6a85c343} 
+\index{Recorder@{Recorder}!record\_generic@{record\_generic}}
+\index{record\_generic@{record\_generic}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{record\_generic()}{record\_generic()}}
+{\footnotesize\ttfamily bool Recorder\+::record\+\_\+generic (\begin{DoxyParamCaption}\item[{float}]{time\+\_\+stamp,  }\item[{int}]{id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{int\+\_\+a,  }\item[{float \texorpdfstring{$\ast$}{*}}]{float\+\_\+a,  }\item[{char \texorpdfstring{$\ast$}{*}}]{char\+\_\+a }\end{DoxyParamCaption})}
+
+
+
+Records generic buffer data for a certain id and a certain point in time. 
+
+In this method data is moved to a DTO which is then added to a recording buffer. As soon as the buffer extends a maximum size the buffer data is moved to a writing buffer. Then a thread task for writing the data from the writing buffer to file is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+stamp} & The point in time for which data is recorded \\
+\hline
+{\em id} & The id for which data is recorded (should be unique for different types and instances of data sources) \\
+\hline
+{\em int\+\_\+a} & A buffer of ints that can contain semantic data (e.\+g. the current color of a object, the state of a process, ...) \\
+\hline
+{\em float\+\_\+a} & A buffer of floats that can contain semantic data (e.\+g. the current distance between users, the current network latency, ...) \\
+\hline
+{\em char\+\_\+a} & A buffer of characters that can contain semantic data (e.\+g. the name of an event, ...) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_recorder_aef5fb4257521f4d77c26d3d4a81fcc09}\label{class_recorder_aef5fb4257521f4d77c26d3d4a81fcc09} 
+\index{Recorder@{Recorder}!record\_sound@{record\_sound}}
+\index{record\_sound@{record\_sound}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{record\_sound()}{record\_sound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Recorder\+::record\+\_\+sound (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int}]{sound\+\_\+data\+\_\+length,  }\item[{int}]{sampling\+\_\+rate,  }\item[{int}]{start\+\_\+index,  }\item[{int}]{channel\+\_\+num,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{sound\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Records audio buffer data for a certain sound source and a certain point in time. 
+
+In this method data is moved to a DTO which is then added to a recording buffer. As soon as the buffer extends a maximum size the buffer data is moved to a writing buffer. Then a thread task for writing the data from the writing buffer to file is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sound\+\_\+data} & The buffer containing the audio data \\
+\hline
+{\em sound\+\_\+data\+\_\+length} & The size of the audio buffer (should be smaller than the size of the audio buffer of a \doxylink{struct_sound_d_t_o}{Sound\+DTO} \\
+\hline
+{\em sampling\+\_\+rate} & The sampling rate of the sound source \\
+\hline
+{\em start\+\_\+index} & Potential offset index from which on new data is present (if 0 all data is new, if n\texorpdfstring{$>$}{>}0 then the first n samples are not recorded) \\
+\hline
+{\em channel\+\_\+num} & The number of channels of the audio source (Note that unity records audio in an interleaved manner e.\+g. for 2 channel audio L0\+R0\+L1\+R1...) \\
+\hline
+{\em time\+\_\+stamp} & The timestamp corresponding with the start time for the first sound sample \\
+\hline
+{\em sound\+\_\+id} & The id referencing the sound source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_recorder_a8c87aed99b5928ed81d96a878477dbfb}\label{class_recorder_a8c87aed99b5928ed81d96a878477dbfb} 
+\index{Recorder@{Recorder}!record\_sound@{record\_sound}}
+\index{record\_sound@{record\_sound}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{record\_sound()}{record\_sound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Recorder\+::record\+\_\+sound (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int}]{sound\+\_\+data\+\_\+length,  }\item[{int}]{sampling\+\_\+rate,  }\item[{int}]{start\+\_\+index,  }\item[{int}]{channel\+\_\+num,  }\item[{int}]{corresponding\+\_\+gameobject\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{sound\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Records audio buffer data for a certain sound source and a certain point in time. 
+
+In this method data is moved to a DTO which is then added to a recording buffer. As soon as the buffer extends a maximum size the buffer data is moved to a writing buffer. Then a thread task for writing the data from the writing buffer to file is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sound\+\_\+data} & The buffer containing the audio data \\
+\hline
+{\em sound\+\_\+data\+\_\+length} & The size of the audio buffer (should be smaller than the size of the audio buffer of a \doxylink{struct_sound_d_t_o}{Sound\+DTO} \\
+\hline
+{\em sampling\+\_\+rate} & The sampling rate of the sound source \\
+\hline
+{\em start\+\_\+index} & Potential offset index from which on new data is present (if 0 all data is new, if n\texorpdfstring{$>$}{>}0 then the first n samples are not recorded) \\
+\hline
+{\em channel\+\_\+num} & The number of channels of the audio source (Note that unity records audio in an interleaved manner e.\+g. for 2 channel audio L0\+R0\+L1\+R1...) \\
+\hline
+{\em corresponding\+\_\+gameobject\+\_\+id} & The id of the corresponding gameobject. This information is retrieved during playback to attach (and move) the audio source to the correct object \\
+\hline
+{\em time\+\_\+stamp} & The timestamp corresponding with the start time for the first sound sample \\
+\hline
+{\em sound\+\_\+id} & The id referencing the sound source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_recorder_a9260d30b9180222ce2595b43fa3eb79a}\label{class_recorder_a9260d30b9180222ce2595b43fa3eb79a} 
+\index{Recorder@{Recorder}!record\_transform@{record\_transform}}
+\index{record\_transform@{record\_transform}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{record\_transform()}{record\_transform()}}
+{\footnotesize\ttfamily bool Recorder\+::record\+\_\+transform (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{object\+\_\+name,  }\item[{int}]{id,  }\item[{float const \texorpdfstring{$\ast$}{*}}]{local\+\_\+matrix,  }\item[{float}]{time\+\_\+stamp,  }\item[{int const \texorpdfstring{$\ast$}{*}}]{object\+\_\+information }\end{DoxyParamCaption})}
+
+
+
+Records transformation data and object information for a certain object and a certain point in time. 
+
+In this method data is moved to a DTO which is then added to a recording buffer. As soon as the buffer extends a maximum size the buffer data is moved to a writing buffer. Then a thread task for writing the data from the writing buffer to file is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+\_\+name} & The name of the object in the application \\
+\hline
+{\em id} & The id of the object in the application (should be unique) \\
+\hline
+{\em local\+\_\+matrix} & A float matrix containing local and global position, orientation and scaling information \\
+\hline
+{\em time\+\_\+stamp} & The time stamp for which the data is recorded \\
+\hline
+{\em object\+\_\+information} & Information about whether the object is currently active in the application and about the id of the current parent in the applicaiton \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_recorder_a7ac93604bb75700e2922c64f1a88ec5f}\label{class_recorder_a7ac93604bb75700e2922c64f1a88ec5f} 
+\index{Recorder@{Recorder}!register\_gameobject\_components@{register\_gameobject\_components}}
+\index{register\_gameobject\_components@{register\_gameobject\_components}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_components()}{register\_gameobject\_components()}}
+{\footnotesize\ttfamily bool Recorder\+::register\+\_\+gameobject\+\_\+components (\begin{DoxyParamCaption}\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{components,  }\item[{int}]{components\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ad66353fe66976c16eb85e5e6254b5c0b}\label{class_recorder_ad66353fe66976c16eb85e5e6254b5c0b} 
+\index{Recorder@{Recorder}!register\_gameobject\_path@{register\_gameobject\_path}}
+\index{register\_gameobject\_path@{register\_gameobject\_path}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_path()}{register\_gameobject\_path()}}
+{\footnotesize\ttfamily bool Recorder\+::register\+\_\+gameobject\+\_\+path (\begin{DoxyParamCaption}\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{path,  }\item[{int}]{path\+\_\+length,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a2d2bf1998a1fe63c949e6ace0a61ff7b}\label{class_recorder_a2d2bf1998a1fe63c949e6ace0a61ff7b} 
+\index{Recorder@{Recorder}!register\_gameobject\_prefab@{register\_gameobject\_prefab}}
+\index{register\_gameobject\_prefab@{register\_gameobject\_prefab}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_prefab()}{register\_gameobject\_prefab()}}
+{\footnotesize\ttfamily bool Recorder\+::register\+\_\+gameobject\+\_\+prefab (\begin{DoxyParamCaption}\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{prefab,  }\item[{int}]{prefab\+\_\+length,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a3c5189994e8dd458d31e392f1f38810d}\label{class_recorder_a3c5189994e8dd458d31e392f1f38810d} 
+\index{Recorder@{Recorder}!register\_recording\_start\_global\_timeoffset@{register\_recording\_start\_global\_timeoffset}}
+\index{register\_recording\_start\_global\_timeoffset@{register\_recording\_start\_global\_timeoffset}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{register\_recording\_start\_global\_timeoffset()}{register\_recording\_start\_global\_timeoffset()}}
+{\footnotesize\ttfamily bool Recorder\+::register\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset (\begin{DoxyParamCaption}\item[{float}]{offset\+\_\+to\+\_\+global\+\_\+time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a55053570b04f7356707ab842ac145512}\label{class_recorder_a55053570b04f7356707ab842ac145512} 
+\index{Recorder@{Recorder}!set\_debug\_mode@{set\_debug\_mode}}
+\index{set\_debug\_mode@{set\_debug\_mode}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{set\_debug\_mode()}{set\_debug\_mode()}}
+{\footnotesize\ttfamily bool Recorder\+::set\+\_\+debug\+\_\+mode (\begin{DoxyParamCaption}\item[{bool}]{debug\+\_\+state }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a31cd7edd026c6bb15db56e292776ee82}\label{class_recorder_a31cd7edd026c6bb15db56e292776ee82} 
+\index{Recorder@{Recorder}!set\_replay\_buffer\_num@{set\_replay\_buffer\_num}}
+\index{set\_replay\_buffer\_num@{set\_replay\_buffer\_num}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{set\_replay\_buffer\_num()}{set\_replay\_buffer\_num()}}
+{\footnotesize\ttfamily bool Recorder\+::set\+\_\+replay\+\_\+buffer\+\_\+num (\begin{DoxyParamCaption}\item[{int}]{buffer\+\_\+num }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a0d79e4f5373c6238053f884d7c994246}\label{class_recorder_a0d79e4f5373c6238053f884d7c994246} 
+\index{Recorder@{Recorder}!set\_replay\_buffer\_time\_interval@{set\_replay\_buffer\_time\_interval}}
+\index{set\_replay\_buffer\_time\_interval@{set\_replay\_buffer\_time\_interval}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{set\_replay\_buffer\_time\_interval()}{set\_replay\_buffer\_time\_interval()}}
+{\footnotesize\ttfamily bool Recorder\+::set\+\_\+replay\+\_\+buffer\+\_\+time\+\_\+interval (\begin{DoxyParamCaption}\item[{float}]{time\+\_\+interval }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a0800d295613da36668ddef7817b9a904}\label{class_recorder_a0800d295613da36668ddef7817b9a904} 
+\index{Recorder@{Recorder}!set\_sound\_recording\_buffer\_size@{set\_sound\_recording\_buffer\_size}}
+\index{set\_sound\_recording\_buffer\_size@{set\_sound\_recording\_buffer\_size}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{set\_sound\_recording\_buffer\_size()}{set\_sound\_recording\_buffer\_size()}}
+{\footnotesize\ttfamily bool Recorder\+::set\+\_\+sound\+\_\+recording\+\_\+buffer\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_ad1203717b8c4b502b79dcf2dc26b5b2f}\label{class_recorder_ad1203717b8c4b502b79dcf2dc26b5b2f} 
+\index{Recorder@{Recorder}!set\_transform\_recording\_buffer\_size@{set\_transform\_recording\_buffer\_size}}
+\index{set\_transform\_recording\_buffer\_size@{set\_transform\_recording\_buffer\_size}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{set\_transform\_recording\_buffer\_size()}{set\_transform\_recording\_buffer\_size()}}
+{\footnotesize\ttfamily bool Recorder\+::set\+\_\+transform\+\_\+recording\+\_\+buffer\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_a05e541b94711c0263e9bcec1a2e16211}\label{class_recorder_a05e541b94711c0263e9bcec1a2e16211} 
+\index{Recorder@{Recorder}!stop\_recording@{stop\_recording}}
+\index{stop\_recording@{stop\_recording}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{stop\_recording()}{stop\_recording()}}
+{\footnotesize\ttfamily bool Recorder\+::stop\+\_\+recording (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_aa9bb7b480942b007492c5a31059de225}\label{class_recorder_aa9bb7b480942b007492c5a31059de225} 
+\index{Recorder@{Recorder}!stop\_replay@{stop\_replay}}
+\index{stop\_replay@{stop\_replay}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{stop\_replay()}{stop\_replay()}}
+{\footnotesize\ttfamily bool Recorder\+::stop\+\_\+replay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_recorder_adb424533fc33416f0fee5bf598ee62cc}\label{class_recorder_adb424533fc33416f0fee5bf598ee62cc} 
+\index{Recorder@{Recorder}!write\_buffer@{write\_buffer}}
+\index{write\_buffer@{write\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{write\_buffer()}{write\_buffer()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Recorder\+::write\+\_\+buffer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+name,  }\item[{std\+::vector$<$ T $>$ \&}]{writing\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Template function for writing buffer data in a compressed manner to a file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The datatype which is written to file \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & The file path \\
+\hline
+{\em writing\+\_\+buffer} & The buffer of objects from type Data\+Type that is written to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_recorder_aff795f0ae5d18c7703d437962167ace9}\label{class_recorder_aff795f0ae5d18c7703d437962167ace9} 
+\index{Recorder@{Recorder}!current\_recording@{current\_recording}}
+\index{current\_recording@{current\_recording}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{current\_recording}{current\_recording}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_recording}{Recording}} Recorder\+::current\+\_\+recording\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+information about the recording currently active during playback / recording 
+
+\Hypertarget{class_recorder_a5d17000ac72a4f747367edd5b7068247}\label{class_recorder_a5d17000ac72a4f747367edd5b7068247} 
+\index{Recorder@{Recorder}!current\_sound\_time@{current\_sound\_time}}
+\index{current\_sound\_time@{current\_sound\_time}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{current\_sound\_time}{current\_sound\_time}}
+{\footnotesize\ttfamily float Recorder\+::current\+\_\+sound\+\_\+time = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a7bee081570006deec7053a79e0ddf8ba}\label{class_recorder_a7bee081570006deec7053a79e0ddf8ba} 
+\index{Recorder@{Recorder}!current\_time@{current\_time}}
+\index{current\_time@{current\_time}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{current\_time}{current\_time}}
+{\footnotesize\ttfamily float Recorder\+::current\+\_\+time = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+last used time stamp during replay/recording 
+
+\Hypertarget{class_recorder_a80d730a48e32cd271362b962db04e231}\label{class_recorder_a80d730a48e32cd271362b962db04e231} 
+\index{Recorder@{Recorder}!debug@{debug}}
+\index{debug@{debug}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily bool Recorder\+::debug = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+if true debug output will be generated during recording/playback 
+
+\Hypertarget{class_recorder_a6121a3a4a7913f64adbb74b7e84514e6}\label{class_recorder_a6121a3a4a7913f64adbb74b7e84514e6} 
+\index{Recorder@{Recorder}!editing\_mode@{editing\_mode}}
+\index{editing\_mode@{editing\_mode}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{editing\_mode}{editing\_mode}}
+{\footnotesize\ttfamily bool Recorder\+::editing\+\_\+mode = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+if true, the complete recording is loaded into memory 
+
+\Hypertarget{class_recorder_a169f3500e009a093b98b5b51559569b8}\label{class_recorder_a169f3500e009a093b98b5b51559569b8} 
+\index{Recorder@{Recorder}!generic\_buffer\_num@{generic\_buffer\_num}}
+\index{generic\_buffer\_num@{generic\_buffer\_num}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{generic\_buffer\_num}{generic\_buffer\_num}}
+{\footnotesize\ttfamily int Recorder\+::generic\+\_\+buffer\+\_\+num = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many buffer are used to store generic data 
+
+\Hypertarget{class_recorder_a0a05dd55af6e92aaeb256d9d6e32f079}\label{class_recorder_a0a05dd55af6e92aaeb256d9d6e32f079} 
+\index{Recorder@{Recorder}!generic\_buffer\_size@{generic\_buffer\_size}}
+\index{generic\_buffer\_size@{generic\_buffer\_size}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{generic\_buffer\_size}{generic\_buffer\_size}}
+{\footnotesize\ttfamily int Recorder\+::generic\+\_\+buffer\+\_\+size = 100\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many generic elements are stored during recording before writing them to a file 
+
+\Hypertarget{class_recorder_aac77e0a29c064232c9910d89e51ab75f}\label{class_recorder_aac77e0a29c064232c9910d89e51ab75f} 
+\index{Recorder@{Recorder}!generic\_buffer\_time\_interval@{generic\_buffer\_time\_interval}}
+\index{generic\_buffer\_time\_interval@{generic\_buffer\_time\_interval}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{generic\_buffer\_time\_interval}{generic\_buffer\_time\_interval}}
+{\footnotesize\ttfamily float Recorder\+::generic\+\_\+buffer\+\_\+time\+\_\+interval = 10.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many seconds of replay are saved in each generic buffer at most 
+
+\Hypertarget{class_recorder_a9937b812e3b100780309d2aef9b336eb}\label{class_recorder_a9937b812e3b100780309d2aef9b336eb} 
+\index{Recorder@{Recorder}!generic\_loading@{generic\_loading}}
+\index{generic\_loading@{generic\_loading}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{generic\_loading}{generic\_loading}}
+{\footnotesize\ttfamily std\+::future$<$void$>$ Recorder\+::generic\+\_\+loading\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a1670552f0450b9c473d8c5866d3e82f4}\label{class_recorder_a1670552f0450b9c473d8c5866d3e82f4} 
+\index{Recorder@{Recorder}!generic\_recording\_buffer@{generic\_recording\_buffer}}
+\index{generic\_recording\_buffer@{generic\_recording\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{generic\_recording\_buffer}{generic\_recording\_buffer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_generic_d_t_o}{Generic\+DTO}}$>$ Recorder\+::generic\+\_\+recording\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores recorded generic data until it is moved to the writing buffer and written to the file 
+
+\Hypertarget{class_recorder_a7b3a30a5a995056d38ae3df22ec0b64c}\label{class_recorder_a7b3a30a5a995056d38ae3df22ec0b64c} 
+\index{Recorder@{Recorder}!generic\_ring\_buffer@{generic\_ring\_buffer}}
+\index{generic\_ring\_buffer@{generic\_ring\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{generic\_ring\_buffer}{generic\_ring\_buffer}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_generic_ring_buffer}{Generic\+Ring\+Buffer}}$>$ Recorder\+::generic\+\_\+ring\+\_\+buffer = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a8ebf9d44c7919c0f13380f39fd7814a8}\label{class_recorder_a8ebf9d44c7919c0f13380f39fd7814a8} 
+\index{Recorder@{Recorder}!generic\_writing\_buffer@{generic\_writing\_buffer}}
+\index{generic\_writing\_buffer@{generic\_writing\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{generic\_writing\_buffer}{generic\_writing\_buffer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_generic_d_t_o}{Generic\+DTO}}$>$ Recorder\+::generic\+\_\+writing\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores recorded generic data that is written to the file 
+
+\Hypertarget{class_recorder_a0f95eb4c12c049e2f0b62bf60f3447f3}\label{class_recorder_a0f95eb4c12c049e2f0b62bf60f3447f3} 
+\index{Recorder@{Recorder}!last\_sound\_data@{last\_sound\_data}}
+\index{last\_sound\_data@{last\_sound\_data}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{last\_sound\_data}{last\_sound\_data}}
+{\footnotesize\ttfamily std\+::map$<$int, \mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}}$>$ Recorder\+::last\+\_\+sound\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores last sound information for a given id. This is used during recording to compress audio. 
+
+\Hypertarget{class_recorder_adb025e84c5795baec9910e19a78a8f51}\label{class_recorder_adb025e84c5795baec9910e19a78a8f51} 
+\index{Recorder@{Recorder}!last\_time@{last\_time}}
+\index{last\_time@{last\_time}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{last\_time}{last\_time}}
+{\footnotesize\ttfamily float Recorder\+::last\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_aba57f3bc52e4e65774775609992d837c}\label{class_recorder_aba57f3bc52e4e65774775609992d837c} 
+\index{Recorder@{Recorder}!last\_transforms@{last\_transforms}}
+\index{last\_transforms@{last\_transforms}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{last\_transforms}{last\_transforms}}
+{\footnotesize\ttfamily std\+::map$<$int, \mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}}$>$ Recorder\+::last\+\_\+transforms\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the last seen transformation matrix for a given object, this can be used to avoid storing data that did not change. 
+
+\Hypertarget{class_recorder_a7a173e25008d17a800a7652a57f33dc8}\label{class_recorder_a7a173e25008d17a800a7652a57f33dc8} 
+\index{Recorder@{Recorder}!recording\_buffer\_size@{recording\_buffer\_size}}
+\index{recording\_buffer\_size@{recording\_buffer\_size}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{recording\_buffer\_size}{recording\_buffer\_size}}
+{\footnotesize\ttfamily int Recorder\+::recording\+\_\+buffer\+\_\+size = 10000\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many transforms are stored during recording before writing them to a file 
+
+\Hypertarget{class_recorder_a34bb086910e095a0e7165377bbf7ed7e}\label{class_recorder_a34bb086910e095a0e7165377bbf7ed7e} 
+\index{Recorder@{Recorder}!sound\_buffer\_num@{sound\_buffer\_num}}
+\index{sound\_buffer\_num@{sound\_buffer\_num}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{sound\_buffer\_num}{sound\_buffer\_num}}
+{\footnotesize\ttfamily int Recorder\+::sound\+\_\+buffer\+\_\+num = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many buffer are used to store sound data 
+
+\Hypertarget{class_recorder_acfdd64c438ea973934816584ac80d072}\label{class_recorder_acfdd64c438ea973934816584ac80d072} 
+\index{Recorder@{Recorder}!sound\_buffer\_time\_interval@{sound\_buffer\_time\_interval}}
+\index{sound\_buffer\_time\_interval@{sound\_buffer\_time\_interval}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{sound\_buffer\_time\_interval}{sound\_buffer\_time\_interval}}
+{\footnotesize\ttfamily float Recorder\+::sound\+\_\+buffer\+\_\+time\+\_\+interval = 10.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many seconds of replay are saved in each sound buffer at most 
+
+\Hypertarget{class_recorder_ab44ebc146d3139fb4044660a56bd23db}\label{class_recorder_ab44ebc146d3139fb4044660a56bd23db} 
+\index{Recorder@{Recorder}!sound\_loading@{sound\_loading}}
+\index{sound\_loading@{sound\_loading}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{sound\_loading}{sound\_loading}}
+{\footnotesize\ttfamily std\+::future$<$void$>$ Recorder\+::sound\+\_\+loading\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a5d913aaa37b8a6c50f6ad22d70fc8a1e}\label{class_recorder_a5d913aaa37b8a6c50f6ad22d70fc8a1e} 
+\index{Recorder@{Recorder}!sound\_rec\_active@{sound\_rec\_active}}
+\index{sound\_rec\_active@{sound\_rec\_active}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{sound\_rec\_active}{sound\_rec\_active}}
+{\footnotesize\ttfamily bool Recorder\+::sound\+\_\+rec\+\_\+active = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a6bddf8f5f8f3898e9449826ead30db70}\label{class_recorder_a6bddf8f5f8f3898e9449826ead30db70} 
+\index{Recorder@{Recorder}!sound\_recording\_buffer@{sound\_recording\_buffer}}
+\index{sound\_recording\_buffer@{sound\_recording\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{sound\_recording\_buffer}{sound\_recording\_buffer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}}$>$ Recorder\+::sound\+\_\+recording\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores recorded sound data until it is moved to the writing buffer and written to the file 
+
+\Hypertarget{class_recorder_a8d09ded04d58e67a4cba387c038ead8d}\label{class_recorder_a8d09ded04d58e67a4cba387c038ead8d} 
+\index{Recorder@{Recorder}!sound\_recording\_buffer\_size@{sound\_recording\_buffer\_size}}
+\index{sound\_recording\_buffer\_size@{sound\_recording\_buffer\_size}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{sound\_recording\_buffer\_size}{sound\_recording\_buffer\_size}}
+{\footnotesize\ttfamily int Recorder\+::sound\+\_\+recording\+\_\+buffer\+\_\+size = 100\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many sound chunks are stored during recording before writing them to a file 
+
+\Hypertarget{class_recorder_a8b9c3c7441bb049273759e6eb1f7a8e9}\label{class_recorder_a8b9c3c7441bb049273759e6eb1f7a8e9} 
+\index{Recorder@{Recorder}!sound\_ring\_buffer@{sound\_ring\_buffer}}
+\index{sound\_ring\_buffer@{sound\_ring\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{sound\_ring\_buffer}{sound\_ring\_buffer}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_sound_ring_buffer}{Sound\+Ring\+Buffer}}$>$ Recorder\+::sound\+\_\+ring\+\_\+buffer = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a3f8b270248dc5b09510e5d7f17ef3251}\label{class_recorder_a3f8b270248dc5b09510e5d7f17ef3251} 
+\index{Recorder@{Recorder}!sound\_writing\_buffer@{sound\_writing\_buffer}}
+\index{sound\_writing\_buffer@{sound\_writing\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{sound\_writing\_buffer}{sound\_writing\_buffer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_sound_d_t_o}{Sound\+DTO}}$>$ Recorder\+::sound\+\_\+writing\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores recorded sound data that is written to the file 
+
+\Hypertarget{class_recorder_a1c25dc401bf5cb8a2d064979bb8d95b2}\label{class_recorder_a1c25dc401bf5cb8a2d064979bb8d95b2} 
+\index{Recorder@{Recorder}!transform\_buffer\_num@{transform\_buffer\_num}}
+\index{transform\_buffer\_num@{transform\_buffer\_num}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{transform\_buffer\_num}{transform\_buffer\_num}}
+{\footnotesize\ttfamily int Recorder\+::transform\+\_\+buffer\+\_\+num = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many buffer are used to store transform data 
+
+\Hypertarget{class_recorder_a3c7b9214d1e9ad20a2102743e3410126}\label{class_recorder_a3c7b9214d1e9ad20a2102743e3410126} 
+\index{Recorder@{Recorder}!transform\_buffer\_time\_interval@{transform\_buffer\_time\_interval}}
+\index{transform\_buffer\_time\_interval@{transform\_buffer\_time\_interval}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{transform\_buffer\_time\_interval}{transform\_buffer\_time\_interval}}
+{\footnotesize\ttfamily float Recorder\+::transform\+\_\+buffer\+\_\+time\+\_\+interval = 10.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+how many seconds of replay are saved in each buffer at most for transform data 
+
+\Hypertarget{class_recorder_a78f68be8e5294c2f7d43e68198dff373}\label{class_recorder_a78f68be8e5294c2f7d43e68198dff373} 
+\index{Recorder@{Recorder}!transform\_loading@{transform\_loading}}
+\index{transform\_loading@{transform\_loading}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{transform\_loading}{transform\_loading}}
+{\footnotesize\ttfamily std\+::future$<$void$>$ Recorder\+::transform\+\_\+loading\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a8df43c220156adc0f51d7c406f61affa}\label{class_recorder_a8df43c220156adc0f51d7c406f61affa} 
+\index{Recorder@{Recorder}!transform\_recording\_buffer@{transform\_recording\_buffer}}
+\index{transform\_recording\_buffer@{transform\_recording\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{transform\_recording\_buffer}{transform\_recording\_buffer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}}$>$ Recorder\+::transform\+\_\+recording\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores recorded transform data until it is moved to the writing buffer and written to the file 
+
+\Hypertarget{class_recorder_a1b92057d9f5360531f33f44209994483}\label{class_recorder_a1b92057d9f5360531f33f44209994483} 
+\index{Recorder@{Recorder}!transform\_ring\_buffer@{transform\_ring\_buffer}}
+\index{transform\_ring\_buffer@{transform\_ring\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{transform\_ring\_buffer}{transform\_ring\_buffer}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_transform_ring_buffer}{Transform\+Ring\+Buffer}}$>$ Recorder\+::transform\+\_\+ring\+\_\+buffer = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_afbf1c0acf26acb59e67e147173632435}\label{class_recorder_afbf1c0acf26acb59e67e147173632435} 
+\index{Recorder@{Recorder}!transform\_writing\_buffer@{transform\_writing\_buffer}}
+\index{transform\_writing\_buffer@{transform\_writing\_buffer}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{transform\_writing\_buffer}{transform\_writing\_buffer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}}$>$ Recorder\+::transform\+\_\+writing\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores recorded transform data that is written to the file 
+
+\Hypertarget{class_recorder_a08784cb9f17bf00e5d19d23f6881a29e}\label{class_recorder_a08784cb9f17bf00e5d19d23f6881a29e} 
+\index{Recorder@{Recorder}!wait\_count@{wait\_count}}
+\index{wait\_count@{wait\_count}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{wait\_count}{wait\_count}}
+{\footnotesize\ttfamily int Recorder\+::wait\+\_\+count = 10000\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_aacab8c8ab1fabdc4ffab13f509713f59}\label{class_recorder_aacab8c8ab1fabdc4ffab13f509713f59} 
+\index{Recorder@{Recorder}!writing\_generic\_to\_file@{writing\_generic\_to\_file}}
+\index{writing\_generic\_to\_file@{writing\_generic\_to\_file}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{writing\_generic\_to\_file}{writing\_generic\_to\_file}}
+{\footnotesize\ttfamily bool Recorder\+::writing\+\_\+generic\+\_\+to\+\_\+file = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a1ebc89f8543ceaaf498244aded268078}\label{class_recorder_a1ebc89f8543ceaaf498244aded268078} 
+\index{Recorder@{Recorder}!writing\_sound\_to\_file@{writing\_sound\_to\_file}}
+\index{writing\_sound\_to\_file@{writing\_sound\_to\_file}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{writing\_sound\_to\_file}{writing\_sound\_to\_file}}
+{\footnotesize\ttfamily bool Recorder\+::writing\+\_\+sound\+\_\+to\+\_\+file = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorder_a87cafc465786a5930dc4905f0c54d231}\label{class_recorder_a87cafc465786a5930dc4905f0c54d231} 
+\index{Recorder@{Recorder}!writing\_transform\_to\_file@{writing\_transform\_to\_file}}
+\index{writing\_transform\_to\_file@{writing\_transform\_to\_file}!Recorder@{Recorder}}
+\doxysubsubsection{\texorpdfstring{writing\_transform\_to\_file}{writing\_transform\_to\_file}}
+{\footnotesize\ttfamily bool Recorder\+::writing\+\_\+transform\+\_\+to\+\_\+file = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\mbox{\hyperlink{_recorder_8h}{Recorder.\+h}}\item 
+Src/\+Recording/\mbox{\hyperlink{_recorder_8cpp}{Recorder.\+cpp}}\end{DoxyCompactItemize}

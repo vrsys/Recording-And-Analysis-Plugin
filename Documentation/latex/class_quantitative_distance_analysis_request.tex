@@ -1,0 +1,201 @@
+\doxysection{Quantitative\+Distance\+Analysis\+Request Class Reference}
+\hypertarget{class_quantitative_distance_analysis_request}{}\label{class_quantitative_distance_analysis_request}\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Quantitative\+Distance\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Quantitative\+Distance\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_quantitative_distance_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quantitative_distance_analysis_request_a92ee485104ebc44583dbbd13fdedb50a}{Quantitative\+Distance\+Analysis\+Request}} (int \mbox{\hyperlink{class_quantitative_distance_analysis_request_a548457e0701e022af7e5db430a291bff}{id\+\_\+a}}, int \mbox{\hyperlink{class_quantitative_distance_analysis_request_a8d7ee193db4926356f87cebbab836786}{id\+\_\+b}}, float t\+\_\+sampling\+\_\+rate)
+\item 
+void \mbox{\hyperlink{class_quantitative_distance_analysis_request_ad2526491affb23c1b53a0c1c6a364a61}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file) override
+\item 
+void \mbox{\hyperlink{class_quantitative_distance_analysis_request_a3ccb16d932be2eba519604754bd779db}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_quantitative_distance_analysis_request_af9ec15d5dca39ca8bc468733de285831}{clone}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_quantitative_distance_analysis_request_a75b313a39421349e9c1ff933c9127b1c}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const override
+\item 
+void \mbox{\hyperlink{class_quantitative_distance_analysis_request_aba96cc80c39dc7abb25a8c691e481939}{clear\+\_\+recent\+\_\+data}} () override
+\item 
+\mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} \mbox{\hyperlink{class_quantitative_distance_analysis_request_a880c9d813a9963c5f36b6a8701c31bc9}{get\+\_\+type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_quantitative_transform_analysis_request}{Quantitative\+Transform\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quantitative_transform_analysis_request_a1eacc12fb71a574c10e25ac422b6ef59}{Quantitative\+Transform\+Analysis\+Request}} (float t\+\_\+sampling\+\_\+rate)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quantitative_analysis_request_aab548255e6498d2859d43916546e1aff}{Quantitative\+Analysis\+Request}} (float t\+\_\+sampling\+\_\+rate)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_based_value}{Time\+Based\+Value}} $>$ \mbox{\hyperlink{class_quantitative_analysis_request_a5433105049c551db583df0f24b91ad61}{get\+\_\+result}} () const
+\item 
+void \mbox{\hyperlink{class_quantitative_analysis_request_a815fa0f990f176d5746a119d6d6a82b9}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_quantitative_distance_analysis_request_a548457e0701e022af7e5db430a291bff}{id\+\_\+a}}
+\item 
+int \mbox{\hyperlink{class_quantitative_distance_analysis_request_a8d7ee193db4926356f87cebbab836786}{id\+\_\+b}}
+\item 
+bool \mbox{\hyperlink{class_quantitative_distance_analysis_request_a75281b6f5b62e81b956171d19c302c7f}{present\+\_\+a}} = false
+\item 
+bool \mbox{\hyperlink{class_quantitative_distance_analysis_request_abc72ee0667a1ed6ac2c6b966ef2439e7}{present\+\_\+b}} = false
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_quantitative_distance_analysis_request_a633b4a5fd9829efc8ce2cf5f0562142c}{current\+\_\+a}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_quantitative_distance_analysis_request_a867aae68d8f2ee6c2550d473211bce68}{current\+\_\+b}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_quantitative_distance_analysis_request_aca3831f5f47f514ab7e0c72595d41645}{last\+\_\+a}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_quantitative_distance_analysis_request_a675444899f09a1298462c5483f473099}{last\+\_\+b}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_based_value}{Time\+Based\+Value}} $>$ \mbox{\hyperlink{class_quantitative_analysis_request_a2d9e013d208cf277ee3a3d45796789a0}{values}}
+\item 
+float \mbox{\hyperlink{class_quantitative_analysis_request_a140e1d3f1bd1dfaec350451cbd56b822}{temporal\+\_\+sampling\+\_\+rate}}
+\item 
+float \mbox{\hyperlink{class_quantitative_analysis_request_ad26cf4d06894a90bf6ce08b658580d86}{last\+\_\+value\+\_\+time}} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_quantitative_distance_analysis_request_a92ee485104ebc44583dbbd13fdedb50a}\label{class_quantitative_distance_analysis_request_a92ee485104ebc44583dbbd13fdedb50a} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{QuantitativeDistanceAnalysisRequest()}{QuantitativeDistanceAnalysisRequest()}}
+{\footnotesize\ttfamily Quantitative\+Distance\+Analysis\+Request\+::\+Quantitative\+Distance\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+a,  }\item[{int}]{id\+\_\+b,  }\item[{float}]{t\+\_\+sampling\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_quantitative_distance_analysis_request_aba96cc80c39dc7abb25a8c691e481939}\label{class_quantitative_distance_analysis_request_aba96cc80c39dc7abb25a8c691e481939} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!clear\_recent\_data@{clear\_recent\_data}}
+\index{clear\_recent\_data@{clear\_recent\_data}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clear\_recent\_data()}{clear\_recent\_data()}}
+{\footnotesize\ttfamily void Quantitative\+Distance\+Analysis\+Request\+::clear\+\_\+recent\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_quantitative_transform_analysis_request_a124640367a1b032d7b106b2fb163decf}{Quantitative\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_distance_analysis_request_af9ec15d5dca39ca8bc468733de285831}\label{class_quantitative_distance_analysis_request_af9ec15d5dca39ca8bc468733de285831} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!clone@{clone}}
+\index{clone@{clone}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$ Quantitative\+Distance\+Analysis\+Request\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_quantitative_analysis_request_a4be1f8e3862fa7a3aff7462ea6b03028}{Quantitative\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_distance_analysis_request_a75b313a39421349e9c1ff933c9127b1c}\label{class_quantitative_distance_analysis_request_a75b313a39421349e9c1ff933c9127b1c} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily std\+::string Quantitative\+Distance\+Analysis\+Request\+::get\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_quantitative_analysis_request_a95d9cdee3e4fa673cb216b67acdd7b6b}{Quantitative\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_distance_analysis_request_a880c9d813a9963c5f36b6a8701c31bc9}\label{class_quantitative_distance_analysis_request_a880c9d813a9963c5f36b6a8701c31bc9} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} Quantitative\+Distance\+Analysis\+Request\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_quantitative_transform_analysis_request_ab2734b5321b7bf729438deb16e212a5b}{Quantitative\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_distance_analysis_request_a3ccb16d932be2eba519604754bd779db}\label{class_quantitative_distance_analysis_request_a3ccb16d932be2eba519604754bd779db} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Quantitative\+Distance\+Analysis\+Request\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{t\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{s\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242}{Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_distance_analysis_request_ad2526491affb23c1b53a0c1c6a364a61}\label{class_quantitative_distance_analysis_request_ad2526491affb23c1b53a0c1c6a364a61} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!update\_parameters@{update\_parameters}}
+\index{update\_parameters@{update\_parameters}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{update\_parameters()}{update\_parameters()}}
+{\footnotesize\ttfamily void Quantitative\+Distance\+Analysis\+Request\+::update\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{original\+\_\+meta\+\_\+file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{new\+\_\+meta\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{Analysis\+Request}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_quantitative_distance_analysis_request_a633b4a5fd9829efc8ce2cf5f0562142c}\label{class_quantitative_distance_analysis_request_a633b4a5fd9829efc8ce2cf5f0562142c} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!current\_a@{current\_a}}
+\index{current\_a@{current\_a}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{current\_a}{current\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Quantitative\+Distance\+Analysis\+Request\+::current\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_distance_analysis_request_a867aae68d8f2ee6c2550d473211bce68}\label{class_quantitative_distance_analysis_request_a867aae68d8f2ee6c2550d473211bce68} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!current\_b@{current\_b}}
+\index{current\_b@{current\_b}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{current\_b}{current\_b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Quantitative\+Distance\+Analysis\+Request\+::current\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_distance_analysis_request_a548457e0701e022af7e5db430a291bff}\label{class_quantitative_distance_analysis_request_a548457e0701e022af7e5db430a291bff} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!id\_a@{id\_a}}
+\index{id\_a@{id\_a}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id\_a}{id\_a}}
+{\footnotesize\ttfamily int Quantitative\+Distance\+Analysis\+Request\+::id\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_distance_analysis_request_a8d7ee193db4926356f87cebbab836786}\label{class_quantitative_distance_analysis_request_a8d7ee193db4926356f87cebbab836786} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!id\_b@{id\_b}}
+\index{id\_b@{id\_b}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id\_b}{id\_b}}
+{\footnotesize\ttfamily int Quantitative\+Distance\+Analysis\+Request\+::id\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_distance_analysis_request_aca3831f5f47f514ab7e0c72595d41645}\label{class_quantitative_distance_analysis_request_aca3831f5f47f514ab7e0c72595d41645} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!last\_a@{last\_a}}
+\index{last\_a@{last\_a}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{last\_a}{last\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Quantitative\+Distance\+Analysis\+Request\+::last\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_distance_analysis_request_a675444899f09a1298462c5483f473099}\label{class_quantitative_distance_analysis_request_a675444899f09a1298462c5483f473099} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!last\_b@{last\_b}}
+\index{last\_b@{last\_b}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{last\_b}{last\_b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Quantitative\+Distance\+Analysis\+Request\+::last\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_distance_analysis_request_a75281b6f5b62e81b956171d19c302c7f}\label{class_quantitative_distance_analysis_request_a75281b6f5b62e81b956171d19c302c7f} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!present\_a@{present\_a}}
+\index{present\_a@{present\_a}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{present\_a}{present\_a}}
+{\footnotesize\ttfamily bool Quantitative\+Distance\+Analysis\+Request\+::present\+\_\+a = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_distance_analysis_request_abc72ee0667a1ed6ac2c6b966ef2439e7}\label{class_quantitative_distance_analysis_request_abc72ee0667a1ed6ac2c6b966ef2439e7} 
+\index{QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}!present\_b@{present\_b}}
+\index{present\_b@{present\_b}!QuantitativeDistanceAnalysisRequest@{QuantitativeDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{present\_b}{present\_b}}
+{\footnotesize\ttfamily bool Quantitative\+Distance\+Analysis\+Request\+::present\+\_\+b = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Quantitative\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_quantitative_distance_analysis_request_8h}{Quantitative\+Distance\+Analysis\+Request.\+h}}\item 
+Src/\+Analysis/\+Quantitative\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_quantitative_distance_analysis_request_8cpp}{Quantitative\+Distance\+Analysis\+Request.\+cpp}}\end{DoxyCompactItemize}

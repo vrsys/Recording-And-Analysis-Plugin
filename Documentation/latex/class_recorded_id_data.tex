@@ -1,0 +1,115 @@
+\doxysection{Recorded\+Id\+Data Class Reference}
+\hypertarget{class_recorded_id_data}{}\label{class_recorded_id_data}\index{RecordedIdData@{RecordedIdData}}
+
+
+{\ttfamily \#include $<$Recorded\+Id\+Data.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_recorded_id_data_ab58ecfd0295378267697aec168454e25}{\texorpdfstring{$\sim$}{\string~}\+Recorded\+Id\+Data}} ()
+\item 
+\mbox{\hyperlink{class_recorded_id_data_af4cdce0872bd277d9be99b140d0af698}{Recorded\+Id\+Data}} (int new\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_recorded_id_data_aa3be92939866f408aba30de3e09333fc}{add\+\_\+data}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ data)
+\item 
+int \mbox{\hyperlink{class_recorded_id_data_a422f8b09ce0ae209d65fbe3c75befd13}{get\+\_\+id}} () const
+\item 
+void \mbox{\hyperlink{class_recorded_id_data_a9dbf00c7f6fc65771182f5023c1ae97e}{sort\+\_\+data\+\_\+by\+\_\+time}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ $>$ \mbox{\hyperlink{class_recorded_id_data_a31a73467854a352ecedf164640e19065}{loaded\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em stores all data with the corresponding id \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_recorded_id_data_a422fa687bd81aa053adb913e6177c35a}{id}} = -\/1
+\begin{DoxyCompactList}\small\item\em id for which data is stored \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_recorded_id_data_aa294c8cc224266330230dfbf42520f67}{debug}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_recorded_id_data_af599949667fdb51d623fe9ce5455e7a9}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_recorded_id_data}{Recorded\+Id\+Data}} \&recorded\+\_\+id\+\_\+data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_recorded_id_data_ab58ecfd0295378267697aec168454e25}\label{class_recorded_id_data_ab58ecfd0295378267697aec168454e25} 
+\index{RecordedIdData@{RecordedIdData}!````~RecordedIdData@{\texorpdfstring{$\sim$}{\string~}RecordedIdData}}
+\index{````~RecordedIdData@{\texorpdfstring{$\sim$}{\string~}RecordedIdData}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RecordedIdData()}{\string~RecordedIdData()}}
+{\footnotesize\ttfamily Recorded\+Id\+Data\+::\texorpdfstring{$\sim$}{\string~}\+Recorded\+Id\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_recorded_id_data_af4cdce0872bd277d9be99b140d0af698}\label{class_recorded_id_data_af4cdce0872bd277d9be99b140d0af698} 
+\index{RecordedIdData@{RecordedIdData}!RecordedIdData@{RecordedIdData}}
+\index{RecordedIdData@{RecordedIdData}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{RecordedIdData()}{RecordedIdData()}}
+{\footnotesize\ttfamily Recorded\+Id\+Data\+::\+Recorded\+Id\+Data (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_recorded_id_data_aa3be92939866f408aba30de3e09333fc}\label{class_recorded_id_data_aa3be92939866f408aba30de3e09333fc} 
+\index{RecordedIdData@{RecordedIdData}!add\_data@{add\_data}}
+\index{add\_data@{add\_data}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{add\_data()}{add\_data()}}
+{\footnotesize\ttfamily void Recorded\+Id\+Data\+::add\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_recorded_id_data_a422f8b09ce0ae209d65fbe3c75befd13}\label{class_recorded_id_data_a422f8b09ce0ae209d65fbe3c75befd13} 
+\index{RecordedIdData@{RecordedIdData}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily int Recorded\+Id\+Data\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_recorded_id_data_a9dbf00c7f6fc65771182f5023c1ae97e}\label{class_recorded_id_data_a9dbf00c7f6fc65771182f5023c1ae97e} 
+\index{RecordedIdData@{RecordedIdData}!sort\_data\_by\_time@{sort\_data\_by\_time}}
+\index{sort\_data\_by\_time@{sort\_data\_by\_time}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{sort\_data\_by\_time()}{sort\_data\_by\_time()}}
+{\footnotesize\ttfamily void Recorded\+Id\+Data\+::sort\+\_\+data\+\_\+by\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_recorded_id_data_af599949667fdb51d623fe9ce5455e7a9}\label{class_recorded_id_data_af599949667fdb51d623fe9ce5455e7a9} 
+\index{RecordedIdData@{RecordedIdData}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_recorded_id_data}{Recorded\+Id\+Data}} \&}]{recorded\+\_\+id\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_recorded_id_data_aa294c8cc224266330230dfbf42520f67}\label{class_recorded_id_data_aa294c8cc224266330230dfbf42520f67} 
+\index{RecordedIdData@{RecordedIdData}!debug@{debug}}
+\index{debug@{debug}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily bool Recorded\+Id\+Data\+::debug = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_recorded_id_data_a422fa687bd81aa053adb913e6177c35a}\label{class_recorded_id_data_a422fa687bd81aa053adb913e6177c35a} 
+\index{RecordedIdData@{RecordedIdData}!id@{id}}
+\index{id@{id}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Recorded\+Id\+Data\+::id = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+id for which data is stored 
+
+\Hypertarget{class_recorded_id_data_a31a73467854a352ecedf164640e19065}\label{class_recorded_id_data_a31a73467854a352ecedf164640e19065} 
+\index{RecordedIdData@{RecordedIdData}!loaded\_data@{loaded\_data}}
+\index{loaded\_data@{loaded\_data}!RecordedIdData@{RecordedIdData}}
+\doxysubsubsection{\texorpdfstring{loaded\_data}{loaded\_data}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}$>$ $>$ Recorded\+Id\+Data\+::loaded\+\_\+data}
+
+
+
+stores all data with the corresponding id 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\+Base\+Structure/\mbox{\hyperlink{_recorded_id_data_8h}{Recorded\+Id\+Data.\+h}}\end{DoxyCompactItemize}

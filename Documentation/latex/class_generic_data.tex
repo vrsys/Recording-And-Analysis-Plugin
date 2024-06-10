@@ -1,0 +1,195 @@
+\doxysection{Generic\+Data Class Reference}
+\hypertarget{class_generic_data}{}\label{class_generic_data}\index{GenericData@{GenericData}}
+
+
+{\ttfamily \#include $<$Generic\+Data.\+h$>$}
+
+Inheritance diagram for Generic\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_generic_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generic_data_a53d266970be68cd208cabbf1b029b96b}{Generic\+Data}} ()
+\item 
+\mbox{\hyperlink{class_generic_data_a4a02d657f3d5125ed598e2ebc001b217}{Generic\+Data}} (\mbox{\hyperlink{struct_generic_d_t_o}{Generic\+DTO}} const \&dto)
+\item 
+\mbox{\hyperlink{class_generic_data_a4cdec4a96ca94bc87732460fefbd5114}{Generic\+Data}} (float \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}}, int \mbox{\hyperlink{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f}{id}}, int \texorpdfstring{$\ast$}{*}i\+\_\+arr, float \texorpdfstring{$\ast$}{*}f\+\_\+arr, char \texorpdfstring{$\ast$}{*}c\+\_\+arr)
+\item 
+\mbox{\hyperlink{class_generic_data_a07639f99cc55f0f11feb6a87c5cbb132}{Generic\+Data}} (const \mbox{\hyperlink{class_generic_data}{Generic\+Data}} \&data)
+\item 
+\mbox{\hyperlink{class_generic_data_a58f3e1d127e873d91a5ad07f19e60bfe}{Generic\+Data}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_generic_data}{Generic\+Data}} $>$ data)
+\item 
+\mbox{\hyperlink{class_generic_data_a6ddd1519e903bb1dfe0de0997d2c2890}{\texorpdfstring{$\sim$}{\string~}\+Generic\+Data}} () override
+\item 
+std\+::ofstream \& \mbox{\hyperlink{class_generic_data_a855ddfa0ed829ae9baf8ded67b61242e}{write}} (std\+::ofstream \&ofs) const override
+\item 
+std\+::ifstream \& \mbox{\hyperlink{class_generic_data_a774453ec791b85ed0a42f1cf19635523}{read}} (std\+::ifstream \&ifs) override
+\item 
+void \mbox{\hyperlink{class_generic_data_a17e00eae448bb8a005a88cea4cc638bd}{update\+\_\+data}} (int \texorpdfstring{$\ast$}{*}i\+\_\+arr, float \texorpdfstring{$\ast$}{*}f\+\_\+arr, char \texorpdfstring{$\ast$}{*}c\+\_\+arr)
+\item 
+\mbox{\hyperlink{class_generic_data}{Generic\+Data}} \mbox{\hyperlink{class_generic_data_a54dbf7548f1d88e8950712009de75d0b}{interpolate}} (const \mbox{\hyperlink{class_generic_data}{Generic\+Data}} \&next\+\_\+data, float t)
+\item 
+\mbox{\hyperlink{class_generic_data}{Generic\+Data}} \mbox{\hyperlink{class_generic_data_acbe1bc2ac6b3a03e32a85c3bb596e0c4}{interpolate}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_generic_data}{Generic\+Data}} $>$ next\+\_\+data, float t)
+\item 
+void \mbox{\hyperlink{class_generic_data_a80a8148ea745ad5da016223ae14b4c89}{write\+\_\+to\+\_\+stream}} (std\+::ofstream \&file) const override
+\item 
+\mbox{\hyperlink{struct_generic_d_t_o}{Generic\+DTO}} \mbox{\hyperlink{class_generic_data_a43899bc91621e21161a429b93b7c5eb2}{to\+\_\+dto}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_recordable_data_a7e95a55e4cb5d09cc3e852fac49c32fa}{Recordable\+Data}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_recordable_data_af98b164c2c1dadb964ef3925e5c1bdc1}{\texorpdfstring{$\sim$}{\string~}\+Recordable\+Data}} ()=default
+\item 
+\mbox{\hyperlink{class_recordable_data_ab341dd4bc935d9c4f13c0131157c46dc}{Recordable\+Data}} (int i, float t)
+\item 
+bool \mbox{\hyperlink{class_recordable_data_a90be1a06b561cde835c22c3a1fc0d009}{operator$<$}} (\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} const \&data) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_generic_data_a5c0ff5930f1c20566294104d27ab38f9}{int\+\_\+ar}} \mbox{[}\mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\+\_\+c}}\mbox{]}
+\item 
+float \mbox{\hyperlink{class_generic_data_aa469100bdb1a366f29b95e9c8955ed30}{float\+\_\+ar}} \mbox{[}\mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\+\_\+c}}\mbox{]}
+\item 
+char \mbox{\hyperlink{class_generic_data_a1722677c55e5477242b5025649ffe45a}{char\+\_\+ar}} \mbox{[}\mbox{\hyperlink{_generic_data_8h_aeb0c3685b857ad530453a1e5e666cbc1}{char\+\_\+c}}\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}} = -\/1.\+0f
+\item 
+int \mbox{\hyperlink{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f}{id}} = -\/1
+\item 
+bool \mbox{\hyperlink{class_recordable_data_a97a09d7f8e5390c4ad98ee9bccab7e05}{interpolated\+\_\+data}} = false
+\item 
+int \mbox{\hyperlink{class_recordable_data_a108952a5624ca94f3fbecf3e75be3351}{layer}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_generic_data_a53d266970be68cd208cabbf1b029b96b}\label{class_generic_data_a53d266970be68cd208cabbf1b029b96b} 
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{GenericData()}{GenericData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Generic\+Data\+::\+Generic\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_generic_data_a4a02d657f3d5125ed598e2ebc001b217}\label{class_generic_data_a4a02d657f3d5125ed598e2ebc001b217} 
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{GenericData()}{GenericData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Generic\+Data\+::\+Generic\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_generic_d_t_o}{Generic\+DTO}} const \&}]{dto }\end{DoxyParamCaption})}
+
+\Hypertarget{class_generic_data_a4cdec4a96ca94bc87732460fefbd5114}\label{class_generic_data_a4cdec4a96ca94bc87732460fefbd5114} 
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{GenericData()}{GenericData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Generic\+Data\+::\+Generic\+Data (\begin{DoxyParamCaption}\item[{float}]{time,  }\item[{int}]{id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{i\+\_\+arr,  }\item[{float \texorpdfstring{$\ast$}{*}}]{f\+\_\+arr,  }\item[{char \texorpdfstring{$\ast$}{*}}]{c\+\_\+arr }\end{DoxyParamCaption})}
+
+\Hypertarget{class_generic_data_a07639f99cc55f0f11feb6a87c5cbb132}\label{class_generic_data_a07639f99cc55f0f11feb6a87c5cbb132} 
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{GenericData()}{GenericData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Generic\+Data\+::\+Generic\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_generic_data}{Generic\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_generic_data_a58f3e1d127e873d91a5ad07f19e60bfe}\label{class_generic_data_a58f3e1d127e873d91a5ad07f19e60bfe} 
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\index{GenericData@{GenericData}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{GenericData()}{GenericData()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Generic\+Data\+::\+Generic\+Data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_generic_data}{Generic\+Data}} $>$}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_generic_data_a6ddd1519e903bb1dfe0de0997d2c2890}\label{class_generic_data_a6ddd1519e903bb1dfe0de0997d2c2890} 
+\index{GenericData@{GenericData}!````~GenericData@{\texorpdfstring{$\sim$}{\string~}GenericData}}
+\index{````~GenericData@{\texorpdfstring{$\sim$}{\string~}GenericData}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GenericData()}{\string~GenericData()}}
+{\footnotesize\ttfamily Generic\+Data\+::\texorpdfstring{$\sim$}{\string~}\+Generic\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_generic_data_a54dbf7548f1d88e8950712009de75d0b}\label{class_generic_data_a54dbf7548f1d88e8950712009de75d0b} 
+\index{GenericData@{GenericData}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_generic_data}{Generic\+Data}} Generic\+Data\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_generic_data}{Generic\+Data}} \&}]{next\+\_\+data,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+\Hypertarget{class_generic_data_acbe1bc2ac6b3a03e32a85c3bb596e0c4}\label{class_generic_data_acbe1bc2ac6b3a03e32a85c3bb596e0c4} 
+\index{GenericData@{GenericData}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_generic_data}{Generic\+Data}} Generic\+Data\+::interpolate (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_generic_data}{Generic\+Data}} $>$}]{next\+\_\+data,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+\Hypertarget{class_generic_data_a774453ec791b85ed0a42f1cf19635523}\label{class_generic_data_a774453ec791b85ed0a42f1cf19635523} 
+\index{GenericData@{GenericData}!read@{read}}
+\index{read@{read}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily std\+::ifstream \& Generic\+Data\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a629b8968c09ea12f82be4112b7cc1a71}{Recordable\+Data}}.
+
+\Hypertarget{class_generic_data_a43899bc91621e21161a429b93b7c5eb2}\label{class_generic_data_a43899bc91621e21161a429b93b7c5eb2} 
+\index{GenericData@{GenericData}!to\_dto@{to\_dto}}
+\index{to\_dto@{to\_dto}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{to\_dto()}{to\_dto()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_generic_d_t_o}{Generic\+DTO}} Generic\+Data\+::to\+\_\+dto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_generic_data_a17e00eae448bb8a005a88cea4cc638bd}\label{class_generic_data_a17e00eae448bb8a005a88cea4cc638bd} 
+\index{GenericData@{GenericData}!update\_data@{update\_data}}
+\index{update\_data@{update\_data}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{update\_data()}{update\_data()}}
+{\footnotesize\ttfamily void Generic\+Data\+::update\+\_\+data (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{i\+\_\+arr,  }\item[{float \texorpdfstring{$\ast$}{*}}]{f\+\_\+arr,  }\item[{char \texorpdfstring{$\ast$}{*}}]{c\+\_\+arr }\end{DoxyParamCaption})}
+
+\Hypertarget{class_generic_data_a855ddfa0ed829ae9baf8ded67b61242e}\label{class_generic_data_a855ddfa0ed829ae9baf8ded67b61242e} 
+\index{GenericData@{GenericData}!write@{write}}
+\index{write@{write}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily std\+::ofstream \& Generic\+Data\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a4c719562d1d378e83aa4f751dff67fcb}{Recordable\+Data}}.
+
+\Hypertarget{class_generic_data_a80a8148ea745ad5da016223ae14b4c89}\label{class_generic_data_a80a8148ea745ad5da016223ae14b4c89} 
+\index{GenericData@{GenericData}!write\_to\_stream@{write\_to\_stream}}
+\index{write\_to\_stream@{write\_to\_stream}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{write\_to\_stream()}{write\_to\_stream()}}
+{\footnotesize\ttfamily void Generic\+Data\+::write\+\_\+to\+\_\+stream (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a94dd274caf8c8168f686653f48063d71}{Recordable\+Data}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_generic_data_a1722677c55e5477242b5025649ffe45a}\label{class_generic_data_a1722677c55e5477242b5025649ffe45a} 
+\index{GenericData@{GenericData}!char\_ar@{char\_ar}}
+\index{char\_ar@{char\_ar}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{char\_ar}{char\_ar}}
+{\footnotesize\ttfamily char Generic\+Data\+::char\+\_\+ar\mbox{[}\mbox{\hyperlink{_generic_data_8h_aeb0c3685b857ad530453a1e5e666cbc1}{char\+\_\+c}}\mbox{]}}
+
+\Hypertarget{class_generic_data_aa469100bdb1a366f29b95e9c8955ed30}\label{class_generic_data_aa469100bdb1a366f29b95e9c8955ed30} 
+\index{GenericData@{GenericData}!float\_ar@{float\_ar}}
+\index{float\_ar@{float\_ar}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{float\_ar}{float\_ar}}
+{\footnotesize\ttfamily float Generic\+Data\+::float\+\_\+ar\mbox{[}\mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\+\_\+c}}\mbox{]}}
+
+\Hypertarget{class_generic_data_a5c0ff5930f1c20566294104d27ab38f9}\label{class_generic_data_a5c0ff5930f1c20566294104d27ab38f9} 
+\index{GenericData@{GenericData}!int\_ar@{int\_ar}}
+\index{int\_ar@{int\_ar}!GenericData@{GenericData}}
+\doxysubsubsection{\texorpdfstring{int\_ar}{int\_ar}}
+{\footnotesize\ttfamily int Generic\+Data\+::int\+\_\+ar\mbox{[}\mbox{\hyperlink{_generic_data_8h_ac24a6ed11cbdeef602f084ab55e9c844}{num\+\_\+c}}\mbox{]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\+Generic/\mbox{\hyperlink{_generic_data_8h}{Generic\+Data.\+h}}\item 
+Src/\+Recording/\+Generic/\mbox{\hyperlink{_generic_data_8cpp}{Generic\+Data.\+cpp}}\end{DoxyCompactItemize}

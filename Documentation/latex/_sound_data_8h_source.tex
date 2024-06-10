@@ -1,0 +1,76 @@
+\doxysection{Sound\+Data.\+h}
+\hypertarget{_sound_data_8h_source}{}\label{_sound_data_8h_source}\index{Src/Recording/Sound/SoundData.h@{Src/Recording/Sound/SoundData.h}}
+\mbox{\hyperlink{_sound_data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 18.03.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_SOUNDDATA\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_SOUNDDATA\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_recorded_id_data_8h}{Recording/BaseStructure/RecordedIdData.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_log_8h}{DebugLog.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}glm/glm.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}glm/gtc/quaternion.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}glm/gtx/quaternion.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_sound_d_t_o}{SoundDTO}}\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sound_d_t_o_abd75e282e035bdd45759e64a6d684582}{id}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_sound_d_t_o_a5487b26a49245b25e5e4dce7d91265db}{t}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_sound_d_t_o_a807818d25d25a17dd539456ae73dfa99}{s\_t}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_sound_d_t_o_a6c1bd8d907ea6148e96a1e32ba00fd18}{e\_t}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sound_d_t_o_a573edf7b39cdbd272810447d628ae627}{s\_n}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sound_d_t_o_a37818cf0ef345e89415076e1d3c836fb}{s\_i}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sound_d_t_o_aa368ca968326cbcda0705df9b237d26a}{s\_r}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sound_d_t_o_a5827144e88477e8f918d9065b62dc147}{c\_n}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sound_d_t_o_a18d52d6ba1b1be91871895451f9a1ba4}{c\_go\_id}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_sound_d_t_o_af2842e1ec4b2ef76f06d1e762bf2aa2d}{s\_d}}[4800];}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sound_d_t_o_a96742ad92fd57b910e23efba6156ffea}{layer}}\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_sound_d_t_o_a97c2a38e0b3113f329b365c51176f484}{dto\_layout}}()\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}SoundDTO:\ int\ id;float\ t;float\ s\_t;float\ e\_t;int\ s\_n;int\ s\_i;int\ s\_r;int\ c\_n;int\ c\_go\_id;float\ s\_d[4800];int\ layer\ =\ 0;"{}};}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sound_data}{SoundData}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_recordable_data}{RecordableData}}\{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sound_data_add23b7bf7f5ad665f240a70949f20873}{start\_time}}\ =\ -\/1.0f;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sound_data_ad6c5aecf930aea91cfed055cc3a86616}{end\_time}}\ =\ -\/1.0f;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_data_a376030334c26bc23802e2cc1253cf910}{sample\_num}}\ =\ -\/1;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_data_a4b8ffcd40ab9ef160248f7790d38e678}{start\_index}}\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_data_aa15ba206710b75db1ae97265f51b42ff}{sampling\_rate}}\ =\ -\/1;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_data_a6735224552b8452f64870051d9eb536d}{channel\_num}}\ =\ -\/1;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_data_a12ebd8de9ab90efd8e88414df535352e}{corresponding\_gameobject\_id}};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ assuming\ that\ at\ a\ sampling\ rate\ of\ at\ most\ 48.000\ we\ record\ with\ at\ least\ 10\ steps\ per\ second}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_sound_data_a0ae4a941ed36ed4e653f9dc2740e2377}{sound\_data}}\ [4800];}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_sound_data_a50a82ff0bb0674aaf7d95c5d5b6cb2f5}{SoundData}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_sound_data_a50a82ff0bb0674aaf7d95c5d5b6cb2f5}{SoundData}}(\mbox{\hyperlink{struct_sound_d_t_o}{SoundDTO}}\ \textcolor{keyword}{const}\&\ dto);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_sound_data_a50a82ff0bb0674aaf7d95c5d5b6cb2f5}{SoundData}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{float}\ t,\ \textcolor{keywordtype}{int}\ s\_n,\ \textcolor{keywordtype}{int}\ s\_i,\ \textcolor{keywordtype}{int}\ s\_r,\ \textcolor{keywordtype}{int}\ c\_n,\ \textcolor{keywordtype}{int}\ c\_go\_id,\ \textcolor{keywordtype}{float}*\ data);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_sound_data_a50a82ff0bb0674aaf7d95c5d5b6cb2f5}{SoundData}}(std::shared\_ptr<SoundData>\ data);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_sound_data_a05c74b7ea25f587d7268769b044a3609}{\string~SoundData}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ std::ofstream\&\ \mbox{\hyperlink{class_sound_data_a0a0edc82c9037e8a715f531914bcea62}{write}}(std::ofstream\&\ ofs)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ std::ifstream\&\ \mbox{\hyperlink{class_sound_data_a01570e0cc7a59ae4505bc576a74956aa}{read}}(std::ifstream\&\ ifs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_sound_data}{SoundData}}\ \mbox{\hyperlink{class_sound_data_ae23e082d6145a8fc4450fa5d2a56bea3}{interpolate}}(\mbox{\hyperlink{class_sound_data}{SoundData}}\ next\_sound,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_sound_data}{SoundData}}\ \mbox{\hyperlink{class_sound_data_ae23e082d6145a8fc4450fa5d2a56bea3}{interpolate}}(std::shared\_ptr<SoundData>\ next\_sound,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sound_data_a47c0b461b2cd076add3c00a1879f8e0d}{write\_to\_stream}}(std::ofstream\&\ file)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{struct_sound_d_t_o}{SoundDTO}}\ \mbox{\hyperlink{class_sound_data_add4b8e3098c63402f13db6f8766aee46}{to\_dto}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_SOUNDDATA\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,134 @@
+\doxysection{Negated\+Interval\+Analysis\+Request Class Reference}
+\hypertarget{class_negated_interval_analysis_request}{}\label{class_negated_interval_analysis_request}\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Negated\+Interval\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Negated\+Interval\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_negated_interval_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_negated_interval_analysis_request_aca918ba8f790258633cfc4ceb93f0eda}{Negated\+Interval\+Analysis\+Request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ request)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_negated_interval_analysis_request_aed3818ad27c6e79fbe294bf25eb26ba0}{get\+\_\+result}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_negated_interval_analysis_request_a8228d70f299957a7bcab9192c39a1a35}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const override
+\item 
+void \mbox{\hyperlink{class_negated_interval_analysis_request_a3e52771bcd9ab5b2633a6e1907092826}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file) override
+\item 
+void \mbox{\hyperlink{class_negated_interval_analysis_request_a02e4e7eebfbc9d647581e9df56b34f7d}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_negated_interval_analysis_request_ae20c4a1447c2dfffb57cfddc9caf2ede}{clone}} () const override
+\item 
+void \mbox{\hyperlink{class_negated_interval_analysis_request_aeae7f2ff4e21e76305eb072fba773497}{clear\+\_\+recent\+\_\+data}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_interval_analysis_request_a9961447a702d030a9f8b8d7d204b9568}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_negated_interval_analysis_request_af802bce834a7c574739b9e1b12d52cda}{original\+\_\+request}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_ac34fb1a86b659287180cb91c8a2608f1}{intervals}}
+\item 
+\mbox{\hyperlink{struct_time_interval}{Time\+Interval}} \mbox{\hyperlink{class_interval_analysis_request_a92538cc08380b17ce51d4834d846fab8}{current\+Interval}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_negated_interval_analysis_request_aca918ba8f790258633cfc4ceb93f0eda}\label{class_negated_interval_analysis_request_aca918ba8f790258633cfc4ceb93f0eda} 
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{NegatedIntervalAnalysisRequest()}{NegatedIntervalAnalysisRequest()}}
+{\footnotesize\ttfamily Negated\+Interval\+Analysis\+Request\+::\+Negated\+Interval\+Analysis\+Request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_negated_interval_analysis_request_aeae7f2ff4e21e76305eb072fba773497}\label{class_negated_interval_analysis_request_aeae7f2ff4e21e76305eb072fba773497} 
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!clear\_recent\_data@{clear\_recent\_data}}
+\index{clear\_recent\_data@{clear\_recent\_data}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clear\_recent\_data()}{clear\_recent\_data()}}
+{\footnotesize\ttfamily void Negated\+Interval\+Analysis\+Request\+::clear\+\_\+recent\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a28952cc890dc5eb57cbd7f9d20b6e427}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_negated_interval_analysis_request_ae20c4a1447c2dfffb57cfddc9caf2ede}\label{class_negated_interval_analysis_request_ae20c4a1447c2dfffb57cfddc9caf2ede} 
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!clone@{clone}}
+\index{clone@{clone}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ Negated\+Interval\+Analysis\+Request\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a565b40048c51b3926999fe3ee878c06e}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_negated_interval_analysis_request_a8228d70f299957a7bcab9192c39a1a35}\label{class_negated_interval_analysis_request_a8228d70f299957a7bcab9192c39a1a35} 
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily std\+::string Negated\+Interval\+Analysis\+Request\+::get\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778}{Analysis\+Request}}.
+
+\Hypertarget{class_negated_interval_analysis_request_aed3818ad27c6e79fbe294bf25eb26ba0}\label{class_negated_interval_analysis_request_aed3818ad27c6e79fbe294bf25eb26ba0} 
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!get\_result@{get\_result}}
+\index{get\_result@{get\_result}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_result()}{get\_result()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ Negated\+Interval\+Analysis\+Request\+::get\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_interval_analysis_request_adc02e3fee418698665da22c2b9e38763}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_negated_interval_analysis_request_a02e4e7eebfbc9d647581e9df56b34f7d}\label{class_negated_interval_analysis_request_a02e4e7eebfbc9d647581e9df56b34f7d} 
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Negated\+Interval\+Analysis\+Request\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{t\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{s\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242}{Analysis\+Request}}.
+
+\Hypertarget{class_negated_interval_analysis_request_a3e52771bcd9ab5b2633a6e1907092826}\label{class_negated_interval_analysis_request_a3e52771bcd9ab5b2633a6e1907092826} 
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!update\_parameters@{update\_parameters}}
+\index{update\_parameters@{update\_parameters}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{update\_parameters()}{update\_parameters()}}
+{\footnotesize\ttfamily void Negated\+Interval\+Analysis\+Request\+::update\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{original\+\_\+meta\+\_\+file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{new\+\_\+meta\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{Analysis\+Request}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_negated_interval_analysis_request_af802bce834a7c574739b9e1b12d52cda}\label{class_negated_interval_analysis_request_af802bce834a7c574739b9e1b12d52cda} 
+\index{NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}!original\_request@{original\_request}}
+\index{original\_request@{original\_request}!NegatedIntervalAnalysisRequest@{NegatedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{original\_request}{original\_request}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}$>$ Negated\+Interval\+Analysis\+Request\+::original\+\_\+request\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Interval\+Analysis/\mbox{\hyperlink{_negated_interval_analysis_request_8h}{Negated\+Interval\+Analysis\+Request.\+h}}\item 
+Src/\+Analysis/\+Interval\+Analysis/\mbox{\hyperlink{_negated_interval_analysis_request_8cpp}{Negated\+Interval\+Analysis\+Request.\+cpp}}\end{DoxyCompactItemize}

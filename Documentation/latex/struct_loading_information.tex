@@ -1,0 +1,162 @@
+\doxysection{Loading\+Information Struct Reference}
+\hypertarget{struct_loading_information}{}\label{struct_loading_information}\index{LoadingInformation@{LoadingInformation}}
+
+
+{\ttfamily \#include $<$Ring\+Buffer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_loading_information_afe54f8e6f42284e95ed30c68f0eb8144}{\texorpdfstring{$\sim$}{\string~}\+Loading\+Information}} ()
+\item 
+void \mbox{\hyperlink{struct_loading_information_aa54f8fbfb0edebe0e1878aa6ee815e5c}{add\+\_\+create\+\_\+new\+\_\+data}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ data, \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{Data\+Type}} data\+\_\+type)
+\item 
+void \mbox{\hyperlink{struct_loading_information_a008f88082dc69808b7a21a7bb791fa7b}{add\+\_\+new\+\_\+data}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ data, long long index)
+\item 
+void \mbox{\hyperlink{struct_loading_information_a3d5586eb948b3eb925d7cf575358060f}{add\+\_\+last\+\_\+data}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ data, \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{Data\+Type}} data\+\_\+type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{struct_loading_information_abfbe2c8b0d0db81f23e5638cd4c9b9cd}{min\+\_\+contained\+\_\+time}}
+\item 
+float \mbox{\hyperlink{struct_loading_information_a60751f853bdb5e66fe6677b77227180f}{max\+\_\+contained\+\_\+time}}
+\item 
+float \mbox{\hyperlink{struct_loading_information_ae99f8160eb2dde8363a827fc56dcb448}{min\+\_\+loading\+\_\+time}}
+\item 
+float \mbox{\hyperlink{struct_loading_information_a46f51fe360f5155b3e627c6943a8f9e0}{max\+\_\+loading\+\_\+time}}
+\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{struct_loading_information_a2c946cf7f2124c3eec9a3227eb921ef4}{buffer\+\_\+loaded}}
+\item 
+long long \mbox{\hyperlink{struct_loading_information_a416343e2aa801dccaa6606005dfef581}{min\+\_\+read\+\_\+line}} = 0
+\item 
+long long \mbox{\hyperlink{struct_loading_information_a9dca950c11ffb17870db9e2d32a40996}{max\+\_\+read\+\_\+line}} = -\/1
+\item 
+float \mbox{\hyperlink{struct_loading_information_af652ed1d52ad96c36cd4816ead32f6c5}{min\+\_\+stored\+\_\+time}} = -\/1.\+0f
+\item 
+float \mbox{\hyperlink{struct_loading_information_aec594195d870ded8945b81f1e6dae45e}{max\+\_\+stored\+\_\+time}} = -\/1.\+0f
+\item 
+bool \mbox{\hyperlink{struct_loading_information_a4733557b83b43c77c5050360b048bddb}{stop\+\_\+reading}} = false
+\item 
+std\+::map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ $>$ \mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\+\_\+id\+\_\+data}}
+\item 
+std\+::map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ $>$ \mbox{\hyperlink{struct_loading_information_a345bf0d8655b8f12caf3fa9d1b18edb7}{last\+\_\+id\+\_\+data}}
+\item 
+std\+::set$<$ int $>$ \mbox{\hyperlink{struct_loading_information_a00f7d588aab0a349dfe7ee5bf1c6c650}{id\+\_\+finished\+\_\+loading}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_loading_information_afe54f8e6f42284e95ed30c68f0eb8144}\label{struct_loading_information_afe54f8e6f42284e95ed30c68f0eb8144} 
+\index{LoadingInformation@{LoadingInformation}!````~LoadingInformation@{\texorpdfstring{$\sim$}{\string~}LoadingInformation}}
+\index{````~LoadingInformation@{\texorpdfstring{$\sim$}{\string~}LoadingInformation}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LoadingInformation()}{\string~LoadingInformation()}}
+{\footnotesize\ttfamily Loading\+Information\+::\texorpdfstring{$\sim$}{\string~}\+Loading\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_loading_information_aa54f8fbfb0edebe0e1878aa6ee815e5c}\label{struct_loading_information_aa54f8fbfb0edebe0e1878aa6ee815e5c} 
+\index{LoadingInformation@{LoadingInformation}!add\_create\_new\_data@{add\_create\_new\_data}}
+\index{add\_create\_new\_data@{add\_create\_new\_data}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{add\_create\_new\_data()}{add\_create\_new\_data()}}
+{\footnotesize\ttfamily void Loading\+Information\+::add\+\_\+create\+\_\+new\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$}]{data,  }\item[{\mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{Data\+Type}}}]{data\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_loading_information_a3d5586eb948b3eb925d7cf575358060f}\label{struct_loading_information_a3d5586eb948b3eb925d7cf575358060f} 
+\index{LoadingInformation@{LoadingInformation}!add\_last\_data@{add\_last\_data}}
+\index{add\_last\_data@{add\_last\_data}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{add\_last\_data()}{add\_last\_data()}}
+{\footnotesize\ttfamily void Loading\+Information\+::add\+\_\+last\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$}]{data,  }\item[{\mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{Data\+Type}}}]{data\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_loading_information_a008f88082dc69808b7a21a7bb791fa7b}\label{struct_loading_information_a008f88082dc69808b7a21a7bb791fa7b} 
+\index{LoadingInformation@{LoadingInformation}!add\_new\_data@{add\_new\_data}}
+\index{add\_new\_data@{add\_new\_data}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{add\_new\_data()}{add\_new\_data()}}
+{\footnotesize\ttfamily void Loading\+Information\+::add\+\_\+new\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$}]{data,  }\item[{long long}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_loading_information_a2c946cf7f2124c3eec9a3227eb921ef4}\label{struct_loading_information_a2c946cf7f2124c3eec9a3227eb921ef4} 
+\index{LoadingInformation@{LoadingInformation}!buffer\_loaded@{buffer\_loaded}}
+\index{buffer\_loaded@{buffer\_loaded}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{buffer\_loaded}{buffer\_loaded}}
+{\footnotesize\ttfamily std\+::vector$<$bool$>$ Loading\+Information\+::buffer\+\_\+loaded}
+
+\Hypertarget{struct_loading_information_a00f7d588aab0a349dfe7ee5bf1c6c650}\label{struct_loading_information_a00f7d588aab0a349dfe7ee5bf1c6c650} 
+\index{LoadingInformation@{LoadingInformation}!id\_finished\_loading@{id\_finished\_loading}}
+\index{id\_finished\_loading@{id\_finished\_loading}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{id\_finished\_loading}{id\_finished\_loading}}
+{\footnotesize\ttfamily std\+::set$<$int$>$ Loading\+Information\+::id\+\_\+finished\+\_\+loading}
+
+\Hypertarget{struct_loading_information_a345bf0d8655b8f12caf3fa9d1b18edb7}\label{struct_loading_information_a345bf0d8655b8f12caf3fa9d1b18edb7} 
+\index{LoadingInformation@{LoadingInformation}!last\_id\_data@{last\_id\_data}}
+\index{last\_id\_data@{last\_id\_data}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{last\_id\_data}{last\_id\_data}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}$>$ $>$ Loading\+Information\+::last\+\_\+id\+\_\+data}
+
+\Hypertarget{struct_loading_information_a60751f853bdb5e66fe6677b77227180f}\label{struct_loading_information_a60751f853bdb5e66fe6677b77227180f} 
+\index{LoadingInformation@{LoadingInformation}!max\_contained\_time@{max\_contained\_time}}
+\index{max\_contained\_time@{max\_contained\_time}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{max\_contained\_time}{max\_contained\_time}}
+{\footnotesize\ttfamily float Loading\+Information\+::max\+\_\+contained\+\_\+time}
+
+\Hypertarget{struct_loading_information_a46f51fe360f5155b3e627c6943a8f9e0}\label{struct_loading_information_a46f51fe360f5155b3e627c6943a8f9e0} 
+\index{LoadingInformation@{LoadingInformation}!max\_loading\_time@{max\_loading\_time}}
+\index{max\_loading\_time@{max\_loading\_time}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{max\_loading\_time}{max\_loading\_time}}
+{\footnotesize\ttfamily float Loading\+Information\+::max\+\_\+loading\+\_\+time}
+
+\Hypertarget{struct_loading_information_a9dca950c11ffb17870db9e2d32a40996}\label{struct_loading_information_a9dca950c11ffb17870db9e2d32a40996} 
+\index{LoadingInformation@{LoadingInformation}!max\_read\_line@{max\_read\_line}}
+\index{max\_read\_line@{max\_read\_line}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{max\_read\_line}{max\_read\_line}}
+{\footnotesize\ttfamily long long Loading\+Information\+::max\+\_\+read\+\_\+line = -\/1}
+
+\Hypertarget{struct_loading_information_aec594195d870ded8945b81f1e6dae45e}\label{struct_loading_information_aec594195d870ded8945b81f1e6dae45e} 
+\index{LoadingInformation@{LoadingInformation}!max\_stored\_time@{max\_stored\_time}}
+\index{max\_stored\_time@{max\_stored\_time}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{max\_stored\_time}{max\_stored\_time}}
+{\footnotesize\ttfamily float Loading\+Information\+::max\+\_\+stored\+\_\+time = -\/1.\+0f}
+
+\Hypertarget{struct_loading_information_abfbe2c8b0d0db81f23e5638cd4c9b9cd}\label{struct_loading_information_abfbe2c8b0d0db81f23e5638cd4c9b9cd} 
+\index{LoadingInformation@{LoadingInformation}!min\_contained\_time@{min\_contained\_time}}
+\index{min\_contained\_time@{min\_contained\_time}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{min\_contained\_time}{min\_contained\_time}}
+{\footnotesize\ttfamily float Loading\+Information\+::min\+\_\+contained\+\_\+time}
+
+\Hypertarget{struct_loading_information_ae99f8160eb2dde8363a827fc56dcb448}\label{struct_loading_information_ae99f8160eb2dde8363a827fc56dcb448} 
+\index{LoadingInformation@{LoadingInformation}!min\_loading\_time@{min\_loading\_time}}
+\index{min\_loading\_time@{min\_loading\_time}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{min\_loading\_time}{min\_loading\_time}}
+{\footnotesize\ttfamily float Loading\+Information\+::min\+\_\+loading\+\_\+time}
+
+\Hypertarget{struct_loading_information_a416343e2aa801dccaa6606005dfef581}\label{struct_loading_information_a416343e2aa801dccaa6606005dfef581} 
+\index{LoadingInformation@{LoadingInformation}!min\_read\_line@{min\_read\_line}}
+\index{min\_read\_line@{min\_read\_line}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{min\_read\_line}{min\_read\_line}}
+{\footnotesize\ttfamily long long Loading\+Information\+::min\+\_\+read\+\_\+line = 0}
+
+\Hypertarget{struct_loading_information_af652ed1d52ad96c36cd4816ead32f6c5}\label{struct_loading_information_af652ed1d52ad96c36cd4816ead32f6c5} 
+\index{LoadingInformation@{LoadingInformation}!min\_stored\_time@{min\_stored\_time}}
+\index{min\_stored\_time@{min\_stored\_time}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{min\_stored\_time}{min\_stored\_time}}
+{\footnotesize\ttfamily float Loading\+Information\+::min\+\_\+stored\+\_\+time = -\/1.\+0f}
+
+\Hypertarget{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}\label{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f} 
+\index{LoadingInformation@{LoadingInformation}!new\_id\_data@{new\_id\_data}}
+\index{new\_id\_data@{new\_id\_data}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{new\_id\_data}{new\_id\_data}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}$>$ $>$ Loading\+Information\+::new\+\_\+id\+\_\+data}
+
+\Hypertarget{struct_loading_information_a4733557b83b43c77c5050360b048bddb}\label{struct_loading_information_a4733557b83b43c77c5050360b048bddb} 
+\index{LoadingInformation@{LoadingInformation}!stop\_reading@{stop\_reading}}
+\index{stop\_reading@{stop\_reading}!LoadingInformation@{LoadingInformation}}
+\doxysubsubsection{\texorpdfstring{stop\_reading}{stop\_reading}}
+{\footnotesize\ttfamily bool Loading\+Information\+::stop\+\_\+reading = false}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\+Base\+Structure/\mbox{\hyperlink{_ring_buffer_8h}{Ring\+Buffer.\+h}}\end{DoxyCompactItemize}

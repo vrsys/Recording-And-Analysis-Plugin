@@ -1,0 +1,249 @@
+\doxysection{Analysis\+Manager Class Reference}
+\hypertarget{class_analysis_manager}{}\label{class_analysis_manager}\index{AnalysisManager@{AnalysisManager}}
+
+
+This class can be used to analyse a recording based on different analysis requests.  
+
+
+
+
+{\ttfamily \#include $<$Analysis\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_analysis_manager_ad01a29b31d55b631bff0901c63491f10}{Analysis\+Manager}} ()
+\item 
+\mbox{\hyperlink{class_analysis_manager_ad4251b673528b3f4ac4e2cd569b67625}{Analysis\+Manager}} (\mbox{\hyperlink{class_analysis_manager}{Analysis\+Manager}} const \&)=delete
+\item 
+void \mbox{\hyperlink{class_analysis_manager_a8c410157d6d9f98e11c3bb03bd8a3395}{operator=}} (\mbox{\hyperlink{class_analysis_manager}{Analysis\+Manager}} const \&)=delete
+\item 
+void \mbox{\hyperlink{class_analysis_manager_a817fc13aa767674f914aea01904157f8}{add\+\_\+recording\+\_\+path}} (char \texorpdfstring{$\ast$}{*}path, int path\+\_\+length)
+\item 
+void \mbox{\hyperlink{class_analysis_manager_acf27d19586f907bab63ad1c507d90d0f}{add\+\_\+intervals\+\_\+to\+\_\+investigate}} (std\+::string path, std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ intervals)
+\item 
+void \mbox{\hyperlink{class_analysis_manager_ab005f0016bc4f6bb91a31612a3949e2f}{add\+\_\+interval\+\_\+analysis\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ request)
+\item 
+int \mbox{\hyperlink{class_analysis_manager_aa3b437b2a1dc0d036ad88332f08c42dd}{process\+\_\+interval\+\_\+analysis\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ analysis\+\_\+request, float \texorpdfstring{$\ast$}{*}intervals, std\+::string const \&file, std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ const \&intervals\+\_\+to\+\_\+investigate) const
+\item 
+int \mbox{\hyperlink{class_analysis_manager_a9fff1ebfec10ac1690440de589411fec}{process\+\_\+interval\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+all\+\_\+files}} ()
+\item 
+void \mbox{\hyperlink{class_analysis_manager_a292fda17b7b4b7c629c65b7cbed03cea}{process\+\_\+interval\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+file}} (std\+::string const \&file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+information, std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ const \&\mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\+\_\+of\+\_\+interest}}) const
+\item 
+int \mbox{\hyperlink{class_analysis_manager_a6af46c8cadc935e5e46c3fa04ae70c31}{process\+\_\+interval\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+primary\+\_\+file}} (int analysis\+\_\+id, float \texorpdfstring{$\ast$}{*}intervals, std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\+\_\+of\+\_\+interest}})
+\item 
+void \mbox{\hyperlink{class_analysis_manager_a503f5ac43e87bbde4cdbd12f220f4f53}{add\+\_\+quantitative\+\_\+analysis\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$ request)
+\item 
+int \mbox{\hyperlink{class_analysis_manager_acba2070a57abb219869f044d930ba9dd}{process\+\_\+quantitative\+\_\+analysis\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$ analysis\+\_\+request, float \texorpdfstring{$\ast$}{*}values, std\+::string const \&file, std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ const \&intervals\+\_\+to\+\_\+investigate) const
+\item 
+int \mbox{\hyperlink{class_analysis_manager_a5362e74121bf95b586ef352c021f6509}{process\+\_\+quantitative\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+all\+\_\+files}} ()
+\item 
+void \mbox{\hyperlink{class_analysis_manager_a9f4022284cda1d71e02be1e90c183b12}{process\+\_\+quantitative\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+file}} (const std\+::string \&file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+information, const std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \&\mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\+\_\+of\+\_\+interest}}) const
+\item 
+int \mbox{\hyperlink{class_analysis_manager_aafc6cc93ec44795f6b89d31774165cfc}{process\+\_\+quantitative\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+primary\+\_\+file}} (int analysis\+\_\+id, float \texorpdfstring{$\ast$}{*}values, std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\+\_\+of\+\_\+interest}})
+\item 
+int \mbox{\hyperlink{class_analysis_manager_afcdff5829cae2f0749d20c6528c4479d}{get\+\_\+object\+\_\+positions}} (int object\+\_\+id, float start\+\_\+time, float end\+\_\+time, float \texorpdfstring{$\ast$}{*}positions, int max\+\_\+positions)
+\item 
+void \mbox{\hyperlink{class_analysis_manager_a00566cce01dcd06b2ef569eaddc36a51}{clear\+\_\+requests}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_analysis_manager_afcaadc82834a54a1312c083e413d9c41}{get\+\_\+primary\+\_\+file}} () const
+\item 
+void \mbox{\hyperlink{class_analysis_manager_a9c5d7c66315d78f38bdf9da21c44e561}{clear\+\_\+recording\+\_\+paths}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_analysis_manager}{Analysis\+Manager}} \& \mbox{\hyperlink{class_analysis_manager_a03795e317c88f19723106c333e96c4b9}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static BS\+::thread\+\_\+pool \& \mbox{\hyperlink{class_analysis_manager_a8525bc835d458bc5e9719b90c4af437a}{get\+Thread\+Pool}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_analysis_manager_a49ea2f2e37bfa36a4f897a6bfe7a11da}{debug}} = false
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ $>$ \mbox{\hyperlink{class_analysis_manager_a37a71c63c79dbf4bab6108470450b917}{interval\+\_\+analysis\+\_\+queries}}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$ $>$ \mbox{\hyperlink{class_analysis_manager_a37f949d185769d5b4fa668cc75efe9d4}{quantitative\+\_\+analysis\+\_\+queries}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_analysis_manager_a2fcdfd77b4d329b4ec4dae602573bbf9}{recording\+\_\+file\+\_\+paths}}
+\item 
+std\+::map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ $>$ \mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\+\_\+of\+\_\+interest}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class can be used to analyse a recording based on different analysis requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_analysis_manager_ad01a29b31d55b631bff0901c63491f10}\label{class_analysis_manager_ad01a29b31d55b631bff0901c63491f10} 
+\index{AnalysisManager@{AnalysisManager}!AnalysisManager@{AnalysisManager}}
+\index{AnalysisManager@{AnalysisManager}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{AnalysisManager()}{AnalysisManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Analysis\+Manager\+::\+Analysis\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_ad4251b673528b3f4ac4e2cd569b67625}\label{class_analysis_manager_ad4251b673528b3f4ac4e2cd569b67625} 
+\index{AnalysisManager@{AnalysisManager}!AnalysisManager@{AnalysisManager}}
+\index{AnalysisManager@{AnalysisManager}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{AnalysisManager()}{AnalysisManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Analysis\+Manager\+::\+Analysis\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_analysis_manager}{Analysis\+Manager}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_analysis_manager_ab005f0016bc4f6bb91a31612a3949e2f}\label{class_analysis_manager_ab005f0016bc4f6bb91a31612a3949e2f} 
+\index{AnalysisManager@{AnalysisManager}!add\_interval\_analysis\_request@{add\_interval\_analysis\_request}}
+\index{add\_interval\_analysis\_request@{add\_interval\_analysis\_request}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{add\_interval\_analysis\_request()}{add\_interval\_analysis\_request()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::add\+\_\+interval\+\_\+analysis\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$}]{request }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_acf27d19586f907bab63ad1c507d90d0f}\label{class_analysis_manager_acf27d19586f907bab63ad1c507d90d0f} 
+\index{AnalysisManager@{AnalysisManager}!add\_intervals\_to\_investigate@{add\_intervals\_to\_investigate}}
+\index{add\_intervals\_to\_investigate@{add\_intervals\_to\_investigate}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{add\_intervals\_to\_investigate()}{add\_intervals\_to\_investigate()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::add\+\_\+intervals\+\_\+to\+\_\+investigate (\begin{DoxyParamCaption}\item[{std\+::string}]{path,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$}]{intervals }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_a503f5ac43e87bbde4cdbd12f220f4f53}\label{class_analysis_manager_a503f5ac43e87bbde4cdbd12f220f4f53} 
+\index{AnalysisManager@{AnalysisManager}!add\_quantitative\_analysis\_request@{add\_quantitative\_analysis\_request}}
+\index{add\_quantitative\_analysis\_request@{add\_quantitative\_analysis\_request}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{add\_quantitative\_analysis\_request()}{add\_quantitative\_analysis\_request()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::add\+\_\+quantitative\+\_\+analysis\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$}]{request }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_a817fc13aa767674f914aea01904157f8}\label{class_analysis_manager_a817fc13aa767674f914aea01904157f8} 
+\index{AnalysisManager@{AnalysisManager}!add\_recording\_path@{add\_recording\_path}}
+\index{add\_recording\_path@{add\_recording\_path}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{add\_recording\_path()}{add\_recording\_path()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::add\+\_\+recording\+\_\+path (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{path,  }\item[{int}]{path\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_a9c5d7c66315d78f38bdf9da21c44e561}\label{class_analysis_manager_a9c5d7c66315d78f38bdf9da21c44e561} 
+\index{AnalysisManager@{AnalysisManager}!clear\_recording\_paths@{clear\_recording\_paths}}
+\index{clear\_recording\_paths@{clear\_recording\_paths}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{clear\_recording\_paths()}{clear\_recording\_paths()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::clear\+\_\+recording\+\_\+paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_a00566cce01dcd06b2ef569eaddc36a51}\label{class_analysis_manager_a00566cce01dcd06b2ef569eaddc36a51} 
+\index{AnalysisManager@{AnalysisManager}!clear\_requests@{clear\_requests}}
+\index{clear\_requests@{clear\_requests}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{clear\_requests()}{clear\_requests()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::clear\+\_\+requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_afcdff5829cae2f0749d20c6528c4479d}\label{class_analysis_manager_afcdff5829cae2f0749d20c6528c4479d} 
+\index{AnalysisManager@{AnalysisManager}!get\_object\_positions@{get\_object\_positions}}
+\index{get\_object\_positions@{get\_object\_positions}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{get\_object\_positions()}{get\_object\_positions()}}
+{\footnotesize\ttfamily int Analysis\+Manager\+::get\+\_\+object\+\_\+positions (\begin{DoxyParamCaption}\item[{int}]{object\+\_\+id,  }\item[{float}]{start\+\_\+time,  }\item[{float}]{end\+\_\+time,  }\item[{float \texorpdfstring{$\ast$}{*}}]{positions,  }\item[{int}]{max\+\_\+positions }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_afcaadc82834a54a1312c083e413d9c41}\label{class_analysis_manager_afcaadc82834a54a1312c083e413d9c41} 
+\index{AnalysisManager@{AnalysisManager}!get\_primary\_file@{get\_primary\_file}}
+\index{get\_primary\_file@{get\_primary\_file}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{get\_primary\_file()}{get\_primary\_file()}}
+{\footnotesize\ttfamily std\+::string Analysis\+Manager\+::get\+\_\+primary\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_analysis_manager_a03795e317c88f19723106c333e96c4b9}\label{class_analysis_manager_a03795e317c88f19723106c333e96c4b9} 
+\index{AnalysisManager@{AnalysisManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_analysis_manager}{Analysis\+Manager}} \& Analysis\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_analysis_manager_a8525bc835d458bc5e9719b90c4af437a}\label{class_analysis_manager_a8525bc835d458bc5e9719b90c4af437a} 
+\index{AnalysisManager@{AnalysisManager}!getThreadPool@{getThreadPool}}
+\index{getThreadPool@{getThreadPool}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{getThreadPool()}{getThreadPool()}}
+{\footnotesize\ttfamily static BS\+::thread\+\_\+pool \& Analysis\+Manager\+::get\+Thread\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_analysis_manager_a8c410157d6d9f98e11c3bb03bd8a3395}\label{class_analysis_manager_a8c410157d6d9f98e11c3bb03bd8a3395} 
+\index{AnalysisManager@{AnalysisManager}!operator=@{operator=}}
+\index{operator=@{operator=}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_analysis_manager}{Analysis\+Manager}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_analysis_manager_aa3b437b2a1dc0d036ad88332f08c42dd}\label{class_analysis_manager_aa3b437b2a1dc0d036ad88332f08c42dd} 
+\index{AnalysisManager@{AnalysisManager}!process\_interval\_analysis\_request@{process\_interval\_analysis\_request}}
+\index{process\_interval\_analysis\_request@{process\_interval\_analysis\_request}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{process\_interval\_analysis\_request()}{process\_interval\_analysis\_request()}}
+{\footnotesize\ttfamily int Analysis\+Manager\+::process\+\_\+interval\+\_\+analysis\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$}]{analysis\+\_\+request,  }\item[{float \texorpdfstring{$\ast$}{*}}]{intervals,  }\item[{std\+::string const \&}]{file,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ const \&}]{intervals\+\_\+to\+\_\+investigate }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_analysis_manager_a9fff1ebfec10ac1690440de589411fec}\label{class_analysis_manager_a9fff1ebfec10ac1690440de589411fec} 
+\index{AnalysisManager@{AnalysisManager}!process\_interval\_analysis\_requests\_for\_all\_files@{process\_interval\_analysis\_requests\_for\_all\_files}}
+\index{process\_interval\_analysis\_requests\_for\_all\_files@{process\_interval\_analysis\_requests\_for\_all\_files}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{process\_interval\_analysis\_requests\_for\_all\_files()}{process\_interval\_analysis\_requests\_for\_all\_files()}}
+{\footnotesize\ttfamily int Analysis\+Manager\+::process\+\_\+interval\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+all\+\_\+files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_a292fda17b7b4b7c629c65b7cbed03cea}\label{class_analysis_manager_a292fda17b7b4b7c629c65b7cbed03cea} 
+\index{AnalysisManager@{AnalysisManager}!process\_interval\_analysis\_requests\_for\_file@{process\_interval\_analysis\_requests\_for\_file}}
+\index{process\_interval\_analysis\_requests\_for\_file@{process\_interval\_analysis\_requests\_for\_file}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{process\_interval\_analysis\_requests\_for\_file()}{process\_interval\_analysis\_requests\_for\_file()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::process\+\_\+interval\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+information,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ const \&}]{intervals\+\_\+of\+\_\+interest }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_analysis_manager_a6af46c8cadc935e5e46c3fa04ae70c31}\label{class_analysis_manager_a6af46c8cadc935e5e46c3fa04ae70c31} 
+\index{AnalysisManager@{AnalysisManager}!process\_interval\_analysis\_requests\_for\_primary\_file@{process\_interval\_analysis\_requests\_for\_primary\_file}}
+\index{process\_interval\_analysis\_requests\_for\_primary\_file@{process\_interval\_analysis\_requests\_for\_primary\_file}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{process\_interval\_analysis\_requests\_for\_primary\_file()}{process\_interval\_analysis\_requests\_for\_primary\_file()}}
+{\footnotesize\ttfamily int Analysis\+Manager\+::process\+\_\+interval\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+primary\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{float \texorpdfstring{$\ast$}{*}}]{intervals,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$}]{intervals\+\_\+of\+\_\+interest }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_acba2070a57abb219869f044d930ba9dd}\label{class_analysis_manager_acba2070a57abb219869f044d930ba9dd} 
+\index{AnalysisManager@{AnalysisManager}!process\_quantitative\_analysis\_request@{process\_quantitative\_analysis\_request}}
+\index{process\_quantitative\_analysis\_request@{process\_quantitative\_analysis\_request}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{process\_quantitative\_analysis\_request()}{process\_quantitative\_analysis\_request()}}
+{\footnotesize\ttfamily int Analysis\+Manager\+::process\+\_\+quantitative\+\_\+analysis\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$}]{analysis\+\_\+request,  }\item[{float \texorpdfstring{$\ast$}{*}}]{values,  }\item[{std\+::string const \&}]{file,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ const \&}]{intervals\+\_\+to\+\_\+investigate }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_analysis_manager_a5362e74121bf95b586ef352c021f6509}\label{class_analysis_manager_a5362e74121bf95b586ef352c021f6509} 
+\index{AnalysisManager@{AnalysisManager}!process\_quantitative\_analysis\_requests\_for\_all\_files@{process\_quantitative\_analysis\_requests\_for\_all\_files}}
+\index{process\_quantitative\_analysis\_requests\_for\_all\_files@{process\_quantitative\_analysis\_requests\_for\_all\_files}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{process\_quantitative\_analysis\_requests\_for\_all\_files()}{process\_quantitative\_analysis\_requests\_for\_all\_files()}}
+{\footnotesize\ttfamily int Analysis\+Manager\+::process\+\_\+quantitative\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+all\+\_\+files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_analysis_manager_a9f4022284cda1d71e02be1e90c183b12}\label{class_analysis_manager_a9f4022284cda1d71e02be1e90c183b12} 
+\index{AnalysisManager@{AnalysisManager}!process\_quantitative\_analysis\_requests\_for\_file@{process\_quantitative\_analysis\_requests\_for\_file}}
+\index{process\_quantitative\_analysis\_requests\_for\_file@{process\_quantitative\_analysis\_requests\_for\_file}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{process\_quantitative\_analysis\_requests\_for\_file()}{process\_quantitative\_analysis\_requests\_for\_file()}}
+{\footnotesize\ttfamily void Analysis\+Manager\+::process\+\_\+quantitative\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+information,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \&}]{intervals\+\_\+of\+\_\+interest }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_analysis_manager_aafc6cc93ec44795f6b89d31774165cfc}\label{class_analysis_manager_aafc6cc93ec44795f6b89d31774165cfc} 
+\index{AnalysisManager@{AnalysisManager}!process\_quantitative\_analysis\_requests\_for\_primary\_file@{process\_quantitative\_analysis\_requests\_for\_primary\_file}}
+\index{process\_quantitative\_analysis\_requests\_for\_primary\_file@{process\_quantitative\_analysis\_requests\_for\_primary\_file}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{process\_quantitative\_analysis\_requests\_for\_primary\_file()}{process\_quantitative\_analysis\_requests\_for\_primary\_file()}}
+{\footnotesize\ttfamily int Analysis\+Manager\+::process\+\_\+quantitative\+\_\+analysis\+\_\+requests\+\_\+for\+\_\+primary\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{float \texorpdfstring{$\ast$}{*}}]{values,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$}]{intervals\+\_\+of\+\_\+interest }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_analysis_manager_a49ea2f2e37bfa36a4f897a6bfe7a11da}\label{class_analysis_manager_a49ea2f2e37bfa36a4f897a6bfe7a11da} 
+\index{AnalysisManager@{AnalysisManager}!debug@{debug}}
+\index{debug@{debug}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily bool Analysis\+Manager\+::debug = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_analysis_manager_a37a71c63c79dbf4bab6108470450b917}\label{class_analysis_manager_a37a71c63c79dbf4bab6108470450b917} 
+\index{AnalysisManager@{AnalysisManager}!interval\_analysis\_queries@{interval\_analysis\_queries}}
+\index{interval\_analysis\_queries@{interval\_analysis\_queries}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{interval\_analysis\_queries}{interval\_analysis\_queries}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}$>$ $>$ Analysis\+Manager\+::interval\+\_\+analysis\+\_\+queries\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}\label{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5} 
+\index{AnalysisManager@{AnalysisManager}!intervals\_of\_interest@{intervals\_of\_interest}}
+\index{intervals\_of\_interest@{intervals\_of\_interest}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{intervals\_of\_interest}{intervals\_of\_interest}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::vector$<$\mbox{\hyperlink{struct_time_interval}{Time\+Interval}}$>$ $>$ Analysis\+Manager\+::intervals\+\_\+of\+\_\+interest\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_analysis_manager_a37f949d185769d5b4fa668cc75efe9d4}\label{class_analysis_manager_a37f949d185769d5b4fa668cc75efe9d4} 
+\index{AnalysisManager@{AnalysisManager}!quantitative\_analysis\_queries@{quantitative\_analysis\_queries}}
+\index{quantitative\_analysis\_queries@{quantitative\_analysis\_queries}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{quantitative\_analysis\_queries}{quantitative\_analysis\_queries}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}}$>$ $>$ Analysis\+Manager\+::quantitative\+\_\+analysis\+\_\+queries\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_analysis_manager_a2fcdfd77b4d329b4ec4dae602573bbf9}\label{class_analysis_manager_a2fcdfd77b4d329b4ec4dae602573bbf9} 
+\index{AnalysisManager@{AnalysisManager}!recording\_file\_paths@{recording\_file\_paths}}
+\index{recording\_file\_paths@{recording\_file\_paths}!AnalysisManager@{AnalysisManager}}
+\doxysubsubsection{\texorpdfstring{recording\_file\_paths}{recording\_file\_paths}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Analysis\+Manager\+::recording\+\_\+file\+\_\+paths\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\mbox{\hyperlink{_analysis_manager_8h}{Analysis\+Manager.\+h}}\item 
+Src/\+Analysis/\mbox{\hyperlink{_analysis_manager_8cpp}{Analysis\+Manager.\+cpp}}\end{DoxyCompactItemize}

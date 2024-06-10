@@ -1,0 +1,95 @@
+\doxysection{Debug Class Reference}
+\hypertarget{class_debug}{}\label{class_debug}\index{Debug@{Debug}}
+
+
+This class is used to call external debug functions.  
+
+
+
+
+{\ttfamily \#include $<$Debug\+Log.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Log}} (const char \texorpdfstring{$\ast$}{*}message, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} color=\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}})
+\item 
+static void \mbox{\hyperlink{class_debug_abb0e505f8a5bbd45e0dc77e5b3619e4f}{Log}} (const std\+::string message, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} color=\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}})
+\item 
+static void \mbox{\hyperlink{class_debug_a5506c4512a5d51d818d1d2cd47552a0d}{Log}} (const int message, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} color=\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}})
+\item 
+static void \mbox{\hyperlink{class_debug_ac4bf0d21790945470b3cc4076db18490}{Log}} (const char message, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} color=\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}})
+\item 
+static void \mbox{\hyperlink{class_debug_aa0d45defc20171793db579ddbfdd1e55}{Log}} (const float message, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} color=\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}})
+\item 
+static void \mbox{\hyperlink{class_debug_a242a77086933536b32d3248c701f32aa}{Log}} (const double message, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} color=\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}})
+\item 
+static void \mbox{\hyperlink{class_debug_aa52b2a456e2703f2e0308bc024c37ea0}{Log}} (const bool message, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} color=\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_debug_a1dcd4631a9a23ada4131e6926944d657}{send\+\_\+log}} (const std\+::stringstream \&ss, const \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} \&color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used to call external debug functions. 
+
+Using this class debug log of the plugin can be printed in the Unity Log. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_debug_aa52b2a456e2703f2e0308bc024c37ea0}\label{class_debug_aa52b2a456e2703f2e0308bc024c37ea0} 
+\index{Debug@{Debug}!Log@{Log}}
+\index{Log@{Log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily void Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const bool}]{message,  }\item[{\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{color = {\ttfamily \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_debug_a27c301ab98eb45fd4df73935b5d0e619}\label{class_debug_a27c301ab98eb45fd4df73935b5d0e619} 
+\index{Debug@{Debug}!Log@{Log}}
+\index{Log@{Log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily void Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message,  }\item[{\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{color = {\ttfamily \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_debug_ac4bf0d21790945470b3cc4076db18490}\label{class_debug_ac4bf0d21790945470b3cc4076db18490} 
+\index{Debug@{Debug}!Log@{Log}}
+\index{Log@{Log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily void Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const char}]{message,  }\item[{\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{color = {\ttfamily \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_debug_a242a77086933536b32d3248c701f32aa}\label{class_debug_a242a77086933536b32d3248c701f32aa} 
+\index{Debug@{Debug}!Log@{Log}}
+\index{Log@{Log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily void Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const double}]{message,  }\item[{\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{color = {\ttfamily \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_debug_aa0d45defc20171793db579ddbfdd1e55}\label{class_debug_aa0d45defc20171793db579ddbfdd1e55} 
+\index{Debug@{Debug}!Log@{Log}}
+\index{Log@{Log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily void Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const float}]{message,  }\item[{\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{color = {\ttfamily \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_debug_a5506c4512a5d51d818d1d2cd47552a0d}\label{class_debug_a5506c4512a5d51d818d1d2cd47552a0d} 
+\index{Debug@{Debug}!Log@{Log}}
+\index{Log@{Log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily void Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const int}]{message,  }\item[{\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{color = {\ttfamily \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_debug_abb0e505f8a5bbd45e0dc77e5b3619e4f}\label{class_debug_abb0e505f8a5bbd45e0dc77e5b3619e4f} 
+\index{Debug@{Debug}!Log@{Log}}
+\index{Log@{Log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily void Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const std\+::string}]{message,  }\item[{\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}}]{color = {\ttfamily \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color\+::\+Black}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_debug_a1dcd4631a9a23ada4131e6926944d657}\label{class_debug_a1dcd4631a9a23ada4131e6926944d657} 
+\index{Debug@{Debug}!send\_log@{send\_log}}
+\index{send\_log@{send\_log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{send\_log()}{send\_log()}}
+{\footnotesize\ttfamily void Debug\+::send\+\_\+log (\begin{DoxyParamCaption}\item[{const std\+::stringstream \&}]{ss,  }\item[{const \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\mbox{\hyperlink{_debug_log_8h}{Debug\+Log.\+h}}\item 
+Src/\mbox{\hyperlink{_debug_log_8cpp}{Debug\+Log.\+cpp}}\end{DoxyCompactItemize}

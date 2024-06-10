@@ -1,0 +1,331 @@
+\doxysection{Transform\+Data Class Reference}
+\hypertarget{class_transform_data}{}\label{class_transform_data}\index{TransformData@{TransformData}}
+
+
+{\ttfamily \#include $<$Transform\+Data.\+h$>$}
+
+Inheritance diagram for Transform\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_transform_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transform_data_a1dedca4c85495569dc299cf9f95330f8}{Transform\+Data}} ()
+\item 
+\mbox{\hyperlink{class_transform_data_a365a0c591b36295b8589d289b323fdc4}{\texorpdfstring{$\sim$}{\string~}\+Transform\+Data}} () override
+\item 
+std\+::ofstream \& \mbox{\hyperlink{class_transform_data_af48a416ac4edcc878f7ab5f829da0029}{write}} (std\+::ofstream \&ofs) const override
+\item 
+std\+::ifstream \& \mbox{\hyperlink{class_transform_data_ae8425540d4753dc33900bf856d714bc1}{read}} (std\+::ifstream \&ifs) override
+\item 
+\mbox{\hyperlink{class_transform_data_a224a055575e6d63c5f1cb98583fdc9c4}{Transform\+Data}} (const float \texorpdfstring{$\ast$}{*}transform\+\_\+data, const int \texorpdfstring{$\ast$}{*}object\+\_\+information, float \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}}, int \mbox{\hyperlink{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f}{id}})
+\item 
+\mbox{\hyperlink{class_transform_data_af00aff8e68643f4b3a867e33d0d42fea}{Transform\+Data}} (\mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}} const \&dto)
+\item 
+\mbox{\hyperlink{class_transform_data_a967101aece7da5afdba2ba69d97245f4}{Transform\+Data}} (glm\+::vec3 local\+\_\+pos, glm\+::quat local\+\_\+rot, glm\+::vec3 local\+\_\+sca, int act, int parent)
+\item 
+\mbox{\hyperlink{class_transform_data_a3cdac4723def593ad0c746823fef7c36}{Transform\+Data}} (glm\+::vec3 local\+\_\+pos, glm\+::quat local\+\_\+rot, glm\+::vec3 local\+\_\+sca, glm\+::vec3 global\+\_\+pos, glm\+::quat global\+\_\+rot, glm\+::vec3 global\+\_\+sca, int act, int parent)
+\item 
+\mbox{\hyperlink{class_transform_data_af836898589e9bce94103e2028d9eb922}{Transform\+Data}} (\mbox{\hyperlink{class_transform_data}{Transform\+Data}} const \&data)
+\item 
+\mbox{\hyperlink{class_transform_data_a8a36af36978e484a577cb0e18d30cbba}{Transform\+Data}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ data)
+\item 
+void \mbox{\hyperlink{class_transform_data_ac2834bb256f1e15cfc1c622c769330f7}{update\+\_\+matrix\+\_\+and\+\_\+object\+\_\+info}} (float \texorpdfstring{$\ast$}{*}matrix, int \texorpdfstring{$\ast$}{*}object\+\_\+information)
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_transform_data_af82a210d24e5c823be67c2e29c14bc10}{trs\+\_\+matrix}} ()
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_transform_data_a8ef7da24826ea865cee9b1ffb880ec25}{interpolate}} (\mbox{\hyperlink{class_transform_data}{Transform\+Data}} next\+\_\+transform, float t)
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_transform_data_a028de85941c274674831b67665efdb1a}{interpolate}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ next\+\_\+transform, float t)
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_transform_data_a6ab063715316db87787cabee841b0bcb}{get\+\_\+local\+\_\+position}} () const
+\item 
+const glm\+::quat \& \mbox{\hyperlink{class_transform_data_a51b0bcd1d15986a2dd91cb96a9fa2b67}{get\+\_\+local\+\_\+rotation}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_transform_data_ab8acb232bb80db7fa6064ad908295ed7}{get\+\_\+local\+\_\+scale}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_transform_data_a9c2919f33239b00b173f41386eeb9757}{get\+\_\+global\+\_\+position}} () const
+\item 
+const glm\+::quat \& \mbox{\hyperlink{class_transform_data_ad2934980cd559ed56028c12b79a9a301}{get\+\_\+global\+\_\+rotation}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_transform_data_a89f4658cdffb2ee93f336a49767cd5f6}{get\+\_\+global\+\_\+scale}} () const
+\item 
+int \mbox{\hyperlink{class_transform_data_a4f07e69cd146b738ac7d59eca436e2db}{get\+\_\+active}} () const
+\item 
+int \mbox{\hyperlink{class_transform_data_ad022a848f1c915f681131c4d8371008e}{get\+\_\+parent\+\_\+uuid}} () const
+\item 
+bool friend \mbox{\hyperlink{class_transform_data_a7f73215effda927eb4d2445bb23c8a81}{operator==}} (const \mbox{\hyperlink{class_transform_data}{Transform\+Data}} \&lhs, const \mbox{\hyperlink{class_transform_data}{Transform\+Data}} \&rhs)
+\item 
+void \mbox{\hyperlink{class_transform_data_ad35b58674c00d5f91fb1f7dbc6640aa0}{write\+\_\+to\+\_\+stream}} (std\+::ofstream \&file) const override
+\item 
+\mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}} \mbox{\hyperlink{class_transform_data_a2ce58839e78f06c7fe965b9bff07b88d}{to\+\_\+dto}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_recordable_data_a7e95a55e4cb5d09cc3e852fac49c32fa}{Recordable\+Data}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_recordable_data_af98b164c2c1dadb964ef3925e5c1bdc1}{\texorpdfstring{$\sim$}{\string~}\+Recordable\+Data}} ()=default
+\item 
+\mbox{\hyperlink{class_recordable_data_ab341dd4bc935d9c4f13c0131157c46dc}{Recordable\+Data}} (int i, float t)
+\item 
+bool \mbox{\hyperlink{class_recordable_data_a90be1a06b561cde835c22c3a1fc0d009}{operator$<$}} (\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} const \&data) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_data_ad6b2cacd8441ef666d4006d787c0b34a}{local\+\_\+position}} \{0.\+0f,0.\+0f,0.\+0f\}
+\item 
+glm\+::quat \mbox{\hyperlink{class_transform_data_ae4c0a98d59abba4635983ac9d5599028}{local\+\_\+rotation}} \{0.\+0f,0.\+0f,0.\+0f,0.\+0f\}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_data_a41f475f090d47d094a619364533adfc2}{local\+\_\+scale}} \{1.\+0f,1.\+0f,1.\+0f\}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_data_a54b003fe3586026b913e1d694adfc42d}{global\+\_\+position}} \{0.\+0f,0.\+0f,0.\+0f\}
+\item 
+glm\+::quat \mbox{\hyperlink{class_transform_data_a8fd00608e08b55a5bbf6872fa863e28d}{global\+\_\+rotation}} \{0.\+0f,0.\+0f,0.\+0f,0.\+0f\}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_transform_data_a4e543a188308614e66e4f0e02927d484}{global\+\_\+scale}} \{1.\+0f,1.\+0f,1.\+0f\}
+\item 
+int \mbox{\hyperlink{class_transform_data_ac3663647d9912d5f109c54fea08a3cc7}{active}} = -\/1
+\item 
+int \mbox{\hyperlink{class_transform_data_a033b1390643b0622518dd8fa75829d39}{parent\+\_\+uuid}} = -\/1
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}} = -\/1.\+0f
+\item 
+int \mbox{\hyperlink{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f}{id}} = -\/1
+\item 
+bool \mbox{\hyperlink{class_recordable_data_a97a09d7f8e5390c4ad98ee9bccab7e05}{interpolated\+\_\+data}} = false
+\item 
+int \mbox{\hyperlink{class_recordable_data_a108952a5624ca94f3fbecf3e75be3351}{layer}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_transform_data_a1dedca4c85495569dc299cf9f95330f8}\label{class_transform_data_a1dedca4c85495569dc299cf9f95330f8} 
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{TransformData()}{TransformData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily Transform\+Data\+::\+Transform\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_a365a0c591b36295b8589d289b323fdc4}\label{class_transform_data_a365a0c591b36295b8589d289b323fdc4} 
+\index{TransformData@{TransformData}!````~TransformData@{\texorpdfstring{$\sim$}{\string~}TransformData}}
+\index{````~TransformData@{\texorpdfstring{$\sim$}{\string~}TransformData}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TransformData()}{\string~TransformData()}}
+{\footnotesize\ttfamily Transform\+Data\+::\texorpdfstring{$\sim$}{\string~}\+Transform\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+\Hypertarget{class_transform_data_a224a055575e6d63c5f1cb98583fdc9c4}\label{class_transform_data_a224a055575e6d63c5f1cb98583fdc9c4} 
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{TransformData()}{TransformData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily Transform\+Data\+::\+Transform\+Data (\begin{DoxyParamCaption}\item[{const float \texorpdfstring{$\ast$}{*}}]{transform\+\_\+data,  }\item[{const int \texorpdfstring{$\ast$}{*}}]{object\+\_\+information,  }\item[{float}]{time,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_af00aff8e68643f4b3a867e33d0d42fea}\label{class_transform_data_af00aff8e68643f4b3a867e33d0d42fea} 
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{TransformData()}{TransformData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily Transform\+Data\+::\+Transform\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}} const \&}]{dto }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_a967101aece7da5afdba2ba69d97245f4}\label{class_transform_data_a967101aece7da5afdba2ba69d97245f4} 
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{TransformData()}{TransformData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily Transform\+Data\+::\+Transform\+Data (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{local\+\_\+pos,  }\item[{glm\+::quat}]{local\+\_\+rot,  }\item[{glm\+::vec3}]{local\+\_\+sca,  }\item[{int}]{act,  }\item[{int}]{parent }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_a3cdac4723def593ad0c746823fef7c36}\label{class_transform_data_a3cdac4723def593ad0c746823fef7c36} 
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{TransformData()}{TransformData()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily Transform\+Data\+::\+Transform\+Data (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{local\+\_\+pos,  }\item[{glm\+::quat}]{local\+\_\+rot,  }\item[{glm\+::vec3}]{local\+\_\+sca,  }\item[{glm\+::vec3}]{global\+\_\+pos,  }\item[{glm\+::quat}]{global\+\_\+rot,  }\item[{glm\+::vec3}]{global\+\_\+sca,  }\item[{int}]{act,  }\item[{int}]{parent }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_af836898589e9bce94103e2028d9eb922}\label{class_transform_data_af836898589e9bce94103e2028d9eb922} 
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{TransformData()}{TransformData()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily Transform\+Data\+::\+Transform\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_transform_data}{Transform\+Data}} const \&}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_a8a36af36978e484a577cb0e18d30cbba}\label{class_transform_data_a8a36af36978e484a577cb0e18d30cbba} 
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\index{TransformData@{TransformData}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{TransformData()}{TransformData()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily Transform\+Data\+::\+Transform\+Data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_transform_data_a4f07e69cd146b738ac7d59eca436e2db}\label{class_transform_data_a4f07e69cd146b738ac7d59eca436e2db} 
+\index{TransformData@{TransformData}!get\_active@{get\_active}}
+\index{get\_active@{get\_active}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{get\_active()}{get\_active()}}
+{\footnotesize\ttfamily int Transform\+Data\+::get\+\_\+active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_a9c2919f33239b00b173f41386eeb9757}\label{class_transform_data_a9c2919f33239b00b173f41386eeb9757} 
+\index{TransformData@{TransformData}!get\_global\_position@{get\_global\_position}}
+\index{get\_global\_position@{get\_global\_position}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{get\_global\_position()}{get\_global\_position()}}
+{\footnotesize\ttfamily const glm\+::vec3 \& Transform\+Data\+::get\+\_\+global\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_ad2934980cd559ed56028c12b79a9a301}\label{class_transform_data_ad2934980cd559ed56028c12b79a9a301} 
+\index{TransformData@{TransformData}!get\_global\_rotation@{get\_global\_rotation}}
+\index{get\_global\_rotation@{get\_global\_rotation}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{get\_global\_rotation()}{get\_global\_rotation()}}
+{\footnotesize\ttfamily const glm\+::quat \& Transform\+Data\+::get\+\_\+global\+\_\+rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_a89f4658cdffb2ee93f336a49767cd5f6}\label{class_transform_data_a89f4658cdffb2ee93f336a49767cd5f6} 
+\index{TransformData@{TransformData}!get\_global\_scale@{get\_global\_scale}}
+\index{get\_global\_scale@{get\_global\_scale}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{get\_global\_scale()}{get\_global\_scale()}}
+{\footnotesize\ttfamily const glm\+::vec3 \& Transform\+Data\+::get\+\_\+global\+\_\+scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_a6ab063715316db87787cabee841b0bcb}\label{class_transform_data_a6ab063715316db87787cabee841b0bcb} 
+\index{TransformData@{TransformData}!get\_local\_position@{get\_local\_position}}
+\index{get\_local\_position@{get\_local\_position}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{get\_local\_position()}{get\_local\_position()}}
+{\footnotesize\ttfamily const glm\+::vec3 \& Transform\+Data\+::get\+\_\+local\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_a51b0bcd1d15986a2dd91cb96a9fa2b67}\label{class_transform_data_a51b0bcd1d15986a2dd91cb96a9fa2b67} 
+\index{TransformData@{TransformData}!get\_local\_rotation@{get\_local\_rotation}}
+\index{get\_local\_rotation@{get\_local\_rotation}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{get\_local\_rotation()}{get\_local\_rotation()}}
+{\footnotesize\ttfamily const glm\+::quat \& Transform\+Data\+::get\+\_\+local\+\_\+rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_ab8acb232bb80db7fa6064ad908295ed7}\label{class_transform_data_ab8acb232bb80db7fa6064ad908295ed7} 
+\index{TransformData@{TransformData}!get\_local\_scale@{get\_local\_scale}}
+\index{get\_local\_scale@{get\_local\_scale}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{get\_local\_scale()}{get\_local\_scale()}}
+{\footnotesize\ttfamily const glm\+::vec3 \& Transform\+Data\+::get\+\_\+local\+\_\+scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_ad022a848f1c915f681131c4d8371008e}\label{class_transform_data_ad022a848f1c915f681131c4d8371008e} 
+\index{TransformData@{TransformData}!get\_parent\_uuid@{get\_parent\_uuid}}
+\index{get\_parent\_uuid@{get\_parent\_uuid}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{get\_parent\_uuid()}{get\_parent\_uuid()}}
+{\footnotesize\ttfamily int Transform\+Data\+::get\+\_\+parent\+\_\+uuid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_a028de85941c274674831b67665efdb1a}\label{class_transform_data_a028de85941c274674831b67665efdb1a} 
+\index{TransformData@{TransformData}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Transform\+Data\+::interpolate (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{next\+\_\+transform,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_a8ef7da24826ea865cee9b1ffb880ec25}\label{class_transform_data_a8ef7da24826ea865cee9b1ffb880ec25} 
+\index{TransformData@{TransformData}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Transform\+Data\+::interpolate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_transform_data}{Transform\+Data}}}]{next\+\_\+transform,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_a7f73215effda927eb4d2445bb23c8a81}\label{class_transform_data_a7f73215effda927eb4d2445bb23c8a81} 
+\index{TransformData@{TransformData}!operator==@{operator==}}
+\index{operator==@{operator==}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool friend Transform\+Data\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transform_data}{Transform\+Data}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{class_transform_data}{Transform\+Data}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_transform_data_ae8425540d4753dc33900bf856d714bc1}\label{class_transform_data_ae8425540d4753dc33900bf856d714bc1} 
+\index{TransformData@{TransformData}!read@{read}}
+\index{read@{read}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily std\+::ifstream \& Transform\+Data\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a629b8968c09ea12f82be4112b7cc1a71}{Recordable\+Data}}.
+
+\Hypertarget{class_transform_data_a2ce58839e78f06c7fe965b9bff07b88d}\label{class_transform_data_a2ce58839e78f06c7fe965b9bff07b88d} 
+\index{TransformData@{TransformData}!to\_dto@{to\_dto}}
+\index{to\_dto@{to\_dto}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{to\_dto()}{to\_dto()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_transform_d_t_o}{Transform\+DTO}} Transform\+Data\+::to\+\_\+dto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_transform_data_af82a210d24e5c823be67c2e29c14bc10}\label{class_transform_data_af82a210d24e5c823be67c2e29c14bc10} 
+\index{TransformData@{TransformData}!trs\_matrix@{trs\_matrix}}
+\index{trs\_matrix@{trs\_matrix}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{trs\_matrix()}{trs\_matrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Transform\+Data\+::trs\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_ac2834bb256f1e15cfc1c622c769330f7}\label{class_transform_data_ac2834bb256f1e15cfc1c622c769330f7} 
+\index{TransformData@{TransformData}!update\_matrix\_and\_object\_info@{update\_matrix\_and\_object\_info}}
+\index{update\_matrix\_and\_object\_info@{update\_matrix\_and\_object\_info}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{update\_matrix\_and\_object\_info()}{update\_matrix\_and\_object\_info()}}
+{\footnotesize\ttfamily void Transform\+Data\+::update\+\_\+matrix\+\_\+and\+\_\+object\+\_\+info (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{matrix,  }\item[{int \texorpdfstring{$\ast$}{*}}]{object\+\_\+information }\end{DoxyParamCaption})}
+
+\Hypertarget{class_transform_data_af48a416ac4edcc878f7ab5f829da0029}\label{class_transform_data_af48a416ac4edcc878f7ab5f829da0029} 
+\index{TransformData@{TransformData}!write@{write}}
+\index{write@{write}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily std\+::ofstream \& Transform\+Data\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a4c719562d1d378e83aa4f751dff67fcb}{Recordable\+Data}}.
+
+\Hypertarget{class_transform_data_ad35b58674c00d5f91fb1f7dbc6640aa0}\label{class_transform_data_ad35b58674c00d5f91fb1f7dbc6640aa0} 
+\index{TransformData@{TransformData}!write\_to\_stream@{write\_to\_stream}}
+\index{write\_to\_stream@{write\_to\_stream}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{write\_to\_stream()}{write\_to\_stream()}}
+{\footnotesize\ttfamily void Transform\+Data\+::write\+\_\+to\+\_\+stream (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_recordable_data_a94dd274caf8c8168f686653f48063d71}{Recordable\+Data}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_transform_data_ac3663647d9912d5f109c54fea08a3cc7}\label{class_transform_data_ac3663647d9912d5f109c54fea08a3cc7} 
+\index{TransformData@{TransformData}!active@{active}}
+\index{active@{active}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily int Transform\+Data\+::active = -\/1}
+
+\Hypertarget{class_transform_data_a54b003fe3586026b913e1d694adfc42d}\label{class_transform_data_a54b003fe3586026b913e1d694adfc42d} 
+\index{TransformData@{TransformData}!global\_position@{global\_position}}
+\index{global\_position@{global\_position}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{global\_position}{global\_position}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+Data\+::global\+\_\+position \{0.\+0f,0.\+0f,0.\+0f\}}
+
+\Hypertarget{class_transform_data_a8fd00608e08b55a5bbf6872fa863e28d}\label{class_transform_data_a8fd00608e08b55a5bbf6872fa863e28d} 
+\index{TransformData@{TransformData}!global\_rotation@{global\_rotation}}
+\index{global\_rotation@{global\_rotation}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{global\_rotation}{global\_rotation}}
+{\footnotesize\ttfamily glm\+::quat Transform\+Data\+::global\+\_\+rotation \{0.\+0f,0.\+0f,0.\+0f,0.\+0f\}}
+
+\Hypertarget{class_transform_data_a4e543a188308614e66e4f0e02927d484}\label{class_transform_data_a4e543a188308614e66e4f0e02927d484} 
+\index{TransformData@{TransformData}!global\_scale@{global\_scale}}
+\index{global\_scale@{global\_scale}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{global\_scale}{global\_scale}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+Data\+::global\+\_\+scale \{1.\+0f,1.\+0f,1.\+0f\}}
+
+\Hypertarget{class_transform_data_ad6b2cacd8441ef666d4006d787c0b34a}\label{class_transform_data_ad6b2cacd8441ef666d4006d787c0b34a} 
+\index{TransformData@{TransformData}!local\_position@{local\_position}}
+\index{local\_position@{local\_position}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{local\_position}{local\_position}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+Data\+::local\+\_\+position \{0.\+0f,0.\+0f,0.\+0f\}}
+
+\Hypertarget{class_transform_data_ae4c0a98d59abba4635983ac9d5599028}\label{class_transform_data_ae4c0a98d59abba4635983ac9d5599028} 
+\index{TransformData@{TransformData}!local\_rotation@{local\_rotation}}
+\index{local\_rotation@{local\_rotation}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{local\_rotation}{local\_rotation}}
+{\footnotesize\ttfamily glm\+::quat Transform\+Data\+::local\+\_\+rotation \{0.\+0f,0.\+0f,0.\+0f,0.\+0f\}}
+
+\Hypertarget{class_transform_data_a41f475f090d47d094a619364533adfc2}\label{class_transform_data_a41f475f090d47d094a619364533adfc2} 
+\index{TransformData@{TransformData}!local\_scale@{local\_scale}}
+\index{local\_scale@{local\_scale}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{local\_scale}{local\_scale}}
+{\footnotesize\ttfamily glm\+::vec3 Transform\+Data\+::local\+\_\+scale \{1.\+0f,1.\+0f,1.\+0f\}}
+
+\Hypertarget{class_transform_data_a033b1390643b0622518dd8fa75829d39}\label{class_transform_data_a033b1390643b0622518dd8fa75829d39} 
+\index{TransformData@{TransformData}!parent\_uuid@{parent\_uuid}}
+\index{parent\_uuid@{parent\_uuid}!TransformData@{TransformData}}
+\doxysubsubsection{\texorpdfstring{parent\_uuid}{parent\_uuid}}
+{\footnotesize\ttfamily int Transform\+Data\+::parent\+\_\+uuid = -\/1}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\+Transform/\mbox{\hyperlink{_transform_data_8h}{Transform\+Data.\+h}}\item 
+Src/\+Recording/\+Transform/\mbox{\hyperlink{_transform_data_8cpp}{Transform\+Data.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,38 @@
+\doxysection{Sound\+Buffer.\+h}
+\hypertarget{_sound_buffer_8h_source}{}\label{_sound_buffer_8h_source}\index{Src/Recording/Sound/SoundBuffer.h@{Src/Recording/Sound/SoundBuffer.h}}
+\mbox{\hyperlink{_sound_buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 18.03.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_SOUNDBUFFER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_SOUNDBUFFER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_buffer_8h}{Recording/BaseStructure/Buffer.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sound_data_8h}{SoundData.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sound_buffer}{SoundBuffer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_buffer}{Buffer}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::shared\_ptr<SoundData>\ \mbox{\hyperlink{class_sound_buffer_a8f721d64e0ac4b342a65cb7856b0cbe9}{next\_data}};}
+\DoxyCodeLine{00014\ \ \ \ \ std::shared\_ptr<SoundData>\ \mbox{\hyperlink{class_sound_buffer_a380c0d093a35647cac0fcdbe98351df5}{current\_data}};}
+\DoxyCodeLine{00015\ \ \ \ \ std::shared\_ptr<SoundData>\ \mbox{\hyperlink{class_sound_buffer_ad7efea40eb7d2ac5f7a23a78c245b675}{empty\_data}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_sound_buffer}{SoundBuffer}}(\textcolor{keywordtype}{float}\ start\_time,\ \textcolor{keywordtype}{float}\ end\_time);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_sound_buffer_a98f11fde16b93bf0d95cc70e1ea4dafb}{\string~SoundBuffer}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_sound_buffer_a1753655f2fc8ccbd7ceb38109d033367}{get\_data}}(\textcolor{keywordtype}{float}\ time,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_sound_buffer_a2ecea262effb9747c132a4d57e1482b6}{get\_any\_data}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_sound_buffer_a87119f76a33bbb35396efc5389a26183}{get\_first\_data}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sound_buffer_a8bbd344054626bd2720a489fadd94fb9}{reload\_index\_maps}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_SOUNDBUFFER\_H}}
+
+\end{DoxyCode}

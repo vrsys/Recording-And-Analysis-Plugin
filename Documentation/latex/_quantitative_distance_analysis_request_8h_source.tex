@@ -1,0 +1,48 @@
+\doxysection{Quantitative\+Distance\+Analysis\+Request.\+h}
+\hypertarget{_quantitative_distance_analysis_request_8h_source}{}\label{_quantitative_distance_analysis_request_8h_source}\index{Src/Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeDistanceAnalysisRequest.h@{Src/Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeDistanceAnalysisRequest.h}}
+\mbox{\hyperlink{_quantitative_distance_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Admin\ on\ 07.03.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_QUANTITATIVEDISTANCEANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_QUANTITATIVEDISTANCEANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quantitative_tramsform_analysis_request_8h}{QuantitativeTramsformAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_quantitative_distance_analysis_request}{QuantitativeDistanceAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_quantitative_transform_analysis_request}{QuantitativeTransformAnalysisRequest}}\{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a548457e0701e022af7e5db430a291bff}{id\_a}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a8d7ee193db4926356f87cebbab836786}{id\_b}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a75281b6f5b62e81b956171d19c302c7f}{present\_a}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_abc72ee0667a1ed6ac2c6b966ef2439e7}{present\_b}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a633b4a5fd9829efc8ce2cf5f0562142c}{current\_a}};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a867aae68d8f2ee6c2550d473211bce68}{current\_b}};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_aca3831f5f47f514ab7e0c72595d41645}{last\_a}};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a675444899f09a1298462c5483f473099}{last\_b}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_quantitative_distance_analysis_request}{QuantitativeDistanceAnalysisRequest}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a548457e0701e022af7e5db430a291bff}{id\_a}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a8d7ee193db4926356f87cebbab836786}{id\_b}},\ \textcolor{keywordtype}{float}\ t\_sampling\_rate);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_ad2526491affb23c1b53a0c1c6a364a61}{update\_parameters}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ original\_meta\_file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ new\_meta\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a3ccb16d932be2eba519604754bd779db}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ std::shared\_ptr<QuantitativeAnalysisRequest>\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_af9ec15d5dca39ca8bc468733de285831}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a75b313a39421349e9c1ff933c9127b1c}{get\_description}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_info)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_aba96cc80c39dc7abb25a8c691e481939}{clear\_recent\_data}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\ \mbox{\hyperlink{class_quantitative_distance_analysis_request_a880c9d813a9963c5f36b6a8701c31bc9}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_QUANTITATIVEDISTANCEANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

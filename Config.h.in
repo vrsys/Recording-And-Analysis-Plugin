@@ -1,0 +1,17 @@
+#ifndef CONFIG_H_IN
+#define CONFIG_H_IN
+
+#include <zlib.h>
+#include <stdint.h>
+
+#define PROJECT_NAME "@PROJECT_NAME@"
+#define PROJECT_VER  "@PROJECT_VERSION@"
+#define PROJECT_VER_MAJOR "@PROJECT_VERSION_MAJOR@"
+#define PROJECT_VER_MINOR "@PROJECT_VERSION_MINOR@"
+#define PROJECT_VER_PATCH "@PROJECT_VERSION_PATCH@"
+#define COMPRESSION 0
+#define COMPRESSION_LEVEL 5 // 1 (low) to 9 (high but slow)
+#define MULTI_THREADED 1
+const size_t HEADER_SIZE = sizeof(uint32_t); // size of compressed data block header
+
+#endif // INCLUDE_GUARD

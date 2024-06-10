@@ -1,0 +1,232 @@
+\doxysection{Interval\+Distance\+Analysis\+Request Class Reference}
+\hypertarget{class_interval_distance_analysis_request}{}\label{class_interval_distance_analysis_request}\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Interval\+Distance\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Interval\+Distance\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_interval_distance_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_interval_distance_analysis_request_a191efa08ed09335ba8677fac4385d17d}{Interval\+Distance\+Analysis\+Request}} (int a, int b, float t)
+\item 
+void \mbox{\hyperlink{class_interval_distance_analysis_request_aab2e82c7d7a1b68ef857ff2a8dd7d04e}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data) override
+\item 
+std\+::string \mbox{\hyperlink{class_interval_distance_analysis_request_a7229aac2f7fd82f70eb03ff777223ec6}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const override
+\item 
+void \mbox{\hyperlink{class_interval_distance_analysis_request_a81000eac637f7f6ad6dbbd29d353408a}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_interval_distance_analysis_request_a8b8003c9519aacda0653ddc1e38e19ac}{clone}} () const override
+\item 
+void \mbox{\hyperlink{class_interval_distance_analysis_request_a1f0f630f541c8f574191fd09d7e5a813}{clear\+\_\+recent\+\_\+data}} () override
+\item 
+\mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} \mbox{\hyperlink{class_interval_distance_analysis_request_a4400f73ef7b84f780ace5626fcb5fa32}{get\+\_\+type}} () const override
+\item 
+int \mbox{\hyperlink{class_interval_distance_analysis_request_a375fb8d6f77a93a0ff7ac887f965f3a7}{get\+\_\+id\+\_\+a}} () const
+\item 
+int \mbox{\hyperlink{class_interval_distance_analysis_request_a2a4ff3832ede6f405b4c402b12256cb2}{get\+\_\+id\+\_\+b}} () const
+\item 
+void \mbox{\hyperlink{class_interval_distance_analysis_request_aec42f373b4fa65b242184129f59fc296}{set\+\_\+id\+\_\+a}} (int new\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_interval_distance_analysis_request_a784a5d8fe135533297be112402f13cc6}{set\+\_\+id\+\_\+b}} (int new\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_adc02e3fee418698665da22c2b9e38763}{get\+\_\+result}} () const
+\item 
+void \mbox{\hyperlink{class_interval_analysis_request_a9961447a702d030a9f8b8d7d204b9568}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_interval_distance_analysis_request_a690a9be3dc24f57dad842dfba4ba851d}{id\+\_\+a}}
+\item 
+int \mbox{\hyperlink{class_interval_distance_analysis_request_a360cd9b26688f410c6622225c0424394}{id\+\_\+b}}
+\item 
+float \mbox{\hyperlink{class_interval_distance_analysis_request_a2708da938c1b8e5734298c5194264bb1}{threshold}}
+\item 
+bool \mbox{\hyperlink{class_interval_distance_analysis_request_a72654b169c8fc0a08a7d8f6deadbe5d5}{present\+\_\+a}} = false
+\item 
+bool \mbox{\hyperlink{class_interval_distance_analysis_request_ad4f56f81fbe5fcce65b906db16bde0c6}{present\+\_\+b}} = false
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_interval_distance_analysis_request_a007a96edf648fe7dfa037521d5f7464b}{current\+\_\+a}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_interval_distance_analysis_request_ad63f2db48d60c33885999ede2e108313}{current\+\_\+b}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_interval_distance_analysis_request_a0a60e77dcf376b04637d2f7343c43606}{last\+\_\+a}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_interval_distance_analysis_request_ab9f88792b6e29dbff9abda7e304cffdb}{last\+\_\+b}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_ac34fb1a86b659287180cb91c8a2608f1}{intervals}}
+\item 
+\mbox{\hyperlink{struct_time_interval}{Time\+Interval}} \mbox{\hyperlink{class_interval_analysis_request_a92538cc08380b17ce51d4834d846fab8}{current\+Interval}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_interval_distance_analysis_request_a191efa08ed09335ba8677fac4385d17d}\label{class_interval_distance_analysis_request_a191efa08ed09335ba8677fac4385d17d} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{IntervalDistanceAnalysisRequest()}{IntervalDistanceAnalysisRequest()}}
+{\footnotesize\ttfamily Interval\+Distance\+Analysis\+Request\+::\+Interval\+Distance\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_interval_distance_analysis_request_a1f0f630f541c8f574191fd09d7e5a813}\label{class_interval_distance_analysis_request_a1f0f630f541c8f574191fd09d7e5a813} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!clear\_recent\_data@{clear\_recent\_data}}
+\index{clear\_recent\_data@{clear\_recent\_data}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clear\_recent\_data()}{clear\_recent\_data()}}
+{\footnotesize\ttfamily void Interval\+Distance\+Analysis\+Request\+::clear\+\_\+recent\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a28952cc890dc5eb57cbd7f9d20b6e427}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_distance_analysis_request_a8b8003c9519aacda0653ddc1e38e19ac}\label{class_interval_distance_analysis_request_a8b8003c9519aacda0653ddc1e38e19ac} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!clone@{clone}}
+\index{clone@{clone}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ Interval\+Distance\+Analysis\+Request\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a565b40048c51b3926999fe3ee878c06e}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_distance_analysis_request_a7229aac2f7fd82f70eb03ff777223ec6}\label{class_interval_distance_analysis_request_a7229aac2f7fd82f70eb03ff777223ec6} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily std\+::string Interval\+Distance\+Analysis\+Request\+::get\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778}{Analysis\+Request}}.
+
+\Hypertarget{class_interval_distance_analysis_request_a375fb8d6f77a93a0ff7ac887f965f3a7}\label{class_interval_distance_analysis_request_a375fb8d6f77a93a0ff7ac887f965f3a7} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!get\_id\_a@{get\_id\_a}}
+\index{get\_id\_a@{get\_id\_a}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_id\_a()}{get\_id\_a()}}
+{\footnotesize\ttfamily int Interval\+Distance\+Analysis\+Request\+::get\+\_\+id\+\_\+a (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_interval_distance_analysis_request_a2a4ff3832ede6f405b4c402b12256cb2}\label{class_interval_distance_analysis_request_a2a4ff3832ede6f405b4c402b12256cb2} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!get\_id\_b@{get\_id\_b}}
+\index{get\_id\_b@{get\_id\_b}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_id\_b()}{get\_id\_b()}}
+{\footnotesize\ttfamily int Interval\+Distance\+Analysis\+Request\+::get\+\_\+id\+\_\+b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_interval_distance_analysis_request_a4400f73ef7b84f780ace5626fcb5fa32}\label{class_interval_distance_analysis_request_a4400f73ef7b84f780ace5626fcb5fa32} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} Interval\+Distance\+Analysis\+Request\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_transform_analysis_request_a3dea3275685c99d8ea8bc559cad7759f}{Interval\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_distance_analysis_request_aab2e82c7d7a1b68ef857ff2a8dd7d04e}\label{class_interval_distance_analysis_request_aab2e82c7d7a1b68ef857ff2a8dd7d04e} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Interval\+Distance\+Analysis\+Request\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{t\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{s\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_transform_analysis_request_a7e72be7c65fd84d8317e8f035d3d4c72}{Interval\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_distance_analysis_request_aec42f373b4fa65b242184129f59fc296}\label{class_interval_distance_analysis_request_aec42f373b4fa65b242184129f59fc296} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!set\_id\_a@{set\_id\_a}}
+\index{set\_id\_a@{set\_id\_a}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{set\_id\_a()}{set\_id\_a()}}
+{\footnotesize\ttfamily void Interval\+Distance\+Analysis\+Request\+::set\+\_\+id\+\_\+a (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_interval_distance_analysis_request_a784a5d8fe135533297be112402f13cc6}\label{class_interval_distance_analysis_request_a784a5d8fe135533297be112402f13cc6} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!set\_id\_b@{set\_id\_b}}
+\index{set\_id\_b@{set\_id\_b}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{set\_id\_b()}{set\_id\_b()}}
+{\footnotesize\ttfamily void Interval\+Distance\+Analysis\+Request\+::set\+\_\+id\+\_\+b (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_interval_distance_analysis_request_a81000eac637f7f6ad6dbbd29d353408a}\label{class_interval_distance_analysis_request_a81000eac637f7f6ad6dbbd29d353408a} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!update\_parameters@{update\_parameters}}
+\index{update\_parameters@{update\_parameters}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{update\_parameters()}{update\_parameters()}}
+{\footnotesize\ttfamily void Interval\+Distance\+Analysis\+Request\+::update\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{original\+\_\+meta\+\_\+file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{new\+\_\+meta\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{Analysis\+Request}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_interval_distance_analysis_request_a007a96edf648fe7dfa037521d5f7464b}\label{class_interval_distance_analysis_request_a007a96edf648fe7dfa037521d5f7464b} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!current\_a@{current\_a}}
+\index{current\_a@{current\_a}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{current\_a}{current\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Interval\+Distance\+Analysis\+Request\+::current\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_distance_analysis_request_ad63f2db48d60c33885999ede2e108313}\label{class_interval_distance_analysis_request_ad63f2db48d60c33885999ede2e108313} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!current\_b@{current\_b}}
+\index{current\_b@{current\_b}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{current\_b}{current\_b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Interval\+Distance\+Analysis\+Request\+::current\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_distance_analysis_request_a690a9be3dc24f57dad842dfba4ba851d}\label{class_interval_distance_analysis_request_a690a9be3dc24f57dad842dfba4ba851d} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!id\_a@{id\_a}}
+\index{id\_a@{id\_a}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id\_a}{id\_a}}
+{\footnotesize\ttfamily int Interval\+Distance\+Analysis\+Request\+::id\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_distance_analysis_request_a360cd9b26688f410c6622225c0424394}\label{class_interval_distance_analysis_request_a360cd9b26688f410c6622225c0424394} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!id\_b@{id\_b}}
+\index{id\_b@{id\_b}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id\_b}{id\_b}}
+{\footnotesize\ttfamily int Interval\+Distance\+Analysis\+Request\+::id\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_distance_analysis_request_a0a60e77dcf376b04637d2f7343c43606}\label{class_interval_distance_analysis_request_a0a60e77dcf376b04637d2f7343c43606} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!last\_a@{last\_a}}
+\index{last\_a@{last\_a}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{last\_a}{last\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Interval\+Distance\+Analysis\+Request\+::last\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_distance_analysis_request_ab9f88792b6e29dbff9abda7e304cffdb}\label{class_interval_distance_analysis_request_ab9f88792b6e29dbff9abda7e304cffdb} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!last\_b@{last\_b}}
+\index{last\_b@{last\_b}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{last\_b}{last\_b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Interval\+Distance\+Analysis\+Request\+::last\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_distance_analysis_request_a72654b169c8fc0a08a7d8f6deadbe5d5}\label{class_interval_distance_analysis_request_a72654b169c8fc0a08a7d8f6deadbe5d5} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!present\_a@{present\_a}}
+\index{present\_a@{present\_a}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{present\_a}{present\_a}}
+{\footnotesize\ttfamily bool Interval\+Distance\+Analysis\+Request\+::present\+\_\+a = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_distance_analysis_request_ad4f56f81fbe5fcce65b906db16bde0c6}\label{class_interval_distance_analysis_request_ad4f56f81fbe5fcce65b906db16bde0c6} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!present\_b@{present\_b}}
+\index{present\_b@{present\_b}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{present\_b}{present\_b}}
+{\footnotesize\ttfamily bool Interval\+Distance\+Analysis\+Request\+::present\+\_\+b = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_distance_analysis_request_a2708da938c1b8e5734298c5194264bb1}\label{class_interval_distance_analysis_request_a2708da938c1b8e5734298c5194264bb1} 
+\index{IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}!threshold@{threshold}}
+\index{threshold@{threshold}!IntervalDistanceAnalysisRequest@{IntervalDistanceAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily float Interval\+Distance\+Analysis\+Request\+::threshold\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Interval\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_interval_distance_analysis_request_8h}{Interval\+Distance\+Analysis\+Request.\+h}}\item 
+Src/\+Analysis/\+Interval\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_interval_distance_analysis_request_8cpp}{Interval\+Distance\+Analysis\+Request.\+cpp}}\end{DoxyCompactItemize}

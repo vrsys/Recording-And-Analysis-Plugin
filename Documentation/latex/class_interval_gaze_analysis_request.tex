@@ -1,0 +1,256 @@
+\doxysection{Interval\+Gaze\+Analysis\+Request Class Reference}
+\hypertarget{class_interval_gaze_analysis_request}{}\label{class_interval_gaze_analysis_request}\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Interval\+Gaze\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Interval\+Gaze\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_interval_gaze_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_interval_gaze_analysis_request_aaf164b38f2b4efd33621e6ff2b0d9557}{Interval\+Gaze\+Analysis\+Request}} (int a, int b, float t, float max\+\_\+d, int \mbox{\hyperlink{class_interval_gaze_analysis_request_a8687f1477a6975aa79d5c7a7fbbede2f}{axis}}=0)
+\item 
+void \mbox{\hyperlink{class_interval_gaze_analysis_request_af9723a0904cbc5c06a67b95cf5728042}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data) override
+\item 
+std\+::string \mbox{\hyperlink{class_interval_gaze_analysis_request_a1fda365162636ef987904648712cb615}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const override
+\item 
+void \mbox{\hyperlink{class_interval_gaze_analysis_request_a4b05c72e15f0bf3b639b2ae80c53a73c}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_interval_gaze_analysis_request_ad6ce666b4481fb86cf5bd099c460b76f}{clone}} () const override
+\item 
+void \mbox{\hyperlink{class_interval_gaze_analysis_request_a93f188dc11464f68e400790dc26b76cc}{clear\+\_\+recent\+\_\+data}} () override
+\item 
+\mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} \mbox{\hyperlink{class_interval_gaze_analysis_request_a50c6563060465fc1828f634b2f5cba58}{get\+\_\+type}} () const override
+\item 
+int \mbox{\hyperlink{class_interval_gaze_analysis_request_a70e69b2a543304b25e02413e138261a0}{get\+\_\+id\+\_\+a}} () const
+\item 
+int \mbox{\hyperlink{class_interval_gaze_analysis_request_a78935069bfdc50eaf9073168397ec226}{get\+\_\+id\+\_\+b}} () const
+\item 
+void \mbox{\hyperlink{class_interval_gaze_analysis_request_a7b55b6f60cdc2c8f0290ad662880022a}{set\+\_\+id\+\_\+a}} (int new\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_interval_gaze_analysis_request_a6ce4cd040dbcf6ed3f3f6ef8e1991e22}{set\+\_\+id\+\_\+b}} (int new\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_adc02e3fee418698665da22c2b9e38763}{get\+\_\+result}} () const
+\item 
+void \mbox{\hyperlink{class_interval_analysis_request_a9961447a702d030a9f8b8d7d204b9568}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_interval_gaze_analysis_request_a62d8461bfa7a1dc7b4404f4a108683fc}{id\+\_\+a}}
+\item 
+int \mbox{\hyperlink{class_interval_gaze_analysis_request_af6f095771339bac5417aeda2fd15db06}{id\+\_\+b}}
+\item 
+float \mbox{\hyperlink{class_interval_gaze_analysis_request_a54cedfe3e6ef43cf4d6f1263bc76b127}{threshold}}
+\item 
+int \mbox{\hyperlink{class_interval_gaze_analysis_request_a8687f1477a6975aa79d5c7a7fbbede2f}{axis}}
+\item 
+float \mbox{\hyperlink{class_interval_gaze_analysis_request_ab4790da69d3d9b7a3a10700aa6953f80}{cone\+\_\+height}} = 100.\+0f
+\item 
+float \mbox{\hyperlink{class_interval_gaze_analysis_request_a38cef76f2856145960354f91588c34a3}{cone\+\_\+radius}} = -\/1.\+0f
+\item 
+bool \mbox{\hyperlink{class_interval_gaze_analysis_request_ab6833620f18452ca7630c5d7e0cbfe18}{present\+\_\+a}} = false
+\item 
+bool \mbox{\hyperlink{class_interval_gaze_analysis_request_aa6b58f4bbc223e8834e340f608d31a4e}{present\+\_\+b}} = false
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_interval_gaze_analysis_request_a4e6c7fb68431f6f45963da29df3ac068}{current\+\_\+a}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_interval_gaze_analysis_request_a166394262f740a6a6fe8018439fdbae0}{current\+\_\+b}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_interval_gaze_analysis_request_ae77bb6183db61b72e9c7e9cdf157a854}{last\+\_\+a}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_interval_gaze_analysis_request_a27634cb8f65f81c96f23fab9f5779227}{last\+\_\+b}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_ac34fb1a86b659287180cb91c8a2608f1}{intervals}}
+\item 
+\mbox{\hyperlink{struct_time_interval}{Time\+Interval}} \mbox{\hyperlink{class_interval_analysis_request_a92538cc08380b17ce51d4834d846fab8}{current\+Interval}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_interval_gaze_analysis_request_aaf164b38f2b4efd33621e6ff2b0d9557}\label{class_interval_gaze_analysis_request_aaf164b38f2b4efd33621e6ff2b0d9557} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{IntervalGazeAnalysisRequest()}{IntervalGazeAnalysisRequest()}}
+{\footnotesize\ttfamily Interval\+Gaze\+Analysis\+Request\+::\+Interval\+Gaze\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b,  }\item[{float}]{t,  }\item[{float}]{max\+\_\+d,  }\item[{int}]{axis = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_interval_gaze_analysis_request_a93f188dc11464f68e400790dc26b76cc}\label{class_interval_gaze_analysis_request_a93f188dc11464f68e400790dc26b76cc} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!clear\_recent\_data@{clear\_recent\_data}}
+\index{clear\_recent\_data@{clear\_recent\_data}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clear\_recent\_data()}{clear\_recent\_data()}}
+{\footnotesize\ttfamily void Interval\+Gaze\+Analysis\+Request\+::clear\+\_\+recent\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a28952cc890dc5eb57cbd7f9d20b6e427}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_gaze_analysis_request_ad6ce666b4481fb86cf5bd099c460b76f}\label{class_interval_gaze_analysis_request_ad6ce666b4481fb86cf5bd099c460b76f} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!clone@{clone}}
+\index{clone@{clone}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ Interval\+Gaze\+Analysis\+Request\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a565b40048c51b3926999fe3ee878c06e}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_gaze_analysis_request_a1fda365162636ef987904648712cb615}\label{class_interval_gaze_analysis_request_a1fda365162636ef987904648712cb615} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily std\+::string Interval\+Gaze\+Analysis\+Request\+::get\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778}{Analysis\+Request}}.
+
+\Hypertarget{class_interval_gaze_analysis_request_a70e69b2a543304b25e02413e138261a0}\label{class_interval_gaze_analysis_request_a70e69b2a543304b25e02413e138261a0} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!get\_id\_a@{get\_id\_a}}
+\index{get\_id\_a@{get\_id\_a}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_id\_a()}{get\_id\_a()}}
+{\footnotesize\ttfamily int Interval\+Gaze\+Analysis\+Request\+::get\+\_\+id\+\_\+a (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_interval_gaze_analysis_request_a78935069bfdc50eaf9073168397ec226}\label{class_interval_gaze_analysis_request_a78935069bfdc50eaf9073168397ec226} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!get\_id\_b@{get\_id\_b}}
+\index{get\_id\_b@{get\_id\_b}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_id\_b()}{get\_id\_b()}}
+{\footnotesize\ttfamily int Interval\+Gaze\+Analysis\+Request\+::get\+\_\+id\+\_\+b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_interval_gaze_analysis_request_a50c6563060465fc1828f634b2f5cba58}\label{class_interval_gaze_analysis_request_a50c6563060465fc1828f634b2f5cba58} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} Interval\+Gaze\+Analysis\+Request\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_transform_analysis_request_a3dea3275685c99d8ea8bc559cad7759f}{Interval\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_gaze_analysis_request_af9723a0904cbc5c06a67b95cf5728042}\label{class_interval_gaze_analysis_request_af9723a0904cbc5c06a67b95cf5728042} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Interval\+Gaze\+Analysis\+Request\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{t\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{s\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_transform_analysis_request_a7e72be7c65fd84d8317e8f035d3d4c72}{Interval\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_gaze_analysis_request_a7b55b6f60cdc2c8f0290ad662880022a}\label{class_interval_gaze_analysis_request_a7b55b6f60cdc2c8f0290ad662880022a} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!set\_id\_a@{set\_id\_a}}
+\index{set\_id\_a@{set\_id\_a}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{set\_id\_a()}{set\_id\_a()}}
+{\footnotesize\ttfamily void Interval\+Gaze\+Analysis\+Request\+::set\+\_\+id\+\_\+a (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_interval_gaze_analysis_request_a6ce4cd040dbcf6ed3f3f6ef8e1991e22}\label{class_interval_gaze_analysis_request_a6ce4cd040dbcf6ed3f3f6ef8e1991e22} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!set\_id\_b@{set\_id\_b}}
+\index{set\_id\_b@{set\_id\_b}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{set\_id\_b()}{set\_id\_b()}}
+{\footnotesize\ttfamily void Interval\+Gaze\+Analysis\+Request\+::set\+\_\+id\+\_\+b (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_interval_gaze_analysis_request_a4b05c72e15f0bf3b639b2ae80c53a73c}\label{class_interval_gaze_analysis_request_a4b05c72e15f0bf3b639b2ae80c53a73c} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!update\_parameters@{update\_parameters}}
+\index{update\_parameters@{update\_parameters}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{update\_parameters()}{update\_parameters()}}
+{\footnotesize\ttfamily void Interval\+Gaze\+Analysis\+Request\+::update\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{original\+\_\+meta\+\_\+file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{new\+\_\+meta\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{Analysis\+Request}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_interval_gaze_analysis_request_a8687f1477a6975aa79d5c7a7fbbede2f}\label{class_interval_gaze_analysis_request_a8687f1477a6975aa79d5c7a7fbbede2f} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!axis@{axis}}
+\index{axis@{axis}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{axis}{axis}}
+{\footnotesize\ttfamily int Interval\+Gaze\+Analysis\+Request\+::axis\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_ab4790da69d3d9b7a3a10700aa6953f80}\label{class_interval_gaze_analysis_request_ab4790da69d3d9b7a3a10700aa6953f80} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!cone\_height@{cone\_height}}
+\index{cone\_height@{cone\_height}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{cone\_height}{cone\_height}}
+{\footnotesize\ttfamily float Interval\+Gaze\+Analysis\+Request\+::cone\+\_\+height = 100.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_a38cef76f2856145960354f91588c34a3}\label{class_interval_gaze_analysis_request_a38cef76f2856145960354f91588c34a3} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!cone\_radius@{cone\_radius}}
+\index{cone\_radius@{cone\_radius}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{cone\_radius}{cone\_radius}}
+{\footnotesize\ttfamily float Interval\+Gaze\+Analysis\+Request\+::cone\+\_\+radius = -\/1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_a4e6c7fb68431f6f45963da29df3ac068}\label{class_interval_gaze_analysis_request_a4e6c7fb68431f6f45963da29df3ac068} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!current\_a@{current\_a}}
+\index{current\_a@{current\_a}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{current\_a}{current\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Interval\+Gaze\+Analysis\+Request\+::current\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_a166394262f740a6a6fe8018439fdbae0}\label{class_interval_gaze_analysis_request_a166394262f740a6a6fe8018439fdbae0} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!current\_b@{current\_b}}
+\index{current\_b@{current\_b}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{current\_b}{current\_b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Interval\+Gaze\+Analysis\+Request\+::current\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_a62d8461bfa7a1dc7b4404f4a108683fc}\label{class_interval_gaze_analysis_request_a62d8461bfa7a1dc7b4404f4a108683fc} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!id\_a@{id\_a}}
+\index{id\_a@{id\_a}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id\_a}{id\_a}}
+{\footnotesize\ttfamily int Interval\+Gaze\+Analysis\+Request\+::id\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_af6f095771339bac5417aeda2fd15db06}\label{class_interval_gaze_analysis_request_af6f095771339bac5417aeda2fd15db06} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!id\_b@{id\_b}}
+\index{id\_b@{id\_b}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id\_b}{id\_b}}
+{\footnotesize\ttfamily int Interval\+Gaze\+Analysis\+Request\+::id\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_ae77bb6183db61b72e9c7e9cdf157a854}\label{class_interval_gaze_analysis_request_ae77bb6183db61b72e9c7e9cdf157a854} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!last\_a@{last\_a}}
+\index{last\_a@{last\_a}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{last\_a}{last\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Interval\+Gaze\+Analysis\+Request\+::last\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_a27634cb8f65f81c96f23fab9f5779227}\label{class_interval_gaze_analysis_request_a27634cb8f65f81c96f23fab9f5779227} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!last\_b@{last\_b}}
+\index{last\_b@{last\_b}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{last\_b}{last\_b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Interval\+Gaze\+Analysis\+Request\+::last\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_ab6833620f18452ca7630c5d7e0cbfe18}\label{class_interval_gaze_analysis_request_ab6833620f18452ca7630c5d7e0cbfe18} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!present\_a@{present\_a}}
+\index{present\_a@{present\_a}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{present\_a}{present\_a}}
+{\footnotesize\ttfamily bool Interval\+Gaze\+Analysis\+Request\+::present\+\_\+a = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_aa6b58f4bbc223e8834e340f608d31a4e}\label{class_interval_gaze_analysis_request_aa6b58f4bbc223e8834e340f608d31a4e} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!present\_b@{present\_b}}
+\index{present\_b@{present\_b}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{present\_b}{present\_b}}
+{\footnotesize\ttfamily bool Interval\+Gaze\+Analysis\+Request\+::present\+\_\+b = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_gaze_analysis_request_a54cedfe3e6ef43cf4d6f1263bc76b127}\label{class_interval_gaze_analysis_request_a54cedfe3e6ef43cf4d6f1263bc76b127} 
+\index{IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}!threshold@{threshold}}
+\index{threshold@{threshold}!IntervalGazeAnalysisRequest@{IntervalGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily float Interval\+Gaze\+Analysis\+Request\+::threshold\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Interval\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_interval_gaze_analysis_request_8h}{Interval\+Gaze\+Analysis\+Request.\+h}}\item 
+Src/\+Analysis/\+Interval\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_interval_gaze_analysis_request_8cpp}{Interval\+Gaze\+Analysis\+Request.\+cpp}}\end{DoxyCompactItemize}

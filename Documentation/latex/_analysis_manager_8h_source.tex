@@ -1,0 +1,88 @@
+\doxysection{Analysis\+Manager.\+h}
+\hypertarget{_analysis_manager_8h_source}{}\label{_analysis_manager_8h_source}\index{Src/Analysis/AnalysisManager.h@{Src/Analysis/AnalysisManager.h}}
+\mbox{\hyperlink{_analysis_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Anton-\/Lammert\ on\ 13.12.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_ANALYSISMANAGER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_ANALYSISMANAGER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_distance_analysis_request_8h}{Analysis/IntervalAnalysis/TransformAnalysis/IntervalDistanceAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_containment_analysis_request_8h}{Analysis/IntervalAnalysis/TransformAnalysis/IntervalContainmentAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_gaze_analysis_request_8h}{Analysis/IntervalAnalysis/TransformAnalysis/IntervalGazeAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_rotation_analysis_request_8h}{Analysis/IntervalAnalysis/TransformAnalysis/IntervalRotationAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_sound_activation_analysis_request_8h}{Analysis/IntervalAnalysis/SoundAnalysis/IntervalSoundActivationAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_velocity_analysis_request_8h}{Analysis/IntervalAnalysis/TransformAnalysis/IntervalVelocityAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_transform_analysis_request_8h}{Analysis/IntervalAnalysis/TransformAnalysis/IntervalTransformAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_sound_analysis_request_8h}{Analysis/IntervalAnalysis/SoundAnalysis/IntervalSoundAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_meta_information_8h}{Recording/MetaInformation.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../../External/thread-\/pool/include/BS\_thread\_pool.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quantitative_analysis_request_8h}{Analysis/QuantitativeAnalysis/QuantitativeAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_analysis_manager}{AnalysisManager}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_analysis_manager}{AnalysisManager}}\&\ \mbox{\hyperlink{class_analysis_manager_a03795e317c88f19723106c333e96c4b9}{getInstance}}()\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_analysis_manager}{AnalysisManager}}\ instance;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_analysis_manager_ad01a29b31d55b631bff0901c63491f10}{AnalysisManager}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_analysis_manager_ad4251b673528b3f4ac4e2cd569b67625}{AnalysisManager}}(\mbox{\hyperlink{class_analysis_manager}{AnalysisManager}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_a8c410157d6d9f98e11c3bb03bd8a3395}{operator=}}(\mbox{\hyperlink{class_analysis_manager}{AnalysisManager}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_a817fc13aa767674f914aea01904157f8}{add\_recording\_path}}(\textcolor{keywordtype}{char}*\ path,\ \textcolor{keywordtype}{int}\ path\_length);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_acf27d19586f907bab63ad1c507d90d0f}{add\_intervals\_to\_investigate}}(std::string\ path,\ std::vector<TimeInterval>\ intervals);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_ab005f0016bc4f6bb91a31612a3949e2f}{add\_interval\_analysis\_request}}(std::shared\_ptr<IntervalAnalysisRequest>\ request);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_manager_aa3b437b2a1dc0d036ad88332f08c42dd}{process\_interval\_analysis\_request}}(std::shared\_ptr<IntervalAnalysisRequest>\ analysis\_request,\ \textcolor{keywordtype}{float}*\ intervals,\ std::string\ \textcolor{keyword}{const}\&\ file,\ std::vector<TimeInterval>\ \textcolor{keyword}{const}\&\ intervals\_to\_investigate)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_manager_a9fff1ebfec10ac1690440de589411fec}{process\_interval\_analysis\_requests\_for\_all\_files}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_a292fda17b7b4b7c629c65b7cbed03cea}{process\_interval\_analysis\_requests\_for\_file}}(std::string\ \textcolor{keyword}{const}\&\ file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_information,\ std::vector<TimeInterval>\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\_of\_interest}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_manager_a6af46c8cadc935e5e46c3fa04ae70c31}{process\_interval\_analysis\_requests\_for\_primary\_file}}(\textcolor{keywordtype}{int}\ analysis\_id,\ \textcolor{keywordtype}{float}*\ intervals,\ std::vector<TimeInterval>\ \mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\_of\_interest}});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_a503f5ac43e87bbde4cdbd12f220f4f53}{add\_quantitative\_analysis\_request}}(std::shared\_ptr<QuantitativeAnalysisRequest>\ request);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_manager_acba2070a57abb219869f044d930ba9dd}{process\_quantitative\_analysis\_request}}(std::shared\_ptr<QuantitativeAnalysisRequest>\ analysis\_request,\ \textcolor{keywordtype}{float}*\ values,\ std::string\ \textcolor{keyword}{const}\&\ file,\ std::vector<TimeInterval>\ \textcolor{keyword}{const}\&\ intervals\_to\_investigate)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_manager_a5362e74121bf95b586ef352c021f6509}{process\_quantitative\_analysis\_requests\_for\_all\_files}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_a9f4022284cda1d71e02be1e90c183b12}{process\_quantitative\_analysis\_requests\_for\_file}}(\textcolor{keyword}{const}\ std::string\ \&file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_information,\ \textcolor{keyword}{const}\ std::vector<TimeInterval>\ \&\mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\_of\_interest}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_manager_aafc6cc93ec44795f6b89d31774165cfc}{process\_quantitative\_analysis\_requests\_for\_primary\_file}}(\textcolor{keywordtype}{int}\ analysis\_id,\ \textcolor{keywordtype}{float}*\ values,\ std::vector<TimeInterval>\ \mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\_of\_interest}});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_manager_afcdff5829cae2f0749d20c6528c4479d}{get\_object\_positions}}(\textcolor{keywordtype}{int}\ object\_id,\ \textcolor{keywordtype}{float}\ start\_time,\ \textcolor{keywordtype}{float}\ end\_time,\ \textcolor{keywordtype}{float}*\ positions,\ \textcolor{keywordtype}{int}\ max\_positions);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_a00566cce01dcd06b2ef569eaddc36a51}{clear\_requests}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ std::string\ \mbox{\hyperlink{class_analysis_manager_afcaadc82834a54a1312c083e413d9c41}{get\_primary\_file}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_manager_a9c5d7c66315d78f38bdf9da21c44e561}{clear\_recording\_paths}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_analysis_manager_a49ea2f2e37bfa36a4f897a6bfe7a11da}{debug}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::vector<std::shared\_ptr<IntervalAnalysisRequest>>\ \mbox{\hyperlink{class_analysis_manager_a37a71c63c79dbf4bab6108470450b917}{interval\_analysis\_queries}};}
+\DoxyCodeLine{00076\ \ \ \ \ std::vector<std::shared\_ptr<QuantitativeAnalysisRequest>>\ \mbox{\hyperlink{class_analysis_manager_a37f949d185769d5b4fa668cc75efe9d4}{quantitative\_analysis\_queries}};}
+\DoxyCodeLine{00077\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_analysis_manager_a2fcdfd77b4d329b4ec4dae602573bbf9}{recording\_file\_paths}};}
+\DoxyCodeLine{00078\ \ \ \ \ std::map<std::string,\ std::vector<TimeInterval>>\ \mbox{\hyperlink{class_analysis_manager_a591f6ac30693abf019ef0c733e3213b5}{intervals\_of\_interest}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{static}\ BS::thread\_pool\&\ \mbox{\hyperlink{class_analysis_manager_a8525bc835d458bc5e9719b90c4af437a}{getThreadPool}}()\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ BS::thread\_pool\ thread\_pool(16);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ thread\_pool;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_ANALYSISMANAGER\_H}}
+
+\end{DoxyCode}

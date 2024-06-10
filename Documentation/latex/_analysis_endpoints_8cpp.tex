@@ -1,0 +1,113 @@
+\doxysection{Src/\+Analysis/\+Analysis\+Endpoints.cpp File Reference}
+\hypertarget{_analysis_endpoints_8cpp}{}\label{_analysis_endpoints_8cpp}\index{Src/Analysis/AnalysisEndpoints.cpp@{Src/Analysis/AnalysisEndpoints.cpp}}
+{\ttfamily \#include "{}Analysis/\+Analysis\+Manager.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_ac009d6acc267a1939302788b443de577}{Add\+Analysis\+Recording\+Path}} (char \texorpdfstring{$\ast$}{*}path, int path\+\_\+length)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_ae7d01ef553e70b8fe4a5b88c1fc0e13a}{Add\+Distance\+Analysis\+Request}} (int analysis\+\_\+id, int id\+\_\+a, int id\+\_\+b, float distance)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_aa96afef9da8c9999d74285da836e8201}{Add\+Containment\+Analysis\+Request}} (int analysis\+\_\+id, int id\+\_\+a, float \texorpdfstring{$\ast$}{*}min\+\_\+max)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_a898c2c0ca742e9dc3daa2f163e03e7f7}{Add\+Gaze\+Analysis\+Request}} (int analysis\+\_\+id, int id\+\_\+a, int id\+\_\+b, float cone\+\_\+angle, float distance)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_aff68bf9a021b57d467ce0139f5aede7e}{Add\+Gaze\+Analysis\+Request\+Ax}} (int analysis\+\_\+id, int id\+\_\+a, int id\+\_\+b, float cone\+\_\+angle, float distance, int axis)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_a193591beb4a9f326c57ed0bdcf8e0fa2}{Add\+Rotation\+Analysis\+Request}} (int analysis\+\_\+id, int id\+\_\+a, float temporal\+\_\+search\+\_\+interval, float rotation\+\_\+threshold)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_a6556ed0290b5fc9a0ef9f71c1e4edcd2}{Add\+Sound\+Activation\+Analysis\+Request}} (int analysis\+\_\+id, int sound\+\_\+id, float temporal\+\_\+search\+\_\+interval, float activation\+\_\+level)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_a351f19a05d5889462deb2d3e7553ed15}{Add\+Velocity\+Analysis\+Request}} (int analysis\+\_\+id, int id\+\_\+a, float temporal\+\_\+search\+\_\+interval, float velocity\+\_\+threshold)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_a772e0da541f7f101b9bd0c26271eaf2d}{Process\+Analysis\+Requests}} (int analysis\+\_\+id, float \texorpdfstring{$\ast$}{*}intervals, std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ intervals\+\_\+of\+\_\+interest)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_analysis_endpoints_8cpp_a9d94628699970656897a9978ee9b0a11}{Process\+Analysis\+Requests\+For\+All\+Files}} ()
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT \mbox{\hyperlink{_analysis_endpoints_8cpp_ab4fa85c61e1d462b6228a52f32824a28}{UNITY\+\_\+\+INTERFACE\+\_\+\+APIGet\+Object\+Positions}} (int analysis\+\_\+id, int object\+\_\+id, float start\+\_\+time, float end\+\_\+time, float \texorpdfstring{$\ast$}{*}positions, int max\+\_\+positions)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT \mbox{\hyperlink{_analysis_endpoints_8cpp_a14901966926b3a197ebfa35967d20a50}{UNITY\+\_\+\+INTERFACE\+\_\+\+APIClear\+Analysis\+Requests}} (int analysis\+\_\+id)
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT \mbox{\hyperlink{_analysis_endpoints_8cpp_ace67695a838caa640128b9fbcbcd0ed8}{UNITY\+\_\+\+INTERFACE\+\_\+\+APIClear\+Analysis\+File\+Paths}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_analysis_endpoints_8cpp_ac009d6acc267a1939302788b443de577}\label{_analysis_endpoints_8cpp_ac009d6acc267a1939302788b443de577} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!AddAnalysisRecordingPath@{AddAnalysisRecordingPath}}
+\index{AddAnalysisRecordingPath@{AddAnalysisRecordingPath}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{AddAnalysisRecordingPath()}{AddAnalysisRecordingPath()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Add\+Analysis\+Recording\+Path (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{path,  }\item[{int}]{path\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_aa96afef9da8c9999d74285da836e8201}\label{_analysis_endpoints_8cpp_aa96afef9da8c9999d74285da836e8201} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!AddContainmentAnalysisRequest@{AddContainmentAnalysisRequest}}
+\index{AddContainmentAnalysisRequest@{AddContainmentAnalysisRequest}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{AddContainmentAnalysisRequest()}{AddContainmentAnalysisRequest()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Add\+Containment\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{int}]{id\+\_\+a,  }\item[{float \texorpdfstring{$\ast$}{*}}]{min\+\_\+max }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_ae7d01ef553e70b8fe4a5b88c1fc0e13a}\label{_analysis_endpoints_8cpp_ae7d01ef553e70b8fe4a5b88c1fc0e13a} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!AddDistanceAnalysisRequest@{AddDistanceAnalysisRequest}}
+\index{AddDistanceAnalysisRequest@{AddDistanceAnalysisRequest}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{AddDistanceAnalysisRequest()}{AddDistanceAnalysisRequest()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Add\+Distance\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{int}]{id\+\_\+a,  }\item[{int}]{id\+\_\+b,  }\item[{float}]{distance }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_a898c2c0ca742e9dc3daa2f163e03e7f7}\label{_analysis_endpoints_8cpp_a898c2c0ca742e9dc3daa2f163e03e7f7} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!AddGazeAnalysisRequest@{AddGazeAnalysisRequest}}
+\index{AddGazeAnalysisRequest@{AddGazeAnalysisRequest}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{AddGazeAnalysisRequest()}{AddGazeAnalysisRequest()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Add\+Gaze\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{int}]{id\+\_\+a,  }\item[{int}]{id\+\_\+b,  }\item[{float}]{cone\+\_\+angle,  }\item[{float}]{distance }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_aff68bf9a021b57d467ce0139f5aede7e}\label{_analysis_endpoints_8cpp_aff68bf9a021b57d467ce0139f5aede7e} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!AddGazeAnalysisRequestAx@{AddGazeAnalysisRequestAx}}
+\index{AddGazeAnalysisRequestAx@{AddGazeAnalysisRequestAx}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{AddGazeAnalysisRequestAx()}{AddGazeAnalysisRequestAx()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Add\+Gaze\+Analysis\+Request\+Ax (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{int}]{id\+\_\+a,  }\item[{int}]{id\+\_\+b,  }\item[{float}]{cone\+\_\+angle,  }\item[{float}]{distance,  }\item[{int}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_a193591beb4a9f326c57ed0bdcf8e0fa2}\label{_analysis_endpoints_8cpp_a193591beb4a9f326c57ed0bdcf8e0fa2} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!AddRotationAnalysisRequest@{AddRotationAnalysisRequest}}
+\index{AddRotationAnalysisRequest@{AddRotationAnalysisRequest}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{AddRotationAnalysisRequest()}{AddRotationAnalysisRequest()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Add\+Rotation\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{int}]{id\+\_\+a,  }\item[{float}]{temporal\+\_\+search\+\_\+interval,  }\item[{float}]{rotation\+\_\+threshold }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_a6556ed0290b5fc9a0ef9f71c1e4edcd2}\label{_analysis_endpoints_8cpp_a6556ed0290b5fc9a0ef9f71c1e4edcd2} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!AddSoundActivationAnalysisRequest@{AddSoundActivationAnalysisRequest}}
+\index{AddSoundActivationAnalysisRequest@{AddSoundActivationAnalysisRequest}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{AddSoundActivationAnalysisRequest()}{AddSoundActivationAnalysisRequest()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Add\+Sound\+Activation\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{int}]{sound\+\_\+id,  }\item[{float}]{temporal\+\_\+search\+\_\+interval,  }\item[{float}]{activation\+\_\+level }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_a351f19a05d5889462deb2d3e7553ed15}\label{_analysis_endpoints_8cpp_a351f19a05d5889462deb2d3e7553ed15} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!AddVelocityAnalysisRequest@{AddVelocityAnalysisRequest}}
+\index{AddVelocityAnalysisRequest@{AddVelocityAnalysisRequest}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{AddVelocityAnalysisRequest()}{AddVelocityAnalysisRequest()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Add\+Velocity\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{int}]{id\+\_\+a,  }\item[{float}]{temporal\+\_\+search\+\_\+interval,  }\item[{float}]{velocity\+\_\+threshold }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_a772e0da541f7f101b9bd0c26271eaf2d}\label{_analysis_endpoints_8cpp_a772e0da541f7f101b9bd0c26271eaf2d} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!ProcessAnalysisRequests@{ProcessAnalysisRequests}}
+\index{ProcessAnalysisRequests@{ProcessAnalysisRequests}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{ProcessAnalysisRequests()}{ProcessAnalysisRequests()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Process\+Analysis\+Requests (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{float \texorpdfstring{$\ast$}{*}}]{intervals,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$}]{intervals\+\_\+of\+\_\+interest }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_a9d94628699970656897a9978ee9b0a11}\label{_analysis_endpoints_8cpp_a9d94628699970656897a9978ee9b0a11} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!ProcessAnalysisRequestsForAllFiles@{ProcessAnalysisRequestsForAllFiles}}
+\index{ProcessAnalysisRequestsForAllFiles@{ProcessAnalysisRequestsForAllFiles}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{ProcessAnalysisRequestsForAllFiles()}{ProcessAnalysisRequestsForAllFiles()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Process\+Analysis\+Requests\+For\+All\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_ace67695a838caa640128b9fbcbcd0ed8}\label{_analysis_endpoints_8cpp_ace67695a838caa640128b9fbcbcd0ed8} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!UNITY\_INTERFACE\_APIClearAnalysisFilePaths@{UNITY\_INTERFACE\_APIClearAnalysisFilePaths}}
+\index{UNITY\_INTERFACE\_APIClearAnalysisFilePaths@{UNITY\_INTERFACE\_APIClearAnalysisFilePaths}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{UNITY\_INTERFACE\_APIClearAnalysisFilePaths()}{UNITY\_INTERFACE\_APIClearAnalysisFilePaths()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+APIClear\+Analysis\+File\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_a14901966926b3a197ebfa35967d20a50}\label{_analysis_endpoints_8cpp_a14901966926b3a197ebfa35967d20a50} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!UNITY\_INTERFACE\_APIClearAnalysisRequests@{UNITY\_INTERFACE\_APIClearAnalysisRequests}}
+\index{UNITY\_INTERFACE\_APIClearAnalysisRequests@{UNITY\_INTERFACE\_APIClearAnalysisRequests}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{UNITY\_INTERFACE\_APIClearAnalysisRequests()}{UNITY\_INTERFACE\_APIClearAnalysisRequests()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+APIClear\+Analysis\+Requests (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{_analysis_endpoints_8cpp_ab4fa85c61e1d462b6228a52f32824a28}\label{_analysis_endpoints_8cpp_ab4fa85c61e1d462b6228a52f32824a28} 
+\index{AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}!UNITY\_INTERFACE\_APIGetObjectPositions@{UNITY\_INTERFACE\_APIGetObjectPositions}}
+\index{UNITY\_INTERFACE\_APIGetObjectPositions@{UNITY\_INTERFACE\_APIGetObjectPositions}!AnalysisEndpoints.cpp@{AnalysisEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{UNITY\_INTERFACE\_APIGetObjectPositions()}{UNITY\_INTERFACE\_APIGetObjectPositions()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+APIGet\+Object\+Positions (\begin{DoxyParamCaption}\item[{int}]{analysis\+\_\+id,  }\item[{int}]{object\+\_\+id,  }\item[{float}]{start\+\_\+time,  }\item[{float}]{end\+\_\+time,  }\item[{float \texorpdfstring{$\ast$}{*}}]{positions,  }\item[{int}]{max\+\_\+positions }\end{DoxyParamCaption})}
+

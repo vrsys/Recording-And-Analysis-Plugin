@@ -1,0 +1,68 @@
+\doxysection{Sound\+Ring\+Buffer.\+h}
+\hypertarget{_sound_ring_buffer_8h_source}{}\label{_sound_ring_buffer_8h_source}\index{Src/Recording/Sound/SoundRingBuffer.h@{Src/Recording/Sound/SoundRingBuffer.h}}
+\mbox{\hyperlink{_sound_ring_buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 05.01.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_SOUNDRINGBUFFER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_SOUNDRINGBUFFER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ring_buffer_8h}{Recording/BaseStructure/RingBuffer.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sound_buffer_8h}{SoundBuffer.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_log_8h}{DebugLog.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sound_ring_buffer}{SoundRingBuffer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ring_buffer}{RingBuffer}}\{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ std::map<int,\ int>\ \mbox{\hyperlink{class_sound_ring_buffer_aa4576148eb85e5d2f3a5867ef19ddf96}{sampling\_rates}};}
+\DoxyCodeLine{00020\ \ \ \ \ std::map<int,\ int>\ \mbox{\hyperlink{class_sound_ring_buffer_ac5850c6b688ffb880fe957e6803f324f}{channel\_nums}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_sound_ring_buffer}{SoundRingBuffer}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_a0a75fb8ddeb31009d02728b46abaed9a}{buffer\_num}},\ \textcolor{keywordtype}{float}\ buffer\_time,\ \textcolor{keywordtype}{float}\ record\_duration);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_sound_ring_buffer_aa5337daba4dcc51c5965d1826802d9de}{\string~SoundRingBuffer}}()\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destroying\ Sound\ Ring\ Buffer\(\backslash\)n"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sound_ring_buffer_aa0242d1ded0977f41354aa04cd153756}{log\_loading\_data\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sound_ring_buffer_a3ad69b4e889c29ba43a8387bd8ab207d}{log\_loading\_finished}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_sound_ring_buffer_a5f84cc085c56929015cf16e6f64fc364}{read\_single\_data\_from\_file}}(std::ifstream\ \&record\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_sound_ring_buffer_ac7c476e79e348b81a740ef15fd987a53}{read\_single\_data\_from\_vector}}(std::vector<Bytef>\ \textcolor{keyword}{const}\&\ data\_vector,\ \textcolor{keywordtype}{int}\&\ index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_sound_ring_buffer_a3fb519b1626ef5b53d9f4a255621a186}{duplicate\_data}}(std::shared\_ptr<RecordableData>\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sound_ring_buffer_a524a567872e6a87197d1cdc3f5b2fbbb}{read\_chunk\_from\_file}}(std::ifstream\ \&record\_file,\ std::shared\_ptr<RecordableData>\ current\_data[],\ \textcolor{keywordtype}{int}\ current\_chunk\_size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sound_ring_buffer_a1a15c3d4e0b5910a63efc9fd485829aa}{load\_data}}(\mbox{\hyperlink{struct_loading_information}{LoadingInformation}}\ \textcolor{keyword}{const}\&\ load\_info,\ std::shared\_ptr<RecordableData>\ data)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sound_ring_buffer_a288841e65cfd7abd42b4630b58bc1673}{reload\_index\_maps}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{DataType}}\ \mbox{\hyperlink{class_sound_ring_buffer_ad0881a1d974706d7fc45cd818b20b3f3}{get\_recorded\_data\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_ring_buffer_af767a07350aaaec0475301e5ba5be485}{get\_sound\_chunk\_for\_time}}(\textcolor{keywordtype}{int}\ sound\_origin,\ \textcolor{keywordtype}{float}\ time\_stamp,\textcolor{keywordtype}{float}*\ sound\_data);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_ring_buffer_af767a07350aaaec0475301e5ba5be485}{get\_sound\_chunk\_for\_time}}(\textcolor{keywordtype}{int}\ sound\_origin,\ \textcolor{keywordtype}{float}\ time\_stamp,\textcolor{keywordtype}{float}*\ sound\_data,\ \textcolor{keywordtype}{int}*\ corresponding\_go\_id);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_ring_buffer_a499c62e08d4a4f1e5c42370ba54622bf}{get\_sampling\_rate}}(\textcolor{keywordtype}{int}\ sound\_origin);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_ring_buffer_a21fa0b2262289b02bd6f1fbb5bcfb58c}{get\_channel\_num}}(\textcolor{keywordtype}{int}\ sound\_origin);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sound_ring_buffer_afe88ecbd0cbed37ecc5941a6a835ec3b}{get\_dto\_size}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{struct_sound_d_t_o}{SoundDTO}}\ \mbox{\hyperlink{class_sound_ring_buffer_abba0f10b66789de75f5e166da9ee5c66}{sound\_dto}}[\mbox{\hyperlink{class_ring_buffer_a5f2a5a431fab450a6dd3d068c5546ee8}{read\_chunk\_size}}];}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{struct_sound_d_t_o}{SoundDTO}}\ \mbox{\hyperlink{class_sound_ring_buffer_adc493f1b184829c7ab13a023539c4e9b}{s\_sound\_dto}};}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_SOUNDRINGBUFFER\_H}}
+
+\end{DoxyCode}

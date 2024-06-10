@@ -1,0 +1,108 @@
+\doxysection{Analysis\+Structs.\+h}
+\hypertarget{_analysis_structs_8h_source}{}\label{_analysis_structs_8h_source}\index{Src/Analysis/AnalysisStructs.h@{Src/Analysis/AnalysisStructs.h}}
+\mbox{\hyperlink{_analysis_structs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Anton-\/Lammert\ on\ 27.10.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_ANALYSISSTRUCTS\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_ANALYSISSTRUCTS\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\{}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847ca08ddd5950977af8d403f9401093a2831}{ContainmentAnalysis}},\ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847ca5cfdf03f0ef44e0529c0ee03d0845cc3}{DistanceAnalysis}},\ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847ca048dbc1b2325b987aadf4d7e54b9398f}{GazeAnalysis}},\ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847ca5b137fd6f467ddd7902b39875215f174}{RotationAnalysis}},\ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847ca5f86c72e3d6d0f39caf2dd4d6eb3fa02}{VelocityAnalysis}},\ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847cab894b947b56beccb8ec84cd0d3e35548}{PositionAdjustmentAnalysis}}}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_time_based_value}{TimeBasedValue}}\{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_time_based_value_a9289da4f4d6a208615e43fc9b3eac953}{time}};}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<float>\ \mbox{\hyperlink{struct_time_based_value_ae9b2c660cd5f6c8f99244dd53e4c65eb}{values}};}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_time_interval}{TimeInterval}}\{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_time_interval_adb102122c79af61b1aeafdd85662b112}{start}}\ =\ -\/1;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_time_interval_af8a483b507a16cf977428d6986a50690}{end}}\ =\ -\/1;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{struct_time_interval}{TimeInterval}}\ \mbox{\hyperlink{struct_time_interval_ad5f65b9d396c9a59c1e855ae384701fb}{operator\ \&\&\ }}(\mbox{\hyperlink{struct_time_interval}{TimeInterval}}\ \textcolor{keyword}{const}\&\ a)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ min\_start\ =\ std::min(a.\mbox{\hyperlink{struct_time_interval_adb102122c79af61b1aeafdd85662b112}{start}},\ this-\/>start);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ max\_start\ =\ std::max(a.\mbox{\hyperlink{struct_time_interval_adb102122c79af61b1aeafdd85662b112}{start}},\ this-\/>start);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ min\_end\ =\ std::min(a.\mbox{\hyperlink{struct_time_interval_af8a483b507a16cf977428d6986a50690}{end}},\ this-\/>end);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ max\_end\ =\ std::max(a.\mbox{\hyperlink{struct_time_interval_af8a483b507a16cf977428d6986a50690}{end}},\ this-\/>end);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(max\_start\ >=\ min\_end)\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_time_interval}{TimeInterval}}\{\};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_time_interval}{TimeInterval}}\{max\_start,\ min\_end\};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_time_interval}{TimeInterval}}\ \mbox{\hyperlink{struct_time_interval_abb78978342ceb1298168010b49e31bf9}{operator\ ||\ }}(\mbox{\hyperlink{struct_time_interval}{TimeInterval}}\ \textcolor{keyword}{const}\&\ a)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ min\_start\ =\ std::min(a.\mbox{\hyperlink{struct_time_interval_adb102122c79af61b1aeafdd85662b112}{start}},\ this-\/>start);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ max\_start\ =\ std::max(a.\mbox{\hyperlink{struct_time_interval_adb102122c79af61b1aeafdd85662b112}{start}},\ this-\/>start);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ min\_end\ =\ std::min(a.\mbox{\hyperlink{struct_time_interval_af8a483b507a16cf977428d6986a50690}{end}},\ this-\/>end);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ max\_end\ =\ std::max(a.\mbox{\hyperlink{struct_time_interval_af8a483b507a16cf977428d6986a50690}{end}},\ this-\/>end);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(max\_start\ >=\ min\_end)\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_time_interval}{TimeInterval}}\{\};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_time_interval}{TimeInterval}}\{min\_start,\ max\_end\};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_time_interval_a9ec13e40108d7cef521817bc6c88e705}{operator\ <}}(\mbox{\hyperlink{struct_time_interval}{TimeInterval}}\ \textcolor{keyword}{const}\&\ a)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>start\ <\ a.\mbox{\hyperlink{struct_time_interval_adb102122c79af61b1aeafdd85662b112}{start}};}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_time_interval_a5dce06bbcc8f733361cabfd261b3b939}{contains}}(\mbox{\hyperlink{struct_time_interval}{TimeInterval}}\ \textcolor{keyword}{const}\&\ a)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(a.\mbox{\hyperlink{struct_time_interval_af8a483b507a16cf977428d6986a50690}{end}}\ <\ this-\/>start\ ||\ a.\mbox{\hyperlink{struct_time_interval_adb102122c79af61b1aeafdd85662b112}{start}}\ >\ this-\/>\mbox{\hyperlink{struct_time_interval_af8a483b507a16cf977428d6986a50690}{end}});}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_time_interval_ab5e7283ac0ee5eb0ba2f8b4b2671bb3b}{contains}}(\textcolor{keywordtype}{float}\ time)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ time\ >\ this-\/>start\ \&\&\ time\ <\ this-\/>\mbox{\hyperlink{struct_time_interval_af8a483b507a16cf977428d6986a50690}{end}};}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{inline}\ std::vector<TimeInterval>\ \mbox{\hyperlink{_analysis_structs_8h_af7b7e99f1c0b57b403e2677088466ee8}{operator\ ||\ }}(std::vector<TimeInterval>\ \textcolor{keyword}{const}\&\ a,\ std::vector<TimeInterval>\ \textcolor{keyword}{const}\&\ b)\{}
+\DoxyCodeLine{00064\ \ \ \ \ std::vector<TimeInterval>\ or\_combined\_intervals;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ or\_combined\_intervals.insert(or\_combined\_intervals.end(),\ a.begin(),\ a.end());}
+\DoxyCodeLine{00067\ \ \ \ \ or\_combined\_intervals.insert(or\_combined\_intervals.end(),\ b.begin(),\ b.end());}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ std::sort(or\_combined\_intervals.begin(),\ or\_combined\_intervals.end());}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ or\_combined\_intervals.size();\ i++)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (or\_combined\_intervals[index].end\ >=\ or\_combined\_intervals[i].start)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ or\_combined\_intervals[index].end\ =\ std::max(or\_combined\_intervals[index].end,\ or\_combined\_intervals[i].end);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ or\_combined\_intervals[index]\ =\ or\_combined\_intervals[i];}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ or\_combined\_intervals.resize(index\ +\ 1);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ or\_combined\_intervals;}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{inline}\ std::vector<TimeInterval>\ \mbox{\hyperlink{_analysis_structs_8h_a0cf185e8d151523ee8f91cffa3d36192}{operator\ !\ }}(std::vector<TimeInterval>\ \textcolor{keyword}{const}\&\ a)\{}
+\DoxyCodeLine{00087\ \ \ \ \ std::vector<TimeInterval>\ negated\_interval;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{float}\ last\_end\ =\ 0.0f;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ i\ :\ a)\{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ negated\_interval.push\_back(\mbox{\hyperlink{struct_time_interval}{TimeInterval}}\{last\_end,\ i.\mbox{\hyperlink{struct_time_interval_adb102122c79af61b1aeafdd85662b112}{start}}\});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ last\_end\ =\ i.end;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ negated\_interval.push\_back(\mbox{\hyperlink{struct_time_interval}{TimeInterval}}\{last\_end,\ 9999999.0f\});}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ negated\_interval;}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{inline}\ std::vector<TimeInterval>\ \mbox{\hyperlink{_analysis_structs_8h_ace3f40cbbe594fe2d2b4b6cf83c04f3a}{operator\ \&\&\ }}(std::vector<TimeInterval>\ lhs,\ std::vector<TimeInterval>\ rhs)\{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{if}(lhs.empty()\ ||\ rhs.empty())}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ !(!lhs\ ||\ !rhs);}
+\DoxyCodeLine{00101\ \}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_ANALYSISSTRUCTS\_H}}
+
+\end{DoxyCode}

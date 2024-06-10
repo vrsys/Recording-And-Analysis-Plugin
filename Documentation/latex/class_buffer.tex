@@ -1,0 +1,254 @@
+\doxysection{Buffer Class Reference}
+\hypertarget{class_buffer}{}\label{class_buffer}\index{Buffer@{Buffer}}
+
+
+This class is used to store data which was recorded in a certain time period \mbox{[}min\+\_\+time -\/ max\+\_\+time\mbox{]}.  
+
+
+
+
+{\ttfamily \#include $<$Buffer.\+h$>$}
+
+Inheritance diagram for Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_buffer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_buffer_a59b8743e4a5f731bdd0c4185c9ef263b}{\texorpdfstring{$\sim$}{\string~}\+Buffer}} ()
+\item 
+\mbox{\hyperlink{class_buffer_ac16f13d430128a2fa81567c7c1fab994}{Buffer}} (float start\+\_\+time, float end\+\_\+time)
+\item 
+void \mbox{\hyperlink{class_buffer_ab72a72560baabc5fcc84e621c9211190}{clear\+\_\+buffer}} ()
+\item 
+bool \mbox{\hyperlink{class_buffer_a58bf464af609b2f6718a58d7f1cc289c}{add\+\_\+element}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ data)
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ \mbox{\hyperlink{class_buffer_a2d84a11fe7192dafd2dd1ce671b4b8bd}{get\+\_\+data}} (float time, int id)=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ \mbox{\hyperlink{class_buffer_a2da541ac2341a26b69ddbd235313b154}{get\+\_\+any\+\_\+data}} (int id)=0
+\item 
+virtual void \mbox{\hyperlink{class_buffer_a52ef2b6f5eb38303a2b31a12b3196dcd}{reload\+\_\+index\+\_\+maps}} ()=0
+\item 
+bool \mbox{\hyperlink{class_buffer_a78782b209d0d6ea2143847042acab702}{contains\+\_\+time}} (float time) const
+\item 
+bool \mbox{\hyperlink{class_buffer_a66913fd318e61eb6dcf1f4fff88c31d0}{stored\+\_\+in\+\_\+memory}} () const
+\item 
+float \mbox{\hyperlink{class_buffer_a9e19e1b4e2f8af2dfa786cd7ec6a5fe1}{get\+\_\+max\+\_\+time}} () const
+\item 
+float \mbox{\hyperlink{class_buffer_a7728f58bfb05676da3686168bf61e646}{get\+\_\+min\+\_\+time}} () const
+\item 
+void \mbox{\hyperlink{class_buffer_acc0333f424b799c31d6ce4388b9171a0}{set\+\_\+max\+\_\+time}} (float time)
+\item 
+void \mbox{\hyperlink{class_buffer_aa62fd7ab020f20b411e317767518c1f7}{set\+\_\+min\+\_\+time}} (float time)
+\item 
+void \mbox{\hyperlink{class_buffer_af56799a64257df2be005b7f9edbaf2a1}{set\+\_\+memory\+\_\+status}} (bool status)
+\item 
+void \mbox{\hyperlink{class_buffer_abbb24ce60c36a4be3baeefd621f5594d}{add\+\_\+last\+\_\+element}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ data)
+\item 
+void \mbox{\hyperlink{class_buffer_a834f60f5bf80ce5a056773c74d1708fb}{set\+\_\+debug\+\_\+mode}} (bool debug\+\_\+state)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recorded_id_data}{Recorded\+Id\+Data}} $>$ $>$ \mbox{\hyperlink{class_buffer_a3506ce1140871bbb7e98de21ce5d3630}{loaded\+\_\+data\+\_\+for\+\_\+ids}}
+\begin{DoxyCompactList}\small\item\em this vector stores the loaded data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_buffer_a6d36a0c58c462bccd89ca8563229383a}{min\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em min time for which recorded data is stored in this buffer \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_buffer_a8fd3ae25875b00a217575a2bd70f1255}{max\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em max time for which recorded data is stored in this buffer \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_buffer_a6439b9f7161509e0bdbc3b230e772713}{in\+\_\+memory}} = false
+\begin{DoxyCompactList}\small\item\em is the current buffer completely loaded into memory \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_buffer_a25259c0e5e639dcb232050a6b036d923}{debug}} = false
+\item 
+std\+::map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ $>$ \mbox{\hyperlink{class_buffer_ae37ed45faf26b275d6294b2354a849b7}{id\+\_\+last\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em stores the last seen data for each id before this buffer (necessary for interpolation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used to store data which was recorded in a certain time period \mbox{[}min\+\_\+time -\/ max\+\_\+time\mbox{]}. 
+
+This class is used to store data which was recorded for a certain id. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_buffer_a59b8743e4a5f731bdd0c4185c9ef263b}\label{class_buffer_a59b8743e4a5f731bdd0c4185c9ef263b} 
+\index{Buffer@{Buffer}!````~Buffer@{\texorpdfstring{$\sim$}{\string~}Buffer}}
+\index{````~Buffer@{\texorpdfstring{$\sim$}{\string~}Buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Buffer()}{\string~Buffer()}}
+{\footnotesize\ttfamily Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{class_buffer_ac16f13d430128a2fa81567c7c1fab994}\label{class_buffer_ac16f13d430128a2fa81567c7c1fab994} 
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{float}]{start\+\_\+time,  }\item[{float}]{end\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_buffer_a58bf464af609b2f6718a58d7f1cc289c}\label{class_buffer_a58bf464af609b2f6718a58d7f1cc289c} 
+\index{Buffer@{Buffer}!add\_element@{add\_element}}
+\index{add\_element@{add\_element}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{add\_element()}{add\_element()}}
+{\footnotesize\ttfamily bool Buffer\+::add\+\_\+element (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_buffer_abbb24ce60c36a4be3baeefd621f5594d}\label{class_buffer_abbb24ce60c36a4be3baeefd621f5594d} 
+\index{Buffer@{Buffer}!add\_last\_element@{add\_last\_element}}
+\index{add\_last\_element@{add\_last\_element}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{add\_last\_element()}{add\_last\_element()}}
+{\footnotesize\ttfamily void Buffer\+::add\+\_\+last\+\_\+element (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_buffer_ab72a72560baabc5fcc84e621c9211190}\label{class_buffer_ab72a72560baabc5fcc84e621c9211190} 
+\index{Buffer@{Buffer}!clear\_buffer@{clear\_buffer}}
+\index{clear\_buffer@{clear\_buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{clear\_buffer()}{clear\_buffer()}}
+{\footnotesize\ttfamily void Buffer\+::clear\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_buffer_a78782b209d0d6ea2143847042acab702}\label{class_buffer_a78782b209d0d6ea2143847042acab702} 
+\index{Buffer@{Buffer}!contains\_time@{contains\_time}}
+\index{contains\_time@{contains\_time}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{contains\_time()}{contains\_time()}}
+{\footnotesize\ttfamily bool Buffer\+::contains\+\_\+time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_buffer_a2da541ac2341a26b69ddbd235313b154}\label{class_buffer_a2da541ac2341a26b69ddbd235313b154} 
+\index{Buffer@{Buffer}!get\_any\_data@{get\_any\_data}}
+\index{get\_any\_data@{get\_any\_data}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{get\_any\_data()}{get\_any\_data()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ Buffer\+::get\+\_\+any\+\_\+data (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_generic_buffer_a255e81a536699ee4810606e4d0890dcb}{Generic\+Buffer}}, \mbox{\hyperlink{class_sound_buffer_a2ecea262effb9747c132a4d57e1482b6}{Sound\+Buffer}}, and \mbox{\hyperlink{class_transform_buffer_a942563c98b4a520e9afd334848c3bd7f}{Transform\+Buffer}}.
+
+\Hypertarget{class_buffer_a2d84a11fe7192dafd2dd1ce671b4b8bd}\label{class_buffer_a2d84a11fe7192dafd2dd1ce671b4b8bd} 
+\index{Buffer@{Buffer}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_recordable_data}{Recordable\+Data}} $>$ Buffer\+::get\+\_\+data (\begin{DoxyParamCaption}\item[{float}]{time,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_generic_buffer_a9978d4eed15cb9402d9f26af237f3dc4}{Generic\+Buffer}}, \mbox{\hyperlink{class_sound_buffer_a1753655f2fc8ccbd7ceb38109d033367}{Sound\+Buffer}}, and \mbox{\hyperlink{class_transform_buffer_abe85128782842ec0bd62886c892840d2}{Transform\+Buffer}}.
+
+\Hypertarget{class_buffer_a9e19e1b4e2f8af2dfa786cd7ec6a5fe1}\label{class_buffer_a9e19e1b4e2f8af2dfa786cd7ec6a5fe1} 
+\index{Buffer@{Buffer}!get\_max\_time@{get\_max\_time}}
+\index{get\_max\_time@{get\_max\_time}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{get\_max\_time()}{get\_max\_time()}}
+{\footnotesize\ttfamily float Buffer\+::get\+\_\+max\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_buffer_a7728f58bfb05676da3686168bf61e646}\label{class_buffer_a7728f58bfb05676da3686168bf61e646} 
+\index{Buffer@{Buffer}!get\_min\_time@{get\_min\_time}}
+\index{get\_min\_time@{get\_min\_time}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{get\_min\_time()}{get\_min\_time()}}
+{\footnotesize\ttfamily float Buffer\+::get\+\_\+min\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_buffer_a52ef2b6f5eb38303a2b31a12b3196dcd}\label{class_buffer_a52ef2b6f5eb38303a2b31a12b3196dcd} 
+\index{Buffer@{Buffer}!reload\_index\_maps@{reload\_index\_maps}}
+\index{reload\_index\_maps@{reload\_index\_maps}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{reload\_index\_maps()}{reload\_index\_maps()}}
+{\footnotesize\ttfamily virtual void Buffer\+::reload\+\_\+index\+\_\+maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_generic_buffer_a1f9192892845c8c8d8f57910747b4db2}{Generic\+Buffer}}, \mbox{\hyperlink{class_sound_buffer_a8bbd344054626bd2720a489fadd94fb9}{Sound\+Buffer}}, and \mbox{\hyperlink{class_transform_buffer_a512c09b703956948877fd4d549d0dfec}{Transform\+Buffer}}.
+
+\Hypertarget{class_buffer_a834f60f5bf80ce5a056773c74d1708fb}\label{class_buffer_a834f60f5bf80ce5a056773c74d1708fb} 
+\index{Buffer@{Buffer}!set\_debug\_mode@{set\_debug\_mode}}
+\index{set\_debug\_mode@{set\_debug\_mode}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{set\_debug\_mode()}{set\_debug\_mode()}}
+{\footnotesize\ttfamily void Buffer\+::set\+\_\+debug\+\_\+mode (\begin{DoxyParamCaption}\item[{bool}]{debug\+\_\+state }\end{DoxyParamCaption})}
+
+\Hypertarget{class_buffer_acc0333f424b799c31d6ce4388b9171a0}\label{class_buffer_acc0333f424b799c31d6ce4388b9171a0} 
+\index{Buffer@{Buffer}!set\_max\_time@{set\_max\_time}}
+\index{set\_max\_time@{set\_max\_time}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{set\_max\_time()}{set\_max\_time()}}
+{\footnotesize\ttfamily void Buffer\+::set\+\_\+max\+\_\+time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_buffer_af56799a64257df2be005b7f9edbaf2a1}\label{class_buffer_af56799a64257df2be005b7f9edbaf2a1} 
+\index{Buffer@{Buffer}!set\_memory\_status@{set\_memory\_status}}
+\index{set\_memory\_status@{set\_memory\_status}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{set\_memory\_status()}{set\_memory\_status()}}
+{\footnotesize\ttfamily void Buffer\+::set\+\_\+memory\+\_\+status (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})}
+
+\Hypertarget{class_buffer_aa62fd7ab020f20b411e317767518c1f7}\label{class_buffer_aa62fd7ab020f20b411e317767518c1f7} 
+\index{Buffer@{Buffer}!set\_min\_time@{set\_min\_time}}
+\index{set\_min\_time@{set\_min\_time}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{set\_min\_time()}{set\_min\_time()}}
+{\footnotesize\ttfamily void Buffer\+::set\+\_\+min\+\_\+time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_buffer_a66913fd318e61eb6dcf1f4fff88c31d0}\label{class_buffer_a66913fd318e61eb6dcf1f4fff88c31d0} 
+\index{Buffer@{Buffer}!stored\_in\_memory@{stored\_in\_memory}}
+\index{stored\_in\_memory@{stored\_in\_memory}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{stored\_in\_memory()}{stored\_in\_memory()}}
+{\footnotesize\ttfamily bool Buffer\+::stored\+\_\+in\+\_\+memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_buffer_a25259c0e5e639dcb232050a6b036d923}\label{class_buffer_a25259c0e5e639dcb232050a6b036d923} 
+\index{Buffer@{Buffer}!debug@{debug}}
+\index{debug@{debug}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily bool Buffer\+::debug = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_buffer_ae37ed45faf26b275d6294b2354a849b7}\label{class_buffer_ae37ed45faf26b275d6294b2354a849b7} 
+\index{Buffer@{Buffer}!id\_last\_data@{id\_last\_data}}
+\index{id\_last\_data@{id\_last\_data}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{id\_last\_data}{id\_last\_data}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_recordable_data}{Recordable\+Data}}$>$ $>$ Buffer\+::id\+\_\+last\+\_\+data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+stores the last seen data for each id before this buffer (necessary for interpolation) 
+
+\Hypertarget{class_buffer_a6439b9f7161509e0bdbc3b230e772713}\label{class_buffer_a6439b9f7161509e0bdbc3b230e772713} 
+\index{Buffer@{Buffer}!in\_memory@{in\_memory}}
+\index{in\_memory@{in\_memory}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{in\_memory}{in\_memory}}
+{\footnotesize\ttfamily bool Buffer\+::in\+\_\+memory = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+is the current buffer completely loaded into memory 
+
+\Hypertarget{class_buffer_a3506ce1140871bbb7e98de21ce5d3630}\label{class_buffer_a3506ce1140871bbb7e98de21ce5d3630} 
+\index{Buffer@{Buffer}!loaded\_data\_for\_ids@{loaded\_data\_for\_ids}}
+\index{loaded\_data\_for\_ids@{loaded\_data\_for\_ids}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{loaded\_data\_for\_ids}{loaded\_data\_for\_ids}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_recorded_id_data}{Recorded\+Id\+Data}}$>$ $>$ Buffer\+::loaded\+\_\+data\+\_\+for\+\_\+ids}
+
+
+
+this vector stores the loaded data 
+
+\Hypertarget{class_buffer_a8fd3ae25875b00a217575a2bd70f1255}\label{class_buffer_a8fd3ae25875b00a217575a2bd70f1255} 
+\index{Buffer@{Buffer}!max\_time@{max\_time}}
+\index{max\_time@{max\_time}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{max\_time}{max\_time}}
+{\footnotesize\ttfamily float Buffer\+::max\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+max time for which recorded data is stored in this buffer 
+
+\Hypertarget{class_buffer_a6d36a0c58c462bccd89ca8563229383a}\label{class_buffer_a6d36a0c58c462bccd89ca8563229383a} 
+\index{Buffer@{Buffer}!min\_time@{min\_time}}
+\index{min\_time@{min\_time}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{min\_time}{min\_time}}
+{\footnotesize\ttfamily float Buffer\+::min\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+min time for which recorded data is stored in this buffer 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\+Base\+Structure/\mbox{\hyperlink{_buffer_8h}{Buffer.\+h}}\item 
+Src/\+Recording/\+Base\+Structure/\mbox{\hyperlink{_buffer_8cpp}{Buffer.\+cpp}}\end{DoxyCompactItemize}

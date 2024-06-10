@@ -1,0 +1,48 @@
+\doxysection{Quantitative\+Gaze\+Analysis\+Request.\+h}
+\hypertarget{_quantitative_gaze_analysis_request_8h_source}{}\label{_quantitative_gaze_analysis_request_8h_source}\index{Src/Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeGazeAnalysisRequest.h@{Src/Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeGazeAnalysisRequest.h}}
+\mbox{\hyperlink{_quantitative_gaze_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Admin\ on\ 04.03.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_QUANTITATIVEGAZEANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_QUANTITATIVEGAZEANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quantitative_tramsform_analysis_request_8h}{QuantitativeTramsformAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_quantitative_gaze_analysis_request}{QuantitativeGazeAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_quantitative_transform_analysis_request}{QuantitativeTransformAnalysisRequest}}\{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aaf08ca64996d4c1d16019599d46c28e0}{id\_a}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a7efbac290f83a03982e0e5a133e77d82}{id\_b}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a20082e7c70b0298f0de46fda08d059c9}{present\_a}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_ae7e40243753f7e732421ad0efd703dff}{present\_b}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a17a99a498af09c3a8beb464d7ab87980}{current\_a}};}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aac4496fa87cf3d9ef5f73b2ac1934ceb}{current\_b}};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a6182fac26475c362849bf4e8e505ae00}{last\_a}};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a3fa13abe75fad9aadc5535812898edaa}{last\_b}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_quantitative_gaze_analysis_request}{QuantitativeGazeAnalysisRequest}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aaf08ca64996d4c1d16019599d46c28e0}{id\_a}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a7efbac290f83a03982e0e5a133e77d82}{id\_b}},\ \textcolor{keywordtype}{float}\ t\_sampling\_rate);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_afe007c85b554b620571e4f7bfa90d356}{update\_parameters}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ original\_meta\_file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ new\_meta\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_af1c85077aa4ec2ddb920a5919b7dbce4}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::shared\_ptr<QuantitativeAnalysisRequest>\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a3ffe0a4290c649702a4ed1d41cd44e86}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aad8288149891bd6f9d8c2dcbe15ae32a}{get\_description}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_info)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a2115d962b448d79df4efe2cca36644b0}{clear\_recent\_data}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a4d529cd40a632f03ceb11cdd75cda82b}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_QUANTITATIVEGAZEANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

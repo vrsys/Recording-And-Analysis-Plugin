@@ -1,0 +1,62 @@
+\doxysection{Interval\+Gaze\+Analysis\+Request.\+h}
+\hypertarget{_interval_gaze_analysis_request_8h_source}{}\label{_interval_gaze_analysis_request_8h_source}\index{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalGazeAnalysisRequest.h@{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalGazeAnalysisRequest.h}}
+\mbox{\hyperlink{_interval_gaze_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Anton-\/Lammert\ on\ 27.10.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_INTERVALGAZEANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_INTERVALGAZEANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_transform_analysis_request_8h}{IntervalTransformAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_interval_gaze_analysis_request}{IntervalGazeAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_interval_transform_analysis_request}{IntervalTransformAnalysisRequest}}\{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a62d8461bfa7a1dc7b4404f4a108683fc}{id\_a}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_af6f095771339bac5417aeda2fd15db06}{id\_b}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ angular\ threshold\ defining\ the\ cone\ that\ is\ used\ to\ determine\ if\ object\ with\ id\ b\ might\ have\ been\ visible\ by\ object\ with\ id\ a}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a54cedfe3e6ef43cf4d6f1263bc76b127}{threshold}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ 0\ =\ -\/z,\ 1\ =\ z,\ 2\ =\ -\/y,\ 3\ =\ y,\ 4\ =\ -\/x,\ 5\ =\ x}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a8687f1477a6975aa79d5c7a7fbbede2f}{axis}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_ab4790da69d3d9b7a3a10700aa6953f80}{cone\_height}}\ =\ 100.0f;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a38cef76f2856145960354f91588c34a3}{cone\_radius}}\ =\ -\/1.0f;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_ab6833620f18452ca7630c5d7e0cbfe18}{present\_a}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_aa6b58f4bbc223e8834e340f608d31a4e}{present\_b}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a4e6c7fb68431f6f45963da29df3ac068}{current\_a}};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a166394262f740a6a6fe8018439fdbae0}{current\_b}};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_ae77bb6183db61b72e9c7e9cdf157a854}{last\_a}};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_transform_data}{TransformData}}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a27634cb8f65f81c96f23fab9f5779227}{last\_b}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_interval_gaze_analysis_request}{IntervalGazeAnalysisRequest}}(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b,\ \textcolor{keywordtype}{float}\ t,\ \textcolor{keywordtype}{float}\ max\_d,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a8687f1477a6975aa79d5c7a7fbbede2f}{axis}}\ =\ 0);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_af9723a0904cbc5c06a67b95cf5728042}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a1fda365162636ef987904648712cb615}{get\_description}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_info)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a4b05c72e15f0bf3b639b2ae80c53a73c}{update\_parameters}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ original\_meta\_file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ new\_meta\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_gaze_analysis_request_ad6ce666b4481fb86cf5bd099c460b76f}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a93f188dc11464f68e400790dc26b76cc}{clear\_recent\_data}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a50c6563060465fc1828f634b2f5cba58}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a70e69b2a543304b25e02413e138261a0}{get\_id\_a}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a78935069bfdc50eaf9073168397ec226}{get\_id\_b}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a7b55b6f60cdc2c8f0290ad662880022a}{set\_id\_a}}(\textcolor{keywordtype}{int}\ new\_id);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_gaze_analysis_request_a6ce4cd040dbcf6ed3f3f6ef8e1991e22}{set\_id\_b}}(\textcolor{keywordtype}{int}\ new\_id);}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_INTERVALGAZEANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

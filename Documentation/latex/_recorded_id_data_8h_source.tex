@@ -1,0 +1,79 @@
+\doxysection{Recorded\+Id\+Data.\+h}
+\hypertarget{_recorded_id_data_8h_source}{}\label{_recorded_id_data_8h_source}\index{Src/Recording/BaseStructure/RecordedIdData.h@{Src/Recording/BaseStructure/RecordedIdData.h}}
+\mbox{\hyperlink{_recorded_id_data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 18.03.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_RECORDEDIDDATA\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_RECORDEDIDDATA\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_recordable_data}{RecordableData}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}}\ =\ -\/1.0f;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ -\/1;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recordable_data_a97a09d7f8e5390c4ad98ee9bccab7e05}{interpolated\_data}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recordable_data_a108952a5624ca94f3fbecf3e75be3351}{layer}}\ =\ 0;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_recordable_data_a7e95a55e4cb5d09cc3e852fac49c32fa}{RecordableData}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_recordable_data_af98b164c2c1dadb964ef3925e5c1bdc1}{\string~RecordableData}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ std::ofstream\&\ \mbox{\hyperlink{class_recordable_data_a4c719562d1d378e83aa4f751dff67fcb}{write}}(std::ofstream\&\ ofs)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ std::ifstream\&\ \mbox{\hyperlink{class_recordable_data_a629b8968c09ea12f82be4112b7cc1a71}{read}}(std::ifstream\&\ ifs)\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_recordable_data_ab341dd4bc935d9c4f13c0131157c46dc}{RecordableData}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{float}\ t)\ :\ \mbox{\hyperlink{class_recordable_data_aa398b32e60ed0dd0d3bc29080bb4524f}{id}}(i),\ \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}}(t)\{\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_recordable_data_a94dd274caf8c8168f686653f48063d71}{write\_to\_stream}}(std::ofstream\&\ file)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recordable_data_a90be1a06b561cde835c22c3a1fc0d009}{operator\ <\ }}(\mbox{\hyperlink{class_recordable_data}{RecordableData}}\ \textcolor{keyword}{const}\&\ data)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}}\ <\ data.\mbox{\hyperlink{class_recordable_data_aa183d327401888c499af11f9700b62de}{time}};}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_recorded_id_data}{RecordedIdData}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ -\/1;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorded_id_data_aa294c8cc224266330230dfbf42520f67}{debug}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ std::vector<std::shared\_ptr<RecordableData>>\ \mbox{\hyperlink{class_recorded_id_data_a31a73467854a352ecedf164640e19065}{loaded\_data}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_recorded_id_data_ab58ecfd0295378267697aec168454e25}{\string~RecordedIdData}}()\{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_recorded_id_data_a31a73467854a352ecedf164640e19065}{loaded\_data}}.clear();}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_recorded_id_data_af4cdce0872bd277d9be99b140d0af698}{RecordedIdData}}(\textcolor{keywordtype}{int}\ new\_id)\ :\ \mbox{\hyperlink{class_recorded_id_data_a422fa687bd81aa053adb913e6177c35a}{id}}(new\_id)\{}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_recorded_id_data_aa3be92939866f408aba30de3e09333fc}{add\_data}}(std::shared\_ptr<RecordableData>\ data)\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_recorded_id_data_a31a73467854a352ecedf164640e19065}{loaded\_data}}.push\_back(data);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorded_id_data_a422f8b09ce0ae209d65fbe3c75befd13}{get\_id}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_recorded_id_data_a422fa687bd81aa053adb913e6177c35a}{id}};}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_recorded_id_data_a9dbf00c7f6fc65771182f5023c1ae97e}{sort\_data\_by\_time}}()\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{class_recorded_id_data_a31a73467854a352ecedf164640e19065}{loaded\_data}}.begin(),\ \mbox{\hyperlink{class_recorded_id_data_a31a73467854a352ecedf164640e19065}{loaded\_data}}.end(),\ [](std::shared\_ptr<RecordableData>\ a,\ std::shared\_ptr<RecordableData>\ \ b)\{return\ a-\/>time\ <\ b-\/>time;\});}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_recorded_id_data_af599949667fdb51d623fe9ce5455e7a9}{operator\ <<\ }}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_recorded_id_data}{RecordedIdData}}\&\ recorded\_id\_data)\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Id:\ "{}}\ <<\ recorded\_id\_data.\mbox{\hyperlink{class_recorded_id_data_a422fa687bd81aa053adb913e6177c35a}{id}}\ <<\ \textcolor{stringliteral}{"{},\ Elements:\ "{}}\ <<\ recorded\_id\_data.\mbox{\hyperlink{class_recorded_id_data_a31a73467854a352ecedf164640e19065}{loaded\_data}}.size();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_RECORDEDIDDATA\_H}}
+
+\end{DoxyCode}

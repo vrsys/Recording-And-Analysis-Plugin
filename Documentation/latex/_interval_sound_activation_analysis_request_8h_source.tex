@@ -1,0 +1,39 @@
+\doxysection{Interval\+Sound\+Activation\+Analysis\+Request.\+h}
+\hypertarget{_interval_sound_activation_analysis_request_8h_source}{}\label{_interval_sound_activation_analysis_request_8h_source}\index{Src/Analysis/IntervalAnalysis/SoundAnalysis/IntervalSoundActivationAnalysisRequest.h@{Src/Analysis/IntervalAnalysis/SoundAnalysis/IntervalSoundActivationAnalysisRequest.h}}
+\mbox{\hyperlink{_interval_sound_activation_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Anton-\/Lammert\ on\ 13.12.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_INTERVALSOUNDACTIVATIONANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_INTERVALSOUNDACTIVATIONANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_sound_analysis_request_8h}{IntervalSoundAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_interval_sound_activation_analysis_request}{IntervalSoundActivationAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_interval_sound_analysis_request}{IntervalSoundAnalysisRequest}}\{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_aac683584753d23297170f192e45bd598}{search\_interval}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a45b8d634b1dc367567c924cc85803a75}{activation\_level}};}
+\DoxyCodeLine{00017\ \ \ \ \ std::deque<SoundData>\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a8fa8b4acdb7789709747d3c0b6c188f0}{recent\_data}};}
+\DoxyCodeLine{00018\ \ \ \ \ std::deque<bool>\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_ac8cd4dfa5975793701988bfba31b0ca8}{recent\_data\_active}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_interval_sound_activation_analysis_request}{IntervalSoundActivationAnalysisRequest}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_aac683584753d23297170f192e45bd598}{search\_interval}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a45b8d634b1dc367567c924cc85803a75}{activation\_level}});}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a5be063ef7dd386b8f63195b8753f7a8a}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_aa80ba37157e88f12af15a698ee4cd290}{update\_parameters}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ original\_meta\_file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ new\_meta\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a6db2b7f7cd033917fc8206f402d778b5}{get\_description}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_info)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a140c910384ee75eab3504d98b7397242}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a4527b1a7bc070c497c2fa45bdaf1b2d6}{clear\_recent\_data}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_INTERVALSOUNDACTIVATIONANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

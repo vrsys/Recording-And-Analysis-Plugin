@@ -1,0 +1,618 @@
+\doxysection{Src/\+Recording/\+Recorder\+Endpoints.cpp File Reference}
+\hypertarget{_recorder_endpoints_8cpp}{}\label{_recorder_endpoints_8cpp}\index{Src/Recording/RecorderEndpoints.cpp@{Src/Recording/RecorderEndpoints.cpp}}
+
+
+This file contains all endpoints that can be used from the outside (Unity, Unreal Engine, ...).  
+
+
+{\ttfamily \#include "{}Config.\+h"{}}\newline
+{\ttfamily \#include "{}Recording/\+Recorder\+Manager.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_af57b0bdaf93c1a4c03f9a65ac31fc5f9}{Get\+Version\+Number}} (char \texorpdfstring{$\ast$}{*}text, int max\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Returns the version number of the plugin. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a4cc89fedf9bb0fb27275a0f098fa3f0e}{Set\+Debug\+Mode}} (int recorder\+\_\+id, bool debug)
+\begin{DoxyCompactList}\small\item\em Specify whether a recorder should print debug output during recording/replay. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a77da3dcffade1d0981ce798917198613}{Set\+Recording\+Max\+Buffer\+Size}} (int recorder\+\_\+id, int max\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Specify whether maximum number of transform elements stored during recording before writing to file. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a35a212a575f7d6e8681f5fa0a0f761b7}{Set\+Sound\+Recording\+Max\+Buffer\+Size}} (int recorder\+\_\+id, int max\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Specify whether maximum number of sound elements stored during recording before writing to file. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a4e6f871396445f7e55951b1d30f72063}{Set\+Replay\+Buffer\+Number}} (int recorder\+\_\+id, int buffer\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Specify whether number of buffers used per ring buffer during playback. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a72cefb381c7f9c7bfdf0274d754e4649}{Set\+Replay\+Buffer\+Stored\+Time\+Interval}} (int recorder\+\_\+id, float time\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em Specify how many seconds of data are stored in each buffer of a ring buffer. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a8868c2e88a76f8e5861fe9b5408d3319}{Record\+Object\+At\+Timestamp}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+uuid, float \texorpdfstring{$\ast$}{*}transformation\+\_\+data, float time\+\_\+stamp, int \texorpdfstring{$\ast$}{*}object\+\_\+information)
+\begin{DoxyCompactList}\small\item\em Endpoint to record 3d transform object information. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a1588d35d305b2cf26b18e408d10e26bf}{Record\+Generic\+At\+Timestamp}} (int recorder\+\_\+id, float time\+\_\+stamp, int id, int \texorpdfstring{$\ast$}{*}int\+\_\+a, float \texorpdfstring{$\ast$}{*}float\+\_\+a, char \texorpdfstring{$\ast$}{*}char\+\_\+a)
+\begin{DoxyCompactList}\small\item\em Endpoint to record generic information. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a47976eb9b306cffd03cca3a6b05427ff}{Record\+Sound\+Data\+At\+Timestamp}} (int recorder\+\_\+id, float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int sound\+\_\+data\+\_\+length, int sampling\+\_\+rate, int start\+\_\+index, int channel\+\_\+num, float time\+\_\+stamp, int sound\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Endpoint used for recording sound data. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_abc9eb16ac53d50569aa632744b639d69}{Record\+Sound\+Data\+With\+GOInfo\+At\+Timestamp}} (int recorder\+\_\+id, float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int sound\+\_\+data\+\_\+length, int sampling\+\_\+rate, int start\+\_\+index, int channel\+\_\+num, int corresponding\+\_\+gameobject\+\_\+id, float time\+\_\+stamp, int sound\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Endpoint used for recording sound data. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a7e0ed2e8cd4b4f3f72ec2f78dbb61a7b}{Get\+Transform\+And\+Information\+At\+Time}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+id, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}transformation\+\_\+data, int \texorpdfstring{$\ast$}{*}object\+\_\+information)
+\begin{DoxyCompactList}\small\item\em Endpoint to retrieve recorded transform data using the recording file which was specified beforehand. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a609b78d868cfc203119c0d43c572fd2e}{Get\+Generic\+At\+Time}} (int recorder\+\_\+id, float time\+\_\+stamp, int id, int \texorpdfstring{$\ast$}{*}int\+\_\+a, float \texorpdfstring{$\ast$}{*}float\+\_\+a, char \texorpdfstring{$\ast$}{*}char\+\_\+a)
+\begin{DoxyCompactList}\small\item\em Endpoint to retrieve generic data using the recording file which was specified beforehand. \end{DoxyCompactList}\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a0e0f3c217bd8253b8ed3ca012d7c1f3b}{Get\+Sound\+Chunk\+For\+Time}} (int recorder\+\_\+id, int sound\+\_\+id, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}sound\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Endpoint to retrieve sound data using the recording file which was specified beforehand. \end{DoxyCompactList}\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_aa43ab6740dacf54a95c8a79f03f986bd}{Get\+Sound\+Chunk\+And\+GOInformation\+For\+Time}} (int recorder\+\_\+id, int sound\+\_\+id, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}sound\+\_\+data, int \texorpdfstring{$\ast$}{*}corresponding\+\_\+go\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Endpoint to retrieve sound data using the recording file which was specified beforehand. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_ae3b9426e3c1a1e101583666d3abf2256}{Create\+New\+Recording\+File}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}directory, int directory\+\_\+length, char \texorpdfstring{$\ast$}{*}recording\+\_\+name, int recording\+\_\+name\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Endpoint which creates a new recording file and set the recorder into the state for recording. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_aae3677513fe40702d851226697ae7bfe}{Stop\+Recording}} (int recorder\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Endpoint which stops a running recording and writes data, not yet written to file, to file. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_aaa45af0af3ba2e69b94756b8dc6d3db3}{Open\+Existing\+Recording\+File}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}directory, int directory\+\_\+length, char \texorpdfstring{$\ast$}{*}recording\+\_\+name, int recording\+\_\+name\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Endpoint which tries to open an existing recording file, initiates data loading and set recorder into replay state. \end{DoxyCompactList}\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_ab28ef7d8ae31f052b33c3cbffbe3e75c}{Stop\+Replay}} (int recorder\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Endpoint which stops a running replay. \end{DoxyCompactList}\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_ab8f75188609fbbec9d67c85968a5df05}{Next\+Positions\+For\+UUID}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+uuid, float time\+\_\+stamp, float \texorpdfstring{$\ast$}{*}positions)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_af746f422beda224ccfff396035ea7cf8}{Get\+Recording\+Game\+Objects}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a52ee2532d234e9e41ef20c13859c5ed3}{Get\+Recording\+Sound\+Sources}} (int recorder\+\_\+id, int \texorpdfstring{$\ast$}{*}ids, int max\+\_\+size)
+\item 
+float UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a7f4fc45ff191effaf3a54211500792f5}{Get\+Recording\+Duration}} (int recorder\+\_\+id)
+\item 
+float UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_afe5d32727b4839872ececff01b1f3054}{Get\+Recording\+Start\+Global\+Time\+Offset}} (int recorder\+\_\+id)
+\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a95ecf69a58aac80158940aba06a09d6e}{Register\+Object\+Path}} (int recorder\+\_\+id, int uuid, char \texorpdfstring{$\ast$}{*}path, int path\+\_\+length, float time)
+\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_ac5029db0849531289ed0f968f17c52b3}{Register\+Object\+Prefab}} (int recorder\+\_\+id, int uuid, char \texorpdfstring{$\ast$}{*}prefab, int prefab\+\_\+length, float time)
+\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a5daa6354f6fa65e99f98675482882fc7}{Register\+Object\+Components}} (int recorder\+\_\+id, int uuid, char \texorpdfstring{$\ast$}{*}components, int components\+\_\+length)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a1ea214b6f7d4013d61add67e9b8f6672}{Get\+Game\+Object\+Path}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a24b3332b2883ffa84d42c90c9d8d99d4}{Get\+Game\+Object\+Prefab}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_ad93449014de2157cb12e283572587e4c}{Get\+Game\+Object\+Components}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}text, int max\+\_\+size, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+float UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_ad6a955117f32bbb051732715379835b3}{Get\+Game\+Object\+First\+Seen\+Time}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}name, int name\+\_\+length)
+\item 
+bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a13d043d051548e24b20da142b8ae304e}{Register\+Recording\+Start\+Global\+Time\+Offset}} (int recorder\+\_\+id, float offset\+\_\+to\+\_\+global\+\_\+time)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a9377a8db46a44e7db5f0e0ce50959e00}{Get\+Sampling\+Rate}} (int recorder\+\_\+id, int sound\+\_\+origin)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_aecd95a5ab7d16baab5e7b66e3a75a537}{Get\+Channel\+Num}} (int recorder\+\_\+id, int sound\+\_\+origin)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a53b6895b112f84bd63e3886268839fb9}{Get\+Sound\+IDs}} (int recorder\+\_\+id, int \texorpdfstring{$\ast$}{*}ids, int max\+\_\+id\+\_\+count)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a9bac9d652c0321f95c4b51a5fe57c74d}{Get\+Original\+ID}} (int recorder\+\_\+id, char \texorpdfstring{$\ast$}{*}object\+\_\+name, int object\+\_\+name\+\_\+length, int object\+\_\+uuid)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_a0b21b855452292715dd668bda998526e}{Get\+Original\+ID2}} (int recorder\+\_\+id, int new\+\_\+object\+\_\+uuid)
+\item 
+int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_recorder_endpoints_8cpp_abe8ee6f42df73a45fe83e52898b185e7}{Get\+New\+ID}} (int recorder\+\_\+id, int old\+\_\+object\+\_\+uuid)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all endpoints that can be used from the outside (Unity, Unreal Engine, ...). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_recorder_endpoints_8cpp_ae3b9426e3c1a1e101583666d3abf2256}\label{_recorder_endpoints_8cpp_ae3b9426e3c1a1e101583666d3abf2256} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!CreateNewRecordingFile@{CreateNewRecordingFile}}
+\index{CreateNewRecordingFile@{CreateNewRecordingFile}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{CreateNewRecordingFile()}{CreateNewRecordingFile()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Create\+New\+Recording\+File (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{directory,  }\item[{int}]{directory\+\_\+length,  }\item[{char \texorpdfstring{$\ast$}{*}}]{recording\+\_\+name,  }\item[{int}]{recording\+\_\+name\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Endpoint which creates a new recording file and set the recorder into the state for recording. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which will start a new recording \\
+\hline
+{\em directory} & string containing the path at which the new recording file will be created \\
+\hline
+{\em directory\+\_\+length} & length of the directory string \\
+\hline
+{\em recording\+\_\+name} & string containing the name of the recording file to be created \\
+\hline
+{\em recording\+\_\+name\+\_\+length} & length of the recording\+\_\+name string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_aecd95a5ab7d16baab5e7b66e3a75a537}\label{_recorder_endpoints_8cpp_aecd95a5ab7d16baab5e7b66e3a75a537} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetChannelNum@{GetChannelNum}}
+\index{GetChannelNum@{GetChannelNum}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetChannelNum()}{GetChannelNum()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Channel\+Num (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{sound\+\_\+origin }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_ad93449014de2157cb12e283572587e4c}\label{_recorder_endpoints_8cpp_ad93449014de2157cb12e283572587e4c} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetGameObjectComponents@{GetGameObjectComponents}}
+\index{GetGameObjectComponents@{GetGameObjectComponents}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetGameObjectComponents()}{GetGameObjectComponents()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Game\+Object\+Components (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_ad6a955117f32bbb051732715379835b3}\label{_recorder_endpoints_8cpp_ad6a955117f32bbb051732715379835b3} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetGameObjectFirstSeenTime@{GetGameObjectFirstSeenTime}}
+\index{GetGameObjectFirstSeenTime@{GetGameObjectFirstSeenTime}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetGameObjectFirstSeenTime()}{GetGameObjectFirstSeenTime()}}
+{\footnotesize\ttfamily float UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Game\+Object\+First\+Seen\+Time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a1ea214b6f7d4013d61add67e9b8f6672}\label{_recorder_endpoints_8cpp_a1ea214b6f7d4013d61add67e9b8f6672} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetGameObjectPath@{GetGameObjectPath}}
+\index{GetGameObjectPath@{GetGameObjectPath}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetGameObjectPath()}{GetGameObjectPath()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Game\+Object\+Path (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a24b3332b2883ffa84d42c90c9d8d99d4}\label{_recorder_endpoints_8cpp_a24b3332b2883ffa84d42c90c9d8d99d4} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetGameObjectPrefab@{GetGameObjectPrefab}}
+\index{GetGameObjectPrefab@{GetGameObjectPrefab}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetGameObjectPrefab()}{GetGameObjectPrefab()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Game\+Object\+Prefab (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size,  }\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{name\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a609b78d868cfc203119c0d43c572fd2e}\label{_recorder_endpoints_8cpp_a609b78d868cfc203119c0d43c572fd2e} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetGenericAtTime@{GetGenericAtTime}}
+\index{GetGenericAtTime@{GetGenericAtTime}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetGenericAtTime()}{GetGenericAtTime()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Generic\+At\+Time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{int\+\_\+a,  }\item[{float \texorpdfstring{$\ast$}{*}}]{float\+\_\+a,  }\item[{char \texorpdfstring{$\ast$}{*}}]{char\+\_\+a }\end{DoxyParamCaption})}
+
+
+
+Endpoint to retrieve generic data using the recording file which was specified beforehand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which is used to replay data \\
+\hline
+{\em time\+\_\+stamp} & point in time for which data is retrieved \\
+\hline
+{\em int\+\_\+a} & int array into which retrieved data will be written \\
+\hline
+{\em float\+\_\+a} & float array into which retrieved data will be written \\
+\hline
+{\em char\+\_\+a} & char array into which retrieved data will be written \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_abe8ee6f42df73a45fe83e52898b185e7}\label{_recorder_endpoints_8cpp_abe8ee6f42df73a45fe83e52898b185e7} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetNewID@{GetNewID}}
+\index{GetNewID@{GetNewID}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetNewID()}{GetNewID()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+New\+ID (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{old\+\_\+object\+\_\+uuid }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a9bac9d652c0321f95c4b51a5fe57c74d}\label{_recorder_endpoints_8cpp_a9bac9d652c0321f95c4b51a5fe57c74d} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetOriginalID@{GetOriginalID}}
+\index{GetOriginalID@{GetOriginalID}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetOriginalID()}{GetOriginalID()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Original\+ID (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+uuid }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a0b21b855452292715dd668bda998526e}\label{_recorder_endpoints_8cpp_a0b21b855452292715dd668bda998526e} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetOriginalID2@{GetOriginalID2}}
+\index{GetOriginalID2@{GetOriginalID2}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetOriginalID2()}{GetOriginalID2()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Original\+ID2 (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{new\+\_\+object\+\_\+uuid }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a7f4fc45ff191effaf3a54211500792f5}\label{_recorder_endpoints_8cpp_a7f4fc45ff191effaf3a54211500792f5} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetRecordingDuration@{GetRecordingDuration}}
+\index{GetRecordingDuration@{GetRecordingDuration}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetRecordingDuration()}{GetRecordingDuration()}}
+{\footnotesize\ttfamily float UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Recording\+Duration (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_af746f422beda224ccfff396035ea7cf8}\label{_recorder_endpoints_8cpp_af746f422beda224ccfff396035ea7cf8} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetRecordingGameObjects@{GetRecordingGameObjects}}
+\index{GetRecordingGameObjects@{GetRecordingGameObjects}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetRecordingGameObjects()}{GetRecordingGameObjects()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Recording\+Game\+Objects (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a52ee2532d234e9e41ef20c13859c5ed3}\label{_recorder_endpoints_8cpp_a52ee2532d234e9e41ef20c13859c5ed3} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetRecordingSoundSources@{GetRecordingSoundSources}}
+\index{GetRecordingSoundSources@{GetRecordingSoundSources}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetRecordingSoundSources()}{GetRecordingSoundSources()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Recording\+Sound\+Sources (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{ids,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_afe5d32727b4839872ececff01b1f3054}\label{_recorder_endpoints_8cpp_afe5d32727b4839872ececff01b1f3054} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetRecordingStartGlobalTimeOffset@{GetRecordingStartGlobalTimeOffset}}
+\index{GetRecordingStartGlobalTimeOffset@{GetRecordingStartGlobalTimeOffset}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetRecordingStartGlobalTimeOffset()}{GetRecordingStartGlobalTimeOffset()}}
+{\footnotesize\ttfamily float UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Recording\+Start\+Global\+Time\+Offset (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a9377a8db46a44e7db5f0e0ce50959e00}\label{_recorder_endpoints_8cpp_a9377a8db46a44e7db5f0e0ce50959e00} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetSamplingRate@{GetSamplingRate}}
+\index{GetSamplingRate@{GetSamplingRate}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetSamplingRate()}{GetSamplingRate()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Sampling\+Rate (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{sound\+\_\+origin }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_aa43ab6740dacf54a95c8a79f03f986bd}\label{_recorder_endpoints_8cpp_aa43ab6740dacf54a95c8a79f03f986bd} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetSoundChunkAndGOInformationForTime@{GetSoundChunkAndGOInformationForTime}}
+\index{GetSoundChunkAndGOInformationForTime@{GetSoundChunkAndGOInformationForTime}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetSoundChunkAndGOInformationForTime()}{GetSoundChunkAndGOInformationForTime()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Sound\+Chunk\+And\+GOInformation\+For\+Time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{sound\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int \texorpdfstring{$\ast$}{*}}]{corresponding\+\_\+go\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Endpoint to retrieve sound data using the recording file which was specified beforehand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which is used to replay data \\
+\hline
+{\em sound\+\_\+id} & id of the sound source for which data is retrieved \\
+\hline
+{\em time\+\_\+stamp} & time for which sound data is retrieved \\
+\hline
+{\em sound\+\_\+data} & float array into which retrieved sound data is written \\
+\hline
+{\em corresponding\+\_\+go\+\_\+id} & int array into which the id of the object, which was the origin of the sound during recording, is written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of samples written into the sound\+\_\+data array 
+\end{DoxyReturn}
+\Hypertarget{_recorder_endpoints_8cpp_a0e0f3c217bd8253b8ed3ca012d7c1f3b}\label{_recorder_endpoints_8cpp_a0e0f3c217bd8253b8ed3ca012d7c1f3b} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetSoundChunkForTime@{GetSoundChunkForTime}}
+\index{GetSoundChunkForTime@{GetSoundChunkForTime}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetSoundChunkForTime()}{GetSoundChunkForTime()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Sound\+Chunk\+For\+Time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{sound\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Endpoint to retrieve sound data using the recording file which was specified beforehand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which is used to replay data \\
+\hline
+{\em sound\+\_\+id} & id of the sound source for which data is retrieved \\
+\hline
+{\em time\+\_\+stamp} & time for which sound data is retrieved \\
+\hline
+{\em sound\+\_\+data} & float array into which retrieved sound data is written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of samples written into the sound\+\_\+data array 
+\end{DoxyReturn}
+\Hypertarget{_recorder_endpoints_8cpp_a53b6895b112f84bd63e3886268839fb9}\label{_recorder_endpoints_8cpp_a53b6895b112f84bd63e3886268839fb9} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetSoundIDs@{GetSoundIDs}}
+\index{GetSoundIDs@{GetSoundIDs}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetSoundIDs()}{GetSoundIDs()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Sound\+IDs (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{ids,  }\item[{int}]{max\+\_\+id\+\_\+count }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a7e0ed2e8cd4b4f3f72ec2f78dbb61a7b}\label{_recorder_endpoints_8cpp_a7e0ed2e8cd4b4f3f72ec2f78dbb61a7b} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetTransformAndInformationAtTime@{GetTransformAndInformationAtTime}}
+\index{GetTransformAndInformationAtTime@{GetTransformAndInformationAtTime}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetTransformAndInformationAtTime()}{GetTransformAndInformationAtTime()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Transform\+And\+Information\+At\+Time (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{transformation\+\_\+data,  }\item[{int \texorpdfstring{$\ast$}{*}}]{object\+\_\+information }\end{DoxyParamCaption})}
+
+
+
+Endpoint to retrieve recorded transform data using the recording file which was specified beforehand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which is used to replay data \\
+\hline
+{\em object\+\_\+name} & the scene graph hierarchy name of the object for which data is retrieved e.\+g. "{}\+Scene/\+User/\+Head"{} \\
+\hline
+{\em object\+\_\+name\+\_\+length} & length of the object name string \\
+\hline
+{\em object\+\_\+id} & the id of the object (for unity object UUIDs can be used) \\
+\hline
+{\em transformation\+\_\+data} & array into which all transformation data will be writted(local \& global position, rotation, scaling) \\
+\hline
+{\em time\+\_\+stamp} & point in time for which data is retrieved \\
+\hline
+{\em object\+\_\+information} & array into which additional object information (current state (active/deactivated), id of current parent) will be written \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_af57b0bdaf93c1a4c03f9a65ac31fc5f9}\label{_recorder_endpoints_8cpp_af57b0bdaf93c1a4c03f9a65ac31fc5f9} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!GetVersionNumber@{GetVersionNumber}}
+\index{GetVersionNumber@{GetVersionNumber}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{GetVersionNumber()}{GetVersionNumber()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Get\+Version\+Number (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{int}]{max\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Returns the version number of the plugin. 
+
+This function can be used to retrieve information about the current plugin version. This can be crucial because data formats might be different between plugin versions potentially leading to crashes when recordings created with different version should be played back.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & string into which the version number is written \\
+\hline
+{\em max\+\_\+length} & max length of the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of the string or -\/1 if the string would exceed capacity 
+\end{DoxyReturn}
+\Hypertarget{_recorder_endpoints_8cpp_ab8f75188609fbbec9d67c85968a5df05}\label{_recorder_endpoints_8cpp_ab8f75188609fbbec9d67c85968a5df05} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!NextPositionsForUUID@{NextPositionsForUUID}}
+\index{NextPositionsForUUID@{NextPositionsForUUID}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{NextPositionsForUUID()}{NextPositionsForUUID()}}
+{\footnotesize\ttfamily int UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Next\+Positions\+For\+UUID (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+uuid,  }\item[{float}]{time\+\_\+stamp,  }\item[{float \texorpdfstring{$\ast$}{*}}]{positions }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_aaa45af0af3ba2e69b94756b8dc6d3db3}\label{_recorder_endpoints_8cpp_aaa45af0af3ba2e69b94756b8dc6d3db3} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!OpenExistingRecordingFile@{OpenExistingRecordingFile}}
+\index{OpenExistingRecordingFile@{OpenExistingRecordingFile}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{OpenExistingRecordingFile()}{OpenExistingRecordingFile()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Open\+Existing\+Recording\+File (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{directory,  }\item[{int}]{directory\+\_\+length,  }\item[{char \texorpdfstring{$\ast$}{*}}]{recording\+\_\+name,  }\item[{int}]{recording\+\_\+name\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Endpoint which tries to open an existing recording file, initiates data loading and set recorder into replay state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which should start playback \\
+\hline
+{\em directory} & string containing the path at which the new recording file will be created \\
+\hline
+{\em directory\+\_\+length} & length of the directory string \\
+\hline
+{\em recording\+\_\+name} & string containing the name of the recording file to be created \\
+\hline
+{\em recording\+\_\+name\+\_\+length} & length of the recording\+\_\+name string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_a1588d35d305b2cf26b18e408d10e26bf}\label{_recorder_endpoints_8cpp_a1588d35d305b2cf26b18e408d10e26bf} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!RecordGenericAtTimestamp@{RecordGenericAtTimestamp}}
+\index{RecordGenericAtTimestamp@{RecordGenericAtTimestamp}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{RecordGenericAtTimestamp()}{RecordGenericAtTimestamp()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Record\+Generic\+At\+Timestamp (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{id,  }\item[{int \texorpdfstring{$\ast$}{*}}]{int\+\_\+a,  }\item[{float \texorpdfstring{$\ast$}{*}}]{float\+\_\+a,  }\item[{char \texorpdfstring{$\ast$}{*}}]{char\+\_\+a }\end{DoxyParamCaption})}
+
+
+
+Endpoint to record generic information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which is used to record the data \\
+\hline
+{\em time\+\_\+stamp} & point in time for which data is recorded \\
+\hline
+{\em id} & the id of the instance for which generic data is recorded (used later for retrieval). Note, this id can be identical to existing sound or transform ids \\
+\hline
+{\em int\+\_\+a} & array containing integer data which will be recorded (for max size see definition of generic\+DTO) \\
+\hline
+{\em float\+\_\+a} & array containing float data which will be recorded (for max size see definition of generic\+DTO) \\
+\hline
+{\em char\+\_\+a} & array containing char data which will be recorded (for max size see definition of generic\+DTO) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_a8868c2e88a76f8e5861fe9b5408d3319}\label{_recorder_endpoints_8cpp_a8868c2e88a76f8e5861fe9b5408d3319} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!RecordObjectAtTimestamp@{RecordObjectAtTimestamp}}
+\index{RecordObjectAtTimestamp@{RecordObjectAtTimestamp}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{RecordObjectAtTimestamp()}{RecordObjectAtTimestamp()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Record\+Object\+At\+Timestamp (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name,  }\item[{int}]{object\+\_\+name\+\_\+length,  }\item[{int}]{object\+\_\+uuid,  }\item[{float \texorpdfstring{$\ast$}{*}}]{transformation\+\_\+data,  }\item[{float}]{time\+\_\+stamp,  }\item[{int \texorpdfstring{$\ast$}{*}}]{object\+\_\+information }\end{DoxyParamCaption})}
+
+
+
+Endpoint to record 3d transform object information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which is used to record the data \\
+\hline
+{\em object\+\_\+name} & the scene graph hierarchy name of the object for which data is recorded e.\+g. "{}\+Scene/\+User/\+Head"{} \\
+\hline
+{\em object\+\_\+name\+\_\+length} & length of the object name string \\
+\hline
+{\em object\+\_\+id} & the id of the object (for unity object UUIDs can be used) \\
+\hline
+{\em transformation\+\_\+data} & array containing all transformation data (local \& global position, rotation, scaling) \\
+\hline
+{\em time\+\_\+stamp} & point in time for which data is recorded \\
+\hline
+{\em object\+\_\+information} & array containing additional object informations (current state (active/deactivated), id of current parent) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_a47976eb9b306cffd03cca3a6b05427ff}\label{_recorder_endpoints_8cpp_a47976eb9b306cffd03cca3a6b05427ff} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!RecordSoundDataAtTimestamp@{RecordSoundDataAtTimestamp}}
+\index{RecordSoundDataAtTimestamp@{RecordSoundDataAtTimestamp}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{RecordSoundDataAtTimestamp()}{RecordSoundDataAtTimestamp()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Record\+Sound\+Data\+At\+Timestamp (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int}]{sound\+\_\+data\+\_\+length,  }\item[{int}]{sampling\+\_\+rate,  }\item[{int}]{start\+\_\+index,  }\item[{int}]{channel\+\_\+num,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{sound\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Endpoint used for recording sound data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which is used to record data \\
+\hline
+{\em sound\+\_\+data} & array containing float data representing sound. Values usually between \mbox{[}-\/1,1\mbox{]} \\
+\hline
+{\em sound\+\_\+data\+\_\+length} & size of the sound\+\_\+data array \\
+\hline
+{\em sampling\+\_\+rate} & sampling rate of the sound source \\
+\hline
+{\em start\+\_\+index} & the index from which on in the sound\+\_\+data buffer new data is present which will be recorded. 0 if only new data is present. \\
+\hline
+{\em channel\+\_\+num} & number of channels of the sound contained in the array. Note, that data is assumed to be in interleaved fashion e.\+g. for 2 channel C1\+S0,C2\+S0,C1\+S1,C2\+S1, ... \\
+\hline
+{\em time\+\_\+stamp} & point in time for which data is recorded \\
+\hline
+{\em sound\+\_\+id} & id of the sound source \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_abc9eb16ac53d50569aa632744b639d69}\label{_recorder_endpoints_8cpp_abc9eb16ac53d50569aa632744b639d69} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!RecordSoundDataWithGOInfoAtTimestamp@{RecordSoundDataWithGOInfoAtTimestamp}}
+\index{RecordSoundDataWithGOInfoAtTimestamp@{RecordSoundDataWithGOInfoAtTimestamp}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{RecordSoundDataWithGOInfoAtTimestamp()}{RecordSoundDataWithGOInfoAtTimestamp()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Record\+Sound\+Data\+With\+GOInfo\+At\+Timestamp (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float \texorpdfstring{$\ast$}{*}}]{sound\+\_\+data,  }\item[{int}]{sound\+\_\+data\+\_\+length,  }\item[{int}]{sampling\+\_\+rate,  }\item[{int}]{start\+\_\+index,  }\item[{int}]{channel\+\_\+num,  }\item[{int}]{corresponding\+\_\+gameobject\+\_\+id,  }\item[{float}]{time\+\_\+stamp,  }\item[{int}]{sound\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Endpoint used for recording sound data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which is used to record data \\
+\hline
+{\em sound\+\_\+data} & array containing float data representing sound. Values usually between \mbox{[}-\/1,1\mbox{]} \\
+\hline
+{\em sound\+\_\+data\+\_\+length} & size of the sound\+\_\+data array \\
+\hline
+{\em sampling\+\_\+rate} & sampling rate of the sound source \\
+\hline
+{\em start\+\_\+index} & the index from which on in the sound\+\_\+data buffer new data is present which will be recorded. 0 if only new data is present. \\
+\hline
+{\em channel\+\_\+num} & number of channels of the sound contained in the array. Note, that data is assumed to be in interleaved fashion e.\+g. for 2 channel C1\+S0,C2\+S0,C1\+S1,C2\+S1, ... \\
+\hline
+{\em time\+\_\+stamp} & point in time for which data is recorded \\
+\hline
+{\em sound\+\_\+id} & id of the sound source \\
+\hline
+{\em corresponding\+\_\+gameobject\+\_\+id} & id of the object which is the origin of the sound source (this id should be used to record transform data of the object) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_a5daa6354f6fa65e99f98675482882fc7}\label{_recorder_endpoints_8cpp_a5daa6354f6fa65e99f98675482882fc7} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!RegisterObjectComponents@{RegisterObjectComponents}}
+\index{RegisterObjectComponents@{RegisterObjectComponents}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{RegisterObjectComponents()}{RegisterObjectComponents()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Register\+Object\+Components (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{components,  }\item[{int}]{components\+\_\+length }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a95ecf69a58aac80158940aba06a09d6e}\label{_recorder_endpoints_8cpp_a95ecf69a58aac80158940aba06a09d6e} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!RegisterObjectPath@{RegisterObjectPath}}
+\index{RegisterObjectPath@{RegisterObjectPath}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{RegisterObjectPath()}{RegisterObjectPath()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Register\+Object\+Path (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{path,  }\item[{int}]{path\+\_\+length,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_ac5029db0849531289ed0f968f17c52b3}\label{_recorder_endpoints_8cpp_ac5029db0849531289ed0f968f17c52b3} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!RegisterObjectPrefab@{RegisterObjectPrefab}}
+\index{RegisterObjectPrefab@{RegisterObjectPrefab}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{RegisterObjectPrefab()}{RegisterObjectPrefab()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Register\+Object\+Prefab (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{uuid,  }\item[{char \texorpdfstring{$\ast$}{*}}]{prefab,  }\item[{int}]{prefab\+\_\+length,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a13d043d051548e24b20da142b8ae304e}\label{_recorder_endpoints_8cpp_a13d043d051548e24b20da142b8ae304e} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!RegisterRecordingStartGlobalTimeOffset@{RegisterRecordingStartGlobalTimeOffset}}
+\index{RegisterRecordingStartGlobalTimeOffset@{RegisterRecordingStartGlobalTimeOffset}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{RegisterRecordingStartGlobalTimeOffset()}{RegisterRecordingStartGlobalTimeOffset()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Register\+Recording\+Start\+Global\+Time\+Offset (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float}]{offset\+\_\+to\+\_\+global\+\_\+time }\end{DoxyParamCaption})}
+
+\Hypertarget{_recorder_endpoints_8cpp_a4cc89fedf9bb0fb27275a0f098fa3f0e}\label{_recorder_endpoints_8cpp_a4cc89fedf9bb0fb27275a0f098fa3f0e} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!SetDebugMode@{SetDebugMode}}
+\index{SetDebugMode@{SetDebugMode}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{SetDebugMode()}{SetDebugMode()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Set\+Debug\+Mode (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{bool}]{debug }\end{DoxyParamCaption})}
+
+
+
+Specify whether a recorder should print debug output during recording/replay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder for which the directory is specified \\
+\hline
+{\em debug} & should debug output be printed? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{_recorder_endpoints_8cpp_a77da3dcffade1d0981ce798917198613}\label{_recorder_endpoints_8cpp_a77da3dcffade1d0981ce798917198613} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!SetRecordingMaxBufferSize@{SetRecordingMaxBufferSize}}
+\index{SetRecordingMaxBufferSize@{SetRecordingMaxBufferSize}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{SetRecordingMaxBufferSize()}{SetRecordingMaxBufferSize()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Set\+Recording\+Max\+Buffer\+Size (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Specify whether maximum number of transform elements stored during recording before writing to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder for which the directory is specified \\
+\hline
+{\em max\+\_\+size} & maximum number of transform elements stored in memory before written to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{_recorder_endpoints_8cpp_a4e6f871396445f7e55951b1d30f72063}\label{_recorder_endpoints_8cpp_a4e6f871396445f7e55951b1d30f72063} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!SetReplayBufferNumber@{SetReplayBufferNumber}}
+\index{SetReplayBufferNumber@{SetReplayBufferNumber}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{SetReplayBufferNumber()}{SetReplayBufferNumber()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Set\+Replay\+Buffer\+Number (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{buffer\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Specify whether number of buffers used per ring buffer during playback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder for which the directory is specified \\
+\hline
+{\em buffer\+\_\+number} & number of buffers in a ring buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{_recorder_endpoints_8cpp_a72cefb381c7f9c7bfdf0274d754e4649}\label{_recorder_endpoints_8cpp_a72cefb381c7f9c7bfdf0274d754e4649} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!SetReplayBufferStoredTimeInterval@{SetReplayBufferStoredTimeInterval}}
+\index{SetReplayBufferStoredTimeInterval@{SetReplayBufferStoredTimeInterval}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{SetReplayBufferStoredTimeInterval()}{SetReplayBufferStoredTimeInterval()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Set\+Replay\+Buffer\+Stored\+Time\+Interval (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{float}]{time\+\_\+interval }\end{DoxyParamCaption})}
+
+
+
+Specify how many seconds of data are stored in each buffer of a ring buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder for which the directory is specified \\
+\hline
+{\em time\+\_\+interval} & time in seconds for which data is stored in each buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{_recorder_endpoints_8cpp_a35a212a575f7d6e8681f5fa0a0f761b7}\label{_recorder_endpoints_8cpp_a35a212a575f7d6e8681f5fa0a0f761b7} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!SetSoundRecordingMaxBufferSize@{SetSoundRecordingMaxBufferSize}}
+\index{SetSoundRecordingMaxBufferSize@{SetSoundRecordingMaxBufferSize}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{SetSoundRecordingMaxBufferSize()}{SetSoundRecordingMaxBufferSize()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Set\+Sound\+Recording\+Max\+Buffer\+Size (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id,  }\item[{int}]{max\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Specify whether maximum number of sound elements stored during recording before writing to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder for which the directory is specified \\
+\hline
+{\em max\+\_\+size} & maximum number of sound elements stored in memory before written to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{_recorder_endpoints_8cpp_aae3677513fe40702d851226697ae7bfe}\label{_recorder_endpoints_8cpp_aae3677513fe40702d851226697ae7bfe} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!StopRecording@{StopRecording}}
+\index{StopRecording@{StopRecording}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{StopRecording()}{StopRecording()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Stop\+Recording (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Endpoint which stops a running recording and writes data, not yet written to file, to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which should stop the recording process \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_recorder_endpoints_8cpp_ab28ef7d8ae31f052b33c3cbffbe3e75c}\label{_recorder_endpoints_8cpp_ab28ef7d8ae31f052b33c3cbffbe3e75c} 
+\index{RecorderEndpoints.cpp@{RecorderEndpoints.cpp}!StopReplay@{StopReplay}}
+\index{StopReplay@{StopReplay}!RecorderEndpoints.cpp@{RecorderEndpoints.cpp}}
+\doxysubsubsection{\texorpdfstring{StopReplay()}{StopReplay()}}
+{\footnotesize\ttfamily bool UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Stop\+Replay (\begin{DoxyParamCaption}\item[{int}]{recorder\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Endpoint which stops a running replay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recorder\+\_\+id} & id of the recorder which should stop playback \\
+\hline
+\end{DoxyParams}

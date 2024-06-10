@@ -1,0 +1,47 @@
+\doxysection{Quantitative\+Velocity\+Analysis\+Request.\+h}
+\hypertarget{_quantitative_velocity_analysis_request_8h_source}{}\label{_quantitative_velocity_analysis_request_8h_source}\index{Src/Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeVelocityAnalysisRequest.h@{Src/Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeVelocityAnalysisRequest.h}}
+\mbox{\hyperlink{_quantitative_velocity_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 26.02.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_QUANTITATIVEVELOCITYANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_QUANTITATIVEVELOCITYANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_meta_information_8h}{Recording/MetaInformation.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quantitative_tramsform_analysis_request_8h}{QuantitativeTramsformAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_quantitative_velocity_analysis_request}{QuantitativeVelocityAnalysisRequest}}\ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_quantitative_transform_analysis_request}{QuantitativeTransformAnalysisRequest}}\{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a66dfdca0f25631c7e206e49cf764ed10}{id}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ std::deque<TransformData>\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a76ab335447c72f3c8fdfd67d77e5ebe7}{recent\_data}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_quantitative_velocity_analysis_request}{QuantitativeVelocityAnalysisRequest}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{float}\ t\_sampling\_rate);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a5a30fb4ee58f81119e1cb517485a2f3d}{update\_parameters}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ original\_meta\_file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ new\_meta\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a773a45c351e3757dfc7899c09abc18e0}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::shared\_ptr<QuantitativeAnalysisRequest>\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_abe39818b398bbf37614e8c7f3a4e144d}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a176411dddb83b6f260dbe290a1217146}{get\_description}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_info)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_ae67bca8cbc952d9514e69013ade06dae}{clear\_recent\_data}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_aacbeb2e75de49f3f1a97538899c62a15}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a69d94c1249b78756912cbd3881248c7d}{get\_id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a6e1ce289a075c7cbc4f81da312020cde}{set\_id}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_QUANTITATIVEVELOCITYANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

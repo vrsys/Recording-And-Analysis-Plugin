@@ -1,0 +1,208 @@
+\doxysection{Ring\+Buffer.\+h}
+\hypertarget{_ring_buffer_8h_source}{}\label{_ring_buffer_8h_source}\index{Src/Recording/BaseStructure/RingBuffer.h@{Src/Recording/BaseStructure/RingBuffer.h}}
+\mbox{\hyperlink{_ring_buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 05.01.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_RINGBUFFER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_RINGBUFFER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_buffer_8h}{Buffer.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_data_8h}{Recording/Transform/TransformData.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_generic_data_8h}{Recording/Generic/GenericData.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sound_data_8h}{Recording/Sound/SoundData.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_data_type_8h}{Recording/DataType.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_log_8h}{DebugLog.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{Config.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}zlib.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_loading_information}{LoadingInformation}}\{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_loading_information_abfbe2c8b0d0db81f23e5638cd4c9b9cd}{min\_contained\_time}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_loading_information_a60751f853bdb5e66fe6677b77227180f}{max\_contained\_time}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_loading_information_ae99f8160eb2dde8363a827fc56dcb448}{min\_loading\_time}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_loading_information_a46f51fe360f5155b3e627c6943a8f9e0}{max\_loading\_time}};}
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{struct_loading_information_a2c946cf7f2124c3eec9a3227eb921ef4}{buffer\_loaded}};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_loading_information_a416343e2aa801dccaa6606005dfef581}{min\_read\_line}}\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_loading_information_a9dca950c11ffb17870db9e2d32a40996}{max\_read\_line}}\ =\ -\/1;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_loading_information_af652ed1d52ad96c36cd4816ead32f6c5}{min\_stored\_time}}\ =\ -\/1.0f;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_loading_information_aec594195d870ded8945b81f1e6dae45e}{max\_stored\_time}}\ =\ -\/1.0f;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_loading_information_a4733557b83b43c77c5050360b048bddb}{stop\_reading}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00040\ \ \ \ \ std::map<int,\ std::shared\_ptr<RecordableData>>\ \mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\_id\_data}};}
+\DoxyCodeLine{00041\ \ \ \ \ std::map<int,\ std::shared\_ptr<RecordableData>>\ \mbox{\hyperlink{struct_loading_information_a345bf0d8655b8f12caf3fa9d1b18edb7}{last\_id\_data}};}
+\DoxyCodeLine{00042\ \ \ \ \ std::set<int>\ \mbox{\hyperlink{struct_loading_information_a00f7d588aab0a349dfe7ee5bf1c6c650}{id\_finished\_loading}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct_loading_information_afe54f8e6f42284e95ed30c68f0eb8144}{\string~LoadingInformation}}()\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\_id\_data}}.clear();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loading_information_a345bf0d8655b8f12caf3fa9d1b18edb7}{last\_id\_data}}.clear();}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ used\ to\ store\ the\ most\ recently\ seen\ data\ before\ loading\ data\ into\ each\ buffer}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ this\ data\ is\ later\ used\ to\ create\ a\ checkpoint}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_loading_information_aa54f8fbfb0edebe0e1878aa6ee815e5c}{add\_create\_new\_data}}(std::shared\_ptr<RecordableData>\ data,\ \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{DataType}}\ data\_type)\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\_id\_data}}.count(data-\/>id)\ ==\ 0\ ||\ \mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\_id\_data}}[data-\/>id]-\/>time\ <\ data-\/>time)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\_id\_data}}[data-\/>id]\ =\ data;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ used\ to\ store\ the\ most\ recently\ seen\ data\ before\ loading\ data\ into\ each\ buffer}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ this\ data\ is\ later\ used\ to\ create\ a\ checkpoint}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_loading_information_a008f88082dc69808b7a21a7bb791fa7b}{add\_new\_data}}(std::shared\_ptr<RecordableData>\ data,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ index)\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\_id\_data}}.count(data-\/>id)\ ==\ 0\ ||}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\_id\_data}}[data-\/>id]-\/>time\ <\ data-\/>time)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loading_information_a60fceb4bf07b13a52aa195ed2cff645f}{new\_id\_data}}[data-\/>id]\ =\ data;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{struct_loading_information_a00f7d588aab0a349dfe7ee5bf1c6c650}{id\_finished\_loading}}.empty())}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loading_information_a416343e2aa801dccaa6606005dfef581}{min\_read\_line}}\ =\ index;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ used\ to\ store\ the\ most\ recently\ seen\ data\ for\ each\ id}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ this\ data\ is\ later\ stored\ in\ each\ buffer}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_loading_information_a3d5586eb948b3eb925d7cf575358060f}{add\_last\_data}}(std::shared\_ptr<RecordableData>\ data,\ \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{DataType}}\ data\_type)\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_loading_information_a345bf0d8655b8f12caf3fa9d1b18edb7}{last\_id\_data}}.count(data-\/>id)\ ==\ 0\ ||\ \mbox{\hyperlink{struct_loading_information_a345bf0d8655b8f12caf3fa9d1b18edb7}{last\_id\_data}}[data-\/>id]-\/>time\ <\ data-\/>time)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loading_information_a345bf0d8655b8f12caf3fa9d1b18edb7}{last\_id\_data}}[data-\/>id]\ =\ data;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_checkpoint}{Checkpoint}}\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_checkpoint_a4145ec83f31b973b305576f160f9d492}{time}}\ =\ -\/1.0f;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_checkpoint_a1d34383eaee5f57eca9978942b753450}{already\_read\_elements}}\ =\ -\/1;}
+\DoxyCodeLine{00085\ \ \ \ \ std::map<int,\ std::shared\_ptr<RecordableData>>\ \mbox{\hyperlink{struct_checkpoint_a24e15284c0b2511b685097f805cf0eae}{last\_seen\_data}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{struct_checkpoint_a37e1378324b46e056aaa5835ee4cca39}{Checkpoint}}(\textcolor{keywordtype}{float}\ t,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ read\_elements,\ std::map<\textcolor{keywordtype}{int},\ std::shared\_ptr<RecordableData>>\ \textcolor{keyword}{const}\&\ data)\ :\ \mbox{\hyperlink{struct_checkpoint_a4145ec83f31b973b305576f160f9d492}{time}}(t),\ \mbox{\hyperlink{struct_checkpoint_a1d34383eaee5f57eca9978942b753450}{already\_read\_elements}}(read\_elements)\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \textcolor{keyword}{const}\ \&\ element\ :\ data)\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_checkpoint_a24e15284c0b2511b685097f805cf0eae}{last\_seen\_data}}[element.first]\ =\ element.second;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{struct_checkpoint_a7fff1a4a6a71c2150a969fbe40d01c34}{\string~Checkpoint}}()\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ element\ :\ \mbox{\hyperlink{struct_checkpoint_a24e15284c0b2511b685097f805cf0eae}{last\_seen\_data}})\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(element.second\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ element.second\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Debug::Log}}(\textcolor{stringliteral}{"{}Error!\ checkpoint\ contained\ invalid\ data!"{}},\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1caee38e4d5dd68c4e440825018d549cb47}{Color::Red}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_checkpoint_a24e15284c0b2511b685097f805cf0eae}{last\_seen\_data}}.clear();}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ring_buffer}{RingBuffer}}\ \{}
+\DoxyCodeLine{00111\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_ab0e2b100081fc25e045365d835f3b348}{current\_active\_buffer}}\ =\ -\/1;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ring_buffer_a028b112214c6716c9a11279423d26bcc}{recording\_duration}}\ =\ -\/1.0f;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_aafd2a430fc665fef2d612fa19554605c}{debug}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_ab64204968eee9c09c4f8bb6bc8ed6f51}{requires\_loading}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_a3610efa725117b3adf7a33bbcf11b5db}{preparing\_buffer}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_afa04437331d1b6b01d5a822ca9ffe3d4}{currently\_loading}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{class_ring_buffer_a4224626aefd55f1e7633d5966965dc20}{already\_read\_elements}}\ =\ 0;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00135\ \ \ \ \ std::vector<std::shared\_ptr<Buffer>>\ \mbox{\hyperlink{class_ring_buffer_a0f78b8bcd98e1892c413796d0eef0dcf}{buffers}};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ring_buffer_a1a381c363b0ffad30620e873952cb56d}{time\_per\_buffer}}\ =\ 10.0f;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_a0a75fb8ddeb31009d02728b46abaed9a}{buffer\_num}}\ =\ 3;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00144\ \ \ \ \ std::vector<Checkpoint*>\ \mbox{\hyperlink{class_ring_buffer_a0620d2a82274b0e78eb8e865bb63d311}{checkpoints}};}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_ae7af83e0c80215d02296ba67071f5fe4}{max\_checkpoint\_num}}\ =\ 50;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_a5f2a5a431fab450a6dd3d068c5546ee8}{read\_chunk\_size}}\ =\ 10;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ring_buffer_a2715b2e99ea24521ef7a586c2f33e1c9}{\string~RingBuffer}}();}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{class_ring_buffer}{RingBuffer}}(\textcolor{keywordtype}{float}\ buffer\_time,\ \textcolor{keywordtype}{int}\ buffer\_number,\ \textcolor{keywordtype}{float}\ record\_duration);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a0bb38433062c2e8a4ea1155c732404fd}{log\_loading\_data\_type}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_aaa71e934e620964e47a2ac573fe9d165}{log\_loading\_finished}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{virtual}\ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_ring_buffer_a213a1a53005576f53add7806e351d37e}{read\_single\_data\_from\_file}}(std::ifstream\&\ record\_file)\ =\ 0;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{virtual}\ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_ring_buffer_ac3d0bfc123e76b720bc30e530996dec0}{read\_single\_data\_from\_vector}}(std::vector<Bytef>\ \textcolor{keyword}{const}\&\ data\_vector,\ \textcolor{keywordtype}{int}\&\ index)\ =\ 0;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{virtual}\ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_ring_buffer_a14e54f79166a9f41c8ddc8d23221a7c2}{duplicate\_data}}(std::shared\_ptr<RecordableData>\ data)\ =\ 0;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_ab68a1e7253728cfa90ffc0625c975b73}{load\_data}}(\mbox{\hyperlink{struct_loading_information}{LoadingInformation}}\ \textcolor{keyword}{const}\&\ load\_info,\ std::shared\_ptr<RecordableData>\ data)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a7a5af0164ce3fc5ac61ec13f0260be18}{read\_chunk\_from\_file}}(std::ifstream\ \&record\_file,\ std::shared\_ptr<RecordableData>\ current\_data[],\ \textcolor{keywordtype}{int}\ current\_chunk\_size)\ =\ 0;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_a2e08b932832c4a933d30f94d45227e81}{time\_in\_active\_buffer}}(\textcolor{keywordtype}{float}\ current\_time)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_a324665b6c7f7c3de4e05d84b68865b52}{current\_active\_buffer\_in\_memory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_aa8c37faa4aae0ffb068ee7d7713f2093}{loading\_required}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_a0986e994f4feea2090e233a234ec2c3f}{is\_currently\_loading}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_a8e559a930af5743b7e871e814ff223fa}{preparing\_buffers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ring_buffer_ab2379201e47fcabce11c1b06c3ee0a4e}{get\_max\_stored\_time}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ring_buffer_add6c7c1a0dc62e9f2c47fd13461a4471}{get\_min\_stored\_time}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ring_buffer_a688b62161f4d87026a64551bf61d60c6}{get\_max\_loading\_time}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ring_buffer_aea25879d8c99c4d3d2bf84d6de431ec8}{get\_min\_loading\_time}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a735642a4e7374d672c10fff09c88d1ef}{clear}}();}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{struct_checkpoint}{Checkpoint}}*\ \mbox{\hyperlink{class_ring_buffer_a31bfb7ef00e683fd7f26b42b9b2282ec}{get\_most\_recent\_checkpoint}}(\mbox{\hyperlink{struct_loading_information}{LoadingInformation}}\ \textcolor{keyword}{const}\&\ load\_info)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a0e2b28f6f7f2e4b4ebd4c401dd84876f}{checkpoint\_creation}}(\mbox{\hyperlink{struct_loading_information}{LoadingInformation}}\ \textcolor{keyword}{const}\&\ load\_info);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a8a6bd024b369f420be5c3ac6f6333042}{checkpoint\_cleanup}}();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a1a26f2c572cd4c49a44dc6c481adfec5}{update\_buffer\_timings}}(\textcolor{keywordtype}{float}\ required\_time);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_a7623fa4323752b3da916d151fe9583aa}{prepare\_buffers}}(\textcolor{keywordtype}{float}\ current\_time);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_af1c7bd1c5e33e8275f5c08ad5dbba16a}{update\_active\_buffer}}(\textcolor{keywordtype}{float}\ current\_time);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_aa99751ea6330ce0df621584fd848c386}{find\_buffer\_for\_time}}(\textcolor{keywordtype}{float}\ time)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a716dbf49ada53db94d08bc6c35618aa0}{clear\_old\_buffers}}();}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{DataType}}\ \mbox{\hyperlink{class_ring_buffer_a9deb00cb21464446cfccaef5c38d5d4a}{get\_recorded\_data\_type}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a5fdd8844ed2685bc947a1c8dc9b6d345}{reload\_index\_maps}}()\ =\ 0;}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_af87a48f0fb588ffc456b62570e304d98}{read\_data}}(std::string\ \textcolor{keyword}{const}\&\ current\_recording\_file);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a711c786cb92b26597e5187dcb3ba3eb4}{wait\_for\_loading}}(\textcolor{keywordtype}{float}\ current\_time)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_a711c786cb92b26597e5187dcb3ba3eb4}{wait\_for\_loading}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ring_buffer_ae474b1a8bce10802e1419c979208bb59}{set\_debug\_mode}}(\textcolor{keywordtype}{bool}\ debug\_state);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_a1496ff04f518292587fe15ec6fd2ac13}{get\_dto\_size}}()\ =\ 0;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ring_buffer_a0917833a4b209d4c1c0c3961a1d70323}{add\_element}}(std::shared\_ptr<RecordableData>\ data,\ \mbox{\hyperlink{struct_loading_information}{LoadingInformation}}\&\ load\_info,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ index,\ \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{DataType}}\ data\_type);}
+\DoxyCodeLine{00225\ \};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_RINGBUFFER\_H}}
+
+\end{DoxyCode}

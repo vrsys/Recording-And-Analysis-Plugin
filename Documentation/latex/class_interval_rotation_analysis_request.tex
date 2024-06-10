@@ -1,0 +1,184 @@
+\doxysection{Interval\+Rotation\+Analysis\+Request Class Reference}
+\hypertarget{class_interval_rotation_analysis_request}{}\label{class_interval_rotation_analysis_request}\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Interval\+Rotation\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Interval\+Rotation\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_interval_rotation_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_interval_rotation_analysis_request_a21385563fa831b13c572bf4a71288f9e}{Interval\+Rotation\+Analysis\+Request}} (int i, float t, float rot\+\_\+threshold, float pos\+\_\+threshold=-\/1.\+0f)
+\item 
+void \mbox{\hyperlink{class_interval_rotation_analysis_request_a8c789fd058f889f16deb482cdeaf98d7}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data) override
+\item 
+std\+::string \mbox{\hyperlink{class_interval_rotation_analysis_request_adb889c5638d20815ab6d2770548404c7}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const override
+\item 
+void \mbox{\hyperlink{class_interval_rotation_analysis_request_a9fa14b75ba60f013e7970ab4304df9bf}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_interval_rotation_analysis_request_a3252d834455733cce494ad365c957f35}{clone}} () const override
+\item 
+void \mbox{\hyperlink{class_interval_rotation_analysis_request_a80247919b621e368ecce02cb34855daa}{clear\+\_\+recent\+\_\+data}} () override
+\item 
+\mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} \mbox{\hyperlink{class_interval_rotation_analysis_request_a98dcc5c8f418aaec20c60bbf723a3f29}{get\+\_\+type}} () const override
+\item 
+int \mbox{\hyperlink{class_interval_rotation_analysis_request_aa5159f59715617d76892ea51cb69c000}{get\+\_\+id}} () const
+\item 
+void \mbox{\hyperlink{class_interval_rotation_analysis_request_aefc6d2fd2e15849ff98739eb41c3f983}{set\+\_\+id}} (int \mbox{\hyperlink{class_interval_rotation_analysis_request_a46c3d4160e558623e7b4625b8b02e771}{id}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_adc02e3fee418698665da22c2b9e38763}{get\+\_\+result}} () const
+\item 
+void \mbox{\hyperlink{class_interval_analysis_request_a9961447a702d030a9f8b8d7d204b9568}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_interval_rotation_analysis_request_a46c3d4160e558623e7b4625b8b02e771}{id}}
+\item 
+float \mbox{\hyperlink{class_interval_rotation_analysis_request_a206232568a2587fbdcb9f43795e9ff45}{search\+\_\+interval}}
+\item 
+float \mbox{\hyperlink{class_interval_rotation_analysis_request_a7e2573f2220d4c0e4b488ac373c3203b}{rotation\+\_\+threshold}}
+\item 
+float \mbox{\hyperlink{class_interval_rotation_analysis_request_ad92548432a9ba5effe98c1c87e5dbcef}{position\+\_\+threshold}}
+\item 
+std\+::deque$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ $>$ \mbox{\hyperlink{class_interval_rotation_analysis_request_ac77139cc420630b1d91d4006dbe513af}{recent\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_ac34fb1a86b659287180cb91c8a2608f1}{intervals}}
+\item 
+\mbox{\hyperlink{struct_time_interval}{Time\+Interval}} \mbox{\hyperlink{class_interval_analysis_request_a92538cc08380b17ce51d4834d846fab8}{current\+Interval}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_interval_rotation_analysis_request_a21385563fa831b13c572bf4a71288f9e}\label{class_interval_rotation_analysis_request_a21385563fa831b13c572bf4a71288f9e} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{IntervalRotationAnalysisRequest()}{IntervalRotationAnalysisRequest()}}
+{\footnotesize\ttfamily Interval\+Rotation\+Analysis\+Request\+::\+Interval\+Rotation\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{float}]{t,  }\item[{float}]{rot\+\_\+threshold,  }\item[{float}]{pos\+\_\+threshold = {\ttfamily -\/1.0f} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_interval_rotation_analysis_request_a80247919b621e368ecce02cb34855daa}\label{class_interval_rotation_analysis_request_a80247919b621e368ecce02cb34855daa} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!clear\_recent\_data@{clear\_recent\_data}}
+\index{clear\_recent\_data@{clear\_recent\_data}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clear\_recent\_data()}{clear\_recent\_data()}}
+{\footnotesize\ttfamily void Interval\+Rotation\+Analysis\+Request\+::clear\+\_\+recent\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a28952cc890dc5eb57cbd7f9d20b6e427}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_rotation_analysis_request_a3252d834455733cce494ad365c957f35}\label{class_interval_rotation_analysis_request_a3252d834455733cce494ad365c957f35} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!clone@{clone}}
+\index{clone@{clone}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ Interval\+Rotation\+Analysis\+Request\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a565b40048c51b3926999fe3ee878c06e}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_rotation_analysis_request_adb889c5638d20815ab6d2770548404c7}\label{class_interval_rotation_analysis_request_adb889c5638d20815ab6d2770548404c7} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily std\+::string Interval\+Rotation\+Analysis\+Request\+::get\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778}{Analysis\+Request}}.
+
+\Hypertarget{class_interval_rotation_analysis_request_aa5159f59715617d76892ea51cb69c000}\label{class_interval_rotation_analysis_request_aa5159f59715617d76892ea51cb69c000} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily int Interval\+Rotation\+Analysis\+Request\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_interval_rotation_analysis_request_a98dcc5c8f418aaec20c60bbf723a3f29}\label{class_interval_rotation_analysis_request_a98dcc5c8f418aaec20c60bbf723a3f29} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} Interval\+Rotation\+Analysis\+Request\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_transform_analysis_request_a3dea3275685c99d8ea8bc559cad7759f}{Interval\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_rotation_analysis_request_a8c789fd058f889f16deb482cdeaf98d7}\label{class_interval_rotation_analysis_request_a8c789fd058f889f16deb482cdeaf98d7} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Interval\+Rotation\+Analysis\+Request\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{t\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{s\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_transform_analysis_request_a7e72be7c65fd84d8317e8f035d3d4c72}{Interval\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_interval_rotation_analysis_request_aefc6d2fd2e15849ff98739eb41c3f983}\label{class_interval_rotation_analysis_request_aefc6d2fd2e15849ff98739eb41c3f983} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!set\_id@{set\_id}}
+\index{set\_id@{set\_id}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{set\_id()}{set\_id()}}
+{\footnotesize\ttfamily void Interval\+Rotation\+Analysis\+Request\+::set\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_interval_rotation_analysis_request_a9fa14b75ba60f013e7970ab4304df9bf}\label{class_interval_rotation_analysis_request_a9fa14b75ba60f013e7970ab4304df9bf} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!update\_parameters@{update\_parameters}}
+\index{update\_parameters@{update\_parameters}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{update\_parameters()}{update\_parameters()}}
+{\footnotesize\ttfamily void Interval\+Rotation\+Analysis\+Request\+::update\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{original\+\_\+meta\+\_\+file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{new\+\_\+meta\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{Analysis\+Request}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_interval_rotation_analysis_request_a46c3d4160e558623e7b4625b8b02e771}\label{class_interval_rotation_analysis_request_a46c3d4160e558623e7b4625b8b02e771} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!id@{id}}
+\index{id@{id}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Interval\+Rotation\+Analysis\+Request\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_rotation_analysis_request_ad92548432a9ba5effe98c1c87e5dbcef}\label{class_interval_rotation_analysis_request_ad92548432a9ba5effe98c1c87e5dbcef} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!position\_threshold@{position\_threshold}}
+\index{position\_threshold@{position\_threshold}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{position\_threshold}{position\_threshold}}
+{\footnotesize\ttfamily float Interval\+Rotation\+Analysis\+Request\+::position\+\_\+threshold\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_rotation_analysis_request_ac77139cc420630b1d91d4006dbe513af}\label{class_interval_rotation_analysis_request_ac77139cc420630b1d91d4006dbe513af} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!recent\_data@{recent\_data}}
+\index{recent\_data@{recent\_data}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{recent\_data}{recent\_data}}
+{\footnotesize\ttfamily std\+::deque$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_transform_data}{Transform\+Data}}$>$ $>$ Interval\+Rotation\+Analysis\+Request\+::recent\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_rotation_analysis_request_a7e2573f2220d4c0e4b488ac373c3203b}\label{class_interval_rotation_analysis_request_a7e2573f2220d4c0e4b488ac373c3203b} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!rotation\_threshold@{rotation\_threshold}}
+\index{rotation\_threshold@{rotation\_threshold}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{rotation\_threshold}{rotation\_threshold}}
+{\footnotesize\ttfamily float Interval\+Rotation\+Analysis\+Request\+::rotation\+\_\+threshold\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interval_rotation_analysis_request_a206232568a2587fbdcb9f43795e9ff45}\label{class_interval_rotation_analysis_request_a206232568a2587fbdcb9f43795e9ff45} 
+\index{IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}!search\_interval@{search\_interval}}
+\index{search\_interval@{search\_interval}!IntervalRotationAnalysisRequest@{IntervalRotationAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{search\_interval}{search\_interval}}
+{\footnotesize\ttfamily float Interval\+Rotation\+Analysis\+Request\+::search\+\_\+interval\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Interval\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_interval_rotation_analysis_request_8h}{Interval\+Rotation\+Analysis\+Request.\+h}}\item 
+Src/\+Analysis/\+Interval\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_interval_rotation_analysis_request_8cpp}{Interval\+Rotation\+Analysis\+Request.\+cpp}}\end{DoxyCompactItemize}

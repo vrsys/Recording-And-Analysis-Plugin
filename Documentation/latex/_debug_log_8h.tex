@@ -1,0 +1,107 @@
+\doxysection{Src/\+Debug\+Log.h File Reference}
+\hypertarget{_debug_log_8h}{}\label{_debug_log_8h}\index{Src/DebugLog.h@{Src/DebugLog.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}IUnity\+Graphics.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_debug}{Debug}}
+\begin{DoxyCompactList}\small\item\em This class is used to call external debug functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}{Func\+Call\+Back}}) (const char \texorpdfstring{$\ast$}{*}message, int color, int size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}} \{ \newline
+\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1caee38e4d5dd68c4e440825018d549cb47}{Red}}
+, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cad382816a3cbeed082c9e216e7392eed1}{Green}}
+, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca9594eec95be70e7b1710f730fdda33d9}{Blue}}
+, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Black}}
+, \newline
+\mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca25a81701fbfa4a1efdf660a950c1d006}{White}}
+, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca51e6cd92b6c45f9affdc158ecca2b8b8}{Yellow}}
+, \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca909cea0c97058cfe2e3ea8d675cb08e1}{Orange}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API \mbox{\hyperlink{_debug_log_8h_a7d3944eb9058d78dfa2a77812fcb40cf}{Register\+Debug\+Callback}} (\mbox{\hyperlink{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}{Func\+Call\+Back}} cb)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}{Func\+Call\+Back}} \mbox{\hyperlink{_debug_log_8h_ab6e050eca9932263ba3625d3ed761fb1}{callback\+Instance}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}\label{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e} 
+\index{DebugLog.h@{DebugLog.h}!FuncCallBack@{FuncCallBack}}
+\index{FuncCallBack@{FuncCallBack}!DebugLog.h@{DebugLog.h}}
+\doxysubsubsection{\texorpdfstring{FuncCallBack}{FuncCallBack}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} Func\+Call\+Back) (const char \texorpdfstring{$\ast$}{*}message, int color, int size)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}\label{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c} 
+\index{DebugLog.h@{DebugLog.h}!Color@{Color}}
+\index{Color@{Color}!DebugLog.h@{DebugLog.h}}
+\doxysubsubsection{\texorpdfstring{Color}{Color}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Red@{Red}!DebugLog.h@{DebugLog.h}}\index{DebugLog.h@{DebugLog.h}!Red@{Red}}}\Hypertarget{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1caee38e4d5dd68c4e440825018d549cb47}\label{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1caee38e4d5dd68c4e440825018d549cb47} 
+Red&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Green@{Green}!DebugLog.h@{DebugLog.h}}\index{DebugLog.h@{DebugLog.h}!Green@{Green}}}\Hypertarget{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cad382816a3cbeed082c9e216e7392eed1}\label{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cad382816a3cbeed082c9e216e7392eed1} 
+Green&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Blue@{Blue}!DebugLog.h@{DebugLog.h}}\index{DebugLog.h@{DebugLog.h}!Blue@{Blue}}}\Hypertarget{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca9594eec95be70e7b1710f730fdda33d9}\label{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca9594eec95be70e7b1710f730fdda33d9} 
+Blue&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Black@{Black}!DebugLog.h@{DebugLog.h}}\index{DebugLog.h@{DebugLog.h}!Black@{Black}}}\Hypertarget{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}\label{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de} 
+Black&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{White@{White}!DebugLog.h@{DebugLog.h}}\index{DebugLog.h@{DebugLog.h}!White@{White}}}\Hypertarget{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca25a81701fbfa4a1efdf660a950c1d006}\label{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca25a81701fbfa4a1efdf660a950c1d006} 
+White&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Yellow@{Yellow}!DebugLog.h@{DebugLog.h}}\index{DebugLog.h@{DebugLog.h}!Yellow@{Yellow}}}\Hypertarget{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca51e6cd92b6c45f9affdc158ecca2b8b8}\label{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca51e6cd92b6c45f9affdc158ecca2b8b8} 
+Yellow&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Orange@{Orange}!DebugLog.h@{DebugLog.h}}\index{DebugLog.h@{DebugLog.h}!Orange@{Orange}}}\Hypertarget{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca909cea0c97058cfe2e3ea8d675cb08e1}\label{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca909cea0c97058cfe2e3ea8d675cb08e1} 
+Orange&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_debug_log_8h_a7d3944eb9058d78dfa2a77812fcb40cf}\label{_debug_log_8h_a7d3944eb9058d78dfa2a77812fcb40cf} 
+\index{DebugLog.h@{DebugLog.h}!RegisterDebugCallback@{RegisterDebugCallback}}
+\index{RegisterDebugCallback@{RegisterDebugCallback}!DebugLog.h@{DebugLog.h}}
+\doxysubsubsection{\texorpdfstring{RegisterDebugCallback()}{RegisterDebugCallback()}}
+{\footnotesize\ttfamily void UNITY\+\_\+\+INTERFACE\+\_\+\+EXPORT UNITY\+\_\+\+INTERFACE\+\_\+\+API Register\+Debug\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}{Func\+Call\+Back}}}]{cb }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_debug_log_8h_ab6e050eca9932263ba3625d3ed761fb1}\label{_debug_log_8h_ab6e050eca9932263ba3625d3ed761fb1} 
+\index{DebugLog.h@{DebugLog.h}!callbackInstance@{callbackInstance}}
+\index{callbackInstance@{callbackInstance}!DebugLog.h@{DebugLog.h}}
+\doxysubsubsection{\texorpdfstring{callbackInstance}{callbackInstance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}{Func\+Call\+Back}} callback\+Instance = nullptr\hspace{0.3cm}{\ttfamily [static]}}
+

@@ -1,0 +1,46 @@
+\doxysection{Interval\+Position\+Adjustment\+Analysis\+Request.\+h}
+\hypertarget{_interval_position_adjustment_analysis_request_8h_source}{}\label{_interval_position_adjustment_analysis_request_8h_source}\index{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalPositionAdjustmentAnalysisRequest.h@{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalPositionAdjustmentAnalysisRequest.h}}
+\mbox{\hyperlink{_interval_position_adjustment_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 09.07.2023.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_INTERVALPOSITIONADJUSTMENTANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_INTERVALPOSITIONADJUSTMENTANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_transform_analysis_request_8h}{IntervalTransformAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_interval_position_adjustment_analysis_request}{IntervalPositionAdjustmentAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_interval_transform_analysis_request}{IntervalTransformAnalysisRequest}}\{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_a5d1fa3757c5602731af0a6be251aac0d}{id}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_acea7daff379495161dfbe2f0c775c34e}{search\_interval}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_a7d5509b2eebd44e0f81361693dcebe18}{distance\_threshold}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ std::deque<std::shared\_ptr<TransformData>>\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_af504470b6e6d6e95cd1350a2aff5c052}{recent\_data}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request}{IntervalPositionAdjustmentAnalysisRequest}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{float}\ t,\ \textcolor{keywordtype}{float}\ dist\_threshold\ =\ -\/1.0f);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_afabac1091bb5f407ea822aeab308164c}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_adfc92cae7018fe1514161f04e17cf243}{update\_parameters}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ original\_meta\_file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ new\_meta\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_a498aadfd10c4d041bfbb5e9cdead7d3c}{get\_description}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_info)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_a1d582e56c9c4f13ec2c10c39b2a1db2f}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_ab0c9b6cacda91f96b35ad978de38ee1e}{clear\_recent\_data}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_a7c29de09211acc6aeafddcbdcd98eec6}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_aa83ebb14c2eabc3ded3c87d3f1d66cdb}{get\_id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_ac793af10d42cfb65e83e4164fb8d109a}{set\_id}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_INTERVALPOSITIONADJUSTMENTANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

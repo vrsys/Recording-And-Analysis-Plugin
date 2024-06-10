@@ -1,0 +1,143 @@
+\chapter{Record, Replay \& Analysis Plugin}
+\hypertarget{index}{}\label{index}\index{Record, Replay  \& Analysis Plugin@{Record, Replay  \& Analysis Plugin}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+ \href{https://github.com/AnBenLa/UnityRecordingPlugin/actions/workflows/cmake.yml}{\texttt{ }}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{Icon_resized.png}
+\doxyfigcaption{Logo}
+\end{DoxyImage}
+   
+
+This plugin enables the recording and replaying of time series data on Windows, Linux, and Android platforms (e.\+g., Oculus Quest). It supports recording of transforms, scene graph structure, sound, and generic time series data. Enhanced features include simultaneous multiple playback capabilities and the ability to record new data while replaying existing recordings, facilitated by unique recorder IDs. In addition, it supports efficient analysis functionalities that allow the analysis of created recordings during playback. Different types of analysis queries (distance queries, velocity queries, ...) can be defined individually or combined for the investigation of complex behaviour.
+
+{\bfseries{Functionalities\+:}}
+\begin{DoxyItemize}
+\item Efficient recording and playback of transform, sound and generic data
+\item Complex analysis of behaviour through composable analysis queries that can be analyzed during playback
+\end{DoxyItemize}
+
+{\bfseries{Possible use cases\+:}} ~\newline
+
+\begin{DoxyItemize}
+\item Integration into 3D engines such as Unity or Unreal Engine to record \& replay user interactions, studies, meetings, gameplay, etc.
+\item Usage as a recorder for generic data i.\+e. to log messages, record float buffer, etc. ~\newline
+
+\end{DoxyItemize}
+
+{\bfseries{Requirements}}\+: ~\newline
+
+\begin{DoxyItemize}
+\item \href{https://gitforwindows.org/}{\texttt{ git}}
+\item \href{https://cmake.org/download/}{\texttt{ cmake}}
+\item \href{http://gnuwin32.sourceforge.net/packages/make.htm}{\texttt{ make for windows}} ~\newline
+
+\item compiler and cmake generator i.\+e. \href{https://sourceforge.net/projects/mingw-w64/}{\texttt{ Min\+GW-\/w64}}
+\end{DoxyItemize}
+
+{\bfseries{Architecture}}  
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{Architecture.png}%Architecture
+\end{DoxyInlineImage}
+   \hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Setup\+:}{Setup:}}\label{index_autotoc_md1}
+{\bfseries{Step 1}}\+: Clone the repository {\bfseries{recursively}} to ensure all submodules are included\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ -\/-\/recursive\ https://github.com/AnBenLa/UnityRecordingPlugin}
+
+\end{DoxyCode}
+
+
+{\bfseries{Step 2}}\+: Update the paths in CMake\+Lists.\+txt to match your setup (UNITY\+\_\+\+PLUGINS\+\_\+\+DIR).
+
+{\bfseries{Step 3}}\+: Build the plugin using the following commands\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ UnityRecordingPlugin}
+\DoxyCodeLine{mkdir\ build}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{cmake\ -\/DCMAKE\_BUILD\_TYPE=Release\ ..}
+\DoxyCodeLine{cmake\ -\/-\/build\ .\ -\/-\/target\ RecordingPlugin}
+
+\end{DoxyCode}
+
+
+{\bfseries{Step 4}}\+: Integrate with your project by using the exposed endpoints from Recording\+Plugin.\+cpp. Example in C\#\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[DllImport("{}RecordingPlugin"{})]}
+\DoxyCodeLine{private\ static\ extern\ bool\ CreateNewRecordingFile(int\ recorder\_id,\ char*\ recording\_name,\ int\ recording\_name\_length);}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Setup for Android (.\+so)\+:}{Setup for Android (.so):}}\label{index_autotoc_md2}
+{\bfseries{Step 1}}\+: Clone the repository {\bfseries{recursively}} to ensure all submodules are included\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ -\/-\/recursive\ https://github.com/AnBenLa/UnityRecordingPlugin}
+
+\end{DoxyCode}
+
+
+{\bfseries{Step 2}}\+: Update the paths in CMake\+Lists.\+txt to match your setup (UNITY\+\_\+\+PLUGINS\+\_\+\+DIR).
+
+{\bfseries{Step 3}}\+: Configure target architecture in \doxylink{build_android_8bat}{build\+Android.\+bat} (ANDROID\+\_\+\+ABI, ANDROID\+\_\+\+PLATFORM)
+
+{\bfseries{Step 4}}\+: Build the plugin for Android using Windows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ UnityRecordingPlugin}
+\DoxyCodeLine{.\(\backslash\)buildAndroid.bat}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Record \& Replay Pipeline\+:}{Record \& Replay Pipeline:}}\label{index_autotoc_md3}
+Note\+: The following code is pseudo-\/code and demonstrates general usage. It cannot be directly copy-\/pasted into your project.
+
+{\bfseries{Configure Parameters}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{SetRecordingMaxBufferSize(recorderId,\ recordingMaxBufferSize);}
+\DoxyCodeLine{SetSoundRecordingMaxBufferSize(recorderId,\ recordingSoundMaxBufferSize);}
+\DoxyCodeLine{SetReplayBufferNumber(recorderId,\ replayBufferNumber);}
+\DoxyCodeLine{SetReplayBufferStoredTimeInterval(recorderId,\ replayBufferTimeInterval);}
+
+\end{DoxyCode}
+ {\bfseries{Begin \doxylink{struct_recording}{Recording}}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CreateNewRecordingFile(recorderId,\ directory,\ directory.Length,\ recordName,\ recordName.Length);}
+\DoxyCodeLine{RecordObjectAtTimestamp(recorderId,\ name,\ name.Length,\ id,\ matrixDTO,\ recordTime,\ infoDTO);}
+\DoxyCodeLine{RecordSoundDataAtTimestamp(recorderId,\ audioData,\ recordedSamples,\ sampleRate,\ startIndex,\ recordTime,\ audioSourceId);}
+\DoxyCodeLine{StopRecording(recorderId);}
+
+\end{DoxyCode}
+
+
+{\bfseries{Begin Replay}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{OpenExistingRecordingFile(recorderId,\ directory,\ directory.Length,\ recordName,\ recordName.Length);}
+\DoxyCodeLine{fixed\ (float*\ p\ =\ matrixDTO)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ fixed\ (int*\ u\ =\ infoDTO)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ GetTransformAndInformationAtTime(recorderId,\ name,\ name.Length,\ id,\ time,\ (IntPtr)\ p,\ (IntPtr)\ u)}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{fixed\ (float*\ p\ =\ soundDTO)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ GetSoundChunkForTime(recorderId,\ 0,\ loadTime,\ (IntPtr)\ p);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{StopReplay(recorderId);}
+
+\end{DoxyCode}
+
+
+{\bfseries{Debugging on Windows}}\+: ~\newline
+ Plugin output is logged both in the Unity console and the Unity editor log file, which is located at\+:\`{}\`{}\`{} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\%LOCALAPPDATA\%\(\backslash\)Unity\(\backslash\)Editor\(\backslash\)Editor.log}
+
+\end{DoxyCode}
+
+
+{\bfseries{Debugging on Android}}\+: ~\newline
+ The debug output of the plugin can be read using the \href{https://developer.android.com/studio/command-line/adb}{\texttt{ android debug bridge}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{adb\ logcat}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,50 @@
+\doxysection{Interval\+Rotation\+Analysis\+Request.\+h}
+\hypertarget{_interval_rotation_analysis_request_8h_source}{}\label{_interval_rotation_analysis_request_8h_source}\index{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalRotationAnalysisRequest.h@{Src/Analysis/IntervalAnalysis/TransformAnalysis/IntervalRotationAnalysisRequest.h}}
+\mbox{\hyperlink{_interval_rotation_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Anton-\/Lammert\ on\ 27.10.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_INTERVALROTATIONANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_INTERVALROTATIONANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interval_transform_analysis_request_8h}{IntervalTransformAnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_interval_rotation_analysis_request}{IntervalRotationAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_interval_transform_analysis_request}{IntervalTransformAnalysisRequest}}\{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_a46c3d4160e558623e7b4625b8b02e771}{id}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_a206232568a2587fbdcb9f43795e9ff45}{search\_interval}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ rotation\ threshold\ in\ degree}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_a7e2573f2220d4c0e4b488ac373c3203b}{rotation\_threshold}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_ad92548432a9ba5effe98c1c87e5dbcef}{position\_threshold}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::deque<std::shared\_ptr<TransformData>>\ \mbox{\hyperlink{class_interval_rotation_analysis_request_ac77139cc420630b1d91d4006dbe513af}{recent\_data}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_interval_rotation_analysis_request}{IntervalRotationAnalysisRequest}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{float}\ t,\ \textcolor{keywordtype}{float}\ rot\_threshold,\ \textcolor{keywordtype}{float}\ pos\_threshold\ =\ -\/1.0f);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_a8c789fd058f889f16deb482cdeaf98d7}{process\_request}}(std::shared\_ptr<TransformData>\ t\_data,\ std::shared\_ptr<SoundData>\ s\_data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{class_interval_rotation_analysis_request_adb889c5638d20815ab6d2770548404c7}{get\_description}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ meta\_info)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_a9fa14b75ba60f013e7970ab4304df9bf}{update\_parameters}}(\mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ original\_meta\_file,\ \mbox{\hyperlink{class_meta_information}{MetaInformation}}\&\ new\_meta\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_rotation_analysis_request_a3252d834455733cce494ad365c957f35}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_a80247919b621e368ecce02cb34855daa}{clear\_recent\_data}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{TransformAnalysisType}}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_a98dcc5c8f418aaec20c60bbf723a3f29}{get\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_aa5159f59715617d76892ea51cb69c000}{get\_id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_rotation_analysis_request_aefc6d2fd2e15849ff98739eb41c3f983}{set\_id}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_INTERVALROTATIONANALYSISREQUEST\_H}}
+
+\end{DoxyCode}

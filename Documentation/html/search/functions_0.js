@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['add_5fcreate_5fnew_5fdata_0',['add_create_new_data',['../struct_loading_information.html#aa54f8fbfb0edebe0e1878aa6ee815e5c',1,'LoadingInformation']]],
+  ['add_5fdata_1',['add_data',['../class_recorded_id_data.html#aa3be92939866f408aba30de3e09333fc',1,'RecordedIdData']]],
+  ['add_5felement_2',['add_element',['../class_buffer.html#a58bf464af609b2f6718a58d7f1cc289c',1,'Buffer::add_element()'],['../class_ring_buffer.html#a0917833a4b209d4c1c0c3961a1d70323',1,'RingBuffer::add_element()']]],
+  ['add_5fgeneric_5fid_5finformation_3',['add_generic_id_information',['../class_meta_information.html#ac893f1560e7ad529a62a8ca5f9e73030',1,'MetaInformation']]],
+  ['add_5finterval_5fanalysis_5frequest_4',['add_interval_analysis_request',['../class_analysis_manager.html#ab005f0016bc4f6bb91a31612a3949e2f',1,'AnalysisManager']]],
+  ['add_5fintervals_5fto_5finvestigate_5',['add_intervals_to_investigate',['../class_analysis_manager.html#acf27d19586f907bab63ad1c507d90d0f',1,'AnalysisManager']]],
+  ['add_5flast_5fdata_6',['add_last_data',['../struct_loading_information.html#a3d5586eb948b3eb925d7cf575358060f',1,'LoadingInformation']]],
+  ['add_5flast_5felement_7',['add_last_element',['../class_buffer.html#abbb24ce60c36a4be3baeefd621f5594d',1,'Buffer']]],
+  ['add_5fnew_5fdata_8',['add_new_data',['../struct_loading_information.html#a008f88082dc69808b7a21a7bb791fa7b',1,'LoadingInformation']]],
+  ['add_5fquantitative_5fanalysis_5frequest_9',['add_quantitative_analysis_request',['../class_analysis_manager.html#a503f5ac43e87bbde4cdbd12f220f4f53',1,'AnalysisManager']]],
+  ['add_5frecording_5fpath_10',['add_recording_path',['../class_analysis_manager.html#a817fc13aa767674f914aea01904157f8',1,'AnalysisManager']]],
+  ['add_5fsound_5fid_5finformation_11',['add_sound_id_information',['../class_meta_information.html#a63995b668bee6494cc00c05f8779cd0f',1,'MetaInformation']]],
+  ['add_5ftransform_5fid_5finformation_12',['add_transform_id_information',['../class_meta_information.html#a72f13c13690cee0560ab0fe4e4088baf',1,'MetaInformation']]],
+  ['addanalysisrecordingpath_13',['AddAnalysisRecordingPath',['../_analysis_endpoints_8cpp.html#ac009d6acc267a1939302788b443de577',1,'AnalysisEndpoints.cpp']]],
+  ['addcontainmentanalysisrequest_14',['AddContainmentAnalysisRequest',['../_analysis_endpoints_8cpp.html#aa96afef9da8c9999d74285da836e8201',1,'AnalysisEndpoints.cpp']]],
+  ['adddistanceanalysisrequest_15',['AddDistanceAnalysisRequest',['../_analysis_endpoints_8cpp.html#ae7d01ef553e70b8fe4a5b88c1fc0e13a',1,'AnalysisEndpoints.cpp']]],
+  ['addgazeanalysisrequest_16',['AddGazeAnalysisRequest',['../_analysis_endpoints_8cpp.html#a898c2c0ca742e9dc3daa2f163e03e7f7',1,'AnalysisEndpoints.cpp']]],
+  ['addgazeanalysisrequestax_17',['AddGazeAnalysisRequestAx',['../_analysis_endpoints_8cpp.html#aff68bf9a021b57d467ce0139f5aede7e',1,'AnalysisEndpoints.cpp']]],
+  ['addrotationanalysisrequest_18',['AddRotationAnalysisRequest',['../_analysis_endpoints_8cpp.html#a193591beb4a9f326c57ed0bdcf8e0fa2',1,'AnalysisEndpoints.cpp']]],
+  ['addsoundactivationanalysisrequest_19',['AddSoundActivationAnalysisRequest',['../_analysis_endpoints_8cpp.html#a6556ed0290b5fc9a0ef9f71c1e4edcd2',1,'AnalysisEndpoints.cpp']]],
+  ['addvelocityanalysisrequest_20',['AddVelocityAnalysisRequest',['../_analysis_endpoints_8cpp.html#a351f19a05d5889462deb2d3e7553ed15',1,'AnalysisEndpoints.cpp']]],
+  ['analysismanager_21',['analysismanager',['../class_analysis_manager.html#ad01a29b31d55b631bff0901c63491f10',1,'AnalysisManager::AnalysisManager()'],['../class_analysis_manager.html#ad4251b673528b3f4ac4e2cd569b67625',1,'AnalysisManager::AnalysisManager(AnalysisManager const &amp;)=delete']]],
+  ['andcombinedintervalanalysisrequest_22',['AndCombinedIntervalAnalysisRequest',['../class_and_combined_interval_analysis_request.html#a87286591c221e892c258476f3672d2c4',1,'AndCombinedIntervalAnalysisRequest']]]
+];

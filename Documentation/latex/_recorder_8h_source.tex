@@ -1,0 +1,192 @@
+\doxysection{Recorder.\+h}
+\hypertarget{_recorder_8h_source}{}\label{_recorder_8h_source}\index{Src/Recording/Recorder.h@{Src/Recording/Recorder.h}}
+\mbox{\hyperlink{_recorder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 01.12.2021.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ \_\_RECORDINGPLUGIN\_RECORDER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ \_\_RECORDINGPLUGIN\_RECORDER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_transform_ring_buffer_8h}{Recording/Transform/TransformRingBuffer.h}}>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_sound_ring_buffer_8h}{Recording/Sound/SoundRingBuffer.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_generic_ring_buffer_8h}{Recording/Generic/GenericRingBuffer.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_log_8h}{DebugLog.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{Config.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_recording_8h}{Recording.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../../External/AudioFile/AudioFile.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}zconf.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <future>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_recorder}{Recorder}}\ \{}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_recorder_af0b4f40e7c67f16b0ffff13712149d78}{Recorder}}()\{}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//Recorder(const\ Recorder\&)\ =\ default;}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_recorder}{Recorder}}\&\ \mbox{\hyperlink{class_recorder_adf51ac79d8beee929b07f3df204f8438}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_recorder}{Recorder}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_recorder_af0b4f40e7c67f16b0ffff13712149d78}{Recorder}}(\mbox{\hyperlink{class_recorder}{Recorder}}\&\&\ obj);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_recorder}{Recorder}}\&\ \mbox{\hyperlink{class_recorder_adf51ac79d8beee929b07f3df204f8438}{operator=}}(\mbox{\hyperlink{class_recorder}{Recorder}}\ \&\&\ obj);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_recorder_a6b3c569577fcdc298d8d4a6a2b96e9a9}{\string~Recorder}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a9260d30b9180222ce2595b43fa3eb79a}{record\_transform}}(std::string\ \textcolor{keyword}{const}\&\ object\_name,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{float}\ \textcolor{keyword}{const}\ *\ local\_matrix,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ *\ object\_information);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_aef5fb4257521f4d77c26d3d4a81fcc09}{record\_sound}}(\textcolor{keywordtype}{float}*\ sound\_data,\ \textcolor{keywordtype}{int}\ sound\_data\_length,\ \textcolor{keywordtype}{int}\ sampling\_rate,\ \textcolor{keywordtype}{int}\ start\_index,\ \textcolor{keywordtype}{int}\ channel\_num,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ sound\_id);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_aef5fb4257521f4d77c26d3d4a81fcc09}{record\_sound}}(\textcolor{keywordtype}{float}*\ sound\_data,\ \textcolor{keywordtype}{int}\ sound\_data\_length,\ \textcolor{keywordtype}{int}\ sampling\_rate,\ \textcolor{keywordtype}{int}\ start\_index,\ \textcolor{keywordtype}{int}\ channel\_num,\ \textcolor{keywordtype}{int}\ corresponding\_gameobject\_id,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ sound\_id);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_ab1361949731a0393778665cc6a85c343}{record\_generic}}(\textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}*\ int\_a,\ \textcolor{keywordtype}{float}*\ float\_a,\ \textcolor{keywordtype}{char}*\ char\_a);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a427b4851602e41aebb9e8408f67710bc}{get\_transform}}(\textcolor{keywordtype}{char}*\ object\_name,\ \textcolor{keywordtype}{int}\ object\_name\_length,\ \textcolor{keywordtype}{int}\ object\_uuid,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{float}*\ matrix,\ \textcolor{keywordtype}{int}*\ object\_information);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a385a398b9404387b15396c3d67a599b3}{get\_sound}}(\textcolor{keywordtype}{int}\ sound\_origin,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{float}*\ sound\_data);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a385a398b9404387b15396c3d67a599b3}{get\_sound}}(\textcolor{keywordtype}{int}\ sound\_origin,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{float}*\ sound\_data,\ \textcolor{keywordtype}{int}*\ corresponding\_go\_id);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a0fa97656e86d951b6af92fe42c4a51fd}{get\_generic}}(\textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}*\ int\_a,\ \textcolor{keywordtype}{float}*\ float\_a,\ \textcolor{keywordtype}{char}*\ char\_a);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_ab4b68d16e0fb975570eb233ad5f06033}{get\_sampling\_rate}}(\textcolor{keywordtype}{int}\ sound\_origin);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_aa5052b8df5701b7ef03696c1873acfff}{get\_channel\_num}}(\textcolor{keywordtype}{int}\ sound\_origin);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_ad3cc1b4f90cacafe5214a88b66972f9c}{get\_sound\_ids}}(\textcolor{keywordtype}{int}*\ ids,\ \textcolor{keywordtype}{int}\ max\_id\_count);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_ad2d379eceda122c5812f4479fe234bd4}{create\_recording\_file}}(std::string\ \textcolor{keyword}{const}\&\ recording\_directory,\ std::string\ \textcolor{keyword}{const}\&\ file\_name);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a05e541b94711c0263e9bcec1a2e16211}{stop\_recording}}();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a7eb142588b1ac02122dae21383372c21}{open\_existing\_recording\_file}}(std::string\ \textcolor{keyword}{const}\&\ directory,\ std::string\ \textcolor{keyword}{const}\&\ file\_name);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_aa9bb7b480942b007492c5a31059de225}{stop\_replay}}();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_ad1203717b8c4b502b79dcf2dc26b5b2f}{set\_transform\_recording\_buffer\_size}}(\textcolor{keywordtype}{int}\ max\_size);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a0800d295613da36668ddef7817b9a904}{set\_sound\_recording\_buffer\_size}}(\textcolor{keywordtype}{int}\ max\_size);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a31cd7edd026c6bb15db56e292776ee82}{set\_replay\_buffer\_num}}(\textcolor{keywordtype}{int}\ buffer\_num);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a0d79e4f5373c6238053f884d7c994246}{set\_replay\_buffer\_time\_interval}}(\textcolor{keywordtype}{float}\ time\_interval);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_aecafa179b6468db3b1c5851d62f044fe}{next\_positions\_for\_id}}(\textcolor{keywordtype}{char}*\ object\_name,\ \textcolor{keywordtype}{int}\ object\_name\_length,\ \textcolor{keywordtype}{int}\ object\_uuid,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{float}*\ positions);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_af8105e836fa0bc7020a2550ebf52d798}{get\_recording\_gameobjects}}(\textcolor{keywordtype}{char}*\ text,\ \textcolor{keywordtype}{int}\ max\_size);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a86df1379fa18ec7d6b329d32468e11b4}{get\_recording\_sound\_sources}}(\textcolor{keywordtype}{int}*\ ids,\ \textcolor{keywordtype}{int}\ max\_size);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ std::map<int,std::string>\ \mbox{\hyperlink{class_recorder_af8105e836fa0bc7020a2550ebf52d798}{get\_recording\_gameobjects}}();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_ad66353fe66976c16eb85e5e6254b5c0b}{register\_gameobject\_path}}(\textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{char}*\ path,\ \textcolor{keywordtype}{int}\ path\_length,\ \textcolor{keywordtype}{float}\ time);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_aa59f6905380bdf81ab029c49dbbe99db}{get\_gameobject\_path}}(\textcolor{keywordtype}{char}*\ text,\ \textcolor{keywordtype}{int}\ max\_size,\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}\ name\_length);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a2d2bf1998a1fe63c949e6ace0a61ff7b}{register\_gameobject\_prefab}}(\textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{char}*\ prefab,\ \textcolor{keywordtype}{int}\ prefab\_length,\ \textcolor{keywordtype}{float}\ time);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_ab866efeec6fc154157dc7063ca6f0af4}{get\_gameobject\_prefab}}(\textcolor{keywordtype}{char}*\ text,\ \textcolor{keywordtype}{int}\ max\_size,\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}\ name\_length);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a7ac93604bb75700e2922c64f1a88ec5f}{register\_gameobject\_components}}(\textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{char}*\ components,\ \textcolor{keywordtype}{int}\ components\_length);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a035f8af083a03fa9405016fda74af0fa}{get\_gameobject\_components}}(\textcolor{keywordtype}{char}*\ text,\ \textcolor{keywordtype}{int}\ max\_size,\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}\ name\_length);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ std::string\ \mbox{\hyperlink{class_recorder_a035f8af083a03fa9405016fda74af0fa}{get\_gameobject\_components}}(std::string\ name);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ std::string\ \mbox{\hyperlink{class_recorder_a793bd0d463d80045f00316520d4ba270}{get\_gameobject\_mesh\_path}}(std::string\ name);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_a4361ceb3ee8b206034d4bf09801d3844}{get\_gameobject\_first\_time}}(\textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}\ name\_length);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_a742965b1b916dcd8a635def9c250c4e5}{get\_recording\_duration}}();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_ad7eae5029e8ece3b7be01968b570356f}{get\_recording\_start\_global\_timeoffset}}();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_aead3f482489c7f26fb4911068a9225a3}{get\_original\_id}}(\textcolor{keywordtype}{char}*\ object\_name,\ \textcolor{keywordtype}{int}\ object\_name\_length,\ \textcolor{keywordtype}{int}\ object\_id);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_aead3f482489c7f26fb4911068a9225a3}{get\_original\_id}}(\textcolor{keywordtype}{int}\ object\_id);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_aab2487e0e4223893b32fe0ca8221fd02}{get\_new\_id}}(\textcolor{keywordtype}{int}\ object\_id);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a3c5189994e8dd458d31e392f1f38810d}{register\_recording\_start\_global\_timeoffset}}(\textcolor{keywordtype}{float}\ offset\_to\_global\_time);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_adb424533fc33416f0fee5bf598ee62cc}{write\_buffer}}(\textcolor{keyword}{const}\ std::string\&\ file\_name,\ std::vector<T>\&\ writing\_buffer);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a55053570b04f7356707ab842ac145512}{set\_debug\_mode}}(\textcolor{keywordtype}{bool}\ debug\_state);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{struct_recording}{Recording}}\ \mbox{\hyperlink{class_recorder_aff795f0ae5d18c7703d437962167ace9}{current\_recording}};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a5d913aaa37b8a6c50f6ad22d70fc8a1e}{sound\_rec\_active}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a80d730a48e32cd271362b962db04e231}{debug}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a6121a3a4a7913f64adbb74b7e84514e6}{editing\_mode}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_aacab8c8ab1fabdc4ffab13f509713f59}{writing\_generic\_to\_file}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a1ebc89f8543ceaaf498244aded268078}{writing\_sound\_to\_file}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_recorder_a87cafc465786a5930dc4905f0c54d231}{writing\_transform\_to\_file}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_a7bee081570006deec7053a79e0ddf8ba}{current\_time}}\ =\ 0.0f;}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_a5d17000ac72a4f747367edd5b7068247}{current\_sound\_time}}\ =\ 0.0f;}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a7a173e25008d17a800a7652a57f33dc8}{recording\_buffer\_size}}\ =\ 10000;}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a8d09ded04d58e67a4cba387c038ead8d}{sound\_recording\_buffer\_size}}\ =\ 100;}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a0a05dd55af6e92aaeb256d9d6e32f079}{generic\_buffer\_size}}\ =\ 100;}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a08784cb9f17bf00e5d19d23f6881a29e}{wait\_count}}\ =\ 10000;}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{comment}{//\ performance\ measurements}}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_adb025e84c5795baec9910e19a78a8f51}{last\_time}};}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00253\ \ \ \ \ std::map<int,\ TransformDTO>\ \mbox{\hyperlink{class_recorder_aba57f3bc52e4e65774775609992d837c}{last\_transforms}};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a1c25dc401bf5cb8a2d064979bb8d95b2}{transform\_buffer\_num}}\ =\ 3;}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_a3c7b9214d1e9ad20a2102743e3410126}{transform\_buffer\_time\_interval}}\ =\ 10.0f;}
+\DoxyCodeLine{00259\ \ \ \ \ std::shared\_ptr<TransformRingBuffer>\ \mbox{\hyperlink{class_recorder_a1b92057d9f5360531f33f44209994483}{transform\_ring\_buffer}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a34bb086910e095a0e7165377bbf7ed7e}{sound\_buffer\_num}}\ =\ 3;}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_acfdd64c438ea973934816584ac80d072}{sound\_buffer\_time\_interval}}\ =\ 10.0f;}
+\DoxyCodeLine{00265\ \ \ \ \ std::shared\_ptr<SoundRingBuffer>\ \mbox{\hyperlink{class_recorder_a8b9c3c7441bb049273759e6eb1f7a8e9}{sound\_ring\_buffer}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_recorder_a169f3500e009a093b98b5b51559569b8}{generic\_buffer\_num}}\ =\ 3;}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_recorder_aac77e0a29c064232c9910d89e51ab75f}{generic\_buffer\_time\_interval}}\ =\ 10.0f;}
+\DoxyCodeLine{00271\ \ \ \ \ std::shared\_ptr<GenericRingBuffer>\ \mbox{\hyperlink{class_recorder_a7b3a30a5a995056d38ae3df22ec0b64c}{generic\_ring\_buffer}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00274\ \ \ \ \ std::vector<TransformDTO>\ \mbox{\hyperlink{class_recorder_a8df43c220156adc0f51d7c406f61affa}{transform\_recording\_buffer}};}
+\DoxyCodeLine{00276\ \ \ \ \ std::vector<SoundDTO>\ \mbox{\hyperlink{class_recorder_a6bddf8f5f8f3898e9449826ead30db70}{sound\_recording\_buffer}};}
+\DoxyCodeLine{00278\ \ \ \ \ std::vector<GenericDTO>\ \mbox{\hyperlink{class_recorder_a1670552f0450b9c473d8c5866d3e82f4}{generic\_recording\_buffer}};}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00281\ \ \ \ \ std::map<int,\ SoundDTO>\ \mbox{\hyperlink{class_recorder_a0f95eb4c12c049e2f0b62bf60f3447f3}{last\_sound\_data}};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00284\ \ \ \ \ std::vector<TransformDTO>\ \mbox{\hyperlink{class_recorder_afbf1c0acf26acb59e67e147173632435}{transform\_writing\_buffer}};}
+\DoxyCodeLine{00286\ \ \ \ \ std::vector<SoundDTO>\ \mbox{\hyperlink{class_recorder_a3f8b270248dc5b09510e5d7f17ef3251}{sound\_writing\_buffer}};}
+\DoxyCodeLine{00288\ \ \ \ \ std::vector<GenericDTO>\ \mbox{\hyperlink{class_recorder_a8ebf9d44c7919c0f13380f39fd7814a8}{generic\_writing\_buffer}};}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ std::future<void>\ \mbox{\hyperlink{class_recorder_a78f68be8e5294c2f7d43e68198dff373}{transform\_loading}};}
+\DoxyCodeLine{00292\ \ \ \ \ std::future<void>\ \mbox{\hyperlink{class_recorder_ab44ebc146d3139fb4044660a56bd23db}{sound\_loading}};}
+\DoxyCodeLine{00293\ \ \ \ \ std::future<void>\ \mbox{\hyperlink{class_recorder_a9937b812e3b100780309d2aef9b336eb}{generic\_loading}};}
+\DoxyCodeLine{00294\ \};}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\_\_RECORDINGPLUGIN\_RECORDER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\doxysection{Analysis\+Request Class Reference}
+\hypertarget{class_analysis_request}{}\label{class_analysis_request}\index{AnalysisRequest@{AnalysisRequest}}
+
+
+{\ttfamily \#include $<$Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.779923cm]{class_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const =0
+\item 
+virtual void \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file)=0
+\item 
+virtual void \mbox{\hyperlink{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778}\label{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778} 
+\index{AnalysisRequest@{AnalysisRequest}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!AnalysisRequest@{AnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily virtual std\+::string Analysis\+Request\+::get\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_quantitative_analysis_request_a95d9cdee3e4fa673cb216b67acdd7b6b}{Quantitative\+Analysis\+Request}}, \mbox{\hyperlink{class_and_combined_interval_analysis_request_a71caba16a9f172c33333868784873e8c}{And\+Combined\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_negated_interval_analysis_request_a8228d70f299957a7bcab9192c39a1a35}{Negated\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_or_combined_interval_analysis_request_a5434c67a36ab4d5dc2a13474c36b2a8e}{Or\+Combined\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a6db2b7f7cd033917fc8206f402d778b5}{Interval\+Sound\+Activation\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_containment_analysis_request_aeb96ccbe3793b77b16e40e4d281fb399}{Interval\+Containment\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_distance_analysis_request_a7229aac2f7fd82f70eb03ff777223ec6}{Interval\+Distance\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_gaze_analysis_request_a1fda365162636ef987904648712cb615}{Interval\+Gaze\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_a498aadfd10c4d041bfbb5e9cdead7d3c}{Interval\+Position\+Adjustment\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_rotation_analysis_request_adb889c5638d20815ab6d2770548404c7}{Interval\+Rotation\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_velocity_analysis_request_ae05671b35014afc65167b7c045fc6423}{Interval\+Velocity\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_distance_analysis_request_a75b313a39421349e9c1ff933c9127b1c}{Quantitative\+Distance\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aad8288149891bd6f9d8c2dcbe15ae32a}{Quantitative\+Gaze\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_rotation_analysis_request_a27c98e7a9dea53f10d45e8b796172421}{Quantitative\+Rotation\+Analysis\+Request}}, and \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a176411dddb83b6f260dbe290a1217146}{Quantitative\+Velocity\+Analysis\+Request}}.
+
+\Hypertarget{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242}\label{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242} 
+\index{AnalysisRequest@{AnalysisRequest}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!AnalysisRequest@{AnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily virtual void Analysis\+Request\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{t\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{s\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_and_combined_interval_analysis_request_af76ce88140dc478cacd9eaa15d97484e}{And\+Combined\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_negated_interval_analysis_request_a02e4e7eebfbc9d647581e9df56b34f7d}{Negated\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_or_combined_interval_analysis_request_a8343b5134ef9074a01c31fc226af84df}{Or\+Combined\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_sound_activation_analysis_request_a5be063ef7dd386b8f63195b8753f7a8a}{Interval\+Sound\+Activation\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_containment_analysis_request_ac32380603554394c612313549c5986e1}{Interval\+Containment\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_distance_analysis_request_aab2e82c7d7a1b68ef857ff2a8dd7d04e}{Interval\+Distance\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_gaze_analysis_request_af9723a0904cbc5c06a67b95cf5728042}{Interval\+Gaze\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_afabac1091bb5f407ea822aeab308164c}{Interval\+Position\+Adjustment\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_rotation_analysis_request_a8c789fd058f889f16deb482cdeaf98d7}{Interval\+Rotation\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_velocity_analysis_request_a560860ff42306a6bd01db0063fb9b7a6}{Interval\+Velocity\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_distance_analysis_request_a3ccb16d932be2eba519604754bd779db}{Quantitative\+Distance\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_gaze_analysis_request_af1c85077aa4ec2ddb920a5919b7dbce4}{Quantitative\+Gaze\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_rotation_analysis_request_a1fc618feb7d9c3e973828b1ed6800443}{Quantitative\+Rotation\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a773a45c351e3757dfc7899c09abc18e0}{Quantitative\+Velocity\+Analysis\+Request}}, and \mbox{\hyperlink{class_interval_transform_analysis_request_a7e72be7c65fd84d8317e8f035d3d4c72}{Interval\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}\label{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9} 
+\index{AnalysisRequest@{AnalysisRequest}!update\_parameters@{update\_parameters}}
+\index{update\_parameters@{update\_parameters}!AnalysisRequest@{AnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{update\_parameters()}{update\_parameters()}}
+{\footnotesize\ttfamily virtual void Analysis\+Request\+::update\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{original\+\_\+meta\+\_\+file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{new\+\_\+meta\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_and_combined_interval_analysis_request_a8383e28e9e9af4d28ebc7692819ca3b1}{And\+Combined\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_negated_interval_analysis_request_a3e52771bcd9ab5b2633a6e1907092826}{Negated\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_or_combined_interval_analysis_request_a833dfc7baaf48c8ecb427ed79c7d649c}{Or\+Combined\+Interval\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_sound_activation_analysis_request_aa80ba37157e88f12af15a698ee4cd290}{Interval\+Sound\+Activation\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_containment_analysis_request_a8c73b0c511da71d467150eeb09157a9f}{Interval\+Containment\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_distance_analysis_request_a81000eac637f7f6ad6dbbd29d353408a}{Interval\+Distance\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_gaze_analysis_request_a4b05c72e15f0bf3b639b2ae80c53a73c}{Interval\+Gaze\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_position_adjustment_analysis_request_adfc92cae7018fe1514161f04e17cf243}{Interval\+Position\+Adjustment\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_rotation_analysis_request_a9fa14b75ba60f013e7970ab4304df9bf}{Interval\+Rotation\+Analysis\+Request}}, \mbox{\hyperlink{class_interval_velocity_analysis_request_a929b1ded5a855aea83d8765edf5f26f1}{Interval\+Velocity\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_distance_analysis_request_ad2526491affb23c1b53a0c1c6a364a61}{Quantitative\+Distance\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_gaze_analysis_request_afe007c85b554b620571e4f7bfa90d356}{Quantitative\+Gaze\+Analysis\+Request}}, \mbox{\hyperlink{class_quantitative_rotation_analysis_request_ac6cb9b6304c532633c70efbe6a102d67}{Quantitative\+Rotation\+Analysis\+Request}}, and \mbox{\hyperlink{class_quantitative_velocity_analysis_request_a5a30fb4ee58f81119e1cb517485a2f3d}{Quantitative\+Velocity\+Analysis\+Request}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\mbox{\hyperlink{_analysis_request_8h}{Analysis\+Request.\+h}}\end{DoxyCompactItemize}

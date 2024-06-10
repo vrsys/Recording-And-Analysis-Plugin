@@ -1,0 +1,42 @@
+\doxysection{Transform\+Buffer.\+h}
+\hypertarget{_transform_buffer_8h_source}{}\label{_transform_buffer_8h_source}\index{Src/Recording/Transform/TransformBuffer.h@{Src/Recording/Transform/TransformBuffer.h}}
+\mbox{\hyperlink{_transform_buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 18.03.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_TRANSFORMBUFFER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_TRANSFORMBUFFER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_data_8h}{TransformData.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_buffer_8h}{Recording/BaseStructure/Buffer.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_transform_buffer}{TransformBuffer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_buffer}{Buffer}}\{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ maps\ for\ faster\ access}}
+\DoxyCodeLine{00016\ \ \ \ \ std::map<int,unsigned\ int>\ \mbox{\hyperlink{class_transform_buffer_a18465b756ddef018c248dfeb1e769554}{uuid\_record\_data\_index}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ store\ position\ of\ the\ last\ used\ matrix\ in\ the\ sorted\ list\ for\ each\ object}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ this\ allows\ for\ a\ faster\ search\ for\ the\ next\ needed\ transformation\ matrix}}
+\DoxyCodeLine{00019\ \ \ \ \ std::map<int,\ unsigned\ int>\ \mbox{\hyperlink{class_transform_buffer_a0d314df01ade6c34145b6327265b5ef8}{uuid\_playhead}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::shared\_ptr<TransformData>\ \mbox{\hyperlink{class_transform_buffer_a725b0bbcf6bf9f8f995498c916e82797}{previous\_transform}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00022\ \ \ \ \ std::shared\_ptr<TransformData>\ \mbox{\hyperlink{class_transform_buffer_a5e37c2de39e0ff5003a07be4bcb3fe57}{next\_transform}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_transform_buffer}{TransformBuffer}}(\textcolor{keywordtype}{float}\ start\_time,\ \textcolor{keywordtype}{float}\ end\_time);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_transform_buffer_ac25c55c7465782e8900cc49588724946}{\string~TransformBuffer}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_transform_buffer_abe85128782842ec0bd62886c892840d2}{get\_data}}(\textcolor{keywordtype}{float}\ time,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_transform_buffer_a942563c98b4a520e9afd334848c3bd7f}{get\_any\_data}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_buffer_a512c09b703956948877fd4d549d0dfec}{reload\_index\_maps}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_TRANSFORMBUFFER\_H}}
+
+\end{DoxyCode}

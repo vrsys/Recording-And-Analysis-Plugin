@@ -1,0 +1,43 @@
+\doxysection{Debug\+Log.\+h}
+\hypertarget{_debug_log_8h_source}{}\label{_debug_log_8h_source}\index{Src/DebugLog.h@{Src/DebugLog.h}}
+\mbox{\hyperlink{_debug_log_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//code\ used\ from:\ https://stackoverflow.com/questions/43732825/use-\/debug-\/log-\/from-\/c}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ RENDERINGPLUGIN\_DEBUGLOG\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ RENDERINGPLUGIN\_DEBUGLOG\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}IUnityGraphics.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\{}
+\DoxyCodeLine{00013\ \textcolor{comment}{//Create\ a\ callback\ delegate}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ void(*\mbox{\hyperlink{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}{FuncCallBack}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \textcolor{keywordtype}{int}\ color,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00015\ \textcolor{keyword}{static}\ \mbox{\hyperlink{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}{FuncCallBack}}\ \mbox{\hyperlink{_debug_log_8h_ab6e050eca9932263ba3625d3ed761fb1}{callbackInstance}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ UNITY\_INTERFACE\_EXPORT\ UNITY\_INTERFACE\_API\ \mbox{\hyperlink{_debug_log_8h_a7d3944eb9058d78dfa2a77812fcb40cf}{RegisterDebugCallback}}(\mbox{\hyperlink{_debug_log_8h_a895335eb1fe4265ecaaf286e1601a38e}{FuncCallBack}}\ cb);}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//Color\ Enum}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ \{\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1caee38e4d5dd68c4e440825018d549cb47}{Red}},\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cad382816a3cbeed082c9e216e7392eed1}{Green}},\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca9594eec95be70e7b1710f730fdda33d9}{Blue}},\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Black}},\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca25a81701fbfa4a1efdf660a950c1d006}{White}},\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca51e6cd92b6c45f9affdc158ecca2b8b8}{Yellow}},\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1ca909cea0c97058cfe2e3ea8d675cb08e1}{Orange}}\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ \ }\mbox{\hyperlink{class_debug}{Debug}}\{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Log}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ color\ =\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color::Black}});}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Log}}(\textcolor{keyword}{const}\ std::string\ message,\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ color\ =\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color::Black}});}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Log}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ message,\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ color\ =\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color::Black}});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Log}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ message,\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ color\ =\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color::Black}});}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Log}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ message,\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ color\ =\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color::Black}});}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Log}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ message,\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ color\ =\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color::Black}});}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a27c301ab98eb45fd4df73935b5d0e619}{Log}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ message,\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ color\ =\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1cae90dfb84e30edf611e326eeb04d680de}{Color::Black}});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a1dcd4631a9a23ada4131e6926944d657}{send\_log}}(\textcolor{keyword}{const}\ std::stringstream\ \&ss,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_debug_log_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}\ \&color);}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RENDERINGPLUGIN\_DEBUGLOG\_H}}
+
+\end{DoxyCode}

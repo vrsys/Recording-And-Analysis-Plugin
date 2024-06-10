@@ -1,0 +1,65 @@
+\doxysection{Transform\+Ring\+Buffer.\+h}
+\hypertarget{_transform_ring_buffer_8h_source}{}\label{_transform_ring_buffer_8h_source}\index{Src/Recording/Transform/TransformRingBuffer.h@{Src/Recording/Transform/TransformRingBuffer.h}}
+\mbox{\hyperlink{_transform_ring_buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 05.01.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_TRANSFORMRINGBUFFER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_TRANSFORMRINGBUFFER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ring_buffer_8h}{Recording/BaseStructure/RingBuffer.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_data_8h}{TransformData.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_buffer_8h}{TransformBuffer.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_log_8h}{DebugLog.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}glm/gtx/matrix\_decompose.hpp"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_transform_ring_buffer}{TransformRingBuffer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ring_buffer}{RingBuffer}}\{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_transform_ring_buffer}{TransformRingBuffer}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ring_buffer_a0a75fb8ddeb31009d02728b46abaed9a}{buffer\_num}},\ \textcolor{keywordtype}{float}\ buffer\_time,\ \textcolor{keywordtype}{float}\ record\_duration);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_transform_ring_buffer_a52c8dc4397d18a51d245a5a0a481ff16}{\string~TransformRingBuffer}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Destroying\ Transform\ Ring\ Buffer\(\backslash\)n"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_ring_buffer_aaaeac85b0cd09059b2a736254a51db85}{log\_loading\_data\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_ring_buffer_a133bbb7c2d65b451119d301fdd068164}{log\_loading\_finished}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_transform_ring_buffer_a3b18a9fbe354d239ddfebfa6da2a1180}{read\_single\_data\_from\_file}}(std::ifstream\ \&record\_file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_transform_ring_buffer_ac5afd495a3534224363c7cb79c3114ee}{read\_single\_data\_from\_vector}}(std::vector<Bytef>\ \textcolor{keyword}{const}\&\ data\_vector,\ \textcolor{keywordtype}{int}\&\ index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_transform_ring_buffer_ade8e99e2ccf9ab600df7c4e307fedab3}{duplicate\_data}}(std::shared\_ptr<RecordableData>\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_ring_buffer_a678f9633d5ed4d3086a0151ce156235a}{read\_chunk\_from\_file}}(std::ifstream\ \&record\_file,\ std::shared\_ptr<RecordableData>\ current\_data[],\ \textcolor{keywordtype}{int}\ current\_chunk\_size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_transform_ring_buffer_a9838c2e080f4c06e95fefc6baecb581c}{load\_data}}(\mbox{\hyperlink{struct_loading_information}{LoadingInformation}}\ \textcolor{keyword}{const}\&\ load\_info,\ std::shared\_ptr<RecordableData>\ data)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_ring_buffer_a6d9fe065c0f01f66cb03fadc47aeb424}{reload\_index\_maps}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{_data_type_8h_ad8ed01ff3ff33333d8e19db4d2818bb6}{DataType}}\ \mbox{\hyperlink{class_transform_ring_buffer_a7fc1b8af7cd49746c891cd2219b0c4b1}{get\_recorded\_data\_type}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_transform_ring_buffer_a5302c985a6e5c763ec8577b887e96a09}{transform\_at\_time}}(\textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{float}\ time,\ \textcolor{keywordtype}{float}*\ matrix,\ \textcolor{keywordtype}{int}*\ object\_information);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_transform_ring_buffer_a914da67802c05d8427558a53ce0e902b}{next\_positions}}(\textcolor{keywordtype}{int}\ uuid,\ \textcolor{keywordtype}{float}\ time\_stamp,\ \textcolor{keywordtype}{float}\ *positions);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_transform_ring_buffer_a5dc1cb3f57a6af57c65b6ff092e635b1}{get\_dto\_size}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{struct_transform_d_t_o}{TransformDTO}}\ \mbox{\hyperlink{class_transform_ring_buffer_a6b6898272013615a3de06fca7a7050ca}{transform\_dto}}[\mbox{\hyperlink{class_ring_buffer_a5f2a5a431fab450a6dd3d068c5546ee8}{read\_chunk\_size}}];}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{struct_transform_d_t_o}{TransformDTO}}\ \mbox{\hyperlink{class_transform_ring_buffer_a224c6aa6e3af74bbad902284e82b3a42}{s\_transform\_dto}};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_TRANSFORMRINGBUFFER\_H}}
+
+\end{DoxyCode}

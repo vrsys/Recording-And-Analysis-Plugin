@@ -1,0 +1,40 @@
+\doxysection{Generic\+Buffer.\+h}
+\hypertarget{_generic_buffer_8h_source}{}\label{_generic_buffer_8h_source}\index{Src/Recording/Generic/GenericBuffer.h@{Src/Recording/Generic/GenericBuffer.h}}
+\mbox{\hyperlink{_generic_buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 18.03.2022.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_GENERICBUFFER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_GENERICBUFFER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_buffer_8h}{Recording/BaseStructure/Buffer.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_generic_data_8h}{GenericData.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_generic_buffer}{GenericBuffer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_buffer}{Buffer}}\{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ maps\ for\ faster\ access}}
+\DoxyCodeLine{00016\ \ \ \ \ std::map<int,unsigned\ int>\ \mbox{\hyperlink{class_generic_buffer_a93eb43531e374f22727d940623369b7c}{id\_record\_data\_index}};}
+\DoxyCodeLine{00017\ \ \ \ \ std::map<int,\ unsigned\ int>\ \mbox{\hyperlink{class_generic_buffer_a02f544e3a5897984b2a89923f997dde4}{id\_playhead}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::shared\_ptr<GenericData>\ \mbox{\hyperlink{class_generic_buffer_a6f29c75e56d91b20ae93997778ed3570}{previous\_data}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00020\ \ \ \ \ std::shared\_ptr<GenericData>\ \mbox{\hyperlink{class_generic_buffer_a9d5cf6868ec1c31210ec5ccc3287d262}{next\_data}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_generic_buffer}{GenericBuffer}}(\textcolor{keywordtype}{float}\ start\_time,\ \textcolor{keywordtype}{float}\ end\_time);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_generic_buffer_ad9a4c588a03bdf24a6fe586376d17e0c}{\string~GenericBuffer}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_generic_buffer_a9978d4eed15cb9402d9f26af237f3dc4}{get\_data}}(\textcolor{keywordtype}{float}\ time,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::shared\_ptr<RecordableData>\ \mbox{\hyperlink{class_generic_buffer_a255e81a536699ee4810606e4d0890dcb}{get\_any\_data}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generic_buffer_a1f9192892845c8c8d8f57910747b4db2}{reload\_index\_maps}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_GENERICBUFFER\_H}}
+
+\end{DoxyCode}

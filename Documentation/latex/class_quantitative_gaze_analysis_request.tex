@@ -1,0 +1,201 @@
+\doxysection{Quantitative\+Gaze\+Analysis\+Request Class Reference}
+\hypertarget{class_quantitative_gaze_analysis_request}{}\label{class_quantitative_gaze_analysis_request}\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Quantitative\+Gaze\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Quantitative\+Gaze\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_quantitative_gaze_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quantitative_gaze_analysis_request_a7bd53a2d2417701efc72bddf16d3007c}{Quantitative\+Gaze\+Analysis\+Request}} (int \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aaf08ca64996d4c1d16019599d46c28e0}{id\+\_\+a}}, int \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a7efbac290f83a03982e0e5a133e77d82}{id\+\_\+b}}, float t\+\_\+sampling\+\_\+rate)
+\item 
+void \mbox{\hyperlink{class_quantitative_gaze_analysis_request_afe007c85b554b620571e4f7bfa90d356}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file) override
+\item 
+void \mbox{\hyperlink{class_quantitative_gaze_analysis_request_af1c85077aa4ec2ddb920a5919b7dbce4}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a3ffe0a4290c649702a4ed1d41cd44e86}{clone}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aad8288149891bd6f9d8c2dcbe15ae32a}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const override
+\item 
+void \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a2115d962b448d79df4efe2cca36644b0}{clear\+\_\+recent\+\_\+data}} () override
+\item 
+\mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a4d529cd40a632f03ceb11cdd75cda82b}{get\+\_\+type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_quantitative_transform_analysis_request}{Quantitative\+Transform\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quantitative_transform_analysis_request_a1eacc12fb71a574c10e25ac422b6ef59}{Quantitative\+Transform\+Analysis\+Request}} (float t\+\_\+sampling\+\_\+rate)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_quantitative_analysis_request_aab548255e6498d2859d43916546e1aff}{Quantitative\+Analysis\+Request}} (float t\+\_\+sampling\+\_\+rate)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_based_value}{Time\+Based\+Value}} $>$ \mbox{\hyperlink{class_quantitative_analysis_request_a5433105049c551db583df0f24b91ad61}{get\+\_\+result}} () const
+\item 
+void \mbox{\hyperlink{class_quantitative_analysis_request_a815fa0f990f176d5746a119d6d6a82b9}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aaf08ca64996d4c1d16019599d46c28e0}{id\+\_\+a}}
+\item 
+int \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a7efbac290f83a03982e0e5a133e77d82}{id\+\_\+b}}
+\item 
+bool \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a20082e7c70b0298f0de46fda08d059c9}{present\+\_\+a}} = false
+\item 
+bool \mbox{\hyperlink{class_quantitative_gaze_analysis_request_ae7e40243753f7e732421ad0efd703dff}{present\+\_\+b}} = false
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a17a99a498af09c3a8beb464d7ab87980}{current\+\_\+a}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_quantitative_gaze_analysis_request_aac4496fa87cf3d9ef5f73b2ac1934ceb}{current\+\_\+b}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a6182fac26475c362849bf4e8e505ae00}{last\+\_\+a}}
+\item 
+\mbox{\hyperlink{class_transform_data}{Transform\+Data}} \mbox{\hyperlink{class_quantitative_gaze_analysis_request_a3fa13abe75fad9aadc5535812898edaa}{last\+\_\+b}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_based_value}{Time\+Based\+Value}} $>$ \mbox{\hyperlink{class_quantitative_analysis_request_a2d9e013d208cf277ee3a3d45796789a0}{values}}
+\item 
+float \mbox{\hyperlink{class_quantitative_analysis_request_a140e1d3f1bd1dfaec350451cbd56b822}{temporal\+\_\+sampling\+\_\+rate}}
+\item 
+float \mbox{\hyperlink{class_quantitative_analysis_request_ad26cf4d06894a90bf6ce08b658580d86}{last\+\_\+value\+\_\+time}} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_quantitative_gaze_analysis_request_a7bd53a2d2417701efc72bddf16d3007c}\label{class_quantitative_gaze_analysis_request_a7bd53a2d2417701efc72bddf16d3007c} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{QuantitativeGazeAnalysisRequest()}{QuantitativeGazeAnalysisRequest()}}
+{\footnotesize\ttfamily Quantitative\+Gaze\+Analysis\+Request\+::\+Quantitative\+Gaze\+Analysis\+Request (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+a,  }\item[{int}]{id\+\_\+b,  }\item[{float}]{t\+\_\+sampling\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_quantitative_gaze_analysis_request_a2115d962b448d79df4efe2cca36644b0}\label{class_quantitative_gaze_analysis_request_a2115d962b448d79df4efe2cca36644b0} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!clear\_recent\_data@{clear\_recent\_data}}
+\index{clear\_recent\_data@{clear\_recent\_data}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clear\_recent\_data()}{clear\_recent\_data()}}
+{\footnotesize\ttfamily void Quantitative\+Gaze\+Analysis\+Request\+::clear\+\_\+recent\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_quantitative_transform_analysis_request_a124640367a1b032d7b106b2fb163decf}{Quantitative\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_gaze_analysis_request_a3ffe0a4290c649702a4ed1d41cd44e86}\label{class_quantitative_gaze_analysis_request_a3ffe0a4290c649702a4ed1d41cd44e86} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!clone@{clone}}
+\index{clone@{clone}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_quantitative_analysis_request}{Quantitative\+Analysis\+Request}} $>$ Quantitative\+Gaze\+Analysis\+Request\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_quantitative_analysis_request_a4be1f8e3862fa7a3aff7462ea6b03028}{Quantitative\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_gaze_analysis_request_aad8288149891bd6f9d8c2dcbe15ae32a}\label{class_quantitative_gaze_analysis_request_aad8288149891bd6f9d8c2dcbe15ae32a} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily std\+::string Quantitative\+Gaze\+Analysis\+Request\+::get\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_quantitative_analysis_request_a95d9cdee3e4fa673cb216b67acdd7b6b}{Quantitative\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_gaze_analysis_request_a4d529cd40a632f03ceb11cdd75cda82b}\label{class_quantitative_gaze_analysis_request_a4d529cd40a632f03ceb11cdd75cda82b} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_analysis_structs_8h_a51a11d1f6c1cff6c1269117b1967847c}{Transform\+Analysis\+Type}} Quantitative\+Gaze\+Analysis\+Request\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_quantitative_transform_analysis_request_ab2734b5321b7bf729438deb16e212a5b}{Quantitative\+Transform\+Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_gaze_analysis_request_af1c85077aa4ec2ddb920a5919b7dbce4}\label{class_quantitative_gaze_analysis_request_af1c85077aa4ec2ddb920a5919b7dbce4} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Quantitative\+Gaze\+Analysis\+Request\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{t\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{s\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242}{Analysis\+Request}}.
+
+\Hypertarget{class_quantitative_gaze_analysis_request_afe007c85b554b620571e4f7bfa90d356}\label{class_quantitative_gaze_analysis_request_afe007c85b554b620571e4f7bfa90d356} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!update\_parameters@{update\_parameters}}
+\index{update\_parameters@{update\_parameters}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{update\_parameters()}{update\_parameters()}}
+{\footnotesize\ttfamily void Quantitative\+Gaze\+Analysis\+Request\+::update\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{original\+\_\+meta\+\_\+file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{new\+\_\+meta\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{Analysis\+Request}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_quantitative_gaze_analysis_request_a17a99a498af09c3a8beb464d7ab87980}\label{class_quantitative_gaze_analysis_request_a17a99a498af09c3a8beb464d7ab87980} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!current\_a@{current\_a}}
+\index{current\_a@{current\_a}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{current\_a}{current\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Quantitative\+Gaze\+Analysis\+Request\+::current\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_gaze_analysis_request_aac4496fa87cf3d9ef5f73b2ac1934ceb}\label{class_quantitative_gaze_analysis_request_aac4496fa87cf3d9ef5f73b2ac1934ceb} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!current\_b@{current\_b}}
+\index{current\_b@{current\_b}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{current\_b}{current\_b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Quantitative\+Gaze\+Analysis\+Request\+::current\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_gaze_analysis_request_aaf08ca64996d4c1d16019599d46c28e0}\label{class_quantitative_gaze_analysis_request_aaf08ca64996d4c1d16019599d46c28e0} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!id\_a@{id\_a}}
+\index{id\_a@{id\_a}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id\_a}{id\_a}}
+{\footnotesize\ttfamily int Quantitative\+Gaze\+Analysis\+Request\+::id\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_gaze_analysis_request_a7efbac290f83a03982e0e5a133e77d82}\label{class_quantitative_gaze_analysis_request_a7efbac290f83a03982e0e5a133e77d82} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!id\_b@{id\_b}}
+\index{id\_b@{id\_b}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{id\_b}{id\_b}}
+{\footnotesize\ttfamily int Quantitative\+Gaze\+Analysis\+Request\+::id\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_gaze_analysis_request_a6182fac26475c362849bf4e8e505ae00}\label{class_quantitative_gaze_analysis_request_a6182fac26475c362849bf4e8e505ae00} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!last\_a@{last\_a}}
+\index{last\_a@{last\_a}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{last\_a}{last\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Quantitative\+Gaze\+Analysis\+Request\+::last\+\_\+a\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_gaze_analysis_request_a3fa13abe75fad9aadc5535812898edaa}\label{class_quantitative_gaze_analysis_request_a3fa13abe75fad9aadc5535812898edaa} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!last\_b@{last\_b}}
+\index{last\_b@{last\_b}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{last\_b}{last\_b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_transform_data}{Transform\+Data}} Quantitative\+Gaze\+Analysis\+Request\+::last\+\_\+b\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_gaze_analysis_request_a20082e7c70b0298f0de46fda08d059c9}\label{class_quantitative_gaze_analysis_request_a20082e7c70b0298f0de46fda08d059c9} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!present\_a@{present\_a}}
+\index{present\_a@{present\_a}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{present\_a}{present\_a}}
+{\footnotesize\ttfamily bool Quantitative\+Gaze\+Analysis\+Request\+::present\+\_\+a = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_quantitative_gaze_analysis_request_ae7e40243753f7e732421ad0efd703dff}\label{class_quantitative_gaze_analysis_request_ae7e40243753f7e732421ad0efd703dff} 
+\index{QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}!present\_b@{present\_b}}
+\index{present\_b@{present\_b}!QuantitativeGazeAnalysisRequest@{QuantitativeGazeAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{present\_b}{present\_b}}
+{\footnotesize\ttfamily bool Quantitative\+Gaze\+Analysis\+Request\+::present\+\_\+b = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Quantitative\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_quantitative_gaze_analysis_request_8h}{Quantitative\+Gaze\+Analysis\+Request.\+h}}\item 
+Src/\+Analysis/\+Quantitative\+Analysis/\+Transform\+Analysis/\mbox{\hyperlink{_quantitative_gaze_analysis_request_8cpp}{Quantitative\+Gaze\+Analysis\+Request.\+cpp}}\end{DoxyCompactItemize}

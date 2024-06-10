@@ -1,0 +1,477 @@
+\doxysection{Meta\+Information Class Reference}
+\hypertarget{class_meta_information}{}\label{class_meta_information}\index{MetaInformation@{MetaInformation}}
+
+
+This class stores meta-\/information of a recording.  
+
+
+
+
+{\ttfamily \#include $<$Meta\+Information.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_meta_information_a57c15f4e819620c570ebcf8e07adfeda}{Meta\+Information}} ()
+\item 
+\mbox{\hyperlink{class_meta_information_afd30c5763d687b8347bf7798dec5ddb4}{Meta\+Information}} (std\+::string const \&directory)
+\item 
+\mbox{\hyperlink{class_meta_information_aeb1e16f5beea575beed9bccd1801c497}{\texorpdfstring{$\sim$}{\string~}\+Meta\+Information}} ()
+\item 
+void \mbox{\hyperlink{class_meta_information_aaac47e2bdf77a379cf4da5c0120f43d6}{recording\+\_\+stopped}} ()
+\item 
+bool \mbox{\hyperlink{class_meta_information_aa1826ae98c8b9b5c936206ef848200fc}{is\+\_\+finished}} ()
+\item 
+float \mbox{\hyperlink{class_meta_information_ae24f2580190bdf2971a5794f701e5190}{get\+\_\+recording\+\_\+duration}} ()
+\item 
+float \mbox{\hyperlink{class_meta_information_a8a93153ca459a29584715c96e236fa3a}{get\+\_\+global\+\_\+time\+\_\+offset}} ()
+\item 
+void \mbox{\hyperlink{class_meta_information_a535c48a5521b12a088fe69754aec7dae}{update\+\_\+recording\+\_\+time}} (float current\+\_\+recording\+\_\+time)
+\item 
+bool \mbox{\hyperlink{class_meta_information_a97abd0951f28c7594b770963744d9b17}{time\+\_\+contained\+\_\+in\+\_\+recording}} (float current\+\_\+time)
+\item 
+void \mbox{\hyperlink{class_meta_information_ac893f1560e7ad529a62a8ca5f9e73030}{add\+\_\+generic\+\_\+id\+\_\+information}} (int id)
+\item 
+void \mbox{\hyperlink{class_meta_information_a72f13c13690cee0560ab0fe4e4088baf}{add\+\_\+transform\+\_\+id\+\_\+information}} (int id)
+\item 
+void \mbox{\hyperlink{class_meta_information_a63995b668bee6494cc00c05f8779cd0f}{add\+\_\+sound\+\_\+id\+\_\+information}} (int id)
+\item 
+void \mbox{\hyperlink{class_meta_information_aa7413333d991b74a57e39fcb33866a64}{update\+\_\+name\+\_\+uuid\+\_\+map}} (std\+::string const \&object\+\_\+name, int object\+\_\+uuid)
+\item 
+bool \mbox{\hyperlink{class_meta_information_af124b72214ae82f6374960ccff275fee}{register\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset}} (float offset\+\_\+to\+\_\+global\+\_\+time)
+\item 
+int \mbox{\hyperlink{class_meta_information_a00264e07bf1f71e5382779c7a87b78ee}{get\+\_\+old\+\_\+uuid}} (std\+::string const \&object\+\_\+name, int new\+\_\+uuid)
+\item 
+int \mbox{\hyperlink{class_meta_information_aadb554d7a4b358b44895c440e3f85fa8}{get\+\_\+old\+\_\+uuid}} (std\+::string const \&object\+\_\+name)
+\item 
+int \mbox{\hyperlink{class_meta_information_af8db6f12b9bdac0a7cc23d35d8bdbd32}{get\+\_\+old\+\_\+uuid}} (int new\+\_\+uuid)
+\item 
+int \mbox{\hyperlink{class_meta_information_a15ae5d7e2ecf5977fbdf2643382ad32e}{get\+\_\+new\+\_\+uuid}} (int old\+\_\+uuid)
+\item 
+std\+::string \mbox{\hyperlink{class_meta_information_ace55ba401b2e330f1723f48d513e6038}{get\+\_\+object\+\_\+name}} (int old\+\_\+uuid)
+\item 
+bool \mbox{\hyperlink{class_meta_information_a53d01be56332c98b2b4494920dc5a4df}{read\+\_\+meta\+\_\+information}} ()
+\item 
+bool \mbox{\hyperlink{class_meta_information_a7e7c84d7f87f3b28e4775ec90b55d665}{write\+\_\+meta\+\_\+information}} ()
+\item 
+bool \mbox{\hyperlink{class_meta_information_abde878be2520a881f4bf634427f1ecb7}{finished\+\_\+writing}} ()
+\item 
+void \mbox{\hyperlink{class_meta_information_a2ae68b83f4ae2d621217253b6dd09313}{clear}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_meta_information_aa135efd59fa62f62b1aa9a075d815818}{get\+\_\+recording\+\_\+gameobjects}} ()
+\item 
+std\+::set$<$ int $>$ \mbox{\hyperlink{class_meta_information_ab0bd509ec3bb43b14b67d6736e6528fb}{get\+\_\+recording\+\_\+sound\+\_\+sources}} ()
+\item 
+std\+::map$<$ int, std\+::string $>$ \mbox{\hyperlink{class_meta_information_a778ea3f99ac948bc8849f60a93b25504}{get\+\_\+recording\+\_\+gameobjects\+\_\+map}} ()
+\item 
+bool \mbox{\hyperlink{class_meta_information_a7f6ad171b2aceb40d989de2fd1aef4ae}{register\+\_\+gameobject\+\_\+path}} (int uuid, std\+::string const \&path, float time)
+\item 
+bool \mbox{\hyperlink{class_meta_information_a156f39eaf9e6494392c10f890759e8b9}{register\+\_\+gameobject\+\_\+prefab}} (int uuid, std\+::string const \&prefab\+\_\+name, float time)
+\item 
+bool \mbox{\hyperlink{class_meta_information_abb18739bfd580f6dfa9b2b5ca1f5f3ae}{register\+\_\+gameobject\+\_\+components}} (int uuid, std\+::string const \&components)
+\item 
+std\+::string \mbox{\hyperlink{class_meta_information_abac35007660893aa4dceddb6c9bebe52}{get\+\_\+gameobject\+\_\+path}} (std\+::string const \&name)
+\item 
+std\+::string \mbox{\hyperlink{class_meta_information_a272f8a628b4a4be3161158b941049f7c}{get\+\_\+gameobject\+\_\+prefab}} (std\+::string const \&name)
+\item 
+std\+::string \mbox{\hyperlink{class_meta_information_aa7722572f0cd03f42ee6e1b6aebf48b4}{get\+\_\+gameobject\+\_\+components}} (std\+::string const \&name)
+\item 
+std\+::string \mbox{\hyperlink{class_meta_information_a9660320bfa7b6004f4eeac76db44dbbf}{get\+\_\+gameobject\+\_\+mesh\+\_\+path}} (std\+::string const \&name)
+\item 
+std\+::set$<$ int $>$ \mbox{\hyperlink{class_meta_information_afd82ef1efd0b622dd81c596cc20c3f18}{get\+\_\+sound\+\_\+ids}} ()
+\item 
+float \mbox{\hyperlink{class_meta_information_a36c71fc9cb0f62634de85c11410d4fb2}{get\+\_\+gameobject\+\_\+first\+\_\+seen\+\_\+time}} (std\+::string const \&name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_meta_information_a482c3c404b5b614486673ffd3abfe396}{total\+\_\+recording\+\_\+time}} = -\/1.\+0f
+\item 
+float \mbox{\hyperlink{class_meta_information_aba903ff2942b780f926f8b3cf3dc2340}{global\+\_\+recording\+\_\+start\+\_\+time\+\_\+offset}} = 0.\+0f
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{class_meta_information_a93bc8a8a6276629fb80f6e77d4797a65}{object\+\_\+name\+\_\+uuid\+\_\+map}}
+\item 
+std\+::map$<$ int, std\+::string $>$ \mbox{\hyperlink{class_meta_information_a9aa05906d8c7c0bbf42acc7d3fe1d54f}{uuid\+\_\+object\+\_\+name\+\_\+map}}
+\item 
+std\+::map$<$ int, int $>$ \mbox{\hyperlink{class_meta_information_a4e0f3682a33c1a921a9d3d0a7a7126bd}{old\+\_\+uuid\+\_\+new\+\_\+uuid\+\_\+map}}
+\item 
+std\+::map$<$ int, int $>$ \mbox{\hyperlink{class_meta_information_a8854a7e3946eb6eecf0936786cea6634}{new\+\_\+uuid\+\_\+old\+\_\+uuid\+\_\+map}}
+\item 
+std\+::map$<$ int, bool $>$ \mbox{\hyperlink{class_meta_information_a7f0cc45224963b9814bc26359762a1e9}{uuid\+\_\+error\+\_\+notified}}
+\item 
+std\+::map$<$ int, std\+::string $>$ \mbox{\hyperlink{class_meta_information_a33d6e869b5fbbfc1fc440fa5b2f0e2dc}{uuid\+\_\+object\+\_\+path}}
+\item 
+std\+::map$<$ int, std\+::string $>$ \mbox{\hyperlink{class_meta_information_a977be2251e355868dc2e9f7716fc21f4}{uuid\+\_\+object\+\_\+components}}
+\item 
+std\+::map$<$ int, std\+::string $>$ \mbox{\hyperlink{class_meta_information_a6c96353ac12468bf44c476d0492de049}{uuid\+\_\+object\+\_\+prefab}}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{class_meta_information_a78ffe7d15caecd1ef31fd1d513120105}{name\+\_\+object\+\_\+components}}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{class_meta_information_a4343fbb700027c5415bdb7b7e6de5dee}{name\+\_\+object\+\_\+path}}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{class_meta_information_a81a35aaa58d24e5619fa8421615327ad}{name\+\_\+object\+\_\+prefab}}
+\item 
+std\+::map$<$ int, float $>$ \mbox{\hyperlink{class_meta_information_a096d57a9ca5abfa8d73cd3916eaa986a}{uuid\+\_\+object\+\_\+path\+\_\+first\+\_\+seen}}
+\item 
+std\+::set$<$ int $>$ \mbox{\hyperlink{class_meta_information_ae1bc3c76c5346b90e175dc3c13d83255}{recordedgeneric\+IDs}}
+\item 
+std\+::set$<$ int $>$ \mbox{\hyperlink{class_meta_information_aee7760bdb2534bb94e027d1ede2c322d}{recorded\+Transform\+IDs}}
+\item 
+std\+::set$<$ int $>$ \mbox{\hyperlink{class_meta_information_a8403656b0c33388559987414b19e7cde}{recorded\+Sound\+IDs}}
+\item 
+std\+::string \mbox{\hyperlink{class_meta_information_a4becb07b47a6b419a54cac2f83294ddc}{file\+\_\+directory}}
+\item 
+bool \mbox{\hyperlink{class_meta_information_a786528d67b5cc528b0854b2fc1d0d904}{recording\+\_\+finished}} = false
+\item 
+bool \mbox{\hyperlink{class_meta_information_ac94676b06f48bb1f6deb8a02311733e5}{writing\+\_\+finished}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class stores meta-\/information of a recording. 
+
+Information includes\+: which objects are present, which sound sources are present, which generic data ids are present. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_meta_information_a57c15f4e819620c570ebcf8e07adfeda}\label{class_meta_information_a57c15f4e819620c570ebcf8e07adfeda} 
+\index{MetaInformation@{MetaInformation}!MetaInformation@{MetaInformation}}
+\index{MetaInformation@{MetaInformation}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{MetaInformation()}{MetaInformation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Meta\+Information\+::\+Meta\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_afd30c5763d687b8347bf7798dec5ddb4}\label{class_meta_information_afd30c5763d687b8347bf7798dec5ddb4} 
+\index{MetaInformation@{MetaInformation}!MetaInformation@{MetaInformation}}
+\index{MetaInformation@{MetaInformation}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{MetaInformation()}{MetaInformation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Meta\+Information\+::\+Meta\+Information (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{directory }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_aeb1e16f5beea575beed9bccd1801c497}\label{class_meta_information_aeb1e16f5beea575beed9bccd1801c497} 
+\index{MetaInformation@{MetaInformation}!````~MetaInformation@{\texorpdfstring{$\sim$}{\string~}MetaInformation}}
+\index{````~MetaInformation@{\texorpdfstring{$\sim$}{\string~}MetaInformation}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MetaInformation()}{\string~MetaInformation()}}
+{\footnotesize\ttfamily Meta\+Information\+::\texorpdfstring{$\sim$}{\string~}\+Meta\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_meta_information_ac893f1560e7ad529a62a8ca5f9e73030}\label{class_meta_information_ac893f1560e7ad529a62a8ca5f9e73030} 
+\index{MetaInformation@{MetaInformation}!add\_generic\_id\_information@{add\_generic\_id\_information}}
+\index{add\_generic\_id\_information@{add\_generic\_id\_information}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{add\_generic\_id\_information()}{add\_generic\_id\_information()}}
+{\footnotesize\ttfamily void Meta\+Information\+::add\+\_\+generic\+\_\+id\+\_\+information (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a63995b668bee6494cc00c05f8779cd0f}\label{class_meta_information_a63995b668bee6494cc00c05f8779cd0f} 
+\index{MetaInformation@{MetaInformation}!add\_sound\_id\_information@{add\_sound\_id\_information}}
+\index{add\_sound\_id\_information@{add\_sound\_id\_information}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{add\_sound\_id\_information()}{add\_sound\_id\_information()}}
+{\footnotesize\ttfamily void Meta\+Information\+::add\+\_\+sound\+\_\+id\+\_\+information (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a72f13c13690cee0560ab0fe4e4088baf}\label{class_meta_information_a72f13c13690cee0560ab0fe4e4088baf} 
+\index{MetaInformation@{MetaInformation}!add\_transform\_id\_information@{add\_transform\_id\_information}}
+\index{add\_transform\_id\_information@{add\_transform\_id\_information}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{add\_transform\_id\_information()}{add\_transform\_id\_information()}}
+{\footnotesize\ttfamily void Meta\+Information\+::add\+\_\+transform\+\_\+id\+\_\+information (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a2ae68b83f4ae2d621217253b6dd09313}\label{class_meta_information_a2ae68b83f4ae2d621217253b6dd09313} 
+\index{MetaInformation@{MetaInformation}!clear@{clear}}
+\index{clear@{clear}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Meta\+Information\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_abde878be2520a881f4bf634427f1ecb7}\label{class_meta_information_abde878be2520a881f4bf634427f1ecb7} 
+\index{MetaInformation@{MetaInformation}!finished\_writing@{finished\_writing}}
+\index{finished\_writing@{finished\_writing}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{finished\_writing()}{finished\_writing()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::finished\+\_\+writing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_aa7722572f0cd03f42ee6e1b6aebf48b4}\label{class_meta_information_aa7722572f0cd03f42ee6e1b6aebf48b4} 
+\index{MetaInformation@{MetaInformation}!get\_gameobject\_components@{get\_gameobject\_components}}
+\index{get\_gameobject\_components@{get\_gameobject\_components}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_components()}{get\_gameobject\_components()}}
+{\footnotesize\ttfamily std\+::string Meta\+Information\+::get\+\_\+gameobject\+\_\+components (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a36c71fc9cb0f62634de85c11410d4fb2}\label{class_meta_information_a36c71fc9cb0f62634de85c11410d4fb2} 
+\index{MetaInformation@{MetaInformation}!get\_gameobject\_first\_seen\_time@{get\_gameobject\_first\_seen\_time}}
+\index{get\_gameobject\_first\_seen\_time@{get\_gameobject\_first\_seen\_time}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_first\_seen\_time()}{get\_gameobject\_first\_seen\_time()}}
+{\footnotesize\ttfamily float Meta\+Information\+::get\+\_\+gameobject\+\_\+first\+\_\+seen\+\_\+time (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a9660320bfa7b6004f4eeac76db44dbbf}\label{class_meta_information_a9660320bfa7b6004f4eeac76db44dbbf} 
+\index{MetaInformation@{MetaInformation}!get\_gameobject\_mesh\_path@{get\_gameobject\_mesh\_path}}
+\index{get\_gameobject\_mesh\_path@{get\_gameobject\_mesh\_path}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_mesh\_path()}{get\_gameobject\_mesh\_path()}}
+{\footnotesize\ttfamily std\+::string Meta\+Information\+::get\+\_\+gameobject\+\_\+mesh\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_abac35007660893aa4dceddb6c9bebe52}\label{class_meta_information_abac35007660893aa4dceddb6c9bebe52} 
+\index{MetaInformation@{MetaInformation}!get\_gameobject\_path@{get\_gameobject\_path}}
+\index{get\_gameobject\_path@{get\_gameobject\_path}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_path()}{get\_gameobject\_path()}}
+{\footnotesize\ttfamily std\+::string Meta\+Information\+::get\+\_\+gameobject\+\_\+path (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a272f8a628b4a4be3161158b941049f7c}\label{class_meta_information_a272f8a628b4a4be3161158b941049f7c} 
+\index{MetaInformation@{MetaInformation}!get\_gameobject\_prefab@{get\_gameobject\_prefab}}
+\index{get\_gameobject\_prefab@{get\_gameobject\_prefab}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_gameobject\_prefab()}{get\_gameobject\_prefab()}}
+{\footnotesize\ttfamily std\+::string Meta\+Information\+::get\+\_\+gameobject\+\_\+prefab (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a8a93153ca459a29584715c96e236fa3a}\label{class_meta_information_a8a93153ca459a29584715c96e236fa3a} 
+\index{MetaInformation@{MetaInformation}!get\_global\_time\_offset@{get\_global\_time\_offset}}
+\index{get\_global\_time\_offset@{get\_global\_time\_offset}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_global\_time\_offset()}{get\_global\_time\_offset()}}
+{\footnotesize\ttfamily float Meta\+Information\+::get\+\_\+global\+\_\+time\+\_\+offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a15ae5d7e2ecf5977fbdf2643382ad32e}\label{class_meta_information_a15ae5d7e2ecf5977fbdf2643382ad32e} 
+\index{MetaInformation@{MetaInformation}!get\_new\_uuid@{get\_new\_uuid}}
+\index{get\_new\_uuid@{get\_new\_uuid}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_new\_uuid()}{get\_new\_uuid()}}
+{\footnotesize\ttfamily int Meta\+Information\+::get\+\_\+new\+\_\+uuid (\begin{DoxyParamCaption}\item[{int}]{old\+\_\+uuid }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_ace55ba401b2e330f1723f48d513e6038}\label{class_meta_information_ace55ba401b2e330f1723f48d513e6038} 
+\index{MetaInformation@{MetaInformation}!get\_object\_name@{get\_object\_name}}
+\index{get\_object\_name@{get\_object\_name}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_object\_name()}{get\_object\_name()}}
+{\footnotesize\ttfamily std\+::string Meta\+Information\+::get\+\_\+object\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{old\+\_\+uuid }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_af8db6f12b9bdac0a7cc23d35d8bdbd32}\label{class_meta_information_af8db6f12b9bdac0a7cc23d35d8bdbd32} 
+\index{MetaInformation@{MetaInformation}!get\_old\_uuid@{get\_old\_uuid}}
+\index{get\_old\_uuid@{get\_old\_uuid}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_old\_uuid()}{get\_old\_uuid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily int Meta\+Information\+::get\+\_\+old\+\_\+uuid (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+uuid }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_aadb554d7a4b358b44895c440e3f85fa8}\label{class_meta_information_aadb554d7a4b358b44895c440e3f85fa8} 
+\index{MetaInformation@{MetaInformation}!get\_old\_uuid@{get\_old\_uuid}}
+\index{get\_old\_uuid@{get\_old\_uuid}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_old\_uuid()}{get\_old\_uuid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily int Meta\+Information\+::get\+\_\+old\+\_\+uuid (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{object\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a00264e07bf1f71e5382779c7a87b78ee}\label{class_meta_information_a00264e07bf1f71e5382779c7a87b78ee} 
+\index{MetaInformation@{MetaInformation}!get\_old\_uuid@{get\_old\_uuid}}
+\index{get\_old\_uuid@{get\_old\_uuid}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_old\_uuid()}{get\_old\_uuid()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily int Meta\+Information\+::get\+\_\+old\+\_\+uuid (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{object\+\_\+name,  }\item[{int}]{new\+\_\+uuid }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_ae24f2580190bdf2971a5794f701e5190}\label{class_meta_information_ae24f2580190bdf2971a5794f701e5190} 
+\index{MetaInformation@{MetaInformation}!get\_recording\_duration@{get\_recording\_duration}}
+\index{get\_recording\_duration@{get\_recording\_duration}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_duration()}{get\_recording\_duration()}}
+{\footnotesize\ttfamily float Meta\+Information\+::get\+\_\+recording\+\_\+duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_aa135efd59fa62f62b1aa9a075d815818}\label{class_meta_information_aa135efd59fa62f62b1aa9a075d815818} 
+\index{MetaInformation@{MetaInformation}!get\_recording\_gameobjects@{get\_recording\_gameobjects}}
+\index{get\_recording\_gameobjects@{get\_recording\_gameobjects}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_gameobjects()}{get\_recording\_gameobjects()}}
+{\footnotesize\ttfamily std\+::string Meta\+Information\+::get\+\_\+recording\+\_\+gameobjects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a778ea3f99ac948bc8849f60a93b25504}\label{class_meta_information_a778ea3f99ac948bc8849f60a93b25504} 
+\index{MetaInformation@{MetaInformation}!get\_recording\_gameobjects\_map@{get\_recording\_gameobjects\_map}}
+\index{get\_recording\_gameobjects\_map@{get\_recording\_gameobjects\_map}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_gameobjects\_map()}{get\_recording\_gameobjects\_map()}}
+{\footnotesize\ttfamily std\+::map$<$ int, std\+::string $>$ Meta\+Information\+::get\+\_\+recording\+\_\+gameobjects\+\_\+map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_ab0bd509ec3bb43b14b67d6736e6528fb}\label{class_meta_information_ab0bd509ec3bb43b14b67d6736e6528fb} 
+\index{MetaInformation@{MetaInformation}!get\_recording\_sound\_sources@{get\_recording\_sound\_sources}}
+\index{get\_recording\_sound\_sources@{get\_recording\_sound\_sources}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_recording\_sound\_sources()}{get\_recording\_sound\_sources()}}
+{\footnotesize\ttfamily std\+::set$<$ int $>$ Meta\+Information\+::get\+\_\+recording\+\_\+sound\+\_\+sources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_afd82ef1efd0b622dd81c596cc20c3f18}\label{class_meta_information_afd82ef1efd0b622dd81c596cc20c3f18} 
+\index{MetaInformation@{MetaInformation}!get\_sound\_ids@{get\_sound\_ids}}
+\index{get\_sound\_ids@{get\_sound\_ids}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{get\_sound\_ids()}{get\_sound\_ids()}}
+{\footnotesize\ttfamily std\+::set$<$ int $>$ Meta\+Information\+::get\+\_\+sound\+\_\+ids (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_aa1826ae98c8b9b5c936206ef848200fc}\label{class_meta_information_aa1826ae98c8b9b5c936206ef848200fc} 
+\index{MetaInformation@{MetaInformation}!is\_finished@{is\_finished}}
+\index{is\_finished@{is\_finished}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{is\_finished()}{is\_finished()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::is\+\_\+finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a53d01be56332c98b2b4494920dc5a4df}\label{class_meta_information_a53d01be56332c98b2b4494920dc5a4df} 
+\index{MetaInformation@{MetaInformation}!read\_meta\_information@{read\_meta\_information}}
+\index{read\_meta\_information@{read\_meta\_information}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{read\_meta\_information()}{read\_meta\_information()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::read\+\_\+meta\+\_\+information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_aaac47e2bdf77a379cf4da5c0120f43d6}\label{class_meta_information_aaac47e2bdf77a379cf4da5c0120f43d6} 
+\index{MetaInformation@{MetaInformation}!recording\_stopped@{recording\_stopped}}
+\index{recording\_stopped@{recording\_stopped}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{recording\_stopped()}{recording\_stopped()}}
+{\footnotesize\ttfamily void Meta\+Information\+::recording\+\_\+stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_abb18739bfd580f6dfa9b2b5ca1f5f3ae}\label{class_meta_information_abb18739bfd580f6dfa9b2b5ca1f5f3ae} 
+\index{MetaInformation@{MetaInformation}!register\_gameobject\_components@{register\_gameobject\_components}}
+\index{register\_gameobject\_components@{register\_gameobject\_components}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_components()}{register\_gameobject\_components()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::register\+\_\+gameobject\+\_\+components (\begin{DoxyParamCaption}\item[{int}]{uuid,  }\item[{std\+::string const \&}]{components }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a7f6ad171b2aceb40d989de2fd1aef4ae}\label{class_meta_information_a7f6ad171b2aceb40d989de2fd1aef4ae} 
+\index{MetaInformation@{MetaInformation}!register\_gameobject\_path@{register\_gameobject\_path}}
+\index{register\_gameobject\_path@{register\_gameobject\_path}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_path()}{register\_gameobject\_path()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::register\+\_\+gameobject\+\_\+path (\begin{DoxyParamCaption}\item[{int}]{uuid,  }\item[{std\+::string const \&}]{path,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a156f39eaf9e6494392c10f890759e8b9}\label{class_meta_information_a156f39eaf9e6494392c10f890759e8b9} 
+\index{MetaInformation@{MetaInformation}!register\_gameobject\_prefab@{register\_gameobject\_prefab}}
+\index{register\_gameobject\_prefab@{register\_gameobject\_prefab}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{register\_gameobject\_prefab()}{register\_gameobject\_prefab()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::register\+\_\+gameobject\+\_\+prefab (\begin{DoxyParamCaption}\item[{int}]{uuid,  }\item[{std\+::string const \&}]{prefab\+\_\+name,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_af124b72214ae82f6374960ccff275fee}\label{class_meta_information_af124b72214ae82f6374960ccff275fee} 
+\index{MetaInformation@{MetaInformation}!register\_recording\_start\_global\_timeoffset@{register\_recording\_start\_global\_timeoffset}}
+\index{register\_recording\_start\_global\_timeoffset@{register\_recording\_start\_global\_timeoffset}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{register\_recording\_start\_global\_timeoffset()}{register\_recording\_start\_global\_timeoffset()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::register\+\_\+recording\+\_\+start\+\_\+global\+\_\+timeoffset (\begin{DoxyParamCaption}\item[{float}]{offset\+\_\+to\+\_\+global\+\_\+time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a97abd0951f28c7594b770963744d9b17}\label{class_meta_information_a97abd0951f28c7594b770963744d9b17} 
+\index{MetaInformation@{MetaInformation}!time\_contained\_in\_recording@{time\_contained\_in\_recording}}
+\index{time\_contained\_in\_recording@{time\_contained\_in\_recording}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{time\_contained\_in\_recording()}{time\_contained\_in\_recording()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::time\+\_\+contained\+\_\+in\+\_\+recording (\begin{DoxyParamCaption}\item[{float}]{current\+\_\+time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_aa7413333d991b74a57e39fcb33866a64}\label{class_meta_information_aa7413333d991b74a57e39fcb33866a64} 
+\index{MetaInformation@{MetaInformation}!update\_name\_uuid\_map@{update\_name\_uuid\_map}}
+\index{update\_name\_uuid\_map@{update\_name\_uuid\_map}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{update\_name\_uuid\_map()}{update\_name\_uuid\_map()}}
+{\footnotesize\ttfamily void Meta\+Information\+::update\+\_\+name\+\_\+uuid\+\_\+map (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{object\+\_\+name,  }\item[{int}]{object\+\_\+uuid }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a535c48a5521b12a088fe69754aec7dae}\label{class_meta_information_a535c48a5521b12a088fe69754aec7dae} 
+\index{MetaInformation@{MetaInformation}!update\_recording\_time@{update\_recording\_time}}
+\index{update\_recording\_time@{update\_recording\_time}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{update\_recording\_time()}{update\_recording\_time()}}
+{\footnotesize\ttfamily void Meta\+Information\+::update\+\_\+recording\+\_\+time (\begin{DoxyParamCaption}\item[{float}]{current\+\_\+recording\+\_\+time }\end{DoxyParamCaption})}
+
+\Hypertarget{class_meta_information_a7e7c84d7f87f3b28e4775ec90b55d665}\label{class_meta_information_a7e7c84d7f87f3b28e4775ec90b55d665} 
+\index{MetaInformation@{MetaInformation}!write\_meta\_information@{write\_meta\_information}}
+\index{write\_meta\_information@{write\_meta\_information}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{write\_meta\_information()}{write\_meta\_information()}}
+{\footnotesize\ttfamily bool Meta\+Information\+::write\+\_\+meta\+\_\+information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_meta_information_a4becb07b47a6b419a54cac2f83294ddc}\label{class_meta_information_a4becb07b47a6b419a54cac2f83294ddc} 
+\index{MetaInformation@{MetaInformation}!file\_directory@{file\_directory}}
+\index{file\_directory@{file\_directory}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{file\_directory}{file\_directory}}
+{\footnotesize\ttfamily std\+::string Meta\+Information\+::file\+\_\+directory\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_aba903ff2942b780f926f8b3cf3dc2340}\label{class_meta_information_aba903ff2942b780f926f8b3cf3dc2340} 
+\index{MetaInformation@{MetaInformation}!global\_recording\_start\_time\_offset@{global\_recording\_start\_time\_offset}}
+\index{global\_recording\_start\_time\_offset@{global\_recording\_start\_time\_offset}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{global\_recording\_start\_time\_offset}{global\_recording\_start\_time\_offset}}
+{\footnotesize\ttfamily float Meta\+Information\+::global\+\_\+recording\+\_\+start\+\_\+time\+\_\+offset = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a78ffe7d15caecd1ef31fd1d513120105}\label{class_meta_information_a78ffe7d15caecd1ef31fd1d513120105} 
+\index{MetaInformation@{MetaInformation}!name\_object\_components@{name\_object\_components}}
+\index{name\_object\_components@{name\_object\_components}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{name\_object\_components}{name\_object\_components}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::string$>$ Meta\+Information\+::name\+\_\+object\+\_\+components\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a4343fbb700027c5415bdb7b7e6de5dee}\label{class_meta_information_a4343fbb700027c5415bdb7b7e6de5dee} 
+\index{MetaInformation@{MetaInformation}!name\_object\_path@{name\_object\_path}}
+\index{name\_object\_path@{name\_object\_path}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{name\_object\_path}{name\_object\_path}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::string$>$ Meta\+Information\+::name\+\_\+object\+\_\+path\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a81a35aaa58d24e5619fa8421615327ad}\label{class_meta_information_a81a35aaa58d24e5619fa8421615327ad} 
+\index{MetaInformation@{MetaInformation}!name\_object\_prefab@{name\_object\_prefab}}
+\index{name\_object\_prefab@{name\_object\_prefab}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{name\_object\_prefab}{name\_object\_prefab}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::string$>$ Meta\+Information\+::name\+\_\+object\+\_\+prefab\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a8854a7e3946eb6eecf0936786cea6634}\label{class_meta_information_a8854a7e3946eb6eecf0936786cea6634} 
+\index{MetaInformation@{MetaInformation}!new\_uuid\_old\_uuid\_map@{new\_uuid\_old\_uuid\_map}}
+\index{new\_uuid\_old\_uuid\_map@{new\_uuid\_old\_uuid\_map}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{new\_uuid\_old\_uuid\_map}{new\_uuid\_old\_uuid\_map}}
+{\footnotesize\ttfamily std\+::map$<$int, int$>$ Meta\+Information\+::new\+\_\+uuid\+\_\+old\+\_\+uuid\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a93bc8a8a6276629fb80f6e77d4797a65}\label{class_meta_information_a93bc8a8a6276629fb80f6e77d4797a65} 
+\index{MetaInformation@{MetaInformation}!object\_name\_uuid\_map@{object\_name\_uuid\_map}}
+\index{object\_name\_uuid\_map@{object\_name\_uuid\_map}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{object\_name\_uuid\_map}{object\_name\_uuid\_map}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Meta\+Information\+::object\+\_\+name\+\_\+uuid\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a4e0f3682a33c1a921a9d3d0a7a7126bd}\label{class_meta_information_a4e0f3682a33c1a921a9d3d0a7a7126bd} 
+\index{MetaInformation@{MetaInformation}!old\_uuid\_new\_uuid\_map@{old\_uuid\_new\_uuid\_map}}
+\index{old\_uuid\_new\_uuid\_map@{old\_uuid\_new\_uuid\_map}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{old\_uuid\_new\_uuid\_map}{old\_uuid\_new\_uuid\_map}}
+{\footnotesize\ttfamily std\+::map$<$int, int$>$ Meta\+Information\+::old\+\_\+uuid\+\_\+new\+\_\+uuid\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_ae1bc3c76c5346b90e175dc3c13d83255}\label{class_meta_information_ae1bc3c76c5346b90e175dc3c13d83255} 
+\index{MetaInformation@{MetaInformation}!recordedgenericIDs@{recordedgenericIDs}}
+\index{recordedgenericIDs@{recordedgenericIDs}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{recordedgenericIDs}{recordedgenericIDs}}
+{\footnotesize\ttfamily std\+::set$<$int$>$ Meta\+Information\+::recordedgeneric\+IDs\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a8403656b0c33388559987414b19e7cde}\label{class_meta_information_a8403656b0c33388559987414b19e7cde} 
+\index{MetaInformation@{MetaInformation}!recordedSoundIDs@{recordedSoundIDs}}
+\index{recordedSoundIDs@{recordedSoundIDs}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{recordedSoundIDs}{recordedSoundIDs}}
+{\footnotesize\ttfamily std\+::set$<$int$>$ Meta\+Information\+::recorded\+Sound\+IDs\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_aee7760bdb2534bb94e027d1ede2c322d}\label{class_meta_information_aee7760bdb2534bb94e027d1ede2c322d} 
+\index{MetaInformation@{MetaInformation}!recordedTransformIDs@{recordedTransformIDs}}
+\index{recordedTransformIDs@{recordedTransformIDs}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{recordedTransformIDs}{recordedTransformIDs}}
+{\footnotesize\ttfamily std\+::set$<$int$>$ Meta\+Information\+::recorded\+Transform\+IDs\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a786528d67b5cc528b0854b2fc1d0d904}\label{class_meta_information_a786528d67b5cc528b0854b2fc1d0d904} 
+\index{MetaInformation@{MetaInformation}!recording\_finished@{recording\_finished}}
+\index{recording\_finished@{recording\_finished}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{recording\_finished}{recording\_finished}}
+{\footnotesize\ttfamily bool Meta\+Information\+::recording\+\_\+finished = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a482c3c404b5b614486673ffd3abfe396}\label{class_meta_information_a482c3c404b5b614486673ffd3abfe396} 
+\index{MetaInformation@{MetaInformation}!total\_recording\_time@{total\_recording\_time}}
+\index{total\_recording\_time@{total\_recording\_time}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{total\_recording\_time}{total\_recording\_time}}
+{\footnotesize\ttfamily float Meta\+Information\+::total\+\_\+recording\+\_\+time = -\/1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a7f0cc45224963b9814bc26359762a1e9}\label{class_meta_information_a7f0cc45224963b9814bc26359762a1e9} 
+\index{MetaInformation@{MetaInformation}!uuid\_error\_notified@{uuid\_error\_notified}}
+\index{uuid\_error\_notified@{uuid\_error\_notified}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{uuid\_error\_notified}{uuid\_error\_notified}}
+{\footnotesize\ttfamily std\+::map$<$int, bool$>$ Meta\+Information\+::uuid\+\_\+error\+\_\+notified\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a977be2251e355868dc2e9f7716fc21f4}\label{class_meta_information_a977be2251e355868dc2e9f7716fc21f4} 
+\index{MetaInformation@{MetaInformation}!uuid\_object\_components@{uuid\_object\_components}}
+\index{uuid\_object\_components@{uuid\_object\_components}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{uuid\_object\_components}{uuid\_object\_components}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::string$>$ Meta\+Information\+::uuid\+\_\+object\+\_\+components\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a9aa05906d8c7c0bbf42acc7d3fe1d54f}\label{class_meta_information_a9aa05906d8c7c0bbf42acc7d3fe1d54f} 
+\index{MetaInformation@{MetaInformation}!uuid\_object\_name\_map@{uuid\_object\_name\_map}}
+\index{uuid\_object\_name\_map@{uuid\_object\_name\_map}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{uuid\_object\_name\_map}{uuid\_object\_name\_map}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::string$>$ Meta\+Information\+::uuid\+\_\+object\+\_\+name\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a33d6e869b5fbbfc1fc440fa5b2f0e2dc}\label{class_meta_information_a33d6e869b5fbbfc1fc440fa5b2f0e2dc} 
+\index{MetaInformation@{MetaInformation}!uuid\_object\_path@{uuid\_object\_path}}
+\index{uuid\_object\_path@{uuid\_object\_path}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{uuid\_object\_path}{uuid\_object\_path}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::string$>$ Meta\+Information\+::uuid\+\_\+object\+\_\+path\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a096d57a9ca5abfa8d73cd3916eaa986a}\label{class_meta_information_a096d57a9ca5abfa8d73cd3916eaa986a} 
+\index{MetaInformation@{MetaInformation}!uuid\_object\_path\_first\_seen@{uuid\_object\_path\_first\_seen}}
+\index{uuid\_object\_path\_first\_seen@{uuid\_object\_path\_first\_seen}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{uuid\_object\_path\_first\_seen}{uuid\_object\_path\_first\_seen}}
+{\footnotesize\ttfamily std\+::map$<$int, float$>$ Meta\+Information\+::uuid\+\_\+object\+\_\+path\+\_\+first\+\_\+seen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_a6c96353ac12468bf44c476d0492de049}\label{class_meta_information_a6c96353ac12468bf44c476d0492de049} 
+\index{MetaInformation@{MetaInformation}!uuid\_object\_prefab@{uuid\_object\_prefab}}
+\index{uuid\_object\_prefab@{uuid\_object\_prefab}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{uuid\_object\_prefab}{uuid\_object\_prefab}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::string$>$ Meta\+Information\+::uuid\+\_\+object\+\_\+prefab\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_meta_information_ac94676b06f48bb1f6deb8a02311733e5}\label{class_meta_information_ac94676b06f48bb1f6deb8a02311733e5} 
+\index{MetaInformation@{MetaInformation}!writing\_finished@{writing\_finished}}
+\index{writing\_finished@{writing\_finished}!MetaInformation@{MetaInformation}}
+\doxysubsubsection{\texorpdfstring{writing\_finished}{writing\_finished}}
+{\footnotesize\ttfamily bool Meta\+Information\+::writing\+\_\+finished = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Recording/\mbox{\hyperlink{_meta_information_8h}{Meta\+Information.\+h}}\item 
+Src/\+Recording/\mbox{\hyperlink{_meta_information_8cpp}{Meta\+Information.\+cpp}}\end{DoxyCompactItemize}

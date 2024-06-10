@@ -1,0 +1,142 @@
+\doxysection{Or\+Combined\+Interval\+Analysis\+Request Class Reference}
+\hypertarget{class_or_combined_interval_analysis_request}{}\label{class_or_combined_interval_analysis_request}\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+
+
+{\ttfamily \#include $<$Or\+Combined\+Interval\+Analysis\+Request.\+h$>$}
+
+Inheritance diagram for Or\+Combined\+Interval\+Analysis\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_or_combined_interval_analysis_request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_or_combined_interval_analysis_request_a325dccdffcf0fa851a6a86d9921253b4}{Or\+Combined\+Interval\+Analysis\+Request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ lhs, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ rhs)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_or_combined_interval_analysis_request_a8f8d445ebfa88518bc4fd9c6c89dbda8}{get\+\_\+result}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_or_combined_interval_analysis_request_a5434c67a36ab4d5dc2a13474c36b2a8e}{get\+\_\+description}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&meta\+\_\+info) const override
+\item 
+void \mbox{\hyperlink{class_or_combined_interval_analysis_request_a833dfc7baaf48c8ecb427ed79c7d649c}{update\+\_\+parameters}} (\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&original\+\_\+meta\+\_\+file, \mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&new\+\_\+meta\+\_\+file) override
+\item 
+void \mbox{\hyperlink{class_or_combined_interval_analysis_request_a8343b5134ef9074a01c31fc226af84df}{process\+\_\+request}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$ t\+\_\+data, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$ s\+\_\+data) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_or_combined_interval_analysis_request_a9e3c0b86ca374677a236b54a6a4d3757}{clone}} () const override
+\item 
+void \mbox{\hyperlink{class_or_combined_interval_analysis_request_a2afd7ad58e60e9084abdf03ad7ba531f}{clear\+\_\+recent\+\_\+data}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_interval_analysis_request_a9961447a702d030a9f8b8d7d204b9568}{clear\+\_\+results}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_or_combined_interval_analysis_request_a0f9dc64a7bdea92b206fe77e1fd7b562}{left\+\_\+hand\+\_\+side}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ \mbox{\hyperlink{class_or_combined_interval_analysis_request_a0e66adbf4edaa9d6c5ffb73520186c89}{right\+\_\+hand\+\_\+side}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ \mbox{\hyperlink{class_interval_analysis_request_ac34fb1a86b659287180cb91c8a2608f1}{intervals}}
+\item 
+\mbox{\hyperlink{struct_time_interval}{Time\+Interval}} \mbox{\hyperlink{class_interval_analysis_request_a92538cc08380b17ce51d4834d846fab8}{current\+Interval}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_or_combined_interval_analysis_request_a325dccdffcf0fa851a6a86d9921253b4}\label{class_or_combined_interval_analysis_request_a325dccdffcf0fa851a6a86d9921253b4} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{OrCombinedIntervalAnalysisRequest()}{OrCombinedIntervalAnalysisRequest()}}
+{\footnotesize\ttfamily Or\+Combined\+Interval\+Analysis\+Request\+::\+Or\+Combined\+Interval\+Analysis\+Request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$}]{lhs,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$}]{rhs }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_or_combined_interval_analysis_request_a2afd7ad58e60e9084abdf03ad7ba531f}\label{class_or_combined_interval_analysis_request_a2afd7ad58e60e9084abdf03ad7ba531f} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!clear\_recent\_data@{clear\_recent\_data}}
+\index{clear\_recent\_data@{clear\_recent\_data}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clear\_recent\_data()}{clear\_recent\_data()}}
+{\footnotesize\ttfamily void Or\+Combined\+Interval\+Analysis\+Request\+::clear\+\_\+recent\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a28952cc890dc5eb57cbd7f9d20b6e427}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_or_combined_interval_analysis_request_a9e3c0b86ca374677a236b54a6a4d3757}\label{class_or_combined_interval_analysis_request_a9e3c0b86ca374677a236b54a6a4d3757} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!clone@{clone}}
+\index{clone@{clone}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}} $>$ Or\+Combined\+Interval\+Analysis\+Request\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interval_analysis_request_a565b40048c51b3926999fe3ee878c06e}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_or_combined_interval_analysis_request_a5434c67a36ab4d5dc2a13474c36b2a8e}\label{class_or_combined_interval_analysis_request_a5434c67a36ab4d5dc2a13474c36b2a8e} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily std\+::string Or\+Combined\+Interval\+Analysis\+Request\+::get\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{meta\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a2925f777cf54b86b861cd0f88e7c6778}{Analysis\+Request}}.
+
+\Hypertarget{class_or_combined_interval_analysis_request_a8f8d445ebfa88518bc4fd9c6c89dbda8}\label{class_or_combined_interval_analysis_request_a8f8d445ebfa88518bc4fd9c6c89dbda8} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!get\_result@{get\_result}}
+\index{get\_result@{get\_result}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{get\_result()}{get\_result()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{struct_time_interval}{Time\+Interval}} $>$ Or\+Combined\+Interval\+Analysis\+Request\+::get\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_interval_analysis_request_adc02e3fee418698665da22c2b9e38763}{Interval\+Analysis\+Request}}.
+
+\Hypertarget{class_or_combined_interval_analysis_request_a8343b5134ef9074a01c31fc226af84df}\label{class_or_combined_interval_analysis_request_a8343b5134ef9074a01c31fc226af84df} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Or\+Combined\+Interval\+Analysis\+Request\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_transform_data}{Transform\+Data}} $>$}]{t\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_sound_data}{Sound\+Data}} $>$}]{s\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a02557b1f0f4181f659e1ce94790cc242}{Analysis\+Request}}.
+
+\Hypertarget{class_or_combined_interval_analysis_request_a833dfc7baaf48c8ecb427ed79c7d649c}\label{class_or_combined_interval_analysis_request_a833dfc7baaf48c8ecb427ed79c7d649c} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!update\_parameters@{update\_parameters}}
+\index{update\_parameters@{update\_parameters}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{update\_parameters()}{update\_parameters()}}
+{\footnotesize\ttfamily void Or\+Combined\+Interval\+Analysis\+Request\+::update\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{original\+\_\+meta\+\_\+file,  }\item[{\mbox{\hyperlink{class_meta_information}{Meta\+Information}} \&}]{new\+\_\+meta\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_analysis_request_a911d5cbfef127d6759f875937c9c4ea9}{Analysis\+Request}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_or_combined_interval_analysis_request_a0f9dc64a7bdea92b206fe77e1fd7b562}\label{class_or_combined_interval_analysis_request_a0f9dc64a7bdea92b206fe77e1fd7b562} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!left\_hand\_side@{left\_hand\_side}}
+\index{left\_hand\_side@{left\_hand\_side}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{left\_hand\_side}{left\_hand\_side}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}$>$ Or\+Combined\+Interval\+Analysis\+Request\+::left\+\_\+hand\+\_\+side\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_or_combined_interval_analysis_request_a0e66adbf4edaa9d6c5ffb73520186c89}\label{class_or_combined_interval_analysis_request_a0e66adbf4edaa9d6c5ffb73520186c89} 
+\index{OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}!right\_hand\_side@{right\_hand\_side}}
+\index{right\_hand\_side@{right\_hand\_side}!OrCombinedIntervalAnalysisRequest@{OrCombinedIntervalAnalysisRequest}}
+\doxysubsubsection{\texorpdfstring{right\_hand\_side}{right\_hand\_side}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_interval_analysis_request}{Interval\+Analysis\+Request}}$>$ Or\+Combined\+Interval\+Analysis\+Request\+::right\+\_\+hand\+\_\+side\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Src/\+Analysis/\+Interval\+Analysis/\mbox{\hyperlink{_or_combined_interval_analysis_request_8h}{Or\+Combined\+Interval\+Analysis\+Request.\+h}}\item 
+Src/\+Analysis/\+Interval\+Analysis/\mbox{\hyperlink{_or_combined_interval_analysis_request_8cpp}{Or\+Combined\+Interval\+Analysis\+Request.\+cpp}}\end{DoxyCompactItemize}

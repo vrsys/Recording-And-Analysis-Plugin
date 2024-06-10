@@ -1,0 +1,15 @@
+[submodule "External/glm"]
+	path = External/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "External/AudioFile"]
+	path = External/AudioFile
+	url = https://github.com/adamstark/AudioFile.git
+[submodule "External/Catch2"]
+	path = External/Catch2
+	url = https://github.com/catchorg/Catch2.git
+[submodule "External/zlib"]
+	path = External/zlib
+	url = https://github.com/madler/zlib.git
+[submodule "External/thread-pool"]
+	path = External/thread-pool
+	url = https://github.com/bshoshany/thread-pool

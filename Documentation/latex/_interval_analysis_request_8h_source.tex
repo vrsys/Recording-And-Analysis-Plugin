@@ -1,0 +1,45 @@
+\doxysection{Interval\+Analysis\+Request.\+h}
+\hypertarget{_interval_analysis_request_8h_source}{}\label{_interval_analysis_request_8h_source}\index{Src/Analysis/IntervalAnalysis/IntervalAnalysisRequest.h@{Src/Analysis/IntervalAnalysis/IntervalAnalysisRequest.h}}
+\mbox{\hyperlink{_interval_analysis_request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Mortiferum\ on\ 09.07.2023.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ RECORDINGPLUGIN\_INTERVALANALYSISREQUEST\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ RECORDINGPLUGIN\_INTERVALANALYSISREQUEST\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_analysis_structs_8h}{Analysis/AnalysisStructs.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_recorded_id_data_8h}{Recording/BaseStructure/RecordedIdData.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_meta_information_8h}{Recording/MetaInformation.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_analysis_request_8h}{Analysis/AnalysisRequest.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_interval_analysis_request}{IntervalAnalysisRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_analysis_request}{AnalysisRequest}}\{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ time\ intervals\ for\ which\ the\ corresponding\ analysis\ request\ yielded\ positive\ results}}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<TimeInterval>\ \mbox{\hyperlink{class_interval_analysis_request_ac34fb1a86b659287180cb91c8a2608f1}{intervals}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ interval\ currently\ being\ worked\ on}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_time_interval}{TimeInterval}}\ \mbox{\hyperlink{class_interval_analysis_request_a92538cc08380b17ce51d4834d846fab8}{currentInterval}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_analysis_request_a565b40048c51b3926999fe3ee878c06e}{clone}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<TimeInterval>\ \mbox{\hyperlink{class_interval_analysis_request_adc02e3fee418698665da22c2b9e38763}{get\_result}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_analysis_request_a28952cc890dc5eb57cbd7f9d20b6e427}{clear\_recent\_data}}()\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_interval_analysis_request_a9961447a702d030a9f8b8d7d204b9568}{clear\_results}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{friend}\ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_analysis_request_aa8cde22df00773aa2e285b6d80643efc}{operator!}}(std::shared\_ptr<IntervalAnalysisRequest>\ lhs);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{friend}\ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_analysis_request_a5247255cdc67a83aadf61943ba491ed9}{operator\&}}(std::shared\_ptr<IntervalAnalysisRequest>\ lhs,\ std::shared\_ptr<IntervalAnalysisRequest>\ rhs);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{friend}\ std::shared\_ptr<IntervalAnalysisRequest>\ \mbox{\hyperlink{class_interval_analysis_request_a5efffa3fbe5530abfec261312b9a7d6e}{operator|}}(std::shared\_ptr<IntervalAnalysisRequest>\ lhs,\ std::shared\_ptr<IntervalAnalysisRequest>\ rhs);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//RECORDINGPLUGIN\_INTERVALANALYSISREQUEST\_H}}
+
+\end{DoxyCode}
