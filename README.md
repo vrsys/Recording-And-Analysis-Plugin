@@ -1,6 +1,6 @@
 # Record, Replay  & Analysis Plugin
 
-[![Build](https://github.com/vrsys/recording-plugin/actions/workflows/cmake.yml/badge.svg)](https://github.com/vrsys/recording-plugin/actions/workflows/cmake.yml)
+[![Build](https://github.com/vrsys/Recording-And-Analysis-Plugin/actions/workflows/cmake.yml/badge.svg)](https://github.com/vrsys/Recording-And-Analysis-Plugin/actions/workflows/cmake.yml)
 
 ![Logo](Images/Icon_resized.png)
 
@@ -191,9 +191,9 @@ The meta information file contains various sections, including:
 ---------------------------Transform IDs------------------------------
 -161210,-161196,-161184,...
 ---------------------------DTO Layouts------------------------------
-TransformDTO: int id;float t;float lp[3];float lr[4];float ls[3];float gp[3];float gr[4];float gs[3];int act;int p_id;int layer = 0;
-SoundDTO: int id;float t;float s_t;float e_t;int s_n;int s_i;int s_r;int c_n;int c_go_id;float s_d[4800];int layer = 0;
-genericDTO: int id;float t;int i[10];float f[10];char c[10];int layer = 0;
+TransformDTO: int id;float t;float lp[3];float lr[4];float ls[3];float gp[3];float gr[4];float gs[3];int act;int p_id;
+SoundDTO: int id;float t;float s_t;float e_t;int s_n;int s_i;int s_r;int c_n;int c_go_id;float s_d[4800];
+genericDTO: int id;float t;int i[10];float f[10];char c[10];
 ```
 
 ### Explanation of the First Numbers
@@ -218,7 +218,7 @@ void export_sound_data_to_WAV(std::string const& sound_file_path);
 Debugging:
 ========================
 **On Windows**:  
-Plugin output is logged both in the Unity console and the Unity editor log file, which is located at:```
+Plugin output is logged both in the Unity console and the Unity editor log file, which is located at:
 ```
 %LOCALAPPDATA%\Unity\Editor\Editor.log
 ```
