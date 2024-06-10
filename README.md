@@ -36,7 +36,7 @@ Setup:
 ========================
 **Step 1**: Clone the repository **recursively** to ensure all submodules are included:
 ```
-git clone --recursive https://github.com/vrsys/recording-plugin
+git clone --recursive https://github.com/vrsys/Recording-And-Analysis-Plugin
 ```  
 
 
