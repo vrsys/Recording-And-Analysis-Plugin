@@ -38,6 +38,10 @@
 #include "AnalysisManager.h"
 #include "Analysis/IntervalAnalysis/TransformAnalysis/IntervalPositionAdjustmentAnalysisRequest.h"
 
+void AnalysisManager::add_interval_analysis_request(std::shared_ptr<IntervalAnalysisRequest> request) {
+    interval_analysis_queries.push_back(request);
+}
+
 void AnalysisManager::add_interval_analysis_request(int analysis_id, std::shared_ptr<IntervalAnalysisRequest> request, int logical_operation) {
     if(interval_analysis_queries.size() > analysis_id){
         if(interval_analysis_queries[analysis_id].get() == nullptr){
