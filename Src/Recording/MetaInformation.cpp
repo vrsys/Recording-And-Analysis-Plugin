@@ -157,6 +157,8 @@ bool MetaInformation::read_meta_information() {
             Debug::Log("Total recording time: " + std::to_string(total_recording_time) + ", name-UUID map size: " + std::to_string(map_size));
 
             std::string line;
+
+            Debug::Log("Reading recorded transform objects");
             for (int i = 0; i < map_size; i++) {
                 std::getline(record_file, line);
 
@@ -194,7 +196,14 @@ bool MetaInformation::read_meta_information() {
                     }
                 }
 
-                int uuid = std::stoi(UUID);
+
+                int uuid = 0;
+                try{
+                    uuid = std::stoi(UUID);
+                } catch (std::exception const& e){
+                    Debug::Log("Could not parse UUID: " + UUID + " for object: " + object_name);
+                    continue;
+                }
 
                 object_prefab.erase(std::remove_if(object_prefab.begin(), object_prefab.end(), []( auto const& c ) -> bool {
                     return !(std::isalnum(c) || c == ' ' || c == '\\' || c == '/' || c == '.' || c == '-' || c == '_') || c == ';';
@@ -262,6 +271,9 @@ bool MetaInformation::read_meta_information() {
                 }
             }
 
+            Debug::Log("Reading recorded transform objects finished");
+
+            Debug::Log("Reading recorded sound ids and generic data ids");
             while(std::getline(record_file, line)) {
                 if (line.find("Sound IDs") != std::string::npos) {
                     std::getline(record_file, line);
@@ -287,6 +299,8 @@ bool MetaInformation::read_meta_information() {
                     }
                 }
             }
+
+            Debug::Log("Reading recorded sound ids and generic data ids finished");
 
             return true;
         } else {

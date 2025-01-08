@@ -50,6 +50,20 @@ file(GLOB_RECURSE TEST_FILES
         External/ThreadPool/*.hpp
         )
 
+file(GLOB_RECURSE EXPORT_DATA_FILES
+        ${SrcDir}/*.h.in
+        ${SrcDir}/*.cpp
+        ${SrcDir}/*.h
+        ${UnityDir}/*.cpp
+        ${UnityDir}/*.h
+        ${TestDir}/ExportData.cpp
+        ${UtilsDir}/*.cpp
+        ${UtilsDir}/*.h
+        External/AudioFile/*.h
+        External/ThreadPool/*.hpp
+)
+
+
 file(GLOB_RECURSE ANALYSIS_TEST_FILES
         ${SrcDir}/*.h.in
         ${SrcDir}/*.cpp
@@ -76,6 +90,9 @@ if(NOT ANDROID_BUILD)
 
     add_executable(tests ${TEST_FILES})
     target_link_libraries(tests ${TEST_LIBRARIES})
+
+    add_executable(export_data ${EXPORT_DATA_FILES})
+    target_link_libraries(export_data ${TEST_LIBRARIES})
 
     add_executable(analysis_tests ${ANALYSIS_TEST_FILES})
     target_link_libraries(analysis_tests ${TEST_LIBRARIES})

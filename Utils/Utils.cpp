@@ -79,8 +79,55 @@ void Utils::export_transform_data_to_CSV(std::string const& transform_file_path)
 
     out.close();
     record_file.close();
+    Debug::Log("Writing transform data to CSV file finished");
+}
 
+void Utils::export_transform_data_to_CSV(std::string const& transform_file_path, std::string target_object_path) {
+    Debug::Log("Writing transform data for object: " + target_object_path + " to CSV file");
+    std::string transform_data_file = transform_file_path;
 
+    std::string meta_file_path = get_meta_file_path_from_transform(transform_file_path);
+    MetaInformation meta_information{meta_file_path};
+
+    int target_object_id = meta_information.get_old_uuid(target_object_path);
+
+    std::ifstream record_file(transform_data_file, std::ios::in | std::ios::binary);
+    record_file.seekg(0, std::ifstream::end);
+    unsigned long size = record_file.tellg() / sizeof(TransformDTO);
+
+    Debug::Log("Recording transform file can be accessed. Number of transform chunks: " + std::to_string(size));
+    TransformDTO current_data{};
+    record_file.seekg(0, std::ifstream::beg);
+
+    std::string file_ending = ".txt";
+    std::string short_file_name = target_object_path.erase(0, target_object_path.find_last_of("/") + 1);
+    std::string file_name = transform_data_file.replace(transform_data_file.find(file_ending), file_ending.length(),"");
+    std::fstream out(file_name + "_" + target_object_path + ".csv", std::fstream::in | std::fstream::out | std::fstream::app);
+
+    out << "Time,ID,ParentID,ActiveState,LocPosX,LocPosY,LocPosZ,GloPosX,GloPosY,GloPosZ,LocScaX,LocScaY,LocScaZ,GloScaX,GloScaY,GloScaZ,LocRotX,LocRotY,LocRotZ,LocRotW,GloRotX,GloRotY,GloRotZ,GloRotW\n";
+
+    for (unsigned long i = 0; i < size; i++) {
+        record_file.read((char *) &current_data, sizeof(TransformDTO));
+        if(current_data.id == target_object_id) {
+            out << current_data.t << ",";
+            out << current_data.id << ",";
+            out << current_data.p_id << ",";
+            out << current_data.act << ",";
+
+            out << current_data.lp[0] << "," << current_data.lp[1] << "," << current_data.lp[2] << ",";
+            out << current_data.gp[0] << "," << current_data.gp[1] << "," << current_data.gp[2] << ",";
+
+            out << current_data.ls[0] << "," << current_data.ls[1] << "," << current_data.ls[2] << ",";
+            out << current_data.gs[0] << "," << current_data.gs[1] << "," << current_data.gs[2] << ",";
+
+            out << current_data.lr[0] << "," << current_data.lr[1] << "," << current_data.lr[2] << ","
+                << current_data.lr[3] << ",";
+            out << current_data.gr[0] << "," << current_data.gr[1] << "," << current_data.gr[2] << ","
+                << current_data.gr[3] << "\n";
+        }
+    }
+    out.close();
+    record_file.close();
     Debug::Log("Writing transform data to CSV file finished");
 }
 
@@ -536,4 +583,19 @@ void Utils::export_sound_data_to_WAV(std::string const& sound_file_path) {
     }
 #endif
     record_file.close();
+}
+
+std::string Utils::get_meta_file_path_from_transform(const std::string &transform_file_path) {
+    std::string transform_file_ending = ".txt";
+    std::string meta_file_path = transform_file_path;
+    std::string::size_type n = transform_file_ending.length();
+    for (std::string::size_type i = meta_file_path.find(transform_file_ending); i != std::string::npos; i = meta_file_path.find(transform_file_ending))
+        meta_file_path.erase(i, n);
+    meta_file_path += ".recordmeta";
+
+    std::ifstream meta_file(meta_file_path, std::ios::in);
+    if(!meta_file.good()){
+        std::cout << "Error, could not determine correct metafile path." << "\n";
+    }
+    return meta_file_path;
 }
