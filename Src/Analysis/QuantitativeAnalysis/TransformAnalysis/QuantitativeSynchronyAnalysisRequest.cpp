@@ -30,10 +30,10 @@ void QuantitativeSynchronyAnalysisRequest::process_request(std::shared_ptr<Trans
 
     if (t_data->time > current_t) {
         current_t = t_data->time;
-        while (recent_data_a.front().time < current_t - temporal_sampling_rate) {
+        while (recent_data_a.size() > 0 &&recent_data_a.front().time < current_t - temporal_sampling_rate) {
             recent_data_a.pop_front();
         }
-        while (recent_data_b.front().time < current_t - temporal_sampling_rate) {
+        while (recent_data_b.size() > 0 && recent_data_b.front().time < current_t - temporal_sampling_rate) {
             recent_data_b.pop_front();
         }
         std::vector<float> a_velocities;
@@ -96,7 +96,7 @@ TransformAnalysisType QuantitativeSynchronyAnalysisRequest::get_type() const {
 // see: https://www.geeksforgeeks.org/program-spearmans-rank-correlation/
 std::vector<float> QuantitativeSynchronyAnalysisRequest::rank_data(std::vector<float> const &data) {
     std::vector<float> ranks(data.size());
-    float threshold = 0.1f;
+    float threshold = 0.00001f;
     for (int i = 0; i < data.size(); i++) {
         int rank = 1, same = 1;
 
@@ -116,11 +116,11 @@ std::vector<float> QuantitativeSynchronyAnalysisRequest::rank_data(std::vector<f
 }
 
 float QuantitativeSynchronyAnalysisRequest::correlation(const std::vector<float> &a, const std::vector<float> &b) {
-    if(a.size() != b.size()) {
-        Debug::Log("Error: Cannot calculate correlation between vectors of different sizes");
+    if(a.size() != b.size() || a.empty()) {
+        //Debug::Log("Error: Cannot calculate correlation between vectors of different sizes");
         return 0;
     }
-    float sum_a, sum_b, sum_ab, square_sum_a, square_sum_b = 0;
+    float sum_a = 0, sum_b = 0, sum_ab = 0, square_sum_a = 0, square_sum_b = 0;
 
     for (int i = 0; i < a.size(); i++) {
         sum_a = sum_a + a[i];

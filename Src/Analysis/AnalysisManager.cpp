@@ -464,16 +464,16 @@ int AnalysisManager::process_quantitative_analysis_requests_for_all_files() {
         if (intervals_of_interest.count(file) != 0) {
             intervals_to_investigate = intervals_of_interest[file];
         }
-        getThreadPool().submit_task([this, &file, &meta_information, &intervals_to_investigate]{this->process_quantitative_analysis_requests_for_file(file,
+        getThreadPool().submit_task([this, file, meta_information, intervals_to_investigate]{this->process_quantitative_analysis_requests_for_file(file,
                                   meta_information, intervals_to_investigate);});
     }
 
     return 0;
 }
 
-void AnalysisManager::process_quantitative_analysis_requests_for_file(const std::string &file,
-                                                                      MetaInformation &meta_information,
-                                                                      const std::vector<TimeInterval> &intervals_of_interest) const {
+void AnalysisManager::process_quantitative_analysis_requests_for_file(std::string file,
+                                                                      MetaInformation meta_information,
+                                                                      std::vector<TimeInterval> intervals_of_interest) const {
     MetaInformation current_meta_information{file + ".recordmeta"};
 
     std::fstream out;

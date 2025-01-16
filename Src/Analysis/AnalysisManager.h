@@ -93,7 +93,7 @@ public:
 
     int process_quantitative_analysis_requests_for_all_files();
 
-    void process_quantitative_analysis_requests_for_file(const std::string &file, MetaInformation& meta_information, const std::vector<TimeInterval> &intervals_of_interest) const;
+    void process_quantitative_analysis_requests_for_file(std::string file, MetaInformation meta_information, std::vector<TimeInterval> intervals_of_interest) const;
 
     int process_quantitative_analysis_requests_for_primary_file(int analysis_id, float* values, std::vector<TimeInterval> intervals_of_interest);
 
