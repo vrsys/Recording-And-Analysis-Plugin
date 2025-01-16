@@ -41,7 +41,7 @@
 
 #include <deque>
 #include "Recording/MetaInformation.h"
-#include "QuantitativeTramsformAnalysisRequest.h"
+#include "QuantitativeTransformAnalysisRequest.h"
 
 class QuantitativeVelocityAnalysisRequest  : public QuantitativeTransformAnalysisRequest{
 

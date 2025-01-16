@@ -38,11 +38,12 @@
 
 #include "Analysis/AnalysisManager.h"
 #include "Analysis/IntervalAnalysis/TransformAnalysis/IntervalPositionAdjustmentAnalysisRequest.h"
-#include "Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeTramsformAnalysisRequest.h"
+#include "Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeTransformAnalysisRequest.h"
 #include "Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeVelocityAnalysisRequest.h"
 #include "Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeGazeAnalysisRequest.h"
 #include "Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeDistanceAnalysisRequest.h"
 #include "Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeRotationAnalysisRequest.h"
+#include "Analysis/QuantitativeAnalysis/TransformAnalysis/QuantitativeSynchronyAnalysisRequest.h"
 #include <filesystem>
 #include <string>
 
@@ -259,7 +260,42 @@ void single_user_analysis() {
 
 }
 
+void synchrony_analysis(){
+    std::vector<std::string> files;
+    std::string directory = "C:\\Users\\Anton-Lammert\\Downloads\\PilotNew";
+    if(!std::filesystem::exists(directory))
+        return;
+
+    for (const auto &entry: std::filesystem::directory_iterator(directory)) {
+        std::string path = entry.path().string();
+        if (path.substr(path.find_last_of(".") + 1) == "recordmeta") {
+            files.push_back(path.substr(0, path.size() - 11));
+        }
+    }
+
+    AnalysisManager &manager = AnalysisManager::getInstance();
+
+    for (auto f: files) {
+        manager.add_recording_path(f.data(), f.length());
+    }
+
+    std::string primary_file = manager.get_primary_file();
+    MetaInformation meta_information{primary_file + ".recordmeta"};
+
+    int participant_a_hand_left = meta_information.get_old_uuid("/Lobby-HMDUser/Camera Offset/LeftHand Controller");
+    int participant_a_hand_right = meta_information.get_old_uuid("/Lobby-HMDUser/Camera Offset/RightHand Controller");
+    int avatar_hand_right = meta_information.get_old_uuid("/__STUDY__/VisualStimulus/HandWaving/StudyHMDAvatar/Camera Offset/RightHand Controller");
+
+    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_synchrony_request_1 = std::make_shared<QuantitativeSynchronyAnalysisRequest>(participant_a_hand_left, avatar_hand_right, 0.3f);
+    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_synchrony_request_2 = std::make_shared<QuantitativeSynchronyAnalysisRequest>(participant_a_hand_right, avatar_hand_right, 0.3f);
+
+    manager.add_quantitative_analysis_request(quantitative_synchrony_request_1);
+    manager.add_quantitative_analysis_request(quantitative_synchrony_request_2);
+
+    manager.process_quantitative_analysis_requests_for_all_files();
+}
+
 int main() {
-    collaboration_analysis();
+    synchrony_analysis();
     return 0;
 }

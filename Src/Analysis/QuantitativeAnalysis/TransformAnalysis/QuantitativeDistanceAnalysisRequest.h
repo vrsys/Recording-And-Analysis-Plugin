@@ -41,7 +41,7 @@
 
 
 #include <deque>
-#include "QuantitativeTramsformAnalysisRequest.h"
+#include "QuantitativeTransformAnalysisRequest.h"
 
 class QuantitativeDistanceAnalysisRequest : public QuantitativeTransformAnalysisRequest{
 
