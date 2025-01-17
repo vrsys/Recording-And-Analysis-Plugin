@@ -40,6 +40,7 @@
 
 #include <algorithm>
 #include <vector>
+#include <string>
 
 enum TransformAnalysisType{
     ContainmentAnalysis, DistanceAnalysis, GazeAnalysis, RotationAnalysis, VelocityAnalysis, PositionAdjustmentAnalysis, SynchronyAnalysis
@@ -47,7 +48,7 @@ enum TransformAnalysisType{
 
 struct TimeBasedValue{
     float time;
-    std::vector<float> values;
+    std::vector<std::pair<std::string,float>> values;
 };
 
 struct TimeInterval{

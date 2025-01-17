@@ -40,7 +40,7 @@ public:
 private:
     std::vector<float> rank_data(std::vector<float> const& data);
 
-    float correlation(std::vector<float> const& a, std::vector<float> const& b);
+    float pearson_correlation(std::vector<float> const& a, std::vector<float> const& b);
 };
 
 

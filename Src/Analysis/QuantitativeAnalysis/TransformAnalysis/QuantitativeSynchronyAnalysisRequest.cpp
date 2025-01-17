@@ -30,41 +30,61 @@ void QuantitativeSynchronyAnalysisRequest::process_request(std::shared_ptr<Trans
 
     if (t_data->time > current_t) {
         current_t = t_data->time;
-        while (recent_data_a.size() > 0 &&recent_data_a.front().time < current_t - temporal_sampling_rate) {
+        while (recent_data_a.size() > 0 &&recent_data_a.front().time < current_t - (1.0f/temporal_sampling_rate)) {
             recent_data_a.pop_front();
         }
-        while (recent_data_b.size() > 0 && recent_data_b.front().time < current_t - temporal_sampling_rate) {
+        while (recent_data_b.size() > 0 && recent_data_b.front().time < current_t - (1.0f/temporal_sampling_rate)) {
             recent_data_b.pop_front();
         }
-        std::vector<float> a_velocities;
-        if (recent_data_a.size() > 1) {
-            for (int i = 1; i < recent_data_a.size(); i++) {
-                TransformData last = recent_data_a[i - 1];
-                TransformData current = recent_data_a[i];
-                float pos_diff = glm::length(current.global_position - last.global_position);
-                float time_diff = current.time - last.time;
-                a_velocities.push_back(std::abs(pos_diff / time_diff));
+
+        if(recent_data_a.size() > 0 && std::abs(recent_data_a.front().time - current_t) > (1.0f/temporal_sampling_rate) - 0.01f) {
+            std::vector<float> a_velocities;
+            if (recent_data_a.size() > 1) {
+                for (int i = 1; i < recent_data_a.size(); i++) {
+                    TransformData last = recent_data_a[i - 1];
+                    TransformData current = recent_data_a[i];
+                    float pos_diff = glm::length(current.global_position - last.global_position);
+                    float time_diff = current.time - last.time;
+                    float velocity = std::abs(pos_diff / time_diff);
+                    if(velocity < 0.1f)
+                        velocity = 0.0f;
+                    a_velocities.push_back(velocity);
+                }
             }
-        }
 
-        std::vector<float> b_velocities;
-        if (recent_data_b.size() > 1) {
-            for (int i = 1; i < recent_data_b.size(); i++) {
-                TransformData last = recent_data_b[i - 1];
-                TransformData current = recent_data_b[i];
-                float pos_diff = glm::length(current.global_position - last.global_position);
-                float time_diff = current.time - last.time;
-                b_velocities.push_back(std::abs(pos_diff / time_diff));
+            std::vector<float> b_velocities;
+            if (recent_data_b.size() > 1) {
+                for (int i = 1; i < recent_data_b.size(); i++) {
+                    TransformData last = recent_data_b[i - 1];
+                    TransformData current = recent_data_b[i];
+                    float pos_diff = glm::length(current.global_position - last.global_position);
+                    float time_diff = current.time - last.time;
+                    float velocity = std::abs(pos_diff / time_diff);
+                    if(velocity < 0.1f)
+                        velocity = 0.0f;
+                    b_velocities.push_back(velocity);
+                }
             }
-        }
 
-        std::vector<float> a_ranks = rank_data(a_velocities);
-        std::vector<float> b_ranks = rank_data(b_velocities);
+            std::vector<float> a_ranks = rank_data(a_velocities);
+            std::vector<float> b_ranks = rank_data(b_velocities);
 
-        float spearman_corr = correlation(a_ranks, b_ranks);
-        if(current_t > last_value_time + (1.0f /temporal_sampling_rate)) {
-            values.push_back(TimeBasedValue{current_t, {spearman_corr}});
-            last_value_time = current_t;
+            if(a_velocities.size() == b_velocities.size()) {
+                float pearson_corr = pearson_correlation(a_velocities, b_velocities);
+                float spearman_corr = pearson_correlation(a_ranks, b_ranks);
+
+                if(std::isnan(pearson_corr))
+                    pearson_corr = 0.0f;
+                if(std::isnan(spearman_corr))
+                    spearman_corr = 0.0f;
+
+                if (current_t > last_value_time + (1.0f / temporal_sampling_rate)) {
+                    std::pair<std::string, float> s_corr = {"Spearman Correlation", spearman_corr};
+                    std::pair<std::string, float> p_corr = {"Pearson Correlation", pearson_corr};
+                    values.push_back(TimeBasedValue{current_t, {s_corr, p_corr}});
+                    last_value_time = current_t;
+                }
+            }
         }
     }
 }
@@ -115,7 +135,7 @@ std::vector<float> QuantitativeSynchronyAnalysisRequest::rank_data(std::vector<f
     return ranks;
 }
 
-float QuantitativeSynchronyAnalysisRequest::correlation(const std::vector<float> &a, const std::vector<float> &b) {
+float QuantitativeSynchronyAnalysisRequest::pearson_correlation(const std::vector<float> &a, const std::vector<float> &b) {
     if(a.size() != b.size() || a.empty()) {
         //Debug::Log("Error: Cannot calculate correlation between vectors of different sizes");
         return 0;
@@ -123,15 +143,21 @@ float QuantitativeSynchronyAnalysisRequest::correlation(const std::vector<float>
     float sum_a = 0, sum_b = 0, sum_ab = 0, square_sum_a = 0, square_sum_b = 0;
 
     for (int i = 0; i < a.size(); i++) {
-        sum_a = sum_a + a[i];
-        sum_b = sum_b + b[i];
-        sum_ab = sum_ab + a[i] * b[i];
-        square_sum_a = square_sum_a + a[i] * a[i];
-        square_sum_b = square_sum_b + b[i] * b[i];
+        sum_a += a[i];
+        sum_b += b[i];
     }
 
-    float corr = (float) (a.size() * sum_ab - sum_a * sum_b) /
-                 sqrt((a.size() * square_sum_a - sum_a * sum_a) * (a.size() * square_sum_b - sum_b * sum_b));
+    float mean_a = sum_a / a.size();
+    float mean_b = sum_b / b.size();
 
-    return corr;
+    float top = 0.0f;
+    float bottom_l = 0.0f;
+    float bottom_r = 0.0f;
+
+    for(int i = 0; i < a.size(); ++i){
+        top += (a[i] - mean_a) * (b[i] - mean_b);
+        bottom_l += (a[i] - mean_a) * (a[i] - mean_a);
+        bottom_r += (b[i] - mean_b) * (b[i] - mean_b);
+    }
+    return top / (std::sqrt(bottom_l) * std::sqrt(bottom_r));
 }

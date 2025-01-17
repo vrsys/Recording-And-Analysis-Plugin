@@ -71,8 +71,8 @@ void QuantitativeRotationAnalysisRequest::process_request(std::shared_ptr<Transf
                         max_angle_diff = angle_diff_degrees;
                 }
             }
-
-            values.push_back(TimeBasedValue{t_data->time, {max_angle_diff}});
+            std::pair<std::string, float> angle_diff = {"Max angle diff", max_angle_diff};
+            values.push_back(TimeBasedValue{t_data->time, {angle_diff}});
             last_value_time = t_data->time;
         }
     }

@@ -84,7 +84,8 @@ void QuantitativeDistanceAnalysisRequest::process_request(std::shared_ptr<Transf
     if((t_data->id == id_a || t_data->id == id_b) && present_a && present_b && current_a.time >= current_b.time){
         glm::vec3 dir = current_b.global_position - current_a.global_position;
         if(current_t - last_value_time > 1.0f/temporal_sampling_rate){
-            values.push_back(TimeBasedValue{current_t, {glm::length(dir)}});
+            std::pair<std::string, float> dist = {"Distance",glm::length(dir)};
+            values.push_back(TimeBasedValue{current_t, {dist}});
             last_value_time = current_t;
         }
     }

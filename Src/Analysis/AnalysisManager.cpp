@@ -378,9 +378,7 @@ void AnalysisManager::add_quantitative_analysis_request(std::shared_ptr<Quantita
     quantitative_analysis_queries.push_back(request);
 }
 
-int AnalysisManager::process_quantitative_analysis_request(std::shared_ptr<QuantitativeAnalysisRequest> analysis_request,
-                                                       float *values, const std::string &file,
-                                                       const std::vector<TimeInterval> &intervals_to_investigate) const {
+std::vector<TimeBasedValue> AnalysisManager::process_quantitative_analysis_request(std::shared_ptr<QuantitativeAnalysisRequest> analysis_request, const std::string &file) const {
     std::ifstream transform_file(file + ".txt", std::ios::in | std::ios::binary);
     std::ifstream sound_file(file + "_sound.txt", std::ios::in | std::ios::binary);
     MetaInformation meta_info{file + ".recordmeta"};
@@ -431,25 +429,7 @@ int AnalysisManager::process_quantitative_analysis_request(std::shared_ptr<Quant
         Debug::Log("Reading sounds for analysis finished\n");
     }
 
-    result_values = analysis_request->get_result();
-    int i = 0;
-    for (auto &time_based_value: result_values) {
-        if (!intervals_to_investigate.empty()) {
-            for (auto const &interval_of_interest: intervals_to_investigate) {
-                if (interval_of_interest.contains(time_based_value.time)) {
-                    values[i] = time_based_value.time;
-                    // TODO: handle return of more return values
-                    values[i + 1] = time_based_value.values[0];
-                    i += 2;
-                }
-            }
-        } else {
-            values[i] = time_based_value.time;
-            values[i + 1] = time_based_value.values[0];
-            i += 2;
-        }
-    }
-    return result_values.size();
+    return analysis_request->get_result();
 }
 
 int AnalysisManager::process_quantitative_analysis_requests_for_all_files() {
@@ -499,21 +479,23 @@ void AnalysisManager::process_quantitative_analysis_requests_for_file(std::strin
     }
 
     for (auto request: adapted_queries) {
-        float values[5000];
-        int value_count = process_quantitative_analysis_request(request, values, file, intervals_of_interest);
-        std::cout << "Value count: " << value_count << "\n";
+        std::vector<TimeBasedValue> results = process_quantitative_analysis_request(request, file);
+        std::cout << "Value count: " << results.size() << "\n";
 
         out << "AnalysisQuery,";
         out << request->get_description(current_meta_information) << ",";
 
         out << "\n\n";
         out << "Time,";
-        out << "Value\n";
+        for(auto & value : results[0].values)
+            out << value.first << ",";
+        out << "\n";
 
-        for (int i = 0; i < value_count; ++i) {
-            float time = values[i * 2];
-            float value = values[i * 2 + 1];
-            out << time << "," << value << "\n";
+        for (int i = 0; i < results.size(); ++i) {
+            out << results[i].time << ",";
+            for(auto & value : results[i].values)
+                out << value.second << ",";
+            out << "\n";
         }
 
         out << "\n\n";

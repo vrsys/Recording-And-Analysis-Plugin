@@ -72,7 +72,10 @@ void QuantitativeGazeAnalysisRequest::process_request(std::shared_ptr<TransformD
        glm::mat4 TRS = translate * rotate * scale;
        glm::vec4 local_pos = glm::inverse(TRS) * glm::vec4{current_b.global_position,1.0f};
        if(current_t - last_value_time > 1.0f/temporal_sampling_rate){
-           values.push_back(TimeBasedValue{current_t, {local_pos.x/local_pos.w,local_pos.y/local_pos.w,local_pos.z,local_pos.w}});
+           std::pair<std::string, float> x = {"Pos b.x local in a",local_pos.x/local_pos.w};
+           std::pair<std::string, float> y = {"Pos b.y local in a",local_pos.y/local_pos.w};
+           std::pair<std::string, float> z = {"Pos b.z local in a",local_pos.z/local_pos.w};
+           values.push_back(TimeBasedValue{current_t, {x,y,z}});
            last_value_time = current_t;
        }
     }

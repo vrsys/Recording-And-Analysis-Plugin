@@ -89,7 +89,7 @@ public:
 
     void add_quantitative_analysis_request(std::shared_ptr<QuantitativeAnalysisRequest> request);
 
-    int process_quantitative_analysis_request(std::shared_ptr<QuantitativeAnalysisRequest> analysis_request, float* values, std::string const& file, std::vector<TimeInterval> const& intervals_to_investigate) const;
+    std::vector<TimeBasedValue> process_quantitative_analysis_request(std::shared_ptr<QuantitativeAnalysisRequest> analysis_request, std::string const& file) const;
 
     int process_quantitative_analysis_requests_for_all_files();
 

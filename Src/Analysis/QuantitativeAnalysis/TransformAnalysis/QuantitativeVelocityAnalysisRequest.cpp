@@ -90,7 +90,8 @@ void QuantitativeVelocityAnalysisRequest::process_request(std::shared_ptr<Transf
             float time_diff = last.time - previous.time;
             float current_velocity = std::abs(pos_diff / time_diff);
             if(last.time > last_value_time + (1.0f /temporal_sampling_rate)) {
-                values.push_back(TimeBasedValue{last.time, {current_velocity}});
+                std::pair<std::string, float> vel = {"Velocity",current_velocity};
+                values.push_back(TimeBasedValue{last.time, {vel}});
                 last_value_time = last.time;
             }
         }

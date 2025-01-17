@@ -262,7 +262,7 @@ void single_user_analysis() {
 
 void synchrony_analysis(){
     std::vector<std::string> files;
-    std::string directory = "C:\\Users\\Anton-Lammert\\Downloads\\PilotNew";
+    std::string directory = "C:\\Users\\Anton-Lammert\\Downloads\\Test";
     if(!std::filesystem::exists(directory))
         return;
 
@@ -286,11 +286,19 @@ void synchrony_analysis(){
     int participant_a_hand_right = meta_information.get_old_uuid("/Lobby-HMDUser/Camera Offset/RightHand Controller");
     int avatar_hand_right = meta_information.get_old_uuid("/__STUDY__/VisualStimulus/HandWaving/StudyHMDAvatar/Camera Offset/RightHand Controller");
 
-    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_synchrony_request_1 = std::make_shared<QuantitativeSynchronyAnalysisRequest>(participant_a_hand_left, avatar_hand_right, 0.3f);
-    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_synchrony_request_2 = std::make_shared<QuantitativeSynchronyAnalysisRequest>(participant_a_hand_right, avatar_hand_right, 0.3f);
+    float sampling_rate = 0.25f;
+    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_synchrony_request_1 = std::make_shared<QuantitativeSynchronyAnalysisRequest>(participant_a_hand_left, avatar_hand_right, sampling_rate);
+    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_synchrony_request_2 = std::make_shared<QuantitativeSynchronyAnalysisRequest>(participant_a_hand_right, avatar_hand_right, sampling_rate);
+
+    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_velocity_request_1 = std::make_shared<QuantitativeVelocityAnalysisRequest>(participant_a_hand_left, sampling_rate);
+    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_velocity_request_2 = std::make_shared<QuantitativeVelocityAnalysisRequest>(participant_a_hand_right, sampling_rate);
+    std::shared_ptr<QuantitativeTransformAnalysisRequest> quantitative_velocity_request_3 = std::make_shared<QuantitativeVelocityAnalysisRequest>(avatar_hand_right, sampling_rate);
 
     manager.add_quantitative_analysis_request(quantitative_synchrony_request_1);
     manager.add_quantitative_analysis_request(quantitative_synchrony_request_2);
+    manager.add_quantitative_analysis_request(quantitative_velocity_request_1);
+    manager.add_quantitative_analysis_request(quantitative_velocity_request_2);
+    manager.add_quantitative_analysis_request(quantitative_velocity_request_3);
 
     manager.process_quantitative_analysis_requests_for_all_files();
 }
