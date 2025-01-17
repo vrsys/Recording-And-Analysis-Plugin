@@ -46,6 +46,9 @@ void Utils::export_transform_data_to_CSV(std::string const& transform_file_path)
     record_file.seekg(0, std::ifstream::end);
     unsigned long size = record_file.tellg() / sizeof(TransformDTO);
 
+    std::string meta_file_path = get_meta_file_path_from_transform(transform_file_path);
+    MetaInformation meta_information{meta_file_path};
+
     Debug::Log("Recording transform file can be accessed. Number of transform chunks: " + std::to_string(size));
     TransformDTO current_data{};
     record_file.seekg(0, std::ifstream::beg);
@@ -55,24 +58,25 @@ void Utils::export_transform_data_to_CSV(std::string const& transform_file_path)
                                                         "");
     std::fstream out(file_name + ".csv", std::fstream::in | std::fstream::out | std::fstream::app);
 
-    out << "Time,ID,ParentID,ActiveState,LocPosX,LocPosY,LocPosZ,GloPosX,GloPosY,GloPosZ,LocScaX,LocScaY,LocScaZ,GloScaX,GloScaY,GloScaZ,LocRotX,LocRotY,LocRotZ,LocRotW,GloRotX,GloRotY,GloRotZ,GloRotW\n";
+    out << "Time;Name;ID;ParentID;ActiveState;LocPosX;LocPosY;LocPosZ;GloPosX;GloPosY;GloPosZ;LocScaX;LocScaY;LocScaZ;GloScaX;GloScaY;GloScaZ;LocRotX;LocRotY;LocRotZ;LocRotW;GloRotX;GloRotY;GloRotZ;GloRotW\n";
 
     for (unsigned long i = 0; i < size; i++) {
         record_file.read((char *) &current_data, sizeof(TransformDTO));
-        out << current_data.t << ",";
-        out << current_data.id << ",";
-        out << current_data.p_id << ",";
-        out << current_data.act << ",";
+        out << current_data.t << ";";
+        out << meta_information.get_object_name(current_data.id) << ";";
+        out << current_data.id << ";";
+        out << current_data.p_id << ";";
+        out << current_data.act << ";";
 
-        out << current_data.lp[0] << "," << current_data.lp[1] << "," << current_data.lp[2] << ",";
-        out << current_data.gp[0] << "," << current_data.gp[1] << "," << current_data.gp[2] << ",";
+        out << current_data.lp[0] << ";" << current_data.lp[1] << ";" << current_data.lp[2] << ";";
+        out << current_data.gp[0] << ";" << current_data.gp[1] << ";" << current_data.gp[2] << ";";
 
-        out << current_data.ls[0] << "," << current_data.ls[1] << "," << current_data.ls[2] << ",";
-        out << current_data.gs[0] << "," << current_data.gs[1] << "," << current_data.gs[2] << ",";
+        out << current_data.ls[0] << ";" << current_data.ls[1] << ";" << current_data.ls[2] << ";";
+        out << current_data.gs[0] << ";" << current_data.gs[1] << ";" << current_data.gs[2] << ";";
 
-        out << current_data.lr[0] << "," << current_data.lr[1] << "," << current_data.lr[2] << ","
-            << current_data.lr[3] << ",";
-        out << current_data.gr[0] << "," << current_data.gr[1] << "," << current_data.gr[2] << ","
+        out << current_data.lr[0] << ";" << current_data.lr[1] << ";" << current_data.lr[2] << ";"
+            << current_data.lr[3] << ";";
+        out << current_data.gr[0] << ";" << current_data.gr[1] << ";" << current_data.gr[2] << ";"
             << current_data.gr[3] << "\n";
     }
 
@@ -104,25 +108,25 @@ void Utils::export_transform_data_to_CSV(std::string const& transform_file_path,
     std::string file_name = transform_data_file.replace(transform_data_file.find(file_ending), file_ending.length(),"");
     std::fstream out(file_name + "_" + target_object_path + ".csv", std::fstream::in | std::fstream::out | std::fstream::app);
 
-    out << "Time,ID,ParentID,ActiveState,LocPosX,LocPosY,LocPosZ,GloPosX,GloPosY,GloPosZ,LocScaX,LocScaY,LocScaZ,GloScaX,GloScaY,GloScaZ,LocRotX,LocRotY,LocRotZ,LocRotW,GloRotX,GloRotY,GloRotZ,GloRotW\n";
+    out << "Time;ID;ParentID;ActiveState;LocPosX;LocPosY;LocPosZ;GloPosX;GloPosY;GloPosZ;LocScaX;LocScaY;LocScaZ;GloScaX;GloScaY;GloScaZ;LocRotX;LocRotY;LocRotZ;LocRotW;GloRotX;GloRotY;GloRotZ;GloRotW\n";
 
     for (unsigned long i = 0; i < size; i++) {
         record_file.read((char *) &current_data, sizeof(TransformDTO));
         if(current_data.id == target_object_id) {
-            out << current_data.t << ",";
-            out << current_data.id << ",";
-            out << current_data.p_id << ",";
-            out << current_data.act << ",";
+            out << current_data.t << ";";
+            out << current_data.id << ";";
+            out << current_data.p_id << ";";
+            out << current_data.act << ";";
 
-            out << current_data.lp[0] << "," << current_data.lp[1] << "," << current_data.lp[2] << ",";
-            out << current_data.gp[0] << "," << current_data.gp[1] << "," << current_data.gp[2] << ",";
+            out << current_data.lp[0] << ";" << current_data.lp[1] << ";" << current_data.lp[2] << ";";
+            out << current_data.gp[0] << ";" << current_data.gp[1] << ";" << current_data.gp[2] << ";";
 
-            out << current_data.ls[0] << "," << current_data.ls[1] << "," << current_data.ls[2] << ",";
-            out << current_data.gs[0] << "," << current_data.gs[1] << "," << current_data.gs[2] << ",";
+            out << current_data.ls[0] << ";" << current_data.ls[1] << ";" << current_data.ls[2] << ";";
+            out << current_data.gs[0] << ";" << current_data.gs[1] << ";" << current_data.gs[2] << ";";
 
-            out << current_data.lr[0] << "," << current_data.lr[1] << "," << current_data.lr[2] << ","
-                << current_data.lr[3] << ",";
-            out << current_data.gr[0] << "," << current_data.gr[1] << "," << current_data.gr[2] << ","
+            out << current_data.lr[0] << ";" << current_data.lr[1] << ";" << current_data.lr[2] << ";"
+                << current_data.lr[3] << ";";
+            out << current_data.gr[0] << ";" << current_data.gr[1] << ";" << current_data.gr[2] << ";"
                 << current_data.gr[3] << "\n";
         }
     }
