@@ -38,7 +38,7 @@
 
 #include "Utils.h"
 
-void Utils::export_transform_data_to_CSV(std::string const& transform_file_path) {
+void Utils::export_transform_data_to_CSV(std::string const& transform_file_path, std::vector<std::string> const& objects_of_interest) {
     Debug::Log("Writing transform data to CSV file");
     std::string transform_data_file = transform_file_path;
 
@@ -62,6 +62,17 @@ void Utils::export_transform_data_to_CSV(std::string const& transform_file_path)
 
     for (unsigned long i = 0; i < size; i++) {
         record_file.read((char *) &current_data, sizeof(TransformDTO));
+
+        bool print_current_data = objects_of_interest.empty();
+        for (const auto & i : objects_of_interest){
+            if(meta_information.get_object_name(current_data.id) == i) {
+                print_current_data = true;
+                break;
+            }
+        }
+        if(!print_current_data)
+            continue;
+
         out << current_data.t << ";";
         out << meta_information.get_object_name(current_data.id) << ";";
         out << current_data.id << ";";

@@ -56,7 +56,7 @@
 
 namespace Utils {
 
-    void export_transform_data_to_CSV(std::string const& transform_file_path);
+    void export_transform_data_to_CSV(std::string const& transform_file_path, std::vector<std::string> const& objects_of_interest = {});
 
     void export_transform_data_to_CSV(std::string const& transform_file_path, std::string target_object_path);
 
