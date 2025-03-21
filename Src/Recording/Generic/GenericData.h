@@ -60,7 +60,7 @@ struct GenericDTO{
     char c[char_c];
 
     std::string static dto_layout() {
-        return "genericDTO: int id;float t;int i[10];float f[10];char c[10];int layer = 0;";
+        return "genericDTO: int id;float t;int i[10];float f[10];char c[10];";
     }
 };
 

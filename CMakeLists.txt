@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(RecordingPlugin VERSION "0.8.4")
+project(RecordingPlugin VERSION "0.8.5")
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -13,9 +13,9 @@ set(UtilsDir Utils)
 configure_file(Config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/${SrcDir}/Config.h @ONLY)
 
 if(ANDROID_BUILD)
-    set( UNITY_PLUGINS_DIR "C:/Users/Anton-Lammert/Desktop/ImmersiveStudyAnalyzer/Assets/Plugins/Android/ARM64" )
+    set( UNITY_PLUGINS_DIR "C:/Users/Anton-Lammert/Desktop/Immersive-Study-Analyzer/Assets/Plugins/Android/ARM64" )
 else()
-    set( UNITY_PLUGINS_DIR "C:/Users/Anton-Lammert/Desktop/ImmersiveStudyAnalyzer/Assets/Plugins/Windows" )
+    set( UNITY_PLUGINS_DIR "C:/Users/Anton-Lammert/Desktop/Immersive-Study-Analyzer/Assets/Plugins/Windows" )
 endif()
 
 if(NOT WORKFLOW)

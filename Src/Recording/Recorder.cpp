@@ -504,7 +504,7 @@ Recorder::record_sound(float *sound_data, int sound_data_length, int sampling_ra
                 Debug::Log("Waiting until the current sound data is written to file before recording new data");
             i++;
         }
-
+#ifdef SUBSAMPLE_RECORDED_AUDIO
         int subsample_factor = 2;
         bool subsampled = false;
         if(sampling_rate % subsample_factor == 0 && sampling_rate/subsample_factor >= 16000){
@@ -522,6 +522,7 @@ Recorder::record_sound(float *sound_data, int sound_data_length, int sampling_ra
 
         if(debug)
             Debug::Log("Subsampled audio source: " + std::to_string(sound_id));
+# endif
 
         if(last_sound_data.count(sound_id) == 0)
             last_sound_data[sound_id] = sound_dto;

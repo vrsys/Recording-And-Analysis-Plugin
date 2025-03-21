@@ -60,7 +60,7 @@ struct SoundDTO{
     float s_d[4800];
 
     std::string static dto_layout(){
-        return "SoundDTO: int id;float t;float s_t;float e_t;int s_n;int s_i;int s_r;int c_n;int c_go_id;float s_d[4800];int layer = 0;";
+        return "SoundDTO: int id;float t;float s_t;float e_t;int s_n;int s_i;int s_r;int c_n;int c_go_id;float s_d[4800];";
     }
 };
 

@@ -91,7 +91,7 @@ struct TransformDTO{
     }
 
     std::string static dto_layout(){
-        return "TransformDTO: int id;float t;float lp[3];float lr[4];float ls[3];float gp[3];float gr[4];float gs[3];int act;int p_id;int layer = 0;";
+        return "TransformDTO: int id;float t;float lp[3];float lr[4];float ls[3];float gp[3];float gr[4];float gs[3];int act;int p_id;";
     }
 };
 

@@ -194,7 +194,7 @@ void Utils::export_generic_data_to_CSV(const std::string &generic_file_path) {
 
 void Utils::export_sound_data_to_WAV(std::string const& sound_file_path) {
     Debug::Log("Writing sound data to WAV file");
-
+    Debug::Log("Reading sound data from file: " + sound_file_path);
     std::string sound_data_file = sound_file_path;
     //std::set<int> sound_ids = current_recording.meta_information.get_sound_ids();
 
