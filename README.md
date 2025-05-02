@@ -10,6 +10,7 @@ Enhanced features include simultaneous multiple playback capabilities and the ab
 In addition, it supports efficient analysis functionalities that allow the analysis of created recordings during playback or outside of the engine using C++.
 Different types of analysis queries (distance queries, velocity queries, ...) can be defined individually or combined for the investigation
 of complex behaviour.
+For further information we refer to our paper ([Preprint](https://www.uni-weimar.de/fileadmin/user/fak/medien/professuren/Virtual_Reality/documents/publications/2024_Collaborative_Immersive_Analysis_of_Social_Virtual_Reality_Studies_Preprint.pdf), bibtex below).
 
 
 **Functionalities:**
@@ -228,3 +229,15 @@ The debug output of the plugin can be read using the [android debug bridge](http
 ```
 adb logcat
 ```
+
+## BibTeX Citation
+If you use the recording and analysis plugin developed for the ISA system in a scientific publication, we would appreciate using the following citations:
+```
+@article{Lammert2024,
+    doi       = {10.1109/TVCG.2024.3456146},
+    url       = {https://doi.org/10.1109/TVCG.2024.3456146},
+    year      = {2024},
+    journal={IEEE Transactions on Visualization and Computer Graphics}, 
+    author={Lammert, Anton and Rendle, Gareth and Immohr, Felix and Neidhardt, Annika and Brandenburg, Karlheinz and Raake, Alexander and Froehlich, Bernd},
+    title     = {Immersive Study Analyzer: Collaborative Immersive Analysis of Recorded Social VR Studies},
+}
