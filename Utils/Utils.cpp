@@ -38,6 +38,34 @@
 
 #include "Utils.h"
 
+bool Utils::ensure_directory_existence(std::string const& path){
+#if (ANDROID == 1)
+    struct stat info;
+    if (stat(path.c_str(), &info) != 0) {
+        if (mkdir(path.c_str(), 0755) != 0) {
+            std::cerr << "Failed to create directory: " << path << std::endl;
+            return false;
+        }
+    } else if (!S_ISDIR(info.st_mode)) {
+        std::cerr << "Path exists but is not a directory: " << path << std::endl;
+        return false;
+    }
+    return true;
+#else
+    fs::path dir_path(path);
+    if (!fs::exists(dir_path)) {
+        if (!fs::create_directories(dir_path)) {
+            std::cerr << "Failed to create directory: " << path << std::endl;
+            return false;
+        }
+    } else if (!fs::is_directory(dir_path)) {
+        std::cerr << "Path exists but is not a directory: " << path << std::endl;
+        return false;
+    }
+    return true;
+#endif
+}
+
 void Utils::export_transform_data_to_CSV(std::string const& transform_file_path, std::vector<std::string> const& objects_of_interest) {
     Debug::Log("Writing transform data to CSV file");
     std::string transform_data_file = transform_file_path;

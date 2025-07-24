@@ -10,6 +10,12 @@ set(TestDir Test)
 set(AnalysisTestDir AnalysisTest)
 set(UtilsDir Utils)
 
+if(DEFINED ANDROID_BUILD)
+    set(ANDROID 1)
+else()
+    set(ANDROID 0)
+endif()
+
 configure_file(Config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/${SrcDir}/Config.h @ONLY)
 
 if(ANDROID_BUILD)

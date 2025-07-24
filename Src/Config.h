@@ -10,6 +10,7 @@
 #define PROJECT_VER_MINOR "8"
 #define PROJECT_VER_PATCH "5"
 #define COMPRESSION 0
+#define ANDROID 1
 #define SUBSAMPLE_RECORDED_AUDIO 0
 #define COMPRESSION_LEVEL 5 // 1 (low) to 9 (high but slow)
 #define MULTI_THREADED 1

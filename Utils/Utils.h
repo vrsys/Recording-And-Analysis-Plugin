@@ -53,19 +53,29 @@
 #include <set>
 #include <map>
 
+#if (ANDROID == 1)
+// POSIX/Android
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <errno.h>
+#else
+#include <filesystem>
+namespace fs = std::filesystem;
+#endif
 
 namespace Utils {
 
-    void export_transform_data_to_CSV(std::string const& transform_file_path, std::vector<std::string> const& objects_of_interest = {});
+    void export_transform_data_to_CSV(std::string const &transform_file_path,
+                                      std::vector<std::string> const &objects_of_interest = {});
 
-    void export_transform_data_to_CSV(std::string const& transform_file_path, std::string target_object_path);
+    void export_transform_data_to_CSV(std::string const &transform_file_path, std::string target_object_path);
 
-    void export_generic_data_to_CSV(std::string const& generic_file_path);
+    void export_generic_data_to_CSV(std::string const &generic_file_path);
 
-    void export_sound_data_to_WAV(std::string const& sound_file_path);
+    void export_sound_data_to_WAV(std::string const &sound_file_path);
 
-    std::string get_meta_file_path_from_transform(std::string const& transform_file_path);
-};
+    std::string get_meta_file_path_from_transform(std::string const &transform_file_path);
 
-
+    bool ensure_directory_existence(std:: string const& path);
+}
 #endif //RECORDINGPLUGIN_UTILS_H
