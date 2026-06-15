@@ -55,7 +55,7 @@ void Utils::export_transform_data_to_CSV(std::string const& transform_file_path)
                                                         "");
     std::fstream out(file_name + ".csv", std::fstream::in | std::fstream::out | std::fstream::app);
 
-    out << "Time,ID,ParentID,ActiveState,LocPosX,LocPosY,LocPosZ,GloPosX,GloPosY,GloPosZ,LocScaX,LocScaY,LocScaZ,GloScaX,GloScaY,GloScaZ,LocRotX,LocRotY,LocRotZ,LocRotW,GloRotX,GloRotY,GloRotZ,GloRotW\n";
+    out << "Time,ID,ParentID,ActiveState,LocPosX,LocPosY,LocPosZ,GloPosX,GloPosY,GloPosZ,LocScaX,LocScaY,LocScaZ,GloScaX,GloScaY,GloScaZ,LocRotW,LocRotX,LocRotY,LocRotZ,GloRotW,GloRotX,GloRotY,GloRotZ\n";
 
     for (unsigned long i = 0; i < size; i++) {
         record_file.read((char *) &current_data, sizeof(TransformDTO));
@@ -104,7 +104,7 @@ void Utils::export_transform_data_to_CSV(std::string const& transform_file_path,
     std::string file_name = transform_data_file.replace(transform_data_file.find(file_ending), file_ending.length(),"");
     std::fstream out(file_name + "_" + target_object_path + ".csv", std::fstream::in | std::fstream::out | std::fstream::app);
 
-    out << "Time,ID,ParentID,ActiveState,LocPosX,LocPosY,LocPosZ,GloPosX,GloPosY,GloPosZ,LocScaX,LocScaY,LocScaZ,GloScaX,GloScaY,GloScaZ,LocRotX,LocRotY,LocRotZ,LocRotW,GloRotX,GloRotY,GloRotZ,GloRotW\n";
+    out << "Time,ID,ParentID,ActiveState,LocPosX,LocPosY,LocPosZ,GloPosX,GloPosY,GloPosZ,LocScaX,LocScaY,LocScaZ,GloScaX,GloScaY,GloScaZ,LocRotW,LocRotX,LocRotY,LocRotZ,GloRotW,GloRotX,GloRotY,GloRotZ\n";
 
     for (unsigned long i = 0; i < size; i++) {
         record_file.read((char *) &current_data, sizeof(TransformDTO));
